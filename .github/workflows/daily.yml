@@ -1,0 +1,72 @@
+name: 骄子每日复盘看板
+
+on:
+  schedule:
+    # GitHub Actions 使用 UTC 时间，北京时间 = UTC + 8
+    - cron: '0 8 * * 1-5'    # 北京时间 16:00 更新行情
+    - cron: '0 12 * * 1-5'   # 北京时间 20:00 更新龙虎榜
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: '抓取阶段'
+        required: true
+        default: 'market'
+        type: choice
+        options:
+          - market
+          - lhb
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 决定抓取阶段
+        id: st
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_STAGE: ${{ github.event.inputs.stage }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "stage=$INPUT_STAGE" >> "$GITHUB_OUTPUT"
+          elif [ "$SCHEDULE" = "0 8 * * 1-5" ]; then
+            echo "stage=market" >> "$GITHUB_OUTPUT"
+          else
+            echo "stage=lhb" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 抓取数据
+        run: python3 fetch_data.py --stage "${{ steps.st.outputs.stage }}"
+
+      - name: 生成页面
+        run: python3 build_html.py
+
+      - name: 提交并推送
+        env:
+          STAGE: ${{ steps.st.outputs.stage }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "无数据变化，跳过提交"
+          else
+            git commit -m "data: $(date -u -d '+8 hours' +'%Y-%m-%d %H:%M') 更新 $STAGE 数据"
+            git push
+          fi
