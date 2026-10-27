@@ -3,8 +3,8 @@ name: 盘中刷新（只更新页面，不存档）
 on:
   schedule:
     # UTC 时间，北京 = UTC+8
-    # 北京 10:00 11:00 13:00 14:00 15:00 16:00
-    - cron: '0 2,3,5,6,7,8 * * 1-5'
+    # 北京 10~16 点每小时更新行情；18/19/20 点尝试抓龙虎榜（已公布就更新，未公布则沿用上一期）
+    - cron: '0 2,3,4,5,6,7,8,10,11,12 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -29,8 +29,11 @@ jobs:
       - name: 安装依赖
         run: pip install requests
 
-      - name: 抓取当前行情（写入临时目录，不提交）
-        run: python3 fetch_data.py --stage market
+      - name: 抓取行情 + 尝试抓龙虎榜（写临时目录，不提交）
+        run: |
+          python3 fetch_data.py --stage market
+          # 龙虎榜同时尝试：已公布则更新，未公布脚本会自行跳过、页面沿用上一期
+          python3 fetch_data.py --stage lhb || true
 
       - name: 生成页面
         run: python3 build_html.py
