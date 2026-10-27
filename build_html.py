@@ -458,12 +458,12 @@ function lhbListHtml(){
 function renderLHB(day){
   const src = (day.lhb && day.lhb.count) ? day : latestLhb();
   if(!src){
-    $('lhb').innerHTML = '<div class="empty">龙虎榜于当日 21:00 存档后更新（尚未采集）</div>';
+    $('lhb').innerHTML = '<div class="empty">当日龙虎榜尚未公布（交易所一般收盘后发布）</div>';
     return;
   }
   window._lhb = src;
   const note = (src.date !== day.date)
-    ? `<div style="font-size:12px;color:var(--t3);margin-bottom:8px">当日龙虎榜于 21:00 存档后更新，以下为最近一期（${src.date}）</div>` : '';
+    ? `<div style="font-size:12px;color:var(--t3);margin-bottom:8px">当日龙虎榜尚未公布，以下为最近一期（${src.date}）</div>` : '';
   $('lhb').innerHTML = note + `<div class="seg">
       <button data-k="buy" class="${window._lhbTab==='buy'?'on':''}">买入榜</button>
       <button data-k="sell" class="${window._lhbTab==='sell'?'on':''}">卖出榜</button>
@@ -586,7 +586,8 @@ function renderHistory(day){
     const amt = b ? b.amount_total_yi : null;
     const todayRow = k.date === day.date;
     h += `<tr${todayRow ? ' class="today"' : ''}>
-      <td class="date">${k.date.slice(5)}${todayRow ? ' <span style="color:var(--blue);font-size:11px">今日</span>' : ''}</td>
+      <td class="date">${k.date.slice(5)}${todayRow ? ' <span style="color:var(--blue);font-size:11px">今日' +
+        (day.updated_at ? ' 截至 ' + day.updated_at.slice(11,16) : '') + '</span>' : ''}</td>
       <td class="num">${f(k.close)}</td>
       <td class="num ${cls(k.pct)}">${sg(k.pct)}%</td>
       <td class="num">${isNum(amt) ? amt : '—'}</td>
