@@ -86,7 +86,7 @@ def upsert_day(date_str, patch):
     for k, v in patch.items():
         d[k] = v
     d['date'] = date_str
-    d['updated_at'] = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    d['updated_at'] = now_bj()
     save_day(date_str, d)
     return d
 
@@ -459,6 +459,11 @@ def short_seat(name):
     return n.strip()
 
 
+def now_bj():
+    """北京时间时间戳（服务器可能为 UTC，统一按 UTC+8 输出）"""
+    return dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).strftime('%Y-%m-%d %H:%M:%S')
+
+
 def fetch_lhb(date_str):
     """龙虎榜：榜单 + 买卖席位"""
     filt = "(TRADE_DATE='%s')" % date_str
@@ -555,13 +560,8 @@ def fetch_funds(date_str):
              '&sortColumns=STATISTICS_DATE&sortTypes=-1&filter='
              + requests.utils.quote("(STATISTICS_DATE<='%s')" % date_str))
         rows = ((get_json(u).get('result') or {}).get('data') or [])
-        cur = prev = None
-        for i, r in enumerate(rows):
-            d = (r.get('STATISTICS_DATE') or '')[:10]
-            if d == date_str:
-                cur = r
-                prev = rows[i + 1] if i + 1 < len(rows) else None
-                break
+        cur = rows[0] if rows else None            # 融资余额 T+1 披露，取最新可得一期
+        prev = rows[1] if len(rows) > 1 else None
         if cur:
             fb, mb, fbuy = cur.get('FIN_BALANCE'), cur.get('MARGIN_BALANCE'), cur.get('FIN_BUY_AMT')
             pfb = prev.get('FIN_BALANCE') if prev else None
@@ -577,17 +577,21 @@ def fetch_funds(date_str):
 
     # 北向（沪股通+深股通）成交总额，单位：百万元 -> 亿元
     try:
-        u = (EM_DC + '?reportName=RPT_MUTUAL_DEAL_HISTORY&columns=ALL&pageSize=20&pageNumber=1&filter='
-             + requests.utils.quote("(TRADE_DATE='%s')" % date_str))
+        u = (EM_DC + '?reportName=RPT_MUTUAL_DEAL_HISTORY&columns=ALL&pageSize=30&pageNumber=1'
+             '&sortColumns=TRADE_DATE&sortTypes=-1&filter='
+             + requests.utils.quote("(TRADE_DATE<='%s')" % date_str))
         rows = ((get_json(u).get('result') or {}).get('data') or [])
-        tot = 0.0
-        hit = 0
-        for r in rows:
-            if str(r.get('MUTUAL_TYPE')) in ('001', '003') and r.get('DEAL_AMT'):
-                tot += float(r['DEAL_AMT'])
-                hit += 1
-        if hit:
-            out['north'] = {'deal_amt': round(tot / 100, 2), 'net': None}   # 净流入已停止披露
+        if rows:
+            latest = (rows[0].get('TRADE_DATE') or '')[:10]
+            tot = 0.0
+            for r in rows:
+                if (r.get('TRADE_DATE') or '')[:10] != latest:
+                    continue
+                if str(r.get('MUTUAL_TYPE')) in ('001', '003') and r.get('DEAL_AMT'):
+                    tot += float(r['DEAL_AMT'])
+            if tot:
+                # 净流入已停止披露，只取成交额
+                out['north'] = {'deal_amt': round(tot / 100, 2), 'net': None, 'date': latest}
     except Exception as e:
         print('[warn] north fail: %s' % e, file=sys.stderr)
     return out
@@ -749,7 +753,7 @@ def stage_lhb(date_str):
         print('[lhb] 当日无龙虎榜数据（非交易日或尚未公布），跳过写入')
         return None
     d = upsert_day(date_str, {'lhb': lhb,
-                              'lhb_updated_at': dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')})
+                              'lhb_updated_at': now_bj()})
     print('[lhb] %d 条 -> data/%s.json' % (lhb['count'], date_str))
     return d
 
