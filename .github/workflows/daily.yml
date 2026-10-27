@@ -1,18 +1,18 @@
-name: 骄子每日复盘看板
+name: 每日正式存档（21点）
 
 on:
   schedule:
     # GitHub Actions 使用 UTC 时间，北京时间 = UTC + 8
-    - cron: '0 8 * * 1-5'    # 北京时间 16:00 更新行情
-    - cron: '0 12 * * 1-5'   # 北京时间 20:00 更新龙虎榜
+    - cron: '0 13 * * 1-5'    # 北京时间 21:00 抓行情+龙虎榜并存档
   workflow_dispatch:
     inputs:
       stage:
-        description: '抓取阶段'
+        description: '抓取阶段（all=行情+龙虎榜）'
         required: true
-        default: 'market'
+        default: 'all'
         type: choice
         options:
+          - all
           - market
           - lhb
 
@@ -22,7 +22,7 @@ permissions:
   id-token: write
 
 jobs:
-  update:
+  archive:
     runs-on: ubuntu-latest
     timeout-minutes: 25
 
@@ -43,23 +43,28 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           INPUT_STAGE: ${{ github.event.inputs.stage }}
-          SCHEDULE: ${{ github.event.schedule }}
         run: |
-          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ -n "$INPUT_STAGE" ]; then
             echo "stage=$INPUT_STAGE" >> "$GITHUB_OUTPUT"
-          elif [ "$SCHEDULE" = "0 8 * * 1-5" ]; then
-            echo "stage=market" >> "$GITHUB_OUTPUT"
           else
-            echo "stage=lhb" >> "$GITHUB_OUTPUT"
+            echo "stage=all" >> "$GITHUB_OUTPUT"
           fi
 
       - name: 抓取数据
-        run: python3 fetch_data.py --stage "${{ steps.st.outputs.stage }}"
+        env:
+          STAGE: ${{ steps.st.outputs.stage }}
+        run: |
+          if [ "$STAGE" = "all" ]; then
+            python3 fetch_data.py --stage market
+            python3 fetch_data.py --stage lhb
+          else
+            python3 fetch_data.py --stage "$STAGE"
+          fi
 
       - name: 生成页面
         run: python3 build_html.py
 
-      - name: 提交数据（页面不入 git 历史，避免仓库膨胀）
+      - name: 提交存档（页面不入 git 历史，避免仓库膨胀）
         env:
           STAGE: ${{ steps.st.outputs.stage }}
         run: |
@@ -70,7 +75,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "无数据变化，跳过提交"
           else
-            git commit -m "data: $(date -u -d '+8 hours' +'%Y-%m-%d %H:%M') 更新 $STAGE 数据"
+            git commit -m "data: $(date -u -d '+8 hours' +'%Y-%m-%d %H:%M') 存档 $STAGE 数据"
             git push
           fi
 
