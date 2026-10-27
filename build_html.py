@@ -185,7 +185,7 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
   <div class="hd-top">
     <div>
       <div class="hd-title">骄子每日复盘看板</div>
-      <div class="hd-sub">盘中每小时刷新　21:00 正式存档</div>
+      <div class="hd-sub">盘中每小时更新数据　21:00 正式存档</div>
     </div>
     <div style="display:flex;gap:6px">
       <button class="btn" id="prev">‹</button>
@@ -541,7 +541,7 @@ function fundCard(title, val, unit, sub){
   return `<div style="flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:9px 8px">
     <div class="ov-lab">${title}</div>
     <div class="ov-val" style="white-space:nowrap;font-size:16px">${isNum(val) ? val : '—'}<span style="font-size:11px;color:var(--t3);font-weight:400;margin-left:2px">${unit||''}</span></div>
-    <div style="font-size:10px;color:var(--t3);margin-top:2px">${sub || ''}</div>
+    <div style="font-size:10px;color:var(--t3);margin-top:2px;white-space:nowrap">${sub || ''}</div>
   </div>`;
 }
 function renderFunds(day){
@@ -556,8 +556,9 @@ function renderFunds(day){
   if(!s){ $('funds').innerHTML = '<div class="empty">暂无数据</div>'; return; }
   const m = (s.funds || {}).margin || {};
   const n = (s.funds || {}).north || {};
-  const note = (s.date !== day.date)
-    ? `<div style="font-size:12px;color:var(--t3);margin-bottom:8px">当日资金数据尚未更新，以下为最近一期（${s.date}）</div>` : '';
+  const mdate = m.date || n.date || s.date;   // 按数据实际所属日期提示，而不是文件所在日
+  const note = (mdate !== day.date)
+    ? `<div style="font-size:12px;color:var(--t3);margin-bottom:8px">融资/北向数据为 T+1 披露，以下为最新一期（${mdate}）</div>` : '';
   const chg = isNum(m.fin_chg) ? `<span class="${cls(m.fin_chg)}">${sg(m.fin_chg)}亿</span>` : '—';
   $('funds').innerHTML = note + `<div style="display:flex;gap:10px">
     ${fundCard('北向成交额', n.deal_amt, '亿', n.deal_amt ? '沪股通+深股通' : '暂无')}
@@ -568,7 +569,12 @@ function renderFunds(day){
 
 /* ---------- 近7个交易日对比 ---------- */
 function renderHistory(day){
-  const rows = (KL || []).filter(k => k.date <= day.date).slice(-7);
+  let rows = (KL || []).filter(k => k.date <= day.date).slice(-7);
+  // 当天为盘中实时数据，日K线里还没有，补在最后一行
+  if(day && !rows.some(k => k.date === day.date)){
+    const sh = idxByName(day, '上证指数');
+    if(sh) rows = rows.concat([{date: day.date, close: sh.close, pct: sh.pct}]).slice(-7);
+  }
   if(!rows.length){ $('history').innerHTML = '<div class="empty">暂无数据</div>'; return; }
   let h = `<div class="hwrap" id="hw"><table class="htable"><thead><tr>
     <th>日期</th><th class="num">上证收盘</th><th class="num">涨跌幅</th>
