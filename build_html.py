@@ -105,7 +105,7 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 /* 近7日对比 */
 .hwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .hwrap::-webkit-scrollbar{display:none}
-.htable{min-width:660px;font-size:12px}
+.htable{min-width:820px;font-size:12px}
 .htable th{white-space:nowrap;padding:7px 4px}
 .htable th.num{text-align:right}
 .htable td{white-space:nowrap;padding:7px 4px}
@@ -217,10 +217,10 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
   <section><div class="card"><h2>资金情况 <small>融资余额单位：亿元</small></h2>
     <div id="funds"></div></div></section>
 
-  <section><div class="card"><h2>近 7 个交易日对比 <small>成交额单位：亿元 · 自建档日起累积</small></h2>
+  <section><div class="card"><h2>近 10 个交易日对比 <small>成交额单位：亿元 · 自建档日起累积</small></h2>
     <div id="history"></div></div></section>
 
-  <section><div class="card"><h2>大宗商品走势 <small>近 60 个交易日</small></h2>
+  <section><div class="card"><h2>美股与大宗商品走势 <small>近 90 个交易日</small></h2>
     <div id="charts"></div></div></section>
 
   <footer>
@@ -531,7 +531,9 @@ function chartBlock(title, points, color, unit){
 }
 function renderCharts(day){
   const c = day.commodities || {};
-  $('charts').innerHTML = chartBlock('布伦特原油（美元/桶）', c.brent, '#c9922e', '美元')
+  $('charts').innerHTML = chartBlock('标普500（点）', c.sp500, '#3b6fd4', '点')
+    + '<div style="height:14px"></div>'
+    + chartBlock('布伦特原油（美元/桶）', c.brent, '#c9922e', '美元')
     + '<div style="height:14px"></div>'
     + chartBlock('纽约黄金（美元/盎司）', c.gold, '#d4a017', '美元');
 }
@@ -567,31 +569,42 @@ function renderFunds(day){
   </div>`;
 }
 
-/* ---------- 近7个交易日对比 ---------- */
+/* ---------- 近10个交易日对比 ---------- */
 function renderHistory(day){
-  let rows = (KL || []).filter(k => k.date <= day.date).slice(-7);
+  let rows = (KL || []).filter(k => k.date <= day.date).slice(-10);
   // 当天为盘中实时数据，日K线里还没有，补在最后一行
   if(day && !rows.some(k => k.date === day.date)){
     const sh = idxByName(day, '上证指数');
-    if(sh) rows = rows.concat([{date: day.date, close: sh.close, pct: sh.pct}]).slice(-7);
+    if(sh) rows = rows.concat([{date: day.date, close: sh.close, pct: sh.pct}]).slice(-10);
   }
   if(!rows.length){ $('history').innerHTML = '<div class="empty">暂无数据</div>'; return; }
   let h = `<div class="hwrap" id="hw"><table class="htable"><thead><tr>
     <th>日期</th><th class="num">上证收盘</th><th class="num">涨跌幅</th>
-    <th class="num">三市成交额</th><th class="num">涨/非涨额比</th>
-    <th class="num">涨 / 跌</th><th class="num">涨/跌停</th></tr></thead><tbody>`;
+    <th class="num">三市成交额</th><th class="num">ADR</th>
+    <th class="num">TRIN</th><th class="num">涨 / 跌</th><th class="num">涨/跌停</th></tr></thead><tbody>`;
   rows.forEach(k => {
     const d = dayOf(k.date);
     const b = d && d.breadth;
     const amt = b ? b.amount_total_yi : null;
     const todayRow = k.date === day.date;
+    // ADR = 上涨家数/下跌家数；TRIN = ADR ÷ (上涨成交额/非上涨成交额)
+    let adr = null, trin = null;
+    if(b && isNum(b.up) && isNum(b.down) && b.down > 0){
+      adr = b.up / b.down;
+      let r = isNum(b.up_notup_ratio) ? b.up_notup_ratio
+        : (isNum(b.amount_up_yi) && isNum(b.amount_notup_yi) && b.amount_notup_yi > 0
+           ? b.amount_up_yi / b.amount_notup_yi : null);
+      if(r) trin = adr / r;
+    }
     h += `<tr${todayRow ? ' class="today"' : ''}>
-      <td class="date">${k.date.slice(5)}${todayRow ? ' <span style="color:var(--blue);font-size:11px">今日' +
-        (day.updated_at ? ' 截至 ' + day.updated_at.slice(11,16) : '') + '</span>' : ''}</td>
+      <td class="date">${todayRow
+        ? `<span style="color:var(--blue)">${k.date.slice(5)}</span>${day.updated_at ? ' <span style="color:var(--blue);font-size:11px">截至 ' + day.updated_at.slice(11,16) + '</span>' : ''}`
+        : k.date.slice(5)}</td>
       <td class="num">${f(k.close)}</td>
       <td class="num ${cls(k.pct)}">${sg(k.pct)}%</td>
       <td class="num">${isNum(amt) ? amt : '—'}</td>
-      <td class="num">${b && isNum(b.up_notup_ratio) ? `<span class="frac-up">${b.up_notup_ratio}</span>` : '—'}</td>
+      <td class="num">${isNum(adr) ? adr.toFixed(2) : '—'}</td>
+      <td class="num">${isNum(trin) ? trin.toFixed(2) : '—'}</td>
       <td class="num">${b ? `<span class="frac-up">${b.up}</span>/<span class="frac-down">${b.down}</span>` : '—'}</td>
       <td class="num">${b ? `<span class="frac-up">${b.limit_up}</span>/<span class="frac-down">${b.limit_down}</span>` : '—'}</td>
     </tr>`;
