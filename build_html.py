@@ -132,10 +132,9 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 /* 近7日对比 */
 .hwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .hwrap::-webkit-scrollbar{display:none}
-.htable{min-width:600px;font-size:12px;table-layout:fixed}
-.htable th{white-space:nowrap;padding:7px 4px}
-.htable th.num{text-align:right}
-.htable td{white-space:nowrap;padding:7px 4px}
+.htable{width:auto;font-size:12px}
+.htable th,.htable td{text-align:center;white-space:nowrap;padding-left:6px;padding-right:6px}
+.htable th{white-space:normal;line-height:1.3}
 /* 横向滚动滑块 */
 .hbar{position:relative;height:5px;background:#e9ecf1;border-radius:3px;margin-top:9px}
 .hbar i{position:absolute;top:0;height:5px;background:var(--blue);border-radius:3px;transition:left .08s linear}
@@ -624,19 +623,19 @@ function drawMount(mount){
   if(!cfg) return;
   const ss = cfg.series, n = ss[0].points.length;
   const W = Math.max(300, Math.round(mount.clientWidth) || 340);
-  const H = 168, PL = 46, PR = 14, PT = 12, PB = 22;
+  const H = 168, PT = 12, PB = 22, PL = 4, PR = 4;
   const lo = cfg.lo, hi = cfg.hi;
   const x = i => PL + i * (W - PL - PR) / (n - 1);
   const y = v => PT + (1 - (v - lo) / ((hi - lo) || 1)) * (H - PT - PB);
   const gid = 'g' + Math.random().toString(36).slice(2, 8);
 
-  // 纵轴：数值刻度 + 网格线
+  // 纵轴：数值刻度 + 网格线（刻度文字画在绘图区内、贴网格线上方，带白色描边保证可读）
   const ticks = yTicks(lo, hi, 5);
   const grid = ticks.map(v =>
     `<line x1="${PL}" y1="${y(v).toFixed(1)}" x2="${W-PR}" y2="${y(v).toFixed(1)}"
       stroke="#eceff3" stroke-width="1" vector-effect="non-scaling-stroke"/>
-     <text x="${PL-6}" y="${y(v).toFixed(1)}" text-anchor="end" dominant-baseline="middle"
-      font-size="10" fill="#9aa0ab">${fmtTick(v)}</text>`).join('');
+     <text x="5" y="${(y(v)-3).toFixed(1)}" font-size="9.5" fill="#8b909b"
+      style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">${fmtTick(v)}</text>`).join('');
 
   // 横轴：月份刻度
   const mx = monthTicks(ss[0].points);
@@ -745,10 +744,7 @@ function renderHistory(day){
     if(sh) rows = rows.concat([{date: day.date, close: sh.close, pct: sh.pct}]).slice(-10);
   }
   if(!rows.length){ $('history').innerHTML = '<div class="empty">暂无数据</div>'; return; }
-  let h = `<div class="hwrap" id="hw"><table class="htable"><colgroup>
-    <col style="width:92px"><col style="width:72px"><col style="width:58px"><col style="width:84px">
-    <col style="width:48px"><col style="width:52px"><col style="width:80px"><col style="width:66px">
-    </colgroup><thead><tr>
+  let h = `<div class="hwrap" id="hw"><table class="htable"><thead><tr>
     <th>日期</th><th class="num">上证收盘</th><th class="num">涨跌幅</th>
     <th class="num">三市成交额</th><th class="num">广度</th>
     <th class="num">TRIN</th><th class="num">涨 / 跌</th><th class="num">涨/跌停</th></tr></thead><tbody>`;
@@ -773,7 +769,7 @@ function renderHistory(day){
     }
     h += `<tr${todayRow ? ' class="today"' : ''}>
       <td class="date">${todayRow
-        ? `<span style="color:var(--blue)">${k.date.slice(5)}</span>${day.updated_at ? ' <span style="color:var(--blue);font-size:11px">截至 ' + day.updated_at.slice(11,16) + '</span>' : ''}`
+        ? `<span style="color:var(--blue)">${k.date.slice(5)}</span>`
         : k.date.slice(5)}</td>
       <td class="num">${f(k.close)}</td>
       <td class="num ${cls(k.pct)}">${sg(k.pct)}%</td>
