@@ -6,13 +6,13 @@
    "name": "上证指数",
    "open": 3698.4405,
    "prev_close": 3697.5199,
-   "close": 3689.6866,
+   "close": 3687.0476,
    "high": 3708.1981,
    "low": 3686.717,
-   "amount": 226254985258.0,
-   "change": -7.83,
-   "pct": -0.21,
-   "amount_yi": 2262.55,
+   "amount": 353280330576.0,
+   "change": -10.47,
+   "pct": -0.28,
+   "amount_yi": 3532.8,
    "quote_date": "2026-10-27"
   },
   {
@@ -20,13 +20,13 @@
    "name": "深证成指",
    "open": 11591.36,
    "prev_close": 11534.379,
-   "close": 11519.734,
+   "close": 11473.533,
    "high": 11633.303,
-   "low": 11514.756,
-   "amount": 289500493275.783,
-   "change": -14.65,
-   "pct": -0.13,
-   "amount_yi": 2895.0,
+   "low": 11472.226,
+   "amount": 443160161279.774,
+   "change": -60.85,
+   "pct": -0.53,
+   "amount_yi": 4431.6,
    "quote_date": "2026-10-27"
   },
   {
@@ -34,13 +34,13 @@
    "name": "创业板指",
    "open": 2661.713,
    "prev_close": 2638.231,
-   "close": 2629.378,
+   "close": 2618.258,
    "high": 2670.47,
-   "low": 2629.066,
-   "amount": 141030528617.72,
-   "change": -8.85,
-   "pct": -0.34,
-   "amount_yi": 1410.31,
+   "low": 2616.281,
+   "amount": 216560743759.8,
+   "change": -19.97,
+   "pct": -0.76,
+   "amount_yi": 2165.61,
    "quote_date": "2026-10-27"
   },
   {
@@ -48,13 +48,13 @@
    "name": "科创50",
    "open": 1326.7573,
    "prev_close": 1315.4984,
-   "close": 1304.1765,
+   "close": 1291.2009,
    "high": 1327.3321,
-   "low": 1303.1597,
-   "amount": 19399786362.0,
-   "change": -11.32,
-   "pct": -0.86,
-   "amount_yi": 194.0,
+   "low": 1290.1351,
+   "amount": 31541813054.0,
+   "change": -24.3,
+   "pct": -1.85,
+   "amount_yi": 315.42,
    "quote_date": "2026-10-27"
   },
   {
@@ -62,13 +62,13 @@
    "name": "北证50",
    "open": 968.412,
    "prev_close": 963.948,
-   "close": 961.913,
+   "close": 960.936,
    "high": 972.059,
-   "low": 959.866,
-   "amount": 4367348222.0,
-   "change": -2.03,
-   "pct": -0.21,
-   "amount_yi": 43.67,
+   "low": 959.722,
+   "amount": 6997001848.0,
+   "change": -3.01,
+   "pct": -0.31,
+   "amount_yi": 69.97,
    "quote_date": "2026-10-27"
   },
   {
@@ -76,13 +76,13 @@
    "name": "沪深300",
    "open": 4105.4807,
    "prev_close": 4103.5432,
-   "close": 4091.1278,
+   "close": 4092.6945,
    "high": 4110.0018,
    "low": 4087.4872,
-   "amount": 116189786130.0,
-   "change": -12.42,
-   "pct": -0.3,
-   "amount_yi": 1161.9,
+   "amount": 187965345955.0,
+   "change": -10.85,
+   "pct": -0.26,
+   "amount_yi": 1879.65,
    "quote_date": "2026-10-27"
   },
   {
@@ -90,40 +90,34 @@
    "name": "深证综指",
    "open": 2196.424,
    "prev_close": 2187.881,
-   "close": 2185.119,
+   "close": 2175.521,
    "high": 2206.552,
-   "low": 2184.698,
-   "amount": 289500493275.783,
-   "change": -2.76,
-   "pct": -0.13,
-   "amount_yi": 2895.0,
+   "low": 2175.521,
+   "amount": 443160161279.774,
+   "change": -12.36,
+   "pct": -0.56,
+   "amount_yi": 4431.6,
    "quote_date": "2026-10-27"
   }
  ],
  "realtime": true,
  "breadth": {
-  "up": 1969,
-  "down": 3244,
-  "flat": 263,
-  "limit_up": 33,
-  "limit_down": 5,
+  "up": 1331,
+  "down": 3991,
+  "flat": 154,
+  "limit_up": 44,
+  "limit_down": 7,
   "total": 5476,
   "amount_yi": {
-   "sh": 2259.95,
-   "sz": 2762.98,
-   "bj": 43.83
+   "sh": 3331.27,
+   "sz": 4432.63,
+   "bj": 70.03
   },
-  "amount_total_yi": 5066.75,
-  "amount_up_yi": 2512.44,
-  "amount_notup_yi": 2554.32,
-  "up_notup_ratio": 0.98,
+  "amount_total_yi": 7833.92,
+  "amount_up_yi": 3139.48,
+  "amount_notup_yi": 4694.44,
+  "up_notup_ratio": 0.67,
   "limit_up_list": [
-   {
-    "symbol": "sh600558",
-    "code": "600558",
-    "name": "大西洋",
-    "pct": 10.072
-   },
    {
     "symbol": "sh600303",
     "code": "600303",
@@ -131,21 +125,15 @@
     "pct": 9.894
    },
    {
+    "symbol": "sh600558",
+    "code": "600558",
+    "name": "大西洋",
+    "pct": 10.072
+   },
+   {
     "symbol": "sh600715",
     "code": "600715",
     "name": "文投控股",
-    "pct": 10.0
-   },
-   {
-    "symbol": "sh600828",
-    "code": "600828",
-    "name": "茂业商业",
-    "pct": 10.099
-   },
-   {
-    "symbol": "sh600838",
-    "code": "600838",
-    "name": "上海九百",
     "pct": 10.0
    },
    {
@@ -173,10 +161,22 @@
     "pct": 9.983
    },
    {
-    "symbol": "sh603758",
-    "code": "603758",
-    "name": "秦安股份",
-    "pct": 10.051
+    "symbol": "sh600828",
+    "code": "600828",
+    "name": "茂业商业",
+    "pct": 10.099
+   },
+   {
+    "symbol": "sh600838",
+    "code": "600838",
+    "name": "上海九百",
+    "pct": 10.0
+   },
+   {
+    "symbol": "sh603370",
+    "code": "603370",
+    "name": "华新精科",
+    "pct": 9.996
    },
    {
     "symbol": "sh603376",
@@ -203,10 +203,22 @@
     "pct": 9.965
    },
    {
-    "symbol": "sz000058",
-    "code": "000058",
-    "name": "深 赛 格",
-    "pct": 10.07
+    "symbol": "sh603758",
+    "code": "603758",
+    "name": "秦安股份",
+    "pct": 10.051
+   },
+   {
+    "symbol": "sh603813",
+    "code": "603813",
+    "name": "原尚股份",
+    "pct": 10.0
+   },
+   {
+    "symbol": "sh605333",
+    "code": "605333",
+    "name": "沪光股份",
+    "pct": 10.0
    },
    {
     "symbol": "sz000678",
@@ -215,22 +227,22 @@
     "pct": 10.034
    },
    {
-    "symbol": "sz001219",
-    "code": "001219",
-    "name": "青岛食品",
-    "pct": 9.985
-   },
-   {
-    "symbol": "sz002187",
-    "code": "002187",
-    "name": "广百股份",
-    "pct": 10.037
+    "symbol": "sz000058",
+    "code": "000058",
+    "name": "深 赛 格",
+    "pct": 10.07
    },
    {
     "symbol": "sz001311",
     "code": "001311",
     "name": "多利科技",
     "pct": 9.993
+   },
+   {
+    "symbol": "sz001318",
+    "code": "001318",
+    "name": "阳光乳业",
+    "pct": 10.0
    },
    {
     "symbol": "sz001331",
@@ -243,6 +255,12 @@
     "code": "001400",
     "name": "江顺科技",
     "pct": 10.003
+   },
+   {
+    "symbol": "sz002434",
+    "code": "002434",
+    "name": "万里扬",
+    "pct": 10.066
    },
    {
     "symbol": "sz002011",
@@ -263,28 +281,40 @@
     "pct": 9.986
    },
    {
+    "symbol": "sz002181",
+    "code": "002181",
+    "name": "粤 传 媒",
+    "pct": 10.041
+   },
+   {
+    "symbol": "sz002187",
+    "code": "002187",
+    "name": "广百股份",
+    "pct": 10.037
+   },
+   {
+    "symbol": "sz002196",
+    "code": "002196",
+    "name": "方正电机",
+    "pct": 10.04
+   },
+   {
+    "symbol": "sz002205",
+    "code": "002205",
+    "name": "国统股份",
+    "pct": 10.039
+   },
+   {
+    "symbol": "sz001219",
+    "code": "001219",
+    "name": "青岛食品",
+    "pct": 9.985
+   },
+   {
     "symbol": "sz002590",
     "code": "002590",
     "name": "万安科技",
     "pct": 10.031
-   },
-   {
-    "symbol": "sz002639",
-    "code": "002639",
-    "name": "雪人集团",
-    "pct": 10.029
-   },
-   {
-    "symbol": "sz002249",
-    "code": "002249",
-    "name": "大洋电机",
-    "pct": 10.0
-   },
-   {
-    "symbol": "sz002284",
-    "code": "002284",
-    "name": "亚太股份",
-    "pct": 10.011
    },
    {
     "symbol": "sz002703",
@@ -299,10 +329,28 @@
     "pct": 10.032
    },
    {
-    "symbol": "sz003026",
-    "code": "003026",
-    "name": "中晶科技",
-    "pct": 9.996
+    "symbol": "sz002820",
+    "code": "002820",
+    "name": "桂发祥",
+    "pct": 10.01
+   },
+   {
+    "symbol": "sz002249",
+    "code": "002249",
+    "name": "大洋电机",
+    "pct": 10.0
+   },
+   {
+    "symbol": "sz002284",
+    "code": "002284",
+    "name": "亚太股份",
+    "pct": 10.011
+   },
+   {
+    "symbol": "sz002929",
+    "code": "002929",
+    "name": "润建股份",
+    "pct": 10.004
    },
    {
     "symbol": "sz300539",
@@ -311,13 +359,37 @@
     "pct": 20.0
    },
    {
+    "symbol": "sz002995",
+    "code": "002995",
+    "name": "天地在线",
+    "pct": 10.017
+   },
+   {
+    "symbol": "sz003026",
+    "code": "003026",
+    "name": "中晶科技",
+    "pct": 9.996
+   },
+   {
     "symbol": "sz301479",
     "code": "301479",
     "name": "弘景光电",
     "pct": 20.004
+   },
+   {
+    "symbol": "sz301682",
+    "code": "301682",
+    "name": "宏明电子",
+    "pct": 20.005
    }
   ],
   "limit_down_list": [
+   {
+    "symbol": "sh603280",
+    "code": "603280",
+    "name": "南方路机",
+    "pct": -9.988
+   },
    {
     "symbol": "sh603669",
     "code": "603669",
@@ -331,10 +403,16 @@
     "pct": -10.006
    },
    {
-    "symbol": "sh603280",
-    "code": "603280",
-    "name": "南方路机",
-    "pct": -9.988
+    "symbol": "sz000567",
+    "code": "000567",
+    "name": "海德股份",
+    "pct": -9.789
+   },
+   {
+    "symbol": "sz000729",
+    "code": "000729",
+    "name": "燕京啤酒",
+    "pct": -10.027
    },
    {
     "symbol": "sz002731",
@@ -351,7 +429,7 @@
   ]
  },
  "limit_up_pool": {
-  "total": 33,
+  "total": 44,
   "ladder": [
    {
     "level": 5,
@@ -365,9 +443,9 @@
       "price": 13.31,
       "board_type": "换手板",
       "reason": "商贸零售+商业地产+洗染服务",
-      "turnover": 6.1245,
+      "turnover": 6.2578,
       "open_num": null,
-      "seal_amount": 266341510.0,
+      "seal_amount": 272430840.0,
       "luv": 5335739200.0
      }
     ]
@@ -383,10 +461,10 @@
       "pct": 10.0344,
       "price": 16.01,
       "board_type": "换手板",
-      "reason": "机器人轴承+汽车轴承",
-      "turnover": 15.5105,
+      "reason": "机器人轴承+汽车轴承+“羊”字辈",
+      "turnover": 15.7672,
       "open_num": 1,
-      "seal_amount": 378859180.0,
+      "seal_amount": 284997360.0,
       "luv": 7358384900.0
      },
      {
@@ -396,9 +474,9 @@
       "price": 10.33,
       "board_type": "一字板",
       "reason": "机器人钢丝绳+高端特种钢索",
-      "turnover": 1.7682,
+      "turnover": 2.0648,
       "open_num": null,
-      "seal_amount": 279839260.0,
+      "seal_amount": 250516100.0,
       "luv": 2929228500.0
      },
      {
@@ -408,9 +486,9 @@
       "price": 9.85,
       "board_type": "一字板",
       "reason": "交通机器人+具身智能+智慧交通",
-      "turnover": 2.9604,
+      "turnover": 3.1139,
       "open_num": null,
-      "seal_amount": 412874250.0,
+      "seal_amount": 387213350.0,
       "luv": 6953411800.0
      }
     ]
@@ -426,10 +504,10 @@
       "pct": 10.0,
       "price": 2.53,
       "board_type": "换手板",
-      "reason": "体外诊断+海参养殖+水溶性维生素试剂",
-      "turnover": 9.9299,
+      "reason": "体外诊断+海参养殖+水溶性维生素试剂+“羊”字辈",
+      "turnover": 10.3245,
       "open_num": 1,
-      "seal_amount": 107726489.0,
+      "seal_amount": 101864714.0,
       "luv": 3999857300.0
      }
     ]
@@ -437,18 +515,78 @@
    {
     "level": 2,
     "label": "2板",
-    "count": 7,
+    "count": 11,
     "stocks": [
+     {
+      "code": "603370",
+      "name": "华新精科",
+      "pct": 9.9964,
+      "price": 30.81,
+      "board_type": "换手板",
+      "reason": "人形机器人+关节电机铁芯+新能源车铁芯",
+      "turnover": 9.4581,
+      "open_num": null,
+      "seal_amount": 57226494.0,
+      "luv": 2602018600.0
+     },
+     {
+      "code": "600303",
+      "name": "曙光股份",
+      "pct": 9.894,
+      "price": 3.11,
+      "board_type": "换手板",
+      "reason": "汽车车桥+新能源客车+军用方舱",
+      "turnover": 9.7205,
+      "open_num": 1,
+      "seal_amount": 48258181.0,
+      "luv": 2107063000.0
+     },
+     {
+      "code": "605333",
+      "name": "沪光股份",
+      "pct": 10.0,
+      "price": 19.91,
+      "board_type": "换手板",
+      "reason": "具身智能+机器人量产+汽车线束",
+      "turnover": 3.1095,
+      "open_num": null,
+      "seal_amount": 52475015.0,
+      "luv": 9239044500.0
+     },
+     {
+      "code": "001318",
+      "name": "阳光乳业",
+      "pct": 10.0,
+      "price": 13.31,
+      "board_type": "换手板",
+      "reason": "乳制品+绿色食品+冷链物流+“羊”字辈",
+      "turnover": 12.5289,
+      "open_num": 1,
+      "seal_amount": 51882380.0,
+      "luv": 3762204600.0
+     },
+     {
+      "code": "002820",
+      "name": "桂发祥",
+      "pct": 10.0098,
+      "price": 11.21,
+      "board_type": "换手板",
+      "reason": "休闲食品+非遗麻花+全国拓展",
+      "turnover": 15.6277,
+      "open_num": null,
+      "seal_amount": 145291320.0,
+      "luv": 2251733600.0
+     },
      {
       "code": "002249",
       "name": "大洋电机",
       "pct": 10.0,
       "price": 7.7,
       "board_type": "换手板",
-      "reason": "",
-      "turnover": 7.444,
+      "reason": "机器人关节+电机业务+数据中心风机+“羊”字辈",
+      "turnover": 7.9532,
       "open_num": null,
-      "seal_amount": 1447021600.0,
+      "seal_amount": 708310900.0,
       "luv": 14417724000.0
      },
      {
@@ -458,9 +596,9 @@
       "price": 38.52,
       "board_type": "换手板",
       "reason": "工业机器人+LNG运贸",
-      "turnover": 3.8686,
+      "turnover": 3.9484,
       "open_num": 2,
-      "seal_amount": 105772261.0,
+      "seal_amount": 105366838.0,
       "luv": 11010331500.0
      },
      {
@@ -470,9 +608,9 @@
       "price": 7.93,
       "board_type": "换手板",
       "reason": "AI应用+养老AI+身联网+通信服务",
-      "turnover": 5.7553,
+      "turnover": 5.8795,
       "open_num": 2,
-      "seal_amount": 220212990.0,
+      "seal_amount": 167396020.0,
       "luv": 7989475000.0
      },
      {
@@ -482,22 +620,10 @@
       "price": 14.98,
       "board_type": "T字板",
       "reason": "三季报增长+饼干食品+渠道拓展",
-      "turnover": 6.761,
+      "turnover": 7.0663,
       "open_num": 1,
-      "seal_amount": 90761124.0,
+      "seal_amount": 85208142.0,
       "luv": 2849158600.0
-     },
-     {
-      "code": "600303",
-      "name": "曙光股份",
-      "pct": 9.894,
-      "price": 3.11,
-      "board_type": "换手板",
-      "reason": "汽车车桥+新能源客车+军用方舱",
-      "turnover": 6.8666,
-      "open_num": null,
-      "seal_amount": 115615494.0,
-      "luv": 2107063000.0
      },
      {
       "code": "002708",
@@ -505,10 +631,10 @@
       "pct": 10.0319,
       "price": 17.22,
       "board_type": "换手板",
-      "reason": "人形机器人+PCB+汽车零部件",
-      "turnover": 3.5333,
+      "reason": "人形机器人+PCB+汽车零部件+“羊”字辈",
+      "turnover": 3.6199,
       "open_num": null,
-      "seal_amount": 254528080.0,
+      "seal_amount": 236393700.0,
       "luv": 8775834600.0
      },
      {
@@ -518,9 +644,9 @@
       "price": 6.12,
       "board_type": "一字板",
       "reason": "机器人焊接材料+可控核聚变+航空航天+“羊”字辈",
-      "turnover": 2.5498,
+      "turnover": 2.7045,
       "open_num": null,
-      "seal_amount": 161670930.0,
+      "seal_amount": 173026900.0,
       "luv": 5493341600.0
      }
     ]
@@ -528,18 +654,126 @@
    {
     "level": 1,
     "label": "首板",
-    "count": 21,
+    "count": 28,
     "stocks": [
+     {
+      "code": "002205",
+      "name": "国统股份",
+      "pct": 10.0386,
+      "price": 11.4,
+      "board_type": "换手板",
+      "reason": "PCCP管道+风电混塔+央企控股",
+      "turnover": 5.3574,
+      "open_num": null,
+      "seal_amount": 80831700.0,
+      "luv": 2118612800.0
+     },
+     {
+      "code": "002196",
+      "name": "方正电机",
+      "pct": 10.0398,
+      "price": 11.07,
+      "board_type": "换手板",
+      "reason": "机器人关节电机+新能源驱动电机+微特电机",
+      "turnover": 15.0782,
+      "open_num": 3,
+      "seal_amount": 287956160.0,
+      "luv": 5426284000.0
+     },
+     {
+      "code": "603813",
+      "name": "原尚股份",
+      "pct": 10.0,
+      "price": 24.2,
+      "board_type": "换手板",
+      "reason": "汽车物流+仓储资源",
+      "turnover": 1.6417,
+      "open_num": null,
+      "seal_amount": 15875200.0,
+      "luv": 2541363000.0
+     },
+     {
+      "code": "002995",
+      "name": "天地在线",
+      "pct": 10.0167,
+      "price": 19.77,
+      "board_type": "换手板",
+      "reason": "数字营销+字节广告+VR文旅",
+      "turnover": 13.3666,
+      "open_num": null,
+      "seal_amount": 293764410.0,
+      "luv": 2405883400.0
+     },
+     {
+      "code": "301682",
+      "name": "宏明电子",
+      "pct": 20.0047,
+      "price": 102.1,
+      "board_type": "换手板",
+      "reason": "精密零组件+人形机器人+特种电容",
+      "turnover": 20.1211,
+      "open_num": 1,
+      "seal_amount": 91532650.0,
+      "luv": 3102547400.0
+     },
+     {
+      "code": "002181",
+      "name": "粤传媒",
+      "pct": 10.041,
+      "price": 10.74,
+      "board_type": "换手板",
+      "reason": "微短剧+妙创AIGC+GEO营销",
+      "turnover": 11.2828,
+      "open_num": 4,
+      "seal_amount": 293293290.0,
+      "luv": 12184928500.0
+     },
+     {
+      "code": "002929",
+      "name": "润建股份",
+      "pct": 10.0039,
+      "price": 56.96,
+      "board_type": "换手板",
+      "reason": "词元出海+算力网络",
+      "turnover": 9.3906,
+      "open_num": null,
+      "seal_amount": 357834110.0,
+      "luv": 12339130000.0
+     },
+     {
+      "code": "301479",
+      "name": "弘景光电",
+      "pct": 20.0043,
+      "price": 56.15,
+      "board_type": "换手板",
+      "reason": "机器人视觉+全景相机+光通信",
+      "turnover": 14.6071,
+      "open_num": 4,
+      "seal_amount": 155869030.0,
+      "luv": 4003546200.0
+     },
+     {
+      "code": "002434",
+      "name": "万里扬",
+      "pct": 10.066,
+      "price": 6.67,
+      "board_type": "换手板",
+      "reason": "机器人零部件+汽车变速器",
+      "turnover": 2.2249,
+      "open_num": null,
+      "seal_amount": 148013970.0,
+      "luv": 8746644800.0
+     },
      {
       "code": "300539",
       "name": "横河精密",
       "pct": 20.0,
       "price": 19.68,
       "board_type": "换手板",
-      "reason": "",
-      "turnover": 7.945,
+      "reason": "减速器+精密模具+汽车零部件",
+      "turnover": 8.9663,
       "open_num": null,
-      "seal_amount": 661991730.0,
+      "seal_amount": 309871260.0,
       "luv": 4298190500.0
      },
      {
@@ -549,9 +783,9 @@
       "price": 26.3,
       "board_type": "换手板",
       "reason": "汽车电子+驾驶辅助+新能源车型",
-      "turnover": 7.7346,
+      "turnover": 8.4593,
       "open_num": 2,
-      "seal_amount": 57762664.0,
+      "seal_amount": 28603249.0,
       "luv": 841621040.0
      },
      {
@@ -561,118 +795,10 @@
       "price": 5.92,
       "board_type": "换手板",
       "reason": "百货零售+免税退税+新零售业态",
-      "turnover": 3.1791,
+      "turnover": 3.4686,
       "open_num": 1,
-      "seal_amount": 108872352.0,
+      "seal_amount": 70677696.0,
       "luv": 4149296200.0
-     },
-     {
-      "code": "301479",
-      "name": "弘景光电",
-      "pct": 20.0043,
-      "price": 56.15,
-      "board_type": "换手板",
-      "reason": "",
-      "turnover": 11.3922,
-      "open_num": 1,
-      "seal_amount": 144848640.0,
-      "luv": 4003546200.0
-     },
-     {
-      "code": "603390",
-      "name": "通达电气",
-      "pct": 10.0198,
-      "price": 11.09,
-      "board_type": "换手板",
-      "reason": "三季报增长+新能源热管理+农机配套",
-      "turnover": 4.0474,
-      "open_num": null,
-      "seal_amount": 143878330.0,
-      "luv": 3893410300.0
-     },
-     {
-      "code": "002639",
-      "name": "雪人集团",
-      "pct": 10.0295,
-      "price": 14.92,
-      "board_type": "换手板",
-      "reason": "数据中心冷却+压缩机+制冰系统",
-      "turnover": 11.933,
-      "open_num": 1,
-      "seal_amount": 737455320.0,
-      "luv": 9849090300.0
-     },
-     {
-      "code": "600715",
-      "name": "文投控股",
-      "pct": 10.0,
-      "price": 1.87,
-      "board_type": "换手板",
-      "reason": "AI漫剧+游戏运营+影院运营",
-      "turnover": 4.1968,
-      "open_num": 1,
-      "seal_amount": 147692600.0,
-      "luv": 5352636100.0
-     },
-     {
-      "code": "601956",
-      "name": "东贝集团",
-      "pct": 9.9206,
-      "price": 5.54,
-      "board_type": "换手板",
-      "reason": "汽车零部件+机器人电机+制冷压缩机",
-      "turnover": 3.0874,
-      "open_num": 1,
-      "seal_amount": 101368150.0,
-      "luv": 3443755900.0
-     },
-     {
-      "code": "600828",
-      "name": "茂业商业",
-      "pct": 10.0985,
-      "price": 4.47,
-      "board_type": "换手板",
-      "reason": "百货零售+全渠道运营+自有物业",
-      "turnover": 1.4134,
-      "open_num": null,
-      "seal_amount": 106747623.0,
-      "luv": 7739180000.0
-     },
-     {
-      "code": "002590",
-      "name": "万安科技",
-      "pct": 10.0313,
-      "price": 10.53,
-      "board_type": "换手板",
-      "reason": "具身智能机器人+智能驾驶+汽车底盘+汽车制动",
-      "turnover": 1.4999,
-      "open_num": null,
-      "seal_amount": 216755290.0,
-      "luv": 5205511700.0
-     },
-     {
-      "code": "003026",
-      "name": "中晶科技",
-      "pct": 9.9962,
-      "price": 29.16,
-      "board_type": "换手板",
-      "reason": "三季报增长+半导体硅片+订单充足",
-      "turnover": 6.3939,
-      "open_num": null,
-      "seal_amount": 240806810.0,
-      "luv": 4203731300.0
-     },
-     {
-      "code": "001400",
-      "name": "江顺科技",
-      "pct": 10.0027,
-      "price": 80.28,
-      "board_type": "换手板",
-      "reason": "3D打印+液冷+商业航天+铝挤压模具",
-      "turnover": 4.9202,
-      "open_num": null,
-      "seal_amount": 98559756.0,
-      "luv": 2586139900.0
      }
     ]
    }
@@ -681,63 +807,41 @@
  "hot_blocks": [
   {
    "name": "新能源汽车",
-   "pct": 0.4936,
+   "pct": -0.1159,
+   "limit_up_num": 22,
+   "continuous": 7,
+   "top": "4天4板",
+   "days": 4,
+   "stocks": [
+    {
+     "code": "600303",
+     "name": "曙光股份"
+    },
+    {
+     "code": "001311",
+     "name": "多利科技"
+    },
+    {
+     "code": "002434",
+     "name": "万里扬"
+    }
+   ]
+  },
+  {
+   "name": "比亚迪概念",
+   "pct": -0.1558,
    "limit_up_num": 18,
    "continuous": 5,
    "top": "4天4板",
    "days": 4,
    "stocks": [
     {
-     "code": "002249",
-     "name": "大洋电机"
+     "code": "001311",
+     "name": "多利科技"
     },
     {
-     "code": "000678",
-     "name": "襄阳轴承"
-    },
-    {
-     "code": "002703",
-     "name": "浙江世宝"
-    }
-   ]
-  },
-  {
-   "name": "比亚迪概念",
-   "pct": 0.5479,
-   "limit_up_num": 16,
-   "continuous": 4,
-   "top": "4天4板",
-   "days": 4,
-   "stocks": [
-    {
-     "code": "002249",
-     "name": "大洋电机"
-    },
-    {
-     "code": "000678",
-     "name": "襄阳轴承"
-    },
-    {
-     "code": "002703",
-     "name": "浙江世宝"
-    }
-   ]
-  },
-  {
-   "name": "机器人概念",
-   "pct": 0.1969,
-   "limit_up_num": 13,
-   "continuous": 5,
-   "top": "4天4板",
-   "days": 12,
-   "stocks": [
-    {
-     "code": "002249",
-     "name": "大洋电机"
-    },
-    {
-     "code": "000678",
-     "name": "襄阳轴承"
+     "code": "002434",
+     "name": "万里扬"
     },
     {
      "code": "603528",
@@ -746,20 +850,64 @@
    ]
   },
   {
+   "name": "机器人概念",
+   "pct": -0.5548,
+   "limit_up_num": 17,
+   "continuous": 6,
+   "top": "4天4板",
+   "days": 12,
+   "stocks": [
+    {
+     "code": "001311",
+     "name": "多利科技"
+    },
+    {
+     "code": "002434",
+     "name": "万里扬"
+    },
+    {
+     "code": "603528",
+     "name": "多伦科技"
+    }
+   ]
+  },
+  {
+   "name": "人形机器人",
+   "pct": -0.3686,
+   "limit_up_num": 13,
+   "continuous": 6,
+   "top": "4天4板",
+   "days": 4,
+   "stocks": [
+    {
+     "code": "002434",
+     "name": "万里扬"
+    },
+    {
+     "code": "603528",
+     "name": "多伦科技"
+    },
+    {
+     "code": "301682",
+     "name": "宏明电子"
+    }
+   ]
+  },
+  {
    "name": "汽车零部件",
-   "pct": 1.2084,
-   "limit_up_num": 11,
-   "continuous": 2,
+   "pct": 0.8725,
+   "limit_up_num": 12,
+   "continuous": 3,
    "top": "4天4板",
    "days": 1,
    "stocks": [
     {
-     "code": "000678",
-     "name": "襄阳轴承"
+     "code": "001311",
+     "name": "多利科技"
     },
     {
-     "code": "002703",
-     "name": "浙江世宝"
+     "code": "002434",
+     "name": "万里扬"
     },
     {
      "code": "603758",
@@ -769,97 +917,75 @@
   },
   {
    "name": "长安汽车概念",
-   "pct": 0.7465,
+   "pct": 0.0822,
    "limit_up_num": 9,
    "continuous": 3,
    "top": "4天2板",
    "days": 1,
    "stocks": [
     {
-     "code": "002249",
-     "name": "大洋电机"
-    },
-    {
-     "code": "002703",
-     "name": "浙江世宝"
+     "code": "600303",
+     "name": "曙光股份"
     },
     {
      "code": "603758",
      "name": "秦安股份"
+    },
+    {
+     "code": "002590",
+     "name": "万安科技"
     }
    ]
   },
   {
-   "name": "人形机器人",
-   "pct": 0.5538,
+   "name": "汽车电子",
+   "pct": -0.5544,
    "limit_up_num": 9,
-   "continuous": 4,
-   "top": "4天4板",
-   "days": 4,
+   "continuous": 1,
+   "top": "2天2板",
+   "days": 2,
    "stocks": [
     {
-     "code": "002249",
-     "name": "大洋电机"
+     "code": "301682",
+     "name": "宏明电子"
     },
     {
-     "code": "603528",
-     "name": "多伦科技"
+     "code": "603390",
+     "name": "通达电气"
     },
     {
-     "code": "002708",
-     "name": "光洋股份"
+     "code": "003026",
+     "name": "中晶科技"
     }
    ]
   },
   {
    "name": "无人驾驶",
-   "pct": 0.5395,
+   "pct": -0.342,
    "limit_up_num": 8,
    "continuous": 2,
    "top": "4天4板",
    "days": 1,
    "stocks": [
     {
-     "code": "002703",
-     "name": "浙江世宝"
-    },
-    {
      "code": "603528",
      "name": "多伦科技"
     },
     {
-     "code": "002708",
-     "name": "光洋股份"
-    }
-   ]
-  },
-  {
-   "name": "汽车电子",
-   "pct": 0.4721,
-   "limit_up_num": 7,
-   "continuous": 1,
-   "top": "2天2板",
-   "days": 2,
-   "stocks": [
-    {
-     "code": "002703",
-     "name": "浙江世宝"
+     "code": "603390",
+     "name": "通达电气"
     },
     {
-     "code": "002708",
-     "name": "光洋股份"
-    },
-    {
-     "code": "002284",
-     "name": "亚太股份"
+     "code": "002590",
+     "name": "万安科技"
     }
    ]
   },
   {
    "name": "专精特新",
-   "pct": 0.0028,
-   "limit_up_num": 7,
-   "continuous": 2,
+   "pct": -0.7253,
+   "limit_up_num": 8,
+   "continuous": 3,
    "top": "4天4板",
    "days": 4,
    "stocks": [
@@ -868,129 +994,85 @@
      "name": "多伦科技"
     },
     {
-     "code": "603028",
-     "name": "赛福天"
-    },
-    {
      "code": "603390",
      "name": "通达电气"
-    }
-   ]
-  },
-  {
-   "name": "华为概念",
-   "pct": 0.0588,
-   "limit_up_num": 6,
-   "continuous": 1,
-   "top": "2天2板",
-   "days": 17,
-   "stocks": [
-    {
-     "code": "002639",
-     "name": "雪人集团"
     },
     {
-     "code": "002011",
-     "name": "盾安环境"
-    },
-    {
-     "code": "603390",
-     "name": "通达电气"
+     "code": "001400",
+     "name": "江顺科技"
     }
    ]
   },
   {
    "name": "创投",
-   "pct": -0.068,
-   "limit_up_num": 6,
+   "pct": -0.4997,
+   "limit_up_num": 7,
    "continuous": 1,
    "top": "4天4板",
    "days": 1,
    "stocks": [
     {
+     "code": "603390",
+     "name": "通达电气"
+    },
+    {
+     "code": "000058",
+     "name": "深赛格"
+    },
+    {
      "code": "002187",
      "name": "广百股份"
-    },
-    {
-     "code": "002011",
-     "name": "盾安环境"
-    },
-    {
-     "code": "603028",
-     "name": "赛福天"
     }
    ]
   },
   {
-   "name": "减速器",
-   "pct": 1.388,
-   "limit_up_num": 5,
-   "continuous": 2,
+   "name": "储能",
+   "pct": -0.51,
+   "limit_up_num": 7,
+   "continuous": 3,
    "top": "4天4板",
    "days": 1,
    "stocks": [
     {
-     "code": "000678",
-     "name": "襄阳轴承"
-    },
-    {
-     "code": "002708",
-     "name": "光洋股份"
-    },
-    {
      "code": "002434",
      "name": "万里扬"
+    },
+    {
+     "code": "603528",
+     "name": "多伦科技"
+    },
+    {
+     "code": "301682",
+     "name": "宏明电子"
     }
    ]
   },
   {
-   "name": "氢能源",
-   "pct": 0.2045,
-   "limit_up_num": 5,
-   "continuous": 2,
-   "top": "4天2板",
-   "days": 1,
+   "name": "华为概念",
+   "pct": -0.7314,
+   "limit_up_num": 7,
+   "continuous": 1,
+   "top": "2天2板",
+   "days": 17,
    "stocks": [
     {
-     "code": "002249",
-     "name": "大洋电机"
+     "code": "301682",
+     "name": "宏明电子"
     },
     {
-     "code": "002639",
-     "name": "雪人集团"
+     "code": "603390",
+     "name": "通达电气"
     },
     {
-     "code": "600303",
-     "name": "曙光股份"
-    }
-   ]
-  },
-  {
-   "name": "数据中心(AIDC)",
-   "pct": 0.1182,
-   "limit_up_num": 5,
-   "continuous": 2,
-   "top": "4天2板",
-   "days": 3,
-   "stocks": [
-    {
-     "code": "002249",
-     "name": "大洋电机"
-    },
-    {
-     "code": "002639",
-     "name": "雪人集团"
-    },
-    {
-     "code": "002011",
-     "name": "盾安环境"
+     "code": "000058",
+     "name": "深赛格"
     }
    ]
   },
   {
    "name": "军工",
-   "pct": 0.019,
-   "limit_up_num": 5,
+   "pct": -0.8162,
+   "limit_up_num": 7,
    "continuous": 2,
    "top": "3天2板",
    "days": 1,
@@ -1000,122 +1082,166 @@
      "name": "曙光股份"
     },
     {
-     "code": "002011",
-     "name": "盾安环境"
+     "code": "301682",
+     "name": "宏明电子"
     },
     {
-     "code": "600558",
-     "name": "大西洋"
+     "code": "002590",
+     "name": "万安科技"
     }
    ]
   },
   {
-   "name": "零售",
-   "pct": 1.3433,
-   "limit_up_num": 4,
-   "continuous": 1,
-   "top": "5天5板",
-   "days": 1,
-   "stocks": [
-    {
-     "code": "600828",
-     "name": "茂业商业"
-    },
-    {
-     "code": "002187",
-     "name": "广百股份"
-    },
-    {
-     "code": "600838",
-     "name": "上海九百"
-    }
-   ]
-  },
-  {
-   "name": "智能座舱",
-   "pct": 0.8045,
-   "limit_up_num": 4,
+   "name": "西部大开发",
+   "pct": -0.3259,
+   "limit_up_num": 6,
    "continuous": 1,
    "top": "2天2板",
-   "days": 1,
-   "stocks": [
-    {
-     "code": "002708",
-     "name": "光洋股份"
-    },
-    {
-     "code": "603390",
-     "name": "通达电气"
-    },
-    {
-     "code": "300539",
-     "name": "横河精密"
-    }
-   ]
-  },
-  {
-   "name": "传感器",
-   "pct": 0.6052,
-   "limit_up_num": 4,
-   "continuous": 0,
-   "top": "首板",
-   "days": 1,
+   "days": 2,
    "stocks": [
     {
      "code": "603758",
      "name": "秦安股份"
     },
     {
-     "code": "603121",
-     "name": "华培动力"
+     "code": "301682",
+     "name": "宏明电子"
     },
     {
-     "code": "603376",
-     "name": "大明电子"
+     "code": "600828",
+     "name": "茂业商业"
     }
    ]
   },
   {
-   "name": "燃料电池",
-   "pct": 0.5264,
-   "limit_up_num": 4,
-   "continuous": 2,
-   "top": "4天2板",
-   "days": 1,
-   "stocks": [
-    {
-     "code": "002249",
-     "name": "大洋电机"
-    },
-    {
-     "code": "002639",
-     "name": "雪人集团"
-    },
-    {
-     "code": "600303",
-     "name": "曙光股份"
-    }
-   ]
-  },
-  {
-   "name": "液冷服务器",
-   "pct": 0.4487,
-   "limit_up_num": 4,
+   "name": "粤港澳大湾区",
+   "pct": -0.4675,
+   "limit_up_num": 6,
    "continuous": 1,
    "top": "4天2板",
    "days": 1,
    "stocks": [
     {
+     "code": "603390",
+     "name": "通达电气"
+    },
+    {
      "code": "002249",
      "name": "大洋电机"
     },
     {
-     "code": "002639",
-     "name": "雪人集团"
+     "code": "002187",
+     "name": "广百股份"
+    }
+   ]
+  },
+  {
+   "name": "数据中心(AIDC)",
+   "pct": -0.623,
+   "limit_up_num": 6,
+   "continuous": 2,
+   "top": "4天2板",
+   "days": 3,
+   "stocks": [
+    {
+     "code": "301682",
+     "name": "宏明电子"
+    },
+    {
+     "code": "002249",
+     "name": "大洋电机"
     },
     {
      "code": "002011",
      "name": "盾安环境"
+    }
+   ]
+  },
+  {
+   "name": "人工智能",
+   "pct": -1.042,
+   "limit_up_num": 6,
+   "continuous": 2,
+   "top": "4天4板",
+   "days": 3,
+   "stocks": [
+    {
+     "code": "603528",
+     "name": "多伦科技"
+    },
+    {
+     "code": "603390",
+     "name": "通达电气"
+    },
+    {
+     "code": "002995",
+     "name": "天地在线"
+    }
+   ]
+  },
+  {
+   "name": "AI应用",
+   "pct": -1.1266,
+   "limit_up_num": 6,
+   "continuous": 2,
+   "top": "4天4板",
+   "days": 3,
+   "stocks": [
+    {
+     "code": "603528",
+     "name": "多伦科技"
+    },
+    {
+     "code": "002995",
+     "name": "天地在线"
+    },
+    {
+     "code": "603028",
+     "name": "赛福天"
+    }
+   ]
+  },
+  {
+   "name": "减速器",
+   "pct": 0.7513,
+   "limit_up_num": 5,
+   "continuous": 2,
+   "top": "4天4板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "001311",
+     "name": "多利科技"
+    },
+    {
+     "code": "002434",
+     "name": "万里扬"
+    },
+    {
+     "code": "002708",
+     "name": "光洋股份"
+    }
+   ]
+  },
+  {
+   "name": "冷链物流",
+   "pct": 0.1508,
+   "limit_up_num": 5,
+   "continuous": 1,
+   "top": "2天2板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "603565",
+     "name": "中谷物流"
+    },
+    {
+     "code": "001318",
+     "name": "阳光乳业"
+    },
+    {
+     "code": "601956",
+     "name": "东贝集团"
     }
    ]
   }
@@ -1364,7 +1490,7 @@
    },
    {
     "date": "2026-10-27",
-    "close": 109.85
+    "close": 109.76
    }
   ],
   "gold": [
@@ -1606,9 +1732,9 @@
    },
    {
     "date": "2026-10-27",
-    "close": 4023.3
+    "close": 4022.4
    }
   ]
  },
- "updated_at": "2026-10-27 02:05:41"
+ "updated_at": "2026-10-27 03:02:48"
 }
