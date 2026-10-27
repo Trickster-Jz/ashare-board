@@ -1,0 +1,53 @@
+name: 盘中刷新（只更新页面，不存档）
+
+on:
+  schedule:
+    # UTC 时间，北京 = UTC+8
+    # 北京 10:00 11:00 13:00 14:00 15:00 16:00
+    - cron: '0 2,3,5,6,7,8 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: 检出历史存档（仅用于对比，不写入）
+        uses: actions/checkout@v4
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 抓取当前行情（写入临时目录，不提交）
+        run: python3 fetch_data.py --stage market
+
+      - name: 生成页面
+        run: python3 build_html.py
+
+      - name: 准备待发布页面
+        run: |
+          mkdir -p _public
+          cp index.html _public/
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传页面
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_public'
+
+      - name: 发布到线上（不提交，仓库零增长）
+        id: deployment
+        uses: actions/deploy-pages@v4
