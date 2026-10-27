@@ -129,11 +129,11 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 .lhb-b{display:none;margin-top:8px}
 .lhb-item.open .lhb-b{display:block}
 
-/* 近7日对比 */
+/* 近10日对比 */
 .hwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .hwrap::-webkit-scrollbar{display:none}
-.htable{min-width:420px;font-size:12px;table-layout:fixed}
-.htable th,.htable td{text-align:center;white-space:nowrap;padding-left:8px;padding-right:8px}
+.htable{min-width:543px;font-size:12px;table-layout:fixed}
+.htable th,.htable td{text-align:center;white-space:nowrap;padding-left:16px;padding-right:16px}
 /* 横向滚动滑块 */
 .hbar{position:relative;height:5px;background:#e9ecf1;border-radius:3px;margin-top:9px}
 .hbar i{position:absolute;top:0;height:5px;background:var(--blue);border-radius:3px;transition:left .08s linear}
@@ -252,7 +252,7 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
   <section><div class="card"><h2>近 10 个交易日对比 <small>成交额单位：亿元 · 自建档日起累积</small></h2>
     <div id="history"></div></div></section>
 
-  <section><div class="card"><h2>市场宽度 <small>近 90 个交易日</small></h2>
+  <section><div class="card"><h2>市场宽广度 <small>近 90 个交易日</small></h2>
     <div id="widthChart"></div></div></section>
 
   <section><div class="card"><h2>美股与大宗商品走势 <small>近 90 个交易日</small></h2>
@@ -744,8 +744,8 @@ function renderHistory(day){
   }
   if(!rows.length){ $('history').innerHTML = '<div class="empty">暂无数据</div>'; return; }
   let h = `<div class="hwrap" id="hw"><table class="htable"><colgroup>
-    <col style="width:47px"><col style="width:59px"><col style="width:54px"><col style="width:66px">
-    <col style="width:38px"><col style="width:39px"><col style="width:66px"><col style="width:46px">
+    <col style="width:63px"><col style="width:75px"><col style="width:70px"><col style="width:82px">
+    <col style="width:54px"><col style="width:55px"><col style="width:82px"><col style="width:62px">
     </colgroup><thead><tr>
     <th>日期</th><th class="num">上证收盘</th><th class="num">涨跌幅</th>
     <th class="num">三市成交额</th><th class="num">广度</th>
