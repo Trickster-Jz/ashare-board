@@ -18,6 +18,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   update:
@@ -57,12 +59,13 @@ jobs:
       - name: 生成页面
         run: python3 build_html.py
 
-      - name: 提交并推送
+      - name: 提交数据（页面不入 git 历史，避免仓库膨胀）
         env:
           STAGE: ${{ steps.st.outputs.stage }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git rm -r --cached index.html --ignore-unmatch -q
           git add -A
           if git diff --staged --quiet; then
             echo "无数据变化，跳过提交"
@@ -70,3 +73,20 @@ jobs:
             git commit -m "data: $(date -u -d '+8 hours' +'%Y-%m-%d %H:%M') 更新 $STAGE 数据"
             git push
           fi
+
+      - name: 准备待发布页面
+        run: |
+          mkdir -p _public
+          cp index.html _public/
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传页面
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_public'
+
+      - name: 发布到线上
+        id: deployment
+        uses: actions/deploy-pages@v4
