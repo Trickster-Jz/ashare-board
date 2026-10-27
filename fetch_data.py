@@ -497,11 +497,35 @@ def fetch_lhb(date_str):
             print('[warn] %s fail: %s' % (rep, e), file=sys.stderr)
 
     items = []
+    # 去重：同一股票可能因多个上榜原因出现多条，只保留 |净买卖额| 最大的一条，
+    # 上榜原因合并展示，避免重复股票且不同口径数据对不上
+    best, reasons = {}, {}
     for r in rows:
         code = r.get('SECURITY_CODE')
+        if not code:
+            continue
+        b = best.get(code)
+        if b is None or abs(r.get('BILLBOARD_NET_AMT') or 0) > abs(b.get('BILLBOARD_NET_AMT') or 0):
+            best[code] = r
+        ex = (r.get('EXPLANATION') or r.get('EXPLAIN') or '').strip()
+        if ex and ex not in reasons.get(code, []):
+            reasons.setdefault(code, []).append(ex)
+
+    for code, r in best.items():
         s = seats.get(code, {'buy': [], 'sell': []})
-        s['buy'] = sorted(s['buy'], key=lambda x: -(x['amount'] or 0))[:5]
-        s['sell'] = sorted(s['sell'], key=lambda x: -(x['amount'] or 0))[:5]
+
+        def _dedup(lst):
+            seen, out = set(), []
+            for x in lst:
+                k = (x['name'], x['amount'])
+                if k in seen:
+                    continue
+                seen.add(k)
+                out.append(x)
+            return out
+
+        s['buy'] = sorted(_dedup(s['buy']), key=lambda x: -(x['amount'] or 0))[:5]
+        s['sell'] = sorted(_dedup(s['sell']), key=lambda x: -(x['amount'] or 0))[:5]
         items.append({
             'code': code,
             'name': r.get('SECURITY_NAME_ABBR'),
@@ -512,10 +536,11 @@ def fetch_lhb(date_str):
             'sell_total': r.get('BILLBOARD_SELL_AMT'),
             'deal': r.get('BILLBOARD_DEAL_AMT'),
             'turnover': r.get('TURNOVERRATE'),
-            'reason': r.get('EXPLANATION') or r.get('EXPLAIN') or '',
+            'reason': '；'.join(reasons.get(code, [])),
             'buy_seats': s['buy'],
             'sell_seats': s['sell'],
         })
+    items.sort(key=lambda x: -(x['net'] or 0))
     return {'count': len(items), 'items': items}
 
 
