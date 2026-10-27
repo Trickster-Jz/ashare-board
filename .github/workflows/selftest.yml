@@ -1,0 +1,39 @@
+name: 数据源连通性自检
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: 探测各数据源
+        run: |
+          python3 - <<'PYEOF'
+          import requests
+          UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36'
+          tests = [
+            ('新浪指数', 'https://hq.sinajs.cn/list=sh000001', {'Referer':'https://finance.sina.com.cn','User-Agent':UA}),
+            ('新浪全市场', 'https://vip.stock.finance.sina.com.cn/quotes_service/api/json_v2.php/Market_Center.getHQNodeData?page=1&num=5&sort=symbol&asc=1&node=hs_a', {'Referer':'https://finance.sina.com.cn','User-Agent':UA}),
+            ('东财datacenter', 'https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_DAILYBILLBOARD_DETAILSNEW&columns=ALL&pageSize=2&pageNumber=1', {'User-Agent':UA}),
+            ('东财push2', 'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=3&fs=m:90+t:2&fields=f12,f14,f3&ut=bd1d9ddb04089700cf9c27f6f7426281', {'User-Agent':UA}),
+            ('同花顺涨停池', 'https://data.10jqka.com.cn/dataapi/limit_up/limit_up_pool?page=1&limit=3&field=199112,10,9001,330323,330324&filter=HS,GEM2STAR&order_field=330324&order_type=0&date=20261026&_=1', {'User-Agent':UA,'Referer':'https://data.10jqka.com.cn/'}),
+            ('同花顺板块', 'https://data.10jqka.com.cn/dataapi/limit_up/block_top?limit=3&date=20261026&_=1', {'User-Agent':UA,'Referer':'https://data.10jqka.com.cn/'}),
+            ('腾讯指数', 'https://qt.gtimg.cn/q=sh000001', {'User-Agent':UA}),
+            ('新浪外盘', 'https://hq.sinajs.cn/list=hf_OIL', {'Referer':'https://finance.sina.com.cn','User-Agent':UA}),
+          ]
+          for name, url, h in tests:
+              try:
+                  r = requests.get(url, headers=h, timeout=30)
+                  print('%-14s HTTP %s  %7d bytes  %r' % (name, r.status_code, len(r.content), r.text[:70]))
+              except Exception as e:
+                  print('%-14s ERROR %s' % (name, e))
+          PYEOF
