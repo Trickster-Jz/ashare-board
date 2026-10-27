@@ -132,9 +132,8 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 /* 近7日对比 */
 .hwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .hwrap::-webkit-scrollbar{display:none}
-.htable{width:auto;font-size:12px}
-.htable th,.htable td{text-align:center;white-space:nowrap;padding-left:6px;padding-right:6px}
-.htable th{white-space:normal;line-height:1.3}
+.htable{min-width:420px;font-size:12px;table-layout:fixed}
+.htable th,.htable td{text-align:center;white-space:nowrap;padding-left:8px;padding-right:8px}
 /* 横向滚动滑块 */
 .hbar{position:relative;height:5px;background:#e9ecf1;border-radius:3px;margin-top:9px}
 .hbar i{position:absolute;top:0;height:5px;background:var(--blue);border-radius:3px;transition:left .08s linear}
@@ -203,7 +202,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 /* 图表：网格线 + 平滑曲线 + 末端亮点；文字用 HTML 渲染，避免 SVG 被横向拉伸变形 */
 .chart-box{margin-bottom:6px}
 .chart-wrap{position:relative}
-svg.chart{display:block;width:100%;height:150px}
+svg.chart{display:block;width:100%;height:auto}
 .cross{position:absolute;top:0;bottom:0;width:1px;background:#c9ced6;display:none}
 .tip{position:absolute;top:0;background:rgba(27,29,33,.93);color:#fff;font-size:11px;padding:3px 7px;
   border-radius:6px;white-space:nowrap;display:none;z-index:5;font-variant-numeric:tabular-nums;
@@ -623,19 +622,19 @@ function drawMount(mount){
   if(!cfg) return;
   const ss = cfg.series, n = ss[0].points.length;
   const W = Math.max(300, Math.round(mount.clientWidth) || 340);
-  const H = 168, PT = 12, PB = 22, PL = 4, PR = 4;
+  const H = 168, PT = 12, PB = 22, PL = 26, PR = 6;
   const lo = cfg.lo, hi = cfg.hi;
   const x = i => PL + i * (W - PL - PR) / (n - 1);
   const y = v => PT + (1 - (v - lo) / ((hi - lo) || 1)) * (H - PT - PB);
   const gid = 'g' + Math.random().toString(36).slice(2, 8);
 
-  // 纵轴：数值刻度 + 网格线（刻度文字画在绘图区内、贴网格线上方，带白色描边保证可读）
+  // 纵轴：数值刻度 + 网格线（刻度文字放在绘图区外左侧，不遮挡曲线）
   const ticks = yTicks(lo, hi, 5);
   const grid = ticks.map(v =>
     `<line x1="${PL}" y1="${y(v).toFixed(1)}" x2="${W-PR}" y2="${y(v).toFixed(1)}"
       stroke="#eceff3" stroke-width="1" vector-effect="non-scaling-stroke"/>
-     <text x="5" y="${(y(v)-3).toFixed(1)}" font-size="9.5" fill="#8b909b"
-      style="paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round">${fmtTick(v)}</text>`).join('');
+     <text x="${PL-4}" y="${y(v).toFixed(1)}" text-anchor="end" dominant-baseline="middle"
+      font-size="9.5" fill="#8b909b">${fmtTick(v)}</text>`).join('');
 
   // 横轴：月份刻度
   const mx = monthTicks(ss[0].points);
@@ -662,7 +661,7 @@ function drawMount(mount){
     return o;
   }).join('');
 
-  mount.innerHTML = `<div class="chart-wrap" style="height:${H}px">
+  mount.innerHTML = `<div class="chart-wrap">
     <svg class="chart" viewBox="0 0 ${W} ${H}" width="100%" height="${H}"
       preserveAspectRatio="xMidYMid meet">
       <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
@@ -744,7 +743,10 @@ function renderHistory(day){
     if(sh) rows = rows.concat([{date: day.date, close: sh.close, pct: sh.pct}]).slice(-10);
   }
   if(!rows.length){ $('history').innerHTML = '<div class="empty">暂无数据</div>'; return; }
-  let h = `<div class="hwrap" id="hw"><table class="htable"><thead><tr>
+  let h = `<div class="hwrap" id="hw"><table class="htable"><colgroup>
+    <col style="width:47px"><col style="width:59px"><col style="width:54px"><col style="width:66px">
+    <col style="width:38px"><col style="width:39px"><col style="width:66px"><col style="width:46px">
+    </colgroup><thead><tr>
     <th>日期</th><th class="num">上证收盘</th><th class="num">涨跌幅</th>
     <th class="num">三市成交额</th><th class="num">广度</th>
     <th class="num">TRIN</th><th class="num">涨 / 跌</th><th class="num">涨/跌停</th></tr></thead><tbody>`;
