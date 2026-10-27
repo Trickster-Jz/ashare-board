@@ -105,7 +105,7 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 /* 近7日对比 */
 .hwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .hwrap::-webkit-scrollbar{display:none}
-.htable{min-width:820px;font-size:12px}
+.htable{min-width:820px;font-size:12px;table-layout:fixed}
 .htable th{white-space:nowrap;padding:7px 4px}
 .htable th.num{text-align:right}
 .htable td{white-space:nowrap;padding:7px 4px}
@@ -219,6 +219,9 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
 
   <section><div class="card"><h2>近 10 个交易日对比 <small>成交额单位：亿元 · 自建档日起累积</small></h2>
     <div id="history"></div></div></section>
+
+  <section><div class="card"><h2>市场宽度 <small>ADR 左轴 · TRIN 右轴 · 近 90 个交易日</small></h2>
+    <div id="widthChart"></div></div></section>
 
   <section><div class="card"><h2>美股与大宗商品走势 <small>近 90 个交易日</small></h2>
     <div id="charts"></div></div></section>
@@ -578,7 +581,10 @@ function renderHistory(day){
     if(sh) rows = rows.concat([{date: day.date, close: sh.close, pct: sh.pct}]).slice(-10);
   }
   if(!rows.length){ $('history').innerHTML = '<div class="empty">暂无数据</div>'; return; }
-  let h = `<div class="hwrap" id="hw"><table class="htable"><thead><tr>
+  let h = `<div class="hwrap" id="hw"><table class="htable"><colgroup>
+    <col style="width:108px"><col style="width:76px"><col style="width:62px"><col style="width:92px">
+    <col style="width:52px"><col style="width:56px"><col style="width:92px"><col style="width:74px">
+    </colgroup><thead><tr>
     <th>日期</th><th class="num">上证收盘</th><th class="num">涨跌幅</th>
     <th class="num">三市成交额</th><th class="num">ADR</th>
     <th class="num">TRIN</th><th class="num">涨 / 跌</th><th class="num">涨/跌停</th></tr></thead><tbody>`;
@@ -587,13 +593,16 @@ function renderHistory(day){
     const b = d && d.breadth;
     const amt = b ? b.amount_total_yi : null;
     const todayRow = k.date === day.date;
-    // ADR = 上涨家数/下跌家数；TRIN = ADR ÷ (上涨成交额/非上涨成交额)
+    // ADR = 上涨家数/下跌家数；TRIN = ADR ÷ (上涨成交额/下跌成交额)（严格定义，分母仅下跌股）
     let adr = null, trin = null;
     if(b && isNum(b.up) && isNum(b.down) && b.down > 0){
       adr = b.up / b.down;
-      let r = isNum(b.up_notup_ratio) ? b.up_notup_ratio
-        : (isNum(b.amount_up_yi) && isNum(b.amount_notup_yi) && b.amount_notup_yi > 0
-           ? b.amount_up_yi / b.amount_notup_yi : null);
+      let r = null;
+      if(isNum(b.amount_up_yi) && isNum(b.amount_down_yi) && b.amount_down_yi > 0){
+        r = b.amount_up_yi / b.amount_down_yi;
+      } else if(isNum(b.up_notup_ratio)){
+        r = b.up_notup_ratio;   // 旧数据只有"上涨/非上涨额比"，分母含平盘，误差<1%
+      }
       if(r) trin = adr / r;
     }
     h += `<tr${todayRow ? ' class="today"' : ''}>
@@ -627,6 +636,70 @@ function renderHistory(day){
   upd();
 }
 
+/* ---------- 市场宽度（ADR / TRIN） ---------- */
+function widthPoints(){
+  return DAYS.filter(d => d.breadth && isNum(d.breadth.up) && isNum(d.breadth.down) && d.breadth.down > 0)
+    .map(d => {
+      const b = d.breadth, adr = b.up / b.down;
+      let r = null;
+      if(isNum(b.amount_up_yi) && isNum(b.amount_down_yi) && b.amount_down_yi > 0){
+        r = b.amount_up_yi / b.amount_down_yi;
+      } else if(isNum(b.up_notup_ratio)){
+        r = b.up_notup_ratio;
+      }
+      return {date: d.date, adr: adr, trin: r ? adr / r : null};
+    }).slice(-90);
+}
+function renderWidth(){
+  const pts = widthPoints();
+  if(pts.length < 2){
+    $('widthChart').innerHTML = '<div class="empty">自建档日起逐日累积，再过几个交易日出曲线</div>';
+    return;
+  }
+  const W = 700, H = 190, PL = 40, PR = 44, PT = 16, PB = 20;
+  const x = i => PL + i * (W - PL - PR) / (pts.length - 1);
+  const mk = key => {
+    const vs = pts.map(p => p[key]).filter(isNum);
+    const mn = Math.min(...vs), mx = Math.max(...vs);
+    const y = v => PT + (1 - (v - mn) / ((mx - mn) || 1)) * (H - PT - PB);
+    return {y: y, mn: mn, mx: mx};
+  };
+  const a = mk('adr'), t = mk('trin');
+  const path = key => {
+    let s = '', started = false;
+    pts.forEach((p, i) => {
+      if(!isNum(p[key])) return;
+      s += (started ? 'L' : 'M') + x(i).toFixed(1) + ',' + mk(key).y(p[key]).toFixed(1) + ' ';
+      started = true;
+    });
+    return s;
+  };
+  const last = pts[pts.length - 1];
+  const gid = 'w' + Math.random().toString(36).slice(2, 8);
+  $('widthChart').innerHTML = `
+    <div class="chart-hd">
+      <span class="t"><span class="up">● ADR</span>　<span style="color:#3b6fd4">● TRIN</span></span>
+      <span><span class="v up" style="font-size:15px">${last.adr.toFixed(2)}</span>
+        <span class="v" style="font-size:15px;color:#3b6fd4">${isNum(last.trin) ? last.trin.toFixed(2) : '—'}</span></span>
+    </div>
+    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="height:170px">
+      <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#e0393e" stop-opacity=".18"/>
+        <stop offset="100%" stop-color="#e0393e" stop-opacity="0"/></linearGradient></defs>
+      <path d="${path('adr')} L${x(pts.length-1).toFixed(1)},${H-PB} L${PL},${H-PB} Z" fill="url(#${gid})" stroke="none"/>
+      <path d="${path('adr')}" fill="none" stroke="#e0393e" stroke-width="2" stroke-linejoin="round"/>
+      <path d="${path('trin')}" fill="none" stroke="#3b6fd4" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round"/>
+      <text x="${PL-4}" y="${PT+8}" text-anchor="end" font-size="11" fill="#e0393e">${a.mx.toFixed(2)}</text>
+      <text x="${PL-4}" y="${H-PB}" text-anchor="end" font-size="11" fill="#e0393e">${a.mn.toFixed(2)}</text>
+      <text x="${W-PR+4}" y="${PT+8}" font-size="11" fill="#3b6fd4">${t.mx.toFixed(2)}</text>
+      <text x="${W-PR+4}" y="${H-PB}" font-size="11" fill="#3b6fd4">${t.mn.toFixed(2)}</text>
+      <text x="${PL}" y="${H-4}" font-size="11" fill="#9aa0ab">${pts[0].date.slice(5)}</text>
+      <text x="${W-PR}" y="${H-4}" text-anchor="end" font-size="11" fill="#9aa0ab">${last.date.slice(5)}</text>
+    </svg>
+    <div class="hint">ADR＝上涨家数÷下跌家数（红，左轴）；TRIN＝ADR÷(上涨成交额÷下跌成交额)（蓝虚线，右轴）。
+    TRIN 持续走低且 ADR 同步走低＝普跌；TRIN 急升伴随 ADR 回落＝抛压释放。数据自建档日起逐日累积。</div>`;
+}
+
 /* ---------- 头部状态 ---------- */
 function renderStatus(day){
   const s = [];
@@ -656,6 +729,7 @@ function render(date){
   renderLHB(day);
   renderFunds(day);
   renderHistory(day);
+  renderWidth();
   renderCharts(day);
   $('genTime').textContent = '页面生成：__GEN__　共收录 ' + DAYS.length + ' 个交易日';
 }
