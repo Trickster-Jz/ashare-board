@@ -599,7 +599,25 @@ def fetch_funds(date_str):
 
 # ---------------------------------------------------------------- 商品走势
 
-def fetch_commodity(symbol, days=60):
+def fetch_sp500(days=90):
+    """新浪美股指数日K：.INX = 标普500"""
+    url = ('https://stock.finance.sina.com.cn/usstock/api/json_v2.php/'
+           'US_MinKService.getDailyK?symbol=.INX')
+    r = get(url, headers=SINA_REFERER, timeout=30)
+    try:
+        arr = json.loads(r.text)
+    except Exception:
+        return []
+    out = []
+    for k in arr:
+        try:
+            out.append({'date': k['d'], 'close': float(k['c'])})
+        except (KeyError, ValueError):
+            continue
+    return out[-days:]
+
+
+def fetch_commodity(symbol, days=90):
     """新浪外盘期货日K：OIL=布伦特原油, GC=纽约黄金"""
     url = ('https://stock.finance.sina.com.cn/futures/api/jsonp.php/var%%20_%s=/'
            'GlobalFuturesService.getGlobalFuturesDailyKLine?symbol=%s' % (symbol, symbol))
@@ -738,8 +756,9 @@ def stage_market(date_str):
 
     patch['funds'] = fetch_funds(date_str)
     patch['commodities'] = {
-        'brent': fetch_commodity('OIL'),
-        'gold': fetch_commodity('GC'),
+        'sp500': fetch_sp500(90),
+        'brent': fetch_commodity('OIL', 90),
+        'gold': fetch_commodity('GC', 90),
     }
     d = upsert_day(date_str, patch)
     print('[market] saved -> data/%s.json' % date_str)
