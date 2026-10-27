@@ -185,7 +185,7 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
   <div class="hd-top">
     <div>
       <div class="hd-title">骄子每日复盘看板</div>
-      <div class="hd-sub">每交易日 16:00 更新行情　20:00 更新龙虎榜</div>
+      <div class="hd-sub">盘中每小时刷新　21:00 正式存档</div>
     </div>
     <div style="display:flex;gap:6px">
       <button class="btn" id="prev">‹</button>
@@ -458,12 +458,12 @@ function lhbListHtml(){
 function renderLHB(day){
   const src = (day.lhb && day.lhb.count) ? day : latestLhb();
   if(!src){
-    $('lhb').innerHTML = '<div class="empty">龙虎榜于当日 20:00 后更新（尚未采集）</div>';
+    $('lhb').innerHTML = '<div class="empty">龙虎榜于当日 21:00 存档后更新（尚未采集）</div>';
     return;
   }
   window._lhb = src;
   const note = (src.date !== day.date)
-    ? `<div style="font-size:12px;color:var(--t3);margin-bottom:8px">当日龙虎榜于 20:00 后更新，以下为最近一期（${src.date}）</div>` : '';
+    ? `<div style="font-size:12px;color:var(--t3);margin-bottom:8px">当日龙虎榜于 21:00 存档后更新，以下为最近一期（${src.date}）</div>` : '';
   $('lhb').innerHTML = note + `<div class="seg">
       <button data-k="buy" class="${window._lhbTab==='buy'?'on':''}">买入榜</button>
       <button data-k="sell" class="${window._lhbTab==='sell'?'on':''}">卖出榜</button>
