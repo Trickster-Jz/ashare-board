@@ -14,10 +14,11 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 OUT = os.path.join(BASE_DIR, 'index.html')
 
-MAX_DAYS = 60
+MAX_DAYS = 80          # 页面内嵌"完整明细"的天数上限
+MAX_SERIES_DAYS = 200  # 轻量序列（广度/TRIN）取数天数上限
 
 
-def load_days():
+def load_days(max_days=MAX_DAYS):
     days = {}
     for p in sorted(glob.glob(os.path.join(DATA_DIR, '*.json'))):
         try:
@@ -27,8 +28,34 @@ def load_days():
             continue
         if d.get('date'):
             days[d['date']] = d
-    keys = sorted(days.keys())[-MAX_DAYS:]
+    keys = sorted(days.keys())[-max_days:]
     return [days[k] for k in keys]
+
+
+def build_width_series(days):
+    """轻量序列：只保留图表所需字段，逐日累积、体积极小"""
+    out = []
+    for d in days:
+        b = d.get('breadth') or {}
+        sh = None
+        for it in (d.get('indices') or []):
+            if it.get('name') == '上证指数':
+                sh = it
+        if not b and not sh:
+            continue
+        out.append({
+            'date': d['date'],
+            'close': (sh or {}).get('close'),
+            'pct': (sh or {}).get('pct'),
+            'amount_total_yi': b.get('amount_total_yi'),
+            'up': b.get('up'), 'down': b.get('down'), 'flat': b.get('flat'),
+            'total': b.get('total') or ((b.get('up') or 0) + (b.get('down') or 0) + (b.get('flat') or 0)),
+            'limit_up': b.get('limit_up'), 'limit_down': b.get('limit_down'),
+            'amount_up_yi': b.get('amount_up_yi'),
+            'amount_down_yi': b.get('amount_down_yi'),
+            'up_notup_ratio': b.get('up_notup_ratio'),
+        })
+    return out
 
 
 HTML = r"""<!DOCTYPE html>
@@ -174,7 +201,14 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 .chart-hd .t{font-size:13px;color:var(--t2);font-weight:600}
 .chart-hd .v{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums}
 .chart-hd .c{font-size:12px;font-variant-numeric:tabular-nums}
-svg{display:block;width:100%;height:130px}
+/* 图表：网格线 + 平滑曲线 + 末端亮点；文字用 HTML 渲染，避免 SVG 被横向拉伸变形 */
+.chart-box{margin-bottom:6px}
+.chart-wrap{position:relative}
+svg.chart{display:block;width:100%;height:150px}
+.cross{position:absolute;top:0;bottom:0;width:1px;background:#c9ced6;display:none}
+.tip{position:absolute;top:0;background:rgba(27,29,33,.93);color:#fff;font-size:11px;padding:3px 7px;
+  border-radius:6px;white-space:nowrap;display:none;z-index:5;font-variant-numeric:tabular-nums;
+  box-shadow:0 2px 6px rgba(0,0,0,.18)}
 footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-height:1.7}
 .empty{color:var(--t3);font-size:13px;padding:14px 0;text-align:center}
 .hint{font-size:11px;color:var(--t3);margin-top:6px;line-height:1.6}
@@ -236,6 +270,7 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
 <script>
 const DAYS = __DATA__;
 const KL = __KLINE__;
+const WSER = __WIDTH__;
 const WEEK = ['周日','周一','周二','周三','周四','周五','周六'];
 
 const $ = id => document.getElementById(id);
@@ -491,54 +526,117 @@ function renderLHB(day){
   }
 }
 
-/* ---------- 商品走势 ---------- */
-function drawChart(points, color, unit){
-  if(!points || points.length < 2) return '<div class="empty">暂无数据</div>';
-  const W = 700, H = 130, PL = 8, PR = 8, PT = 12, PB = 18;
-  const vals = points.map(p => p.close);
-  const mn = Math.min(...vals), mx = Math.max(...vals);
-  const span = (mx - mn) || 1;
-  const x = i => PL + i * (W - PL - PR) / (points.length - 1);
-  const y = v => PT + (1 - (v - mn) / span) * (H - PT - PB);
-  const line = points.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.close).toFixed(1)}`).join(' ');
-  const area = `${line} L${x(points.length-1).toFixed(1)},${H-PB} L${x(0).toFixed(1)},${H-PB} Z`;
-  const last = points[points.length - 1], first = points[0];
-  const chg = (last.close / first.close - 1) * 100;
-  const gid = 'g' + Math.random().toString(36).slice(2, 8);
-  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
-    <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="${color}" stop-opacity=".26"/>
-      <stop offset="100%" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>
-    <path d="${area}" fill="url(#${gid})"/>
-    <path d="${line}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-    <circle cx="${x(points.length-1).toFixed(1)}" cy="${y(last.close).toFixed(1)}" r="3.5" fill="${color}"/>
-  </svg>`;
+/* ---------- 通用折线图（单轴 / 多序列） ---------- */
+function smoothPath(coords){
+  if(coords.length < 3){
+    return coords.map((c, i) => (i ? 'L' : 'M') + c[0].toFixed(1) + ',' + c[1].toFixed(1)).join(' ');
+  }
+  const t = 0.16;
+  let d = 'M' + coords[0][0].toFixed(1) + ',' + coords[0][1].toFixed(1);
+  for(let i = 0; i < coords.length - 1; i++){
+    const p0 = coords[i - 1] || coords[i], p1 = coords[i], p2 = coords[i + 1];
+    const p3 = coords[i + 2] || p2;
+    const c1x = p1[0] + (p2[0] - p0[0]) * t, c1y = p1[1] + (p2[1] - p0[1]) * t;
+    const c2x = p2[0] - (p3[0] - p1[0]) * t, c2y = p2[1] - (p3[1] - p1[1]) * t;
+    d += ` C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
+  }
+  return d;
 }
-function chartBlock(title, points, color, unit){
-  if(!points || !points.length) return `<div class="chart-box"><div class="chart-hd"><span class="t">${title}</span></div></div>`;
-  const last = points[points.length - 1], first = points[0];
+
+function chartBlock(title, series, unit, digits){
+  const ss = series.filter(s => (s.points || []).length >= 2);
+  if(!ss.length){
+    return `<div class="chart-box"><div class="chart-hd"><span class="t">${title}</span></div></div>`;
+  }
+  const W = 700, H = 150, PT = 14, PB = 12, PL = 8, PR = 12;
+  const n = ss[0].points.length;
+  const all = [];
+  ss.forEach(s => s.points.forEach(p => { if(isNum(p.close)) all.push(p.close); }));
+  const mn = Math.min(...all), mx = Math.max(...all);
+  const pad = (mx - mn) * 0.16 || 0.2;
+  const lo = Math.max(0, mn - pad), hi = mx + pad;
+  const x = i => PL + i * (W - PL - PR) / (n - 1);
+  const y = v => PT + (1 - (v - lo) / ((hi - lo) || 1)) * (H - PT - PB);
+  const dig = digits === undefined ? 2 : digits;
+  const gid = 'g' + Math.random().toString(36).slice(2, 8);
+  const grid = [0, 0.25, 0.5, 0.75, 1].map(r => {
+    const yy = (PT + r * (H - PT - PB)).toFixed(1);
+    return `<line x1="${PL}" y1="${yy}" x2="${W-PR}" y2="${yy}" stroke="#eceff3" stroke-width="1"/>`;
+  }).join('');
+  const y1 = (1 >= lo && 1 <= hi) ? y(1).toFixed(1) : null;
+  const parts = ss.map((s, i) => {
+    const coords = s.points.map((p, j) => [x(j), y(p.close)]);
+    const d = smoothPath(coords);
+    let o = '';
+    if(i === 0){
+      o += `<path d="${d} L${x(n-1).toFixed(1)},${H-PB} L${x(0).toFixed(1)},${H-PB} Z" fill="url(#${gid})" stroke="none"/>`;
+    }
+    o += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round"
+      stroke-linecap="round" vector-effect="non-scaling-stroke"` + (s.dash ? ' stroke-dasharray="7 5"' : '') + '/>';
+    const lp = s.points[n - 1];
+    o += `<circle cx="${x(n-1).toFixed(1)}" cy="${y(lp.close).toFixed(1)}" r="3.4" fill="${s.color}"
+      stroke="#fff" stroke-width="1.6" vector-effect="non-scaling-stroke"/>`;
+    return o;
+  }).join('');
+  const last = ss[0].points[n - 1], first = ss[0].points[0];
   const chg = (last.close / first.close - 1) * 100;
+  const idx = (window._charts = window._charts || []).push(ss) - 1;
+  const head = ss.length === 1
+    ? `<span class="v">${f(last.close, dig)}</span> <span class="c ${cls(chg)}">${sg(chg)}%</span>`
+    : ss.map(s => `<span style="color:${s.color};font-size:15px;font-weight:700">${
+        isNum(s.points[n - 1].close) ? s.points[n - 1].close.toFixed(dig) : '—'}</span>`).join('　');
+  const legend = ss.length > 1
+    ? `<div class="legend" style="justify-content:flex-start;gap:14px;margin-top:2px">${
+        ss.map(s => `<span style="color:${s.color};font-size:11px">● ${s.label}</span>`).join('')}</div>`
+    : '';
   return `<div class="chart-box">
-    <div class="chart-hd">
-      <span class="t">${title}</span>
-      <span><span class="v">${f(last.close)}</span>
-        <span class="c ${cls(chg)}">${sg(chg)}%</span></span>
+    <div class="chart-hd"><span class="t">${title}</span><span>${head}</span></div>
+    <div class="chart-wrap" data-ci="${idx}">
+      <svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+        <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="${ss[0].color}" stop-opacity=".24"/>
+          <stop offset="100%" stop-color="${ss[0].color}" stop-opacity="0"/></linearGradient></defs>
+        ${grid}
+        ${y1 ? `<line x1="${PL}" y1="${y1}" x2="${W-PR}" y2="${y1}" stroke="#c4c8cf" stroke-width="1" stroke-dasharray="3 4"/>` : ''}
+        ${parts}
+      </svg>
+      <div class="cross"></div><div class="tip"></div>
     </div>
-    ${drawChart(points, color)}
-    <div class="stk" style="display:flex;justify-content:space-between">
-      <span>${points[0].date}</span>
-      <span>区间 ${f(Math.min(...points.map(p=>p.close)))} ~ ${f(Math.max(...points.map(p=>p.close)))} ${unit}</span>
-      <span>${last.date}</span>
+    <div class="axis">
+      <span>${first.date.slice(5)}</span>
+      <span>区间 ${f(mn, dig)} ~ ${f(mx, dig)}${unit ? ' ' + unit : ''}</span>
+      <span>${last.date.slice(5)}</span>
     </div>
+    ${legend}
   </div>`;
 }
-function renderCharts(day){
-  const c = day.commodities || {};
-  $('charts').innerHTML = chartBlock('标普500（点）', c.sp500, '#3b6fd4', '点')
-    + '<div style="height:14px"></div>'
-    + chartBlock('布伦特原油（美元/桶）', c.brent, '#c9922e', '美元')
-    + '<div style="height:14px"></div>'
-    + chartBlock('纽约黄金（美元/盎司）', c.gold, '#d4a017', '美元');
+
+function bindCharts(root){
+  (root || document).querySelectorAll('.chart-wrap').forEach(w => {
+    const ss = (window._charts || [])[+w.dataset.ci];
+    if(!ss) return;
+    const tip = w.querySelector('.tip'), cross = w.querySelector('.cross');
+    const move = e => {
+      const r = w.getBoundingClientRect();
+      const n = ss[0].points.length;
+      let i = Math.round(((e.clientX - r.left) / r.width) * (n - 1));
+      i = Math.max(0, Math.min(n - 1, i));
+      const pct = (i / (n - 1)) * 100;
+      cross.style.display = 'block';
+      cross.style.left = pct + '%';
+      const txt = ss.map(s => s.label + ' ' +
+        (isNum(s.points[i].close) ? s.points[i].close.toFixed(s.digits || 2) : '—')).join('　');
+      tip.innerHTML = ss[0].points[i].date.slice(5) + '　' + txt;
+      tip.style.display = 'block';
+      tip.style.left = pct + '%';
+      tip.style.transform = (pct > 72 ? 'translate(-100%,0)'
+        : (pct < 28 ? 'translate(0,0)' : 'translate(-50%,0)'));
+    };
+    w.addEventListener('pointerdown', move);
+    w.addEventListener('pointermove', move);
+    w.addEventListener('pointerleave', () => { tip.style.display = 'none'; cross.style.display = 'none'; });
+    w.addEventListener('pointerup', () => { tip.style.display = 'none'; cross.style.display = 'none'; });
+  });
 }
 
 /* ---------- 资金情况 ---------- */
@@ -586,24 +684,26 @@ function renderHistory(day){
     <col style="width:48px"><col style="width:52px"><col style="width:80px"><col style="width:66px">
     </colgroup><thead><tr>
     <th>日期</th><th class="num">上证收盘</th><th class="num">涨跌幅</th>
-    <th class="num">三市成交额</th><th class="num">ADR</th>
+    <th class="num">三市成交额</th><th class="num">广度</th>
     <th class="num">TRIN</th><th class="num">涨 / 跌</th><th class="num">涨/跌停</th></tr></thead><tbody>`;
+  const bmap = {};
+  (WSER || []).forEach(p => { bmap[p.date] = p; });
   rows.forEach(k => {
-    const d = dayOf(k.date);
-    const b = d && d.breadth;
+    const b = bmap[k.date];
     const amt = b ? b.amount_total_yi : null;
     const todayRow = k.date === day.date;
-    // ADR = 上涨家数/下跌家数；TRIN = ADR ÷ (上涨成交额/下跌成交额)（严格定义，分母仅下跌股）
-    let adr = null, trin = null;
-    if(b && isNum(b.up) && isNum(b.down) && b.down > 0){
-      adr = b.up / b.down;
+    // 广度＝当日上涨股票数 ÷ 全市场A股股票数
+    let rate = null, trin = null;
+    if(b && isNum(b.up) && isNum(b.total) && b.total > 0){
+      rate = b.up / b.total;
+      const adr = (isNum(b.down) && b.down > 0) ? b.up / b.down : null;
       let r = null;
       if(isNum(b.amount_up_yi) && isNum(b.amount_down_yi) && b.amount_down_yi > 0){
-        r = b.amount_up_yi / b.amount_down_yi;
+        r = b.amount_up_yi / b.amount_down_yi;   // 严格定义：分母仅下跌股成交额
       } else if(isNum(b.up_notup_ratio)){
-        r = b.up_notup_ratio;   // 旧数据只有"上涨/非上涨额比"，分母含平盘，误差<1%
+        r = b.up_notup_ratio;                        // 老数据回退：分母含平盘，误差<1%
       }
-      if(r) trin = adr / r;
+      if(adr && r) trin = adr / r;
     }
     h += `<tr${todayRow ? ' class="today"' : ''}>
       <td class="date">${todayRow
@@ -612,7 +712,7 @@ function renderHistory(day){
       <td class="num">${f(k.close)}</td>
       <td class="num ${cls(k.pct)}">${sg(k.pct)}%</td>
       <td class="num">${isNum(amt) ? amt : '—'}</td>
-      <td class="num">${isNum(adr) ? adr.toFixed(2) : '—'}</td>
+      <td class="num">${isNum(rate) ? rate.toFixed(2) : '—'}</td>
       <td class="num">${isNum(trin) ? trin.toFixed(2) : '—'}</td>
       <td class="num">${b ? `<span class="frac-up">${b.up}</span>/<span class="frac-down">${b.down}</span>` : '—'}</td>
       <td class="num">${b ? `<span class="frac-up">${b.limit_up}</span>/<span class="frac-down">${b.limit_down}</span>` : '—'}</td>
@@ -636,18 +736,36 @@ function renderHistory(day){
   upd();
 }
 
-/* ---------- 市场宽度（ADR / TRIN） ---------- */
+function oneChart(title, points, color, unit, digits){
+  return chartBlock(title, [{label: '收盘', color: color, points: points || []}], unit, digits);
+}
+function renderCharts(day){
+  const c = day.commodities || {};
+  $('charts').innerHTML = [
+    oneChart('标普500（点）', c.sp500, '#3b6fd4', '点', 2),
+    oneChart('布伦特原油（美元/桶）', c.brent, '#c9922e', '美元', 2),
+    oneChart('纽约黄金（美元/盎司）', c.gold, '#d4a017', '美元', 2),
+  ].join('<div style="height:16px"></div>');
+  bindCharts($('charts'));
+}
+
+/* ---------- 市场宽广度（广度 / TRIN） ---------- */
 function widthPoints(){
-  return DAYS.filter(d => d.breadth && isNum(d.breadth.up) && isNum(d.breadth.down) && d.breadth.down > 0)
-    .map(d => {
-      const b = d.breadth, adr = b.up / b.down;
+  return (WSER || []).filter(p => isNum(p.up) && isNum(p.total) && p.total > 0)
+    .map(p => {
+      const adr = (isNum(p.down) && p.down > 0) ? p.up / p.down : null;
+      // 广度＝当日上涨股票数 ÷ 全市场A股股票数
+      const rate = p.up / p.total;
       let r = null;
-      if(isNum(b.amount_up_yi) && isNum(b.amount_down_yi) && b.amount_down_yi > 0){
-        r = b.amount_up_yi / b.amount_down_yi;
-      } else if(isNum(b.up_notup_ratio)){
-        r = b.up_notup_ratio;
+      if(isNum(p.amount_up_yi) && isNum(p.amount_down_yi) && p.amount_down_yi > 0){
+        r = p.amount_up_yi / p.amount_down_yi;
+      } else if(isNum(p.up_notup_ratio)){
+        r = p.up_notup_ratio;
       }
-      return {date: d.date, adr: adr, trin: r ? adr / r : null};
+      return {date: p.date, rate: rate, trin: (adr && r) ? adr / r : null,
+              up: p.up, down: p.down, flat: p.flat,
+              limit_up: p.limit_up, limit_down: p.limit_down,
+              amount_total_yi: p.amount_total_yi};
     }).slice(-90);
 }
 function renderWidth(){
@@ -656,46 +774,13 @@ function renderWidth(){
     $('widthChart').innerHTML = '<div class="empty">自建档日起逐日累积，再过几个交易日出曲线</div>';
     return;
   }
-  const W = 700, H = 190, PL = 40, PR = 16, PT = 16, PB = 20;
-  const x = i => PL + i * (W - PL - PR) / (pts.length - 1);
-  // 单一坐标轴：ADR 与 TRIN 同为比值量纲，直接可比
-  const vals = pts.flatMap(p => [p.adr, p.trin]).filter(isNum);
-  const mn = Math.min(...vals), mx = Math.max(...vals);
-  const pad = (mx - mn) * 0.08 || 0.1;
-  const lo = Math.max(0, mn - pad), hi = mx + pad;
-  const y = v => PT + (1 - (v - lo) / (hi - lo)) * (H - PT - PB);
-  const path = key => {
-    let s = '', started = false;
-    pts.forEach((p, i) => {
-      if(!isNum(p[key])) return;
-      s += (started ? 'L' : 'M') + x(i).toFixed(1) + ',' + y(p[key]).toFixed(1) + ' ';
-      started = true;
-    });
-    return s;
-  };
-  const last = pts[pts.length - 1];
-  const gid = 'w' + Math.random().toString(36).slice(2, 8);
-  const y1 = y(1);
-  $('widthChart').innerHTML = `
-    <div class="chart-hd">
-      <span class="t"><span class="up">● ADR</span>　<span style="color:#3b6fd4">● TRIN</span></span>
-      <span><span class="v up" style="font-size:15px">${last.adr.toFixed(2)}</span>
-        <span class="v" style="font-size:15px;color:#3b6fd4">${isNum(last.trin) ? last.trin.toFixed(2) : '—'}</span></span>
-    </div>
-    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="height:170px">
-      <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#e0393e" stop-opacity=".18"/>
-        <stop offset="100%" stop-color="#e0393e" stop-opacity="0"/></linearGradient></defs>
-      ${y1 > PT && y1 < H - PB ? `<line x1="${PL}" y1="${y1.toFixed(1)}" x2="${W-PR}" y2="${y1.toFixed(1)}" stroke="#c4c8cf" stroke-width="1" stroke-dasharray="2 3"/>` : ''}
-      <path d="${path('adr')} L${x(pts.length-1).toFixed(1)},${H-PB} L${PL},${H-PB} Z" fill="url(#${gid})" stroke="none"/>
-      <path d="${path('adr')}" fill="none" stroke="#e0393e" stroke-width="2" stroke-linejoin="round"/>
-      <path d="${path('trin')}" fill="none" stroke="#3b6fd4" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round"/>
-      <text x="${PL-4}" y="${PT+8}" text-anchor="end" font-size="11" fill="#9aa0ab">${hi.toFixed(2)}</text>
-      <text x="${PL-4}" y="${H-PB}" text-anchor="end" font-size="11" fill="#9aa0ab">${lo.toFixed(2)}</text>
-      <text x="${PL}" y="${H-4}" font-size="11" fill="#9aa0ab">${pts[0].date.slice(5)}</text>
-      <text x="${W-PR}" y="${H-4}" text-anchor="end" font-size="11" fill="#9aa0ab">${last.date.slice(5)}</text>
-    </svg>
-    <div class="hint">数据自建档日起逐日累积</div>`;
+  $('widthChart').innerHTML = chartBlock('', [
+    {label: '广度', color: '#e0393e', digits: 2,
+     points: pts.map(p => ({date: p.date, close: p.rate}))},
+    {label: 'TRIN', color: '#3b6fd4', dash: true, digits: 2,
+     points: pts.map(p => ({date: p.date, close: p.trin}))},
+  ], '', 2) + '<div class="hint">数据自建档日起逐日累积</div>';
+  bindCharts($('widthChart'));
 }
 
 /* ---------- 头部状态 ---------- */
@@ -718,6 +803,7 @@ function renderStatus(day){
 function render(date){
   const day = dayOf(date);
   if(!day) return;
+  window._charts = [];     // 图表序列索引重置（供触摸取值用）
   $('dateSel').value = date;
   renderStatus(day);
   renderIndices(day);
@@ -786,11 +872,14 @@ def main():
     kline = fetch_sh_kline(15)
     last_date = days[-1]['date']
     kline = [k for k in kline if k['date'] <= last_date]
+    wser = [x for x in build_width_series(load_days(MAX_SERIES_DAYS)) if x['date'] <= last_date]
     data_json = json.dumps(days, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     kl_json = json.dumps(kline, ensure_ascii=False, separators=(',', ':'))
+    wser_json = json.dumps(wser, ensure_ascii=False, separators=(',', ':'))
     gen = dt.datetime.now().strftime('%Y-%m-%d %H:%M')
     html = (HTML.replace('__DATA__', data_json)
                 .replace('__KLINE__', kl_json)
+                .replace('__WIDTH__', wser_json)
                 .replace('__GEN__', gen))
     with open(OUT, 'w', encoding='utf-8') as f:
         f.write(html)
