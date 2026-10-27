@@ -199,7 +199,7 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
 </header>
 
 <div class="wrap">
-  <section><div class="card" id="sec-overview"><h2>市场总览 <small>括号内为较上一交易日</small></h2>
+  <section><div class="card" id="sec-overview"><h2>市场总览 <small>括号内为上一交易日数据</small></h2>
     <div id="overview"></div></div></section>
 
   <section><div class="card" id="sec-index"><h2>指数行情 <small>开盘 / 收盘 / 成交额</small></h2>
@@ -249,6 +249,10 @@ function cmpHtml(cur, prev, unit, d=2){
   const c = dv > 0 ? 'up' : (dv < 0 ? 'down' : 'flat');
   return `<span class="ov-cmp ${c}">（${sg(dv,d)}${unit||''}）</span>`;
 }
+function prevHtml(prev, unit, d=2){
+  if(!isNum(prev)) return '<span class="ov-cmp">（昨 —）</span>';
+  return `<span class="ov-cmp">（昨 ${Number(prev).toFixed(d)}${unit||''}）</span>`;
+}
 function dayOf(date){ return DAYS.find(d => d.date === date); }
 function prevOf(date){
   const i = DAYS.findIndex(d => d.date === date);
@@ -296,14 +300,15 @@ function renderOverview(day){
   if(!b){ $('overview').innerHTML = '<div class="empty">暂无数据（当日未采集）</div>'; return; }
 
   const total = b.amount_total_yi;
-  const pt = pb ? pb.amount_total_yi : null;
+  const pt = pb ? (isNum(pb.amount_total_yi) ? pb.amount_total_yi
+    : (isNum(pb.amount_up_yi) && isNum(pb.amount_notup_yi) ? Number((pb.amount_up_yi + pb.amount_notup_yi).toFixed(2)) : null)) : null;
   const tw = b.up + b.down + b.flat;
   const pu = tw ? (b.up / tw * 100) : 0, pf = tw ? (b.flat / tw * 100) : 0, pd = tw ? (b.down / tw * 100) : 0;
 
   let h = '';
   h += `<div class="ov-row"><span class="ov-lab">三市成交额</span>
     <span><span class="ov-val">${isNum(total) ? total : '—'}</span>
-    <span style="font-size:12px;color:var(--t3)">亿</span>${cmpHtml(total, pt, '亿')}</span></div>`;
+    <span style="font-size:12px;color:var(--t3)">亿</span>${prevHtml(pt, '亿')}</span></div>`;
 
   if(isNum(b.amount_total_yi) && b.amount_yi){
     h += `<div style="padding:6px 0"><div class="kv">
@@ -319,20 +324,20 @@ function renderOverview(day){
       <i class="b-down" style="width:${pd}%"></i>
     </div>
     <div class="legend">
-      <span class="up">涨 <b>${b.up}</b>${cmpHtml(b.up, pb && pb.up, '', 0)}</span>
-      <span class="flat">平 <b>${b.flat}</b>${cmpHtml(b.flat, pb && pb.flat, '', 0)}</span>
-      <span class="down">跌 <b>${b.down}</b>${cmpHtml(b.down, pb && pb.down, '', 0)}</span>
+      <span class="up">涨 <b>${b.up}</b>${prevHtml(pb && pb.up, '', 0)}</span>
+      <span class="flat">平 <b>${b.flat}</b>${prevHtml(pb && pb.flat, '', 0)}</span>
+      <span class="down">跌 <b>${b.down}</b>${prevHtml(pb && pb.down, '', 0)}</span>
     </div>
   </div>`;
 
   h += `<div style="display:flex;gap:10px;margin-top:12px">
     <div style="flex:1;border:1px solid var(--line);border-radius:10px;padding:9px">
       <div class="ov-lab">涨停</div>
-      <div><span class="ov-val up">${b.limit_up}</span>${cmpHtml(b.limit_up, pb && pb.limit_up, '', 0)}</div>
+      <div><span class="ov-val up">${b.limit_up}</span>${prevHtml(pb && pb.limit_up, '', 0)}</div>
     </div>
     <div style="flex:1;border:1px solid var(--line);border-radius:10px;padding:9px">
       <div class="ov-lab">跌停</div>
-      <div><span class="ov-val down">${b.limit_down}</span>${cmpHtml(b.limit_down, pb && pb.limit_down, '', 0)}</div>
+      <div><span class="ov-val down">${b.limit_down}</span>${prevHtml(pb && pb.limit_down, '', 0)}</div>
     </div>
   </div>`;
 
@@ -607,15 +612,14 @@ function renderStatus(day){
   const s = [];
   s.push(`<span class="badge">行情 · ${day.updated_at || '—'}</span>`);
   if(day.realtime === false) s.push(`<span class="badge">收盘数据</span>`);
-  if(day.lhb && day.lhb.count) s.push(`<span class="badge">龙虎榜 ${day.lhb.count} 条</span>`);
-  else {
-    let lday = null;
-    for(let i = DAYS.length - 1; i >= 0; i--){ if(DAYS[i].lhb && DAYS[i].lhb.count){ lday = DAYS[i]; break; } }
-    // 徽章显示：数据所属日期 + 该期龙虎榜的抓取时刻
-    const lt = (lday && lday.lhb_updated_at) ? lday.lhb_updated_at.slice(11) : '';
-    s.push(lday ? `<span class="badge">龙虎榜 · ${lday.date}${lt ? ' ' + lt : ''}</span>`
-                : `<span class="badge warn">龙虎榜待更新</span>`);
-  }
+  // 龙虎榜徽章：统一显示 当前展示数据的日期 + 抓取时刻（不显示条数）
+  let lday = null;
+  if(day.lhb && day.lhb.count) lday = day;
+  else for(let i = DAYS.length - 1; i >= 0; i--){ if(DAYS[i].lhb && DAYS[i].lhb.count){ lday = DAYS[i]; break; } }
+  // 徽章显示：数据所属日期 + 该期龙虎榜的抓取时刻
+  const lt = (lday && lday.lhb_updated_at) ? lday.lhb_updated_at.slice(11) : '';
+  s.push(lday ? `<span class="badge">龙虎榜 · ${lday.date}${lt ? ' ' + lt : ''}</span>`
+              : `<span class="badge warn">龙虎榜待更新</span>`);
   $('status').innerHTML = s.join('');
 }
 
