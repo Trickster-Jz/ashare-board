@@ -543,101 +543,167 @@ function smoothPath(coords){
   return d;
 }
 
+function niceStep(span, target){
+  const raw = (span / target) || 1;
+  const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const norm = raw / mag;
+  let step;
+  if(norm <= 1) step = 1;
+  else if(norm <= 2) step = 2;
+  else if(norm <= 2.5) step = 2.5;
+  else if(norm <= 5) step = 5;
+  else step = 10;
+  return step * mag;
+}
+function yTicks(lo, hi, target){
+  const step = niceStep(hi - lo, target);
+  const start = Math.ceil(lo / step) * step;
+  const out = [];
+  for(let v = start; v <= hi + 1e-9; v += step) out.push(+v.toFixed(10));
+  return out;
+}
+function fmtTick(v){
+  const a = Math.abs(v);
+  if(a >= 1000) return v.toFixed(0);
+  if(a >= 10) return v.toFixed(1);
+  return v.toFixed(2);
+}
+function monthTicks(pts){
+  const out = [];
+  let last = '';
+  pts.forEach((p, i) => {
+    const m = p.date.slice(0, 7);
+    if(m !== last){ out.push({i: i, lab: (+p.date.slice(5, 7)) + '月'}); last = m; }
+  });
+  if(out.length > 7){
+    const st = Math.ceil(out.length / 6);
+    return out.filter((_, k) => k % st === 0);
+  }
+  return out;
+}
+
 function chartBlock(title, series, unit, digits){
   const ss = series.filter(s => (s.points || []).length >= 2);
   if(!ss.length){
     return `<div class="chart-box"><div class="chart-hd"><span class="t">${title}</span></div></div>`;
   }
-  const W = 700, H = 150, PT = 14, PB = 12, PL = 8, PR = 12;
-  const n = ss[0].points.length;
   const all = [];
   ss.forEach(s => s.points.forEach(p => { if(isNum(p.close)) all.push(p.close); }));
   const mn = Math.min(...all), mx = Math.max(...all);
-  const pad = (mx - mn) * 0.16 || 0.2;
-  const lo = Math.max(0, mn - pad), hi = mx + pad;
+  const pad = (mx - mn) * 0.15 || 0.2;
+  let lo = Math.max(0, mn - pad), hi = mx + pad;
+  const tk = yTicks(lo, hi, 5);
+  if(tk.length){
+    lo = Math.min(lo, tk[0]);
+    hi = Math.max(hi, tk[tk.length - 1]);
+  }
+  const idx = (window._charts = window._charts || []).push(
+    {title: title, series: ss, unit: unit, digits: digits === undefined ? 2 : digits,
+     lo: lo, hi: hi}) - 1;
+  const last = ss[0].points[ss[0].points.length - 1], first = ss[0].points[0];
+  const chg = (last.close / first.close - 1) * 100;
+  const dig = digits === undefined ? 2 : digits;
+  const head = ss.length === 1
+    ? `<span class="v">${f(last.close, dig)}</span> <span class="c ${cls(chg)}">${sg(chg)}%</span>`
+    : ss.map(s => `<span style="color:${s.color};font-size:15px;font-weight:700">${
+        isNum(s.points[ss[0].points.length - 1].close)
+          ? s.points[ss[0].points.length - 1].close.toFixed(dig) : '—'}</span>`).join('　');
+  const legend = ss.length > 1
+    ? `<div class="legend" style="justify-content:flex-start;gap:16px;margin-top:2px">${
+        ss.map(s => `<span style="color:${s.color};font-size:11px">● ${s.label}</span>`).join('')}</div>`
+    : '';
+  return `<div class="chart-box">
+    <div class="chart-hd"><span class="t">${title}</span><span>${head}</span></div>
+    <div class="chart-mount" data-ci="${idx}"></div>
+    ${legend}
+  </div>`;
+}
+
+function drawMount(mount){
+  const cfg = (window._charts || [])[+mount.dataset.ci];
+  if(!cfg) return;
+  const ss = cfg.series, n = ss[0].points.length;
+  const W = Math.max(300, Math.round(mount.clientWidth) || 340);
+  const H = 168, PL = 46, PR = 14, PT = 12, PB = 22;
+  const lo = cfg.lo, hi = cfg.hi;
   const x = i => PL + i * (W - PL - PR) / (n - 1);
   const y = v => PT + (1 - (v - lo) / ((hi - lo) || 1)) * (H - PT - PB);
-  const dig = digits === undefined ? 2 : digits;
   const gid = 'g' + Math.random().toString(36).slice(2, 8);
-  const grid = [0, 0.25, 0.5, 0.75, 1].map(r => {
-    const yy = (PT + r * (H - PT - PB)).toFixed(1);
-    return `<line x1="${PL}" y1="${yy}" x2="${W-PR}" y2="${yy}" stroke="#eceff3" stroke-width="1"/>`;
-  }).join('');
-  const y1 = (1 >= lo && 1 <= hi) ? y(1).toFixed(1) : null;
+
+  // 纵轴：数值刻度 + 网格线
+  const ticks = yTicks(lo, hi, 5);
+  const grid = ticks.map(v =>
+    `<line x1="${PL}" y1="${y(v).toFixed(1)}" x2="${W-PR}" y2="${y(v).toFixed(1)}"
+      stroke="#eceff3" stroke-width="1" vector-effect="non-scaling-stroke"/>
+     <text x="${PL-6}" y="${y(v).toFixed(1)}" text-anchor="end" dominant-baseline="middle"
+      font-size="10" fill="#9aa0ab">${fmtTick(v)}</text>`).join('');
+
+  // 横轴：月份刻度
+  const mx = monthTicks(ss[0].points);
+  const xlab = mx.map(t =>
+    `<line x1="${x(t.i).toFixed(1)}" y1="${H-PB}" x2="${x(t.i).toFixed(1)}" y2="${H-PB+3}"
+      stroke="#d8dce2" stroke-width="1" vector-effect="non-scaling-stroke"/>
+     <text x="${x(t.i).toFixed(1)}" y="${H-PB+13}" text-anchor="middle" font-size="10"
+      fill="#9aa0ab">${t.lab}</text>`).join('');
+
   const parts = ss.map((s, i) => {
     const coords = s.points.map((p, j) => [x(j), y(p.close)]);
     const d = smoothPath(coords);
     let o = '';
     if(i === 0){
-      o += `<path d="${d} L${x(n-1).toFixed(1)},${H-PB} L${x(0).toFixed(1)},${H-PB} Z" fill="url(#${gid})" stroke="none"/>`;
+      o += `<path d="${d} L${x(n-1).toFixed(1)},${H-PB} L${x(0).toFixed(1)},${H-PB} Z"
+        fill="url(#${gid})" stroke="none"/>`;
     }
     o += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round"
-      stroke-linecap="round" vector-effect="non-scaling-stroke"` + (s.dash ? ' stroke-dasharray="7 5"' : '') + '/>';
+      stroke-linecap="round" vector-effect="non-scaling-stroke"`
+      + (s.dash ? ' stroke-dasharray="7 5"' : '') + '/>';
     const lp = s.points[n - 1];
-    o += `<circle cx="${x(n-1).toFixed(1)}" cy="${y(lp.close).toFixed(1)}" r="3.4" fill="${s.color}"
-      stroke="#fff" stroke-width="1.6" vector-effect="non-scaling-stroke"/>`;
+    o += `<circle cx="${x(n-1).toFixed(1)}" cy="${y(lp.close).toFixed(1)}" r="3.4"
+      fill="${s.color}" stroke="#fff" stroke-width="1.6" vector-effect="non-scaling-stroke"/>`;
     return o;
   }).join('');
-  const last = ss[0].points[n - 1], first = ss[0].points[0];
-  const chg = (last.close / first.close - 1) * 100;
-  const idx = (window._charts = window._charts || []).push(ss) - 1;
-  const head = ss.length === 1
-    ? `<span class="v">${f(last.close, dig)}</span> <span class="c ${cls(chg)}">${sg(chg)}%</span>`
-    : ss.map(s => `<span style="color:${s.color};font-size:15px;font-weight:700">${
-        isNum(s.points[n - 1].close) ? s.points[n - 1].close.toFixed(dig) : '—'}</span>`).join('　');
-  const legend = ss.length > 1
-    ? `<div class="legend" style="justify-content:flex-start;gap:14px;margin-top:2px">${
-        ss.map(s => `<span style="color:${s.color};font-size:11px">● ${s.label}</span>`).join('')}</div>`
-    : '';
-  return `<div class="chart-box">
-    <div class="chart-hd"><span class="t">${title}</span><span>${head}</span></div>
-    <div class="chart-wrap" data-ci="${idx}">
-      <svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
-        <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="${ss[0].color}" stop-opacity=".24"/>
-          <stop offset="100%" stop-color="${ss[0].color}" stop-opacity="0"/></linearGradient></defs>
-        ${grid}
-        ${y1 ? `<line x1="${PL}" y1="${y1}" x2="${W-PR}" y2="${y1}" stroke="#c4c8cf" stroke-width="1" stroke-dasharray="3 4"/>` : ''}
-        ${parts}
-      </svg>
-      <div class="cross"></div><div class="tip"></div>
-    </div>
-    <div class="axis">
-      <span>${first.date.slice(5)}</span>
-      <span>区间 ${f(mn, dig)} ~ ${f(mx, dig)}${unit ? ' ' + unit : ''}</span>
-      <span>${last.date.slice(5)}</span>
-    </div>
-    ${legend}
+
+  mount.innerHTML = `<div class="chart-wrap" style="height:${H}px">
+    <svg class="chart" viewBox="0 0 ${W} ${H}" width="100%" height="${H}"
+      preserveAspectRatio="xMidYMid meet">
+      <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="${ss[0].color}" stop-opacity=".24"/>
+        <stop offset="100%" stop-color="${ss[0].color}" stop-opacity="0"/></linearGradient></defs>
+      ${grid}${xlab}${parts}
+    </svg>
+    <div class="cross"></div><div class="tip"></div>
   </div>`;
+
+  const w = mount.querySelector('.chart-wrap');
+  const tip = mount.querySelector('.tip'), cross = mount.querySelector('.cross');
+  const move = e => {
+    const r = w.getBoundingClientRect();
+    let i = Math.round((((e.clientX - r.left) / r.width * W) - PL) / (W - PL - PR) * (n - 1));
+    i = Math.max(0, Math.min(n - 1, i));
+    const pct = (x(i) / W) * 100;
+    cross.style.display = 'block';
+    cross.style.left = pct + '%';
+    const txt = ss.map(s => s.label + ' ' +
+      (isNum(s.points[i].close) ? s.points[i].close.toFixed(s.digits || 2) : '—')).join('　');
+    tip.innerHTML = ss[0].points[i].date.slice(5) + '　' + txt;
+    tip.style.display = 'block';
+    tip.style.left = pct + '%';
+    tip.style.transform = (pct > 72 ? 'translate(-100%,0)'
+      : (pct < 28 ? 'translate(0,0)' : 'translate(-50%,0)'));
+  };
+  const hide = () => { tip.style.display = 'none'; cross.style.display = 'none'; };
+  w.addEventListener('pointerdown', move);
+  w.addEventListener('pointermove', move);
+  w.addEventListener('pointerleave', hide);
+  w.addEventListener('pointerup', hide);
 }
 
 function bindCharts(root){
-  (root || document).querySelectorAll('.chart-wrap').forEach(w => {
-    const ss = (window._charts || [])[+w.dataset.ci];
-    if(!ss) return;
-    const tip = w.querySelector('.tip'), cross = w.querySelector('.cross');
-    const move = e => {
-      const r = w.getBoundingClientRect();
-      const n = ss[0].points.length;
-      let i = Math.round(((e.clientX - r.left) / r.width) * (n - 1));
-      i = Math.max(0, Math.min(n - 1, i));
-      const pct = (i / (n - 1)) * 100;
-      cross.style.display = 'block';
-      cross.style.left = pct + '%';
-      const txt = ss.map(s => s.label + ' ' +
-        (isNum(s.points[i].close) ? s.points[i].close.toFixed(s.digits || 2) : '—')).join('　');
-      tip.innerHTML = ss[0].points[i].date.slice(5) + '　' + txt;
-      tip.style.display = 'block';
-      tip.style.left = pct + '%';
-      tip.style.transform = (pct > 72 ? 'translate(-100%,0)'
-        : (pct < 28 ? 'translate(0,0)' : 'translate(-50%,0)'));
-    };
-    w.addEventListener('pointerdown', move);
-    w.addEventListener('pointermove', move);
-    w.addEventListener('pointerleave', () => { tip.style.display = 'none'; cross.style.display = 'none'; });
-    w.addEventListener('pointerup', () => { tip.style.display = 'none'; cross.style.display = 'none'; });
-  });
+  (root || document).querySelectorAll('.chart-mount').forEach(drawMount);
 }
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.chart-mount').forEach(drawMount);
+});
 
 /* ---------- 资金情况 ---------- */
 function fundCard(title, val, unit, sub){
