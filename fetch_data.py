@@ -276,6 +276,7 @@ def summarize_stocks(stocks):
     lu = ld = 0
     amount = {'sh': 0.0, 'sz': 0.0, 'bj': 0.0}
     amt_up = 0.0          # 上涨股票成交额
+    amt_down = 0.0        # 下跌股票成交额
     amt_notup = 0.0       # 非上涨（平+跌）股票成交额
     lu_list, ld_list = [], []
     for s in stocks:
@@ -299,6 +300,9 @@ def summarize_stocks(stocks):
         amount[m] += amt
         if pct > 0:
             amt_up += amt
+        elif pct < 0:
+            amt_down += amt
+            amt_notup += amt
         else:
             amt_notup += amt
         lim = limit_pct(sym, name)
@@ -316,6 +320,7 @@ def summarize_stocks(stocks):
         'amount_yi': {k: fmt_amount(v) for k, v in amount.items()},
         'amount_total_yi': fmt_amount(sum(amount.values())),
         'amount_up_yi': fmt_amount(amt_up),
+        'amount_down_yi': fmt_amount(amt_down),
         'amount_notup_yi': fmt_amount(amt_notup),
         'up_notup_ratio': round(amt_up / amt_notup, 2) if amt_notup else None,
         'limit_up_list': lu_list,
@@ -657,7 +662,7 @@ def backfill_breadth(date_str, max_workers=12):
     print('[info] 回溯 %s，共 %d 只个股...' % (date_str, len(meta)))
     up = down = flat = 0
     lu = ld = 0
-    amt_up = amt_notup = 0.0
+    amt_up = amt_down = amt_notup = 0.0
     done = [0]
 
     def one(m):
@@ -700,6 +705,7 @@ def backfill_breadth(date_str, max_workers=12):
                 amt_up += amt
             elif d < 0:
                 down += 1
+                amt_down += amt
                 amt_notup += amt
             else:
                 flat += 1
@@ -710,7 +716,8 @@ def backfill_breadth(date_str, max_workers=12):
                 ld += 1
     return {'up': up, 'down': down, 'flat': flat, 'limit_up': lu, 'limit_down': ld,
             'total': up + down + flat, 'source': 'backfill',
-            'amount_up_yi': fmt_amount(amt_up), 'amount_notup_yi': fmt_amount(amt_notup),
+            'amount_up_yi': fmt_amount(amt_up), 'amount_down_yi': fmt_amount(amt_down),
+            'amount_notup_yi': fmt_amount(amt_notup),
             'up_notup_ratio': round(amt_up / amt_notup, 2) if amt_notup else None,
             'ratio_estimated': True}
 
