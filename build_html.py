@@ -105,7 +105,7 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 /* 近7日对比 */
 .hwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .hwrap::-webkit-scrollbar{display:none}
-.htable{min-width:820px;font-size:12px;table-layout:fixed}
+.htable{min-width:600px;font-size:12px;table-layout:fixed}
 .htable th{white-space:nowrap;padding:7px 4px}
 .htable th.num{text-align:right}
 .htable td{white-space:nowrap;padding:7px 4px}
@@ -220,7 +220,7 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
   <section><div class="card"><h2>近 10 个交易日对比 <small>成交额单位：亿元 · 自建档日起累积</small></h2>
     <div id="history"></div></div></section>
 
-  <section><div class="card"><h2>市场宽度 <small>ADR 左轴 · TRIN 右轴 · 近 90 个交易日</small></h2>
+  <section><div class="card"><h2>市场宽度 <small>近 90 个交易日</small></h2>
     <div id="widthChart"></div></div></section>
 
   <section><div class="card"><h2>美股与大宗商品走势 <small>近 90 个交易日</small></h2>
@@ -582,8 +582,8 @@ function renderHistory(day){
   }
   if(!rows.length){ $('history').innerHTML = '<div class="empty">暂无数据</div>'; return; }
   let h = `<div class="hwrap" id="hw"><table class="htable"><colgroup>
-    <col style="width:108px"><col style="width:76px"><col style="width:62px"><col style="width:92px">
-    <col style="width:52px"><col style="width:56px"><col style="width:92px"><col style="width:74px">
+    <col style="width:92px"><col style="width:72px"><col style="width:58px"><col style="width:84px">
+    <col style="width:48px"><col style="width:52px"><col style="width:80px"><col style="width:66px">
     </colgroup><thead><tr>
     <th>日期</th><th class="num">上证收盘</th><th class="num">涨跌幅</th>
     <th class="num">三市成交额</th><th class="num">ADR</th>
@@ -656,26 +656,26 @@ function renderWidth(){
     $('widthChart').innerHTML = '<div class="empty">自建档日起逐日累积，再过几个交易日出曲线</div>';
     return;
   }
-  const W = 700, H = 190, PL = 40, PR = 44, PT = 16, PB = 20;
+  const W = 700, H = 190, PL = 40, PR = 16, PT = 16, PB = 20;
   const x = i => PL + i * (W - PL - PR) / (pts.length - 1);
-  const mk = key => {
-    const vs = pts.map(p => p[key]).filter(isNum);
-    const mn = Math.min(...vs), mx = Math.max(...vs);
-    const y = v => PT + (1 - (v - mn) / ((mx - mn) || 1)) * (H - PT - PB);
-    return {y: y, mn: mn, mx: mx};
-  };
-  const a = mk('adr'), t = mk('trin');
+  // 单一坐标轴：ADR 与 TRIN 同为比值量纲，直接可比
+  const vals = pts.flatMap(p => [p.adr, p.trin]).filter(isNum);
+  const mn = Math.min(...vals), mx = Math.max(...vals);
+  const pad = (mx - mn) * 0.08 || 0.1;
+  const lo = Math.max(0, mn - pad), hi = mx + pad;
+  const y = v => PT + (1 - (v - lo) / (hi - lo)) * (H - PT - PB);
   const path = key => {
     let s = '', started = false;
     pts.forEach((p, i) => {
       if(!isNum(p[key])) return;
-      s += (started ? 'L' : 'M') + x(i).toFixed(1) + ',' + mk(key).y(p[key]).toFixed(1) + ' ';
+      s += (started ? 'L' : 'M') + x(i).toFixed(1) + ',' + y(p[key]).toFixed(1) + ' ';
       started = true;
     });
     return s;
   };
   const last = pts[pts.length - 1];
   const gid = 'w' + Math.random().toString(36).slice(2, 8);
+  const y1 = y(1);
   $('widthChart').innerHTML = `
     <div class="chart-hd">
       <span class="t"><span class="up">● ADR</span>　<span style="color:#3b6fd4">● TRIN</span></span>
@@ -686,18 +686,16 @@ function renderWidth(){
       <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#e0393e" stop-opacity=".18"/>
         <stop offset="100%" stop-color="#e0393e" stop-opacity="0"/></linearGradient></defs>
+      ${y1 > PT && y1 < H - PB ? `<line x1="${PL}" y1="${y1.toFixed(1)}" x2="${W-PR}" y2="${y1.toFixed(1)}" stroke="#c4c8cf" stroke-width="1" stroke-dasharray="2 3"/>` : ''}
       <path d="${path('adr')} L${x(pts.length-1).toFixed(1)},${H-PB} L${PL},${H-PB} Z" fill="url(#${gid})" stroke="none"/>
       <path d="${path('adr')}" fill="none" stroke="#e0393e" stroke-width="2" stroke-linejoin="round"/>
       <path d="${path('trin')}" fill="none" stroke="#3b6fd4" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round"/>
-      <text x="${PL-4}" y="${PT+8}" text-anchor="end" font-size="11" fill="#e0393e">${a.mx.toFixed(2)}</text>
-      <text x="${PL-4}" y="${H-PB}" text-anchor="end" font-size="11" fill="#e0393e">${a.mn.toFixed(2)}</text>
-      <text x="${W-PR+4}" y="${PT+8}" font-size="11" fill="#3b6fd4">${t.mx.toFixed(2)}</text>
-      <text x="${W-PR+4}" y="${H-PB}" font-size="11" fill="#3b6fd4">${t.mn.toFixed(2)}</text>
+      <text x="${PL-4}" y="${PT+8}" text-anchor="end" font-size="11" fill="#9aa0ab">${hi.toFixed(2)}</text>
+      <text x="${PL-4}" y="${H-PB}" text-anchor="end" font-size="11" fill="#9aa0ab">${lo.toFixed(2)}</text>
       <text x="${PL}" y="${H-4}" font-size="11" fill="#9aa0ab">${pts[0].date.slice(5)}</text>
       <text x="${W-PR}" y="${H-4}" text-anchor="end" font-size="11" fill="#9aa0ab">${last.date.slice(5)}</text>
     </svg>
-    <div class="hint">ADR＝上涨家数÷下跌家数（红，左轴）；TRIN＝ADR÷(上涨成交额÷下跌成交额)（蓝虚线，右轴）。
-    TRIN 持续走低且 ADR 同步走低＝普跌；TRIN 急升伴随 ADR 回落＝抛压释放。数据自建档日起逐日累积。</div>`;
+    <div class="hint">数据自建档日起逐日累积</div>`;
 }
 
 /* ---------- 头部状态 ---------- */
