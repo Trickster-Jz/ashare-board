@@ -231,11 +231,13 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 .bt1{background:#fdeaea;color:#c9302c}
 .bt2{background:#fff3e2;color:#a86300}
 .bt3{background:#eef1f6;color:#5b616b}
-/* 热点板块：点行展开的涨停股清单（容器藏在本行内，不重排表格） */
+/* 热点板块：点行展开涨停股清单——沿用龙虎榜模式，展开行横跨整宽。
+   表格用固定列宽（宽度取自原本自适应时的自然值），插入展开行不会引起列宽重排 */
 table.bkt{table-layout:fixed}
 tr.bk{cursor:pointer}
-.bkb{display:none}
-tr.bk.open .bkb{display:block;margin-top:7px}
+tr.bkb{display:none}
+tr.bk.open + tr.bkb{display:table-row}
+tr.bkb td{background:#fafbfc;padding:7px 10px 9px}
 </style>
 </head>
 <body>
@@ -457,18 +459,18 @@ function blocksTable(){
     blockSort === 'lu' ? (b.limit_up_num || 0) - (a.limit_up_num || 0) : (b.pct || 0) - (a.pct || 0));
   if(!bs.length){ return '<div class="empty">暂无数据</div>'; }
   return `<table class="bkt"><colgroup>
-      <col style="width:46%"><col style="width:16%"><col style="width:14%"><col style="width:24%">
+      <col style="width:52.1%"><col style="width:16.9%"><col style="width:14.2%"><col style="width:16.9%">
     </colgroup><thead><tr>
       <th>板块 / 题材</th><th class="num">涨跌幅</th><th class="num">涨停数</th><th>最高标</th></tr></thead><tbody>`
     + bs.map(b => {
       const st = (b.stocks || []).slice(0, 3).map(s => s.name).join('、');
       const all = (b.stocks || []).map(s => `<span class="chip">${s.name}</span>`).join('');
       return `<tr class="bk">
-        <td><b>${b.name}</b>${st ? `<div class="stk">${st}</div>` : ''}${
-          all ? `<div class="bkb"><div class="chips">${all}</div></div>` : ''}</td>
+        <td><b>${b.name}</b>${st ? `<div class="stk">${st}</div>` : ''}</td>
         <td class="num ${cls(b.pct)}">${sg(b.pct)}%</td>
         <td class="num">${b.limit_up_num ?? '—'}</td>
-        <td style="font-size:12px">${b.top || '—'}</td></tr>`;
+        <td style="font-size:12px">${b.top || '—'}</td></tr>
+        ${all ? `<tr class="bkb"><td colspan="4"><div class="chips">${all}</div></td></tr>` : ''}`;
     }).join('') + '</tbody></table>';
 }
 /* 点板块行展开 / 收起全部涨停股——沿用龙虎榜的模式：
