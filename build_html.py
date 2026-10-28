@@ -227,10 +227,11 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 .egg-w{font-size:11px;color:#7a5b00;background:#fff5e6;border-radius:7px;
   padding:7px 9px;margin-top:11px;line-height:1.6}
 .r{color:var(--up)}.g{color:var(--down)}.n{color:var(--flat)}
-.bt{font-size:10px;padding:1px 5px;border-radius:4px;margin-left:4px;white-space:nowrap}
-.bt1{background:#fdeaea;color:#c9302c}
-.bt2{background:#fff3e2;color:#a86300}
-.bt3{background:#eef1f6;color:#5b616b}
+.bt{font-size:10px;height:15px;line-height:15px;padding:0 5px;border-radius:4px;
+  margin-left:4px;white-space:nowrap;display:inline-block;vertical-align:middle}
+.bt1{background:#fff3e2;color:#a86300}   /* 一字板 */
+.bt2{background:#fdeaea;color:#c9302c}   /* T字板 */
+.bt3{background:#e7f6ee;color:#0f9d58}   /* 换手板等 */
 /* 热点板块：点行展开涨停股清单——沿用龙虎榜模式，展开行横跨整宽。
    表格用固定列宽（宽度取自原本自适应时的自然值），插入展开行不会引起列宽重排 */
 table.bkt{table-layout:fixed}
