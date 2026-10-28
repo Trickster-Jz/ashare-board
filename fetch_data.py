@@ -395,7 +395,9 @@ def fetch_hot_blocks(date_compact, limit=12):
     out = []
     for b in (js.get('data') or []):
         stocks = []
-        for s in (b.get('stock_list') or [])[:3]:
+        # 涨停股全量保存（可点开查看），上限 60 只保护
+        # 注意：板块接口的 high_days 是数字位编码（与涨停池接口同名不同义），不采集
+        for s in (b.get('stock_list') or [])[:60]:
             stocks.append({'code': s.get('code'), 'name': s.get('name')})
         out.append({
             'name': b.get('name'),
