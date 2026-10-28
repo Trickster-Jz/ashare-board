@@ -350,20 +350,75 @@ def fetch_limit_pool(date_compact, page_size=100):
     return {}
 
 
-def parse_ladder(info):
-    """把涨停池整理成连板梯队"""
-    def level_of(it):
+def parse_ladder(info, date_compact):
+    """把涨停池整理成连板梯队
+
+    重要：同花顺 high_days 的含义是「近 N 个交易日涨停了 M 次」（格式 N天M板 / 首板），
+    不是连续涨停天数。只有 N==M 时才是真连板；N>M 说明中途断过板，必须另算真实连板数。
+    """
+    def parse_hd(it):
+        """返回 (N, M)：N=统计天数, M=区间涨停次数。首板返回 (1, 1)"""
         hd = str(it.get('high_days') or '首板')
-        m = re.search(r'(\d+)板', hd)
-        if m:
-            return int(m.group(1))
         if '首板' in hd:
-            return 1
-        return 1
+            return (1, 1)
+        m = re.search(r'(\d+)\s*天\s*(\d+)\s*板', hd)
+        if m:
+            return (int(m.group(1)), int(m.group(2)))
+        m = re.search(r'(\d+)\s*板', hd)          # 兜底：只写了「X板」
+        return (int(m.group(1)), int(m.group(1))) if m else (1, 1)
+
+    def limit_th(code, name):
+        """各板块涨停幅度阈值（留 0.3 个点容差，防四舍五入误差）"""
+        if 'ST' in (name or ''):
+            return 4.8
+        if code.startswith(('4', '8')):           # 北交所 30%
+            return 29.5
+        if code.startswith(('30', '68')):         # 创业板 / 科创板 20%
+            return 19.5
+        return 9.7                                 # 主板 10%
+
+    def market_symbol(code):
+        return ('sh%s' % code) if code.startswith(('6', '9')) else ('bj%s' % code) \
+            if code.startswith(('4', '8')) else ('sz%s' % code)
+
+    def real_board_days(code, name, date_compact):
+        """用日K倒推真实连续涨停天数（收盘涨停才算）"""
+        want = '%s-%s-%s' % (date_compact[:4], date_compact[4:6], date_compact[6:])
+        url = ('https://money.finance.sina.com.cn/quotes_service/api/json_v2.php/'
+               'CN_MarketData.getKLineData?symbol=%s&scale=240&ma=no&datalen=30'
+               % market_symbol(code))
+        ks = get_json(url, headers={'Referer': 'https://finance.sina.com.cn/'})
+        ks = [k for k in (ks or []) if k.get('day') and k.get('close')]
+        ks.sort(key=lambda k: k['day'])
+        if not ks or ks[-1]['day'] != want:
+            return None                            # 当天K线还没出来，交给调用方降级
+        th = limit_th(code, name)
+        n, prev = 0, None
+        for k in ks:
+            close = float(k['close'])
+            if prev is not None and (close / prev - 1) * 100 >= th:
+                n += 1
+            else:
+                n = 0
+            prev = close
+        return max(n, 1)
+
+    def level_of(it, date_compact):
+        n, m = parse_hd(it)
+        if n == m:
+            return m                               # N天N板 → 中间没断，就是 M 连板
+        # N>M：区间内断过板，用真实日K重算
+        try:
+            r = real_board_days(it.get('code'), it.get('name'), date_compact)
+            if r:
+                return r
+        except Exception as e:
+            print('[warn] real board %s: %s' % (it.get('code'), e), file=sys.stderr)
+        return m                                   # 取不到日K就退回原值，保证不丢数据
 
     groups = {}
     for it in info:
-        lv = level_of(it)
+        lv = level_of(it, date_compact)
         groups.setdefault(lv, []).append({
             'code': it.get('code'),
             'name': it.get('name'),
@@ -754,7 +809,7 @@ def stage_market(date_str):
         js = fetch_limit_pool(dc)
         info = (js.get('data') or {}).get('info') or []
         total = ((js.get('data') or {}).get('page') or {}).get('total') or len(info)
-        patch['limit_up_pool'] = {'total': total, 'ladder': parse_ladder(info)}
+        patch['limit_up_pool'] = {'total': total, 'ladder': parse_ladder(info, dc)}
     except Exception as e:
         print('[warn] limit pool fail: %s' % e, file=sys.stderr)
 
