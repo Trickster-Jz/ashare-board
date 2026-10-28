@@ -230,7 +230,7 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 .bt{font-size:10px;height:15px;padding:0 5px;border-radius:4px;
   margin-left:4px;white-space:nowrap;
   display:inline-flex;align-items:center;justify-content:center;
-  vertical-align:middle;position:relative;top:-0.8px}
+  vertical-align:middle;position:relative;top:-1.3px}
 /* 中文字形墨迹天生比字框偏上约 1.8px，这里单独把字下移，让“看起来”居中 */
 .bt i{font-style:normal;display:block;transform:translateY(1.3px)}
 .bt1{background:#fff3e2;color:#a86300}   /* 一字板 */
