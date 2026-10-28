@@ -231,12 +231,11 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 .bt1{background:#fdeaea;color:#c9302c}
 .bt2{background:#fff3e2;color:#a86300}
 .bt3{background:#eef1f6;color:#5b616b}
-/* 热点板块：点行展开的涨停股清单（平时隐藏，无按钮痕迹） */
+/* 热点板块：点行展开的涨停股清单（容器藏在本行内，不重排表格） */
+table.bkt{table-layout:fixed}
 tr.bk{cursor:pointer}
 .bkb{display:none}
-.bkb.open{display:table-row}
-.bkb td{background:#fafbfc;padding:7px 10px 9px}
-.bd{font-size:10px;color:var(--up);margin-left:3px}
+tr.bk.open .bkb{display:block;margin-top:7px}
 </style>
 </head>
 <body>
@@ -281,7 +280,7 @@ tr.bk{cursor:pointer}
 
   <section><div class="card"><h2 id="wt">市场宽广度 <small>近 90 个交易日</small></h2>
     <div id="egg" class="egg"><div class="egg-box">
-      <div class="egg-t">TRIN 速查卡 <em>再点标题可收起</em></div>
+      <div class="egg-t">TRIN 速查卡</div>
       <div class="egg-f">TRIN ＝（涨家数÷跌家数）÷（上涨成交额÷下跌成交额）</div>
       <div class="egg-f">分子看「谁家多」，分母看「谁的钱多」。＝1.0 量价匹配；&lt;1.0 表示涨股拿到了超出家数占比的钱，<b class="r">多头占优</b>；&gt;1.0 表示钱集中在跌股，<b class="g">空头占优</b>。</div>
 
@@ -319,7 +318,6 @@ tr.bk{cursor:pointer}
         <tr><td>TRIN 在 1.0 附近来回横盘</td><td>多空拉锯，等方向</td></tr>
         </tbody></table>
 
-      <div class="egg-w">TRIN 是「快照」不是「收盘值」，采集时点不同结果能差一大截。跨日对比只用 <b>15:00 收盘后存档</b>的数值；盘中的数仅供感觉。</div>
     </div></div>
     <div id="widthChart"></div></div></section>
 
@@ -458,26 +456,26 @@ function blocksTable(){
   const bs = (window._blocks || []).slice().sort((a, b) =>
     blockSort === 'lu' ? (b.limit_up_num || 0) - (a.limit_up_num || 0) : (b.pct || 0) - (a.pct || 0));
   if(!bs.length){ return '<div class="empty">暂无数据</div>'; }
-  return `<table><thead><tr>
+  return `<table class="bkt"><colgroup>
+      <col style="width:46%"><col style="width:16%"><col style="width:14%"><col style="width:24%">
+    </colgroup><thead><tr>
       <th>板块 / 题材</th><th class="num">涨跌幅</th><th class="num">涨停数</th><th>最高标</th></tr></thead><tbody>`
-    + bs.map((b, i) => {
+    + bs.map(b => {
       const st = (b.stocks || []).slice(0, 3).map(s => s.name).join('、');
       const all = (b.stocks || []).map(s => `<span class="chip">${s.name}</span>`).join('');
-      return `<tr class="bk" data-bk="${i}">
-        <td><b>${b.name}</b>${st ? `<div class="stk">${st}</div>` : ''}</td>
+      return `<tr class="bk">
+        <td><b>${b.name}</b>${st ? `<div class="stk">${st}</div>` : ''}${
+          all ? `<div class="bkb"><div class="chips">${all}</div></div>` : ''}</td>
         <td class="num ${cls(b.pct)}">${sg(b.pct)}%</td>
         <td class="num">${b.limit_up_num ?? '—'}</td>
-        <td style="font-size:12px">${b.top || '—'}</td></tr>
-        <tr class="bkb" id="bk_${i}"><td colspan="4"><div class="chips">${all}</div></td></tr>`;
+        <td style="font-size:12px">${b.top || '—'}</td></tr>`;
     }).join('') + '</tbody></table>';
 }
-/* 点板块行展开 / 收起该题材全部涨停股（外部无任何按钮痕迹） */
+/* 点板块行展开 / 收起全部涨停股——沿用龙虎榜的模式：
+   展开容器藏在本行内部，不动表格结构，所以不会引起其它行列宽重排 */
 function bindBlockToggle(root){
   (root || $('blocks')).querySelectorAll('tr.bk').forEach(tr => {
-    tr.onclick = () => {
-      const el = $('bk_' + tr.dataset.bk);
-      if(el) el.classList.toggle('open');
-    };
+    tr.onclick = () => tr.classList.toggle('open');
   });
 }
 function renderBlocks(day){
@@ -516,9 +514,9 @@ function renderLadder(day){
       <div class="lad-h"><span class="lv${hot}">${g.label}</span>
         <span class="lad-c">${g.count} 只</span></div>
       <div class="chips">${g.stocks.map(s => `<span class="chip"><b>${s.name}</b>
-        <span style="font-size:11px;color:var(--t3)"> ${s.code}</span>
-        ${s.reason ? `<span class="r">${s.reason.slice(0, 20)}</span>` : ''}${
-        boardTag(s.board_type)}</span>`).join('')}</div>
+        <span style="font-size:11px;color:var(--t3)"> ${s.code}</span>${
+        boardTag(s.board_type)}${
+        s.reason ? `<span class="r">${s.reason.slice(0, 20)}</span>` : ''}</span>`).join('')}</div>
     </div>`;
   }).join('');
   $('ladder').innerHTML = h;
