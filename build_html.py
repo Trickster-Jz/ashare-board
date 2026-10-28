@@ -231,6 +231,8 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
   margin-left:4px;white-space:nowrap;
   display:inline-flex;align-items:center;justify-content:center;
   vertical-align:middle;position:relative;top:-0.8px}
+/* 中文字形墨迹天生比字框偏上约 1.8px，这里单独把字下移，让“看起来”居中 */
+.bt i{font-style:normal;display:block;transform:translateY(1.3px)}
 .bt1{background:#fff3e2;color:#a86300}   /* 一字板 */
 .bt2{background:#fdeaea;color:#c9302c}   /* T字板 */
 .bt3{background:#e7f6ee;color:#0f9d58}   /* 换手板等 */
@@ -506,7 +508,7 @@ function renderBlocks(day){
 function boardTag(t){
   if(!t) return '';
   const c = t.indexOf('一字') >= 0 ? 'bt1' : (t.indexOf('T字') >= 0 ? 'bt2' : 'bt3');
-  return `<span class="bt ${c}">${t}</span>`;
+  return `<span class="bt ${c}"><i>${t}</i></span>`;
 }
 function renderLadder(day){
   const lp = day.limit_up_pool;
