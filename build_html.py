@@ -15,7 +15,7 @@ DATA_DIR = os.path.join(BASE_DIR, 'data')
 OUT = os.path.join(BASE_DIR, 'index.html')
 
 MAX_DAYS = 80          # 页面内嵌"完整明细"的天数上限
-MAX_SERIES_DAYS = 200  # 轻量序列（广度/TRIN）取数天数上限
+MAX_SERIES_DAYS = 200  # 轻量序列（红盘率/TRIN）取数天数上限
 
 
 def load_days(max_days=MAX_DAYS):
@@ -132,7 +132,7 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 /* 近10日对比 */
 .hwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .hwrap::-webkit-scrollbar{display:none}
-.htable{min-width:543px;font-size:12px;table-layout:fixed}
+.htable{min-width:555px;font-size:12px;table-layout:fixed}
 .htable th,.htable td{text-align:center;white-space:nowrap;padding-left:16px;padding-right:16px}
 /* 横向滚动滑块 */
 .hbar{position:relative;height:5px;background:#e9ecf1;border-radius:3px;margin-top:9px}
@@ -210,6 +210,23 @@ svg.chart{display:block;width:100%;height:auto}
 footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-height:1.7}
 .empty{color:var(--t3);font-size:13px;padding:14px 0;text-align:center}
 .hint{font-size:11px;color:var(--t3);margin-top:6px;line-height:1.6}
+/* 隐藏彩蛋：点击「市场宽广度」标题才展开，平时不留任何痕迹 */
+.egg{display:none}
+.egg.on{display:block;margin:-2px 0 12px}
+.egg-box{background:#f7f8fa;border-radius:10px;padding:12px 12px 10px;border-left:3px solid var(--blue)}
+.egg-t{font-size:13px;font-weight:700;color:var(--blue);display:flex;align-items:center;
+  justify-content:space-between;gap:8px}
+.egg-t em{font-style:normal;font-size:10px;font-weight:400;color:var(--t3)}
+.egg-f{font-size:11.5px;color:var(--t2);margin-top:7px;line-height:1.65}
+.egg-t2{font-size:12px;font-weight:700;margin:13px 0 5px;color:var(--t1)}
+table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
+.et th{color:var(--t3);font-weight:600;text-align:left;padding:2px 3px;border-bottom:1px solid var(--line)}
+.et td{padding:4px 3px;border-bottom:1px dashed var(--line);vertical-align:top;
+  color:var(--t2);line-height:1.45}
+.et tr:last-child td{border-bottom:0}
+.egg-w{font-size:11px;color:#7a5b00;background:#fff5e6;border-radius:7px;
+  padding:7px 9px;margin-top:11px;line-height:1.6}
+.r{color:var(--up)}.g{color:var(--down)}.n{color:var(--flat)}
 </style>
 </head>
 <body>
@@ -252,7 +269,48 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
   <section><div class="card"><h2>近 10 个交易日对比 <small>成交额单位：亿元 · 自建档日起累积</small></h2>
     <div id="history"></div></div></section>
 
-  <section><div class="card"><h2>市场宽广度 <small>近 90 个交易日</small></h2>
+  <section><div class="card"><h2 id="wt">市场宽广度 <small>近 90 个交易日</small></h2>
+    <div id="egg" class="egg"><div class="egg-box">
+      <div class="egg-t">TRIN 速查卡 <em>再点标题可收起</em></div>
+      <div class="egg-f">TRIN ＝（涨家数÷跌家数）÷（上涨成交额÷下跌成交额）</div>
+      <div class="egg-f">分子看「谁家多」，分母看「谁的钱多」。＝1.0 量价匹配；&lt;1.0 表示涨股拿到了超出家数占比的钱，<b class="r">多头占优</b>；&gt;1.0 表示钱集中在跌股，<b class="g">空头占优</b>。</div>
+
+      <div class="egg-t2">① TRIN 数值怎么看</div>
+      <table class="et"><colgroup><col style="width:60px"><col style="width:56px"><col></colgroup>
+        <thead><tr><th>TRIN</th><th>状态</th><th>怎么理解</th></tr></thead><tbody>
+        <tr><td>&lt; 0.4</td><td class="r">极度亢奋</td><td>钱全往涨股挤，短期过热，常在反弹尾声</td></tr>
+        <tr><td>0.4~0.8</td><td class="r">多头占优</td><td>涨得健康、量能配合，可持股</td></tr>
+        <tr><td>0.8~1.0</td><td class="r">略偏多</td><td>温和多头</td></tr>
+        <tr><td>1.0</td><td class="n">量价平衡</td><td>无方向</td></tr>
+        <tr><td>1.0~1.5</td><td class="g">略偏空</td><td>跌股开始放量</td></tr>
+        <tr><td>1.5~2.5</td><td class="g">空头占优</td><td>杀跌是有量的，别急着抄</td></tr>
+        <tr><td>2.5~3.5</td><td class="g">恐慌</td><td>资金集中出逃</td></tr>
+        <tr><td>&gt; 3.5</td><td class="g">极度恐慌</td><td>常对应阶段性底部</td></tr>
+        </tbody></table>
+
+      <div class="egg-t2">② TRIN × 红盘率 组合（实战核心）</div>
+      <table class="et"><colgroup><col style="width:58px"><col style="width:58px"><col style="width:78px"><col></colgroup>
+        <thead><tr><th>TRIN</th><th>红盘率</th><th>组合含义</th><th>通常意味着</th></tr></thead><tbody>
+        <tr><td class="r">低 &lt;1</td><td class="r">高 &gt;60%</td><td>普涨・多头主导</td><td>趋势健康，可持股</td></tr>
+        <tr><td class="r">低 &lt;1</td><td class="g">低 &lt;40%</td><td>少数股抱团拉升</td><td>赚指数不赚钱，别追高</td></tr>
+        <tr><td class="g">高 &gt;1</td><td class="g">低 &lt;40%</td><td>普跌・恐慌出逃</td><td>系统性下杀，等量能衰竭</td></tr>
+        <tr><td class="g">高 &gt;1</td><td class="r">高 &gt;60%</td><td>指数虚涨・暗流</td><td>资金从小票撤退，注意切换</td></tr>
+        <tr><td class="r">持续走低</td><td class="g">同步走低</td><td>缩量阴跌</td><td>没人接也没人砸，弱势磨底</td></tr>
+        <tr><td class="g">急升</td><td class="g">回落</td><td>抛压释放</td><td>尾盘 TRIN 回落常是最后一跌</td></tr>
+        <tr><td class="r">极低 &lt;0.4</td><td class="r">高位 &gt;70%</td><td>短期过热</td><td>亢奋末端，容易回调</td></tr>
+        <tr><td class="g">极高 &gt;3</td><td class="g">极低 &lt;20%</td><td>恐慌见底</td><td>反向指标，常是阶段性低点</td></tr>
+        </tbody></table>
+
+      <div class="egg-t2">③ 连续几天的走势</div>
+      <table class="et"><colgroup><col style="width:62%"><col></colgroup><tbody>
+        <tr><td>连续 3 天 TRIN&gt;1.5，红盘率一路走低</td><td>下跌趋势确立，别逆势</td></tr>
+        <tr><td>TRIN 连续 2 天自高位回落 ＋ 红盘率回升</td><td>抛压衰竭，反弹窗口开启</td></tr>
+        <tr><td>TRIN 自低位连续抬升 ＋ 红盘率仍高</td><td>上涨动能衰减，考虑兑现</td></tr>
+        <tr><td>TRIN 在 1.0 附近来回横盘</td><td>多空拉锯，等方向</td></tr>
+        </tbody></table>
+
+      <div class="egg-w">TRIN 是「快照」不是「收盘值」，采集时点不同结果能差一大截。跨日对比只用 <b>15:00 收盘后存档</b>的数值；盘中的数仅供感觉。</div>
+    </div></div>
     <div id="widthChart"></div></div></section>
 
   <section><div class="card"><h2>美股与大宗商品走势 <small>近 90 个交易日</small></h2>
@@ -598,8 +656,9 @@ function chartBlock(title, series, unit, digits){
   const idx = (window._charts = window._charts || []).push(
     {title: title, series: ss, unit: unit, digits: digits === undefined ? 2 : digits,
      lo: lo, hi: hi}) - 1;
-  const last = ss[0].points[ss[0].points.length - 1], first = ss[0].points[0];
-  const chg = (last.close / first.close - 1) * 100;
+  const last = ss[0].points[ss[0].points.length - 1],
+        prev = ss[0].points[ss[0].points.length - 2];
+  const chg = (isNum(prev.close) && prev.close > 0) ? (last.close / prev.close - 1) * 100 : 0;
   const dig = digits === undefined ? 2 : digits;
   const head = ss.length === 1
     ? `<span class="v">${f(last.close, dig)}</span> <span class="c ${cls(chg)}">${sg(chg)}%</span>`
@@ -744,11 +803,11 @@ function renderHistory(day){
   }
   if(!rows.length){ $('history').innerHTML = '<div class="empty">暂无数据</div>'; return; }
   let h = `<div class="hwrap" id="hw"><table class="htable"><colgroup>
-    <col style="width:63px"><col style="width:75px"><col style="width:70px"><col style="width:82px">
-    <col style="width:54px"><col style="width:55px"><col style="width:82px"><col style="width:62px">
+    <col style="width:63px"><col style="width:75px"><col style="width:70px">    <col style="width:82px">
+    <col style="width:66px"><col style="width:55px"><col style="width:82px"><col style="width:62px">
     </colgroup><thead><tr>
     <th>日期</th><th class="num">上证收盘</th><th class="num">涨跌幅</th>
-    <th class="num">三市成交额</th><th class="num">广度</th>
+    <th class="num">三市成交额</th><th class="num">红盘率</th>
     <th class="num">TRIN</th><th class="num">涨 / 跌</th><th class="num">涨/跌停</th></tr></thead><tbody>`;
   const bmap = {};
   (WSER || []).forEach(p => { bmap[p.date] = p; });
@@ -756,7 +815,7 @@ function renderHistory(day){
     const b = bmap[k.date];
     const amt = b ? b.amount_total_yi : null;
     const todayRow = k.date === day.date;
-    // 广度＝当日上涨股票数 ÷ 全市场A股股票数
+    // 红盘率＝当日上涨股票数 ÷ 全市场A股股票数（0~1 之间的小数）
     let rate = null, trin = null;
     if(b && isNum(b.up) && isNum(b.total) && b.total > 0){
       rate = b.up / b.total;
@@ -813,12 +872,12 @@ function renderCharts(day){
   bindCharts($('charts'));
 }
 
-/* ---------- 市场宽广度（广度 / TRIN） ---------- */
+/* ---------- 市场宽广度（红盘率 / TRIN） ---------- */
 function widthPoints(){
   return (WSER || []).filter(p => isNum(p.up) && isNum(p.total) && p.total > 0)
     .map(p => {
       const adr = (isNum(p.down) && p.down > 0) ? p.up / p.down : null;
-      // 广度＝当日上涨股票数 ÷ 全市场A股股票数
+      // 红盘率＝当日上涨股票数 ÷ 全市场A股股票数（0~1 之间的小数）
       const rate = p.up / p.total;
       let r = null;
       if(isNum(p.amount_up_yi) && isNum(p.amount_down_yi) && p.amount_down_yi > 0){
@@ -839,7 +898,7 @@ function renderWidth(){
     return;
   }
   $('widthChart').innerHTML = chartBlock('', [
-    {label: '广度', color: '#e0393e', digits: 2,
+    {label: '红盘率', color: '#e0393e', digits: 2,
      points: pts.map(p => ({date: p.date, close: p.rate}))},
     {label: 'TRIN', color: '#3b6fd4', dash: true, digits: 2,
      points: pts.map(p => ({date: p.date, close: p.trin}))},
@@ -881,6 +940,15 @@ function render(date){
   renderCharts(day);
   $('genTime').textContent = '页面生成：__GEN__　共收录 ' + DAYS.length + ' 个交易日';
 }
+
+/* ---------- 隐藏彩蛋：点「市场宽广度」标题展开 / 收起 TRIN 速查卡 ---------- */
+(function(){
+  const t = $('wt'), e = $('egg');
+  if(!t || !e) return;
+  t.addEventListener('click', () => {
+    e.classList.toggle('on');
+  });
+})();
 
 function init(){
   const sel = $('dateSel');
