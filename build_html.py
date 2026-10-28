@@ -227,8 +227,10 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 .egg-w{font-size:11px;color:#7a5b00;background:#fff5e6;border-radius:7px;
   padding:7px 9px;margin-top:11px;line-height:1.6}
 .r{color:var(--up)}.g{color:var(--down)}.n{color:var(--flat)}
-.bt{font-size:10px;height:15px;line-height:15px;padding:0 5px;border-radius:4px;
-  margin-left:4px;white-space:nowrap;display:inline-block;vertical-align:middle}
+.bt{font-size:10px;height:15px;padding:0 5px;border-radius:4px;
+  margin-left:4px;white-space:nowrap;
+  display:inline-flex;align-items:center;justify-content:center;
+  vertical-align:middle;position:relative;top:-0.8px}
 .bt1{background:#fff3e2;color:#a86300}   /* 一字板 */
 .bt2{background:#fdeaea;color:#c9302c}   /* T字板 */
 .bt3{background:#e7f6ee;color:#0f9d58}   /* 换手板等 */
