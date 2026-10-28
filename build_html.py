@@ -213,7 +213,7 @@ footer{text-align:center;font-size:11px;color:var(--t3);margin:18px 12px 0;line-
 /* 隐藏彩蛋：点击「市场宽广度」标题才展开，平时不留任何痕迹 */
 .egg{display:none}
 .egg.on{display:block;margin:-2px 0 12px}
-.egg-box{background:#f7f8fa;border-radius:10px;padding:12px 12px 10px;border-left:3px solid var(--blue)}
+.egg-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
 .egg-t{font-size:13px;font-weight:700;color:var(--blue);display:flex;align-items:center;
   justify-content:space-between;gap:8px}
 .egg-t em{font-style:normal;font-size:10px;font-weight:400;color:var(--t3)}
@@ -227,6 +227,16 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 .egg-w{font-size:11px;color:#7a5b00;background:#fff5e6;border-radius:7px;
   padding:7px 9px;margin-top:11px;line-height:1.6}
 .r{color:var(--up)}.g{color:var(--down)}.n{color:var(--flat)}
+.bt{font-size:10px;padding:1px 5px;border-radius:4px;margin-left:4px;white-space:nowrap}
+.bt1{background:#fdeaea;color:#c9302c}
+.bt2{background:#fff3e2;color:#a86300}
+.bt3{background:#eef1f6;color:#5b616b}
+/* 热点板块：点行展开的涨停股清单（平时隐藏，无按钮痕迹） */
+tr.bk{cursor:pointer}
+.bkb{display:none}
+.bkb.open{display:table-row}
+.bkb td{background:#fafbfc;padding:7px 10px 9px}
+.bd{font-size:10px;color:var(--up);margin-left:3px}
 </style>
 </head>
 <body>
@@ -248,7 +258,7 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 </header>
 
 <div class="wrap">
-  <section><div class="card" id="sec-overview"><h2>市场总览 <small>括号内为上一交易日数据</small></h2>
+  <section><div class="card" id="sec-overview"><h2>市场总览</h2>
     <div id="overview"></div></div></section>
 
   <section><div class="card" id="sec-index"><h2>指数行情 <small>开盘 / 收盘 / 成交额</small></h2>
@@ -450,14 +460,25 @@ function blocksTable(){
   if(!bs.length){ return '<div class="empty">暂无数据</div>'; }
   return `<table><thead><tr>
       <th>板块 / 题材</th><th class="num">涨跌幅</th><th class="num">涨停数</th><th>最高标</th></tr></thead><tbody>`
-    + bs.map(b => {
-      const st = (b.stocks || []).map(s => s.name).join('、');
-      return `<tr>
+    + bs.map((b, i) => {
+      const st = (b.stocks || []).slice(0, 3).map(s => s.name).join('、');
+      const all = (b.stocks || []).map(s => `<span class="chip">${s.name}</span>`).join('');
+      return `<tr class="bk" data-bk="${i}">
         <td><b>${b.name}</b>${st ? `<div class="stk">${st}</div>` : ''}</td>
         <td class="num ${cls(b.pct)}">${sg(b.pct)}%</td>
         <td class="num">${b.limit_up_num ?? '—'}</td>
-        <td style="font-size:12px">${b.top || '—'}</td></tr>`;
+        <td style="font-size:12px">${b.top || '—'}</td></tr>
+        <tr class="bkb" id="bk_${i}"><td colspan="4"><div class="chips">${all}</div></td></tr>`;
     }).join('') + '</tbody></table>';
+}
+/* 点板块行展开 / 收起该题材全部涨停股（外部无任何按钮痕迹） */
+function bindBlockToggle(root){
+  (root || $('blocks')).querySelectorAll('tr.bk').forEach(tr => {
+    tr.onclick = () => {
+      const el = $('bk_' + tr.dataset.bk);
+      if(el) el.classList.toggle('open');
+    };
+  });
 }
 function renderBlocks(day){
   window._blocks = (day.hot_blocks || []).slice(0, 15);
@@ -471,11 +492,19 @@ function renderBlocks(day){
       $('blocks').querySelectorAll('.seg button').forEach(b2 =>
         b2.classList.toggle('on', b2 === btn));
       $('blockTbl').innerHTML = blocksTable();
+      bindBlockToggle();
     };
   });
+  bindBlockToggle();
 }
 
 /* ---------- 连板梯队 ---------- */
+/* 封板类型标签：一字板最强（买不到）、T字板次之、换手板最弱 */
+function boardTag(t){
+  if(!t) return '';
+  const c = t.indexOf('一字') >= 0 ? 'bt1' : (t.indexOf('T字') >= 0 ? 'bt2' : 'bt3');
+  return `<span class="bt ${c}">${t}</span>`;
+}
 function renderLadder(day){
   const lp = day.limit_up_pool;
   if(!lp || !lp.ladder || !lp.ladder.length){ $('ladder').innerHTML = '<div class="empty">暂无数据</div>'; return; }
@@ -488,7 +517,8 @@ function renderLadder(day){
         <span class="lad-c">${g.count} 只</span></div>
       <div class="chips">${g.stocks.map(s => `<span class="chip"><b>${s.name}</b>
         <span style="font-size:11px;color:var(--t3)"> ${s.code}</span>
-        <span class="r">${(s.reason || s.board_type || '').slice(0,22)}</span></span>`).join('')}</div>
+        ${s.reason ? `<span class="r">${s.reason.slice(0, 20)}</span>` : ''}${
+        boardTag(s.board_type)}</span>`).join('')}</div>
     </div>`;
   }).join('');
   $('ladder').innerHTML = h;
@@ -996,8 +1026,19 @@ def fetch_sh_kline(n=15):
     return out
 
 
+def trim_hot_blocks(days, keep=7):
+    """页面内嵌裁剪：仅最近 keep 天保留题材涨停股全量清单，更早的只留 3 只（存档不受影响）"""
+    n = len(days)
+    for i, d in enumerate(days):
+        if i >= n - keep:
+            continue
+        for b in (d.get('hot_blocks') or []):
+            b['stocks'] = (b.get('stocks') or [])[:3]
+    return days
+
+
 def main():
-    days = load_days()
+    days = trim_hot_blocks(load_days())
     if not days:
         print('[error] data/ 下没有数据')
         return
