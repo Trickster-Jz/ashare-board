@@ -224,6 +224,32 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 .et td{padding:4px 3px;border-bottom:1px dashed var(--line);vertical-align:top;
   color:var(--t2);line-height:1.45}
 .et tr:last-child td{border-bottom:0}
+/* TRIN 速查卡版式 */
+.egg-fml{background:#f6f8fa;border:1px solid var(--line);border-radius:9px;
+  padding:9px 10px;margin-top:8px;font-size:12px;color:var(--t1);
+  line-height:1.7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.egg-key{font-size:11.5px;color:#7a5b00;background:#fff7ea;border:1px solid #f2e3c6;
+  border-radius:8px;padding:8px 9px;margin-top:9px;line-height:1.65}
+.egg-sec{margin-top:12px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.egg-h{padding:8px 10px;font-size:12.5px;font-weight:700;border-bottom:1px solid var(--line)}
+.egg-hd{font-size:11px;color:var(--t3);padding:7px 10px;line-height:1.6;background:#fcfcfd}
+.egg-bull .egg-h{background:#fdeced;color:#c9302c;border-bottom-color:#f7d7d8}
+.egg-bear .egg-h{background:#eaf6ef;color:#0f9d58;border-bottom-color:#d5eade}
+.egg-li{display:flex;gap:9px;padding:8px 10px;border-top:1px dashed var(--line);line-height:1.6}
+.egg-hd + .egg-li{border-top:0}
+.egg-rg{flex:0 0 66px;font-size:11px;font-weight:700;color:var(--t1);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;padding-top:1px}
+.egg-lb{font-size:11.5px;font-weight:700;margin-bottom:1px}
+.egg-tx{font-size:11px;color:var(--t3)}
+.egg-mix{margin-top:12px}
+.egg-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.egg-cell{border:1px solid var(--line);border-radius:9px;padding:8px 9px;line-height:1.55}
+.egg-cell.u{background:#fdf3f3;border-color:#f5dbdb}
+.egg-cell.d{background:#f2f9f5;border-color:#d8ecde}
+.egg-cell.w{background:#fffaf1;border-color:#f3e4c6}
+.egg-ct{font-size:11.5px;font-weight:700}
+.egg-cd{font-size:10.5px;margin:3px 0 4px;color:var(--t2)}
+.egg-cx{font-size:10.5px;color:var(--t3)}
 .egg-w{font-size:11px;color:#7a5b00;background:#fff5e6;border-radius:7px;
   padding:7px 9px;margin-top:11px;line-height:1.6}
 .r{color:var(--up)}.g{color:var(--down)}.n{color:var(--flat)}
@@ -288,42 +314,82 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 9px}
   <section><div class="card"><h2 id="wt">市场宽广度 <small>近 90 个交易日</small></h2>
     <div id="egg" class="egg"><div class="egg-box">
       <div class="egg-t">TRIN 速查卡</div>
-      <div class="egg-f">TRIN ＝（涨家数÷跌家数）÷（上涨成交额÷下跌成交额）</div>
-      <div class="egg-f">分子看「谁家多」，分母看「谁的钱多」。＝1.0 量价匹配；&lt;1.0 表示涨股拿到了超出家数占比的钱，<b class="r">多头占优</b>；&gt;1.0 表示钱集中在跌股，<b class="g">空头占优</b>。</div>
+      <div class="egg-fml">TRIN ＝（涨家数÷跌家数）÷（上涨成交额÷下跌成交额）</div>
+      <div class="egg-f">分子看「谁家多」，分母看「谁的钱多」。＝1.0 量价匹配；&lt;1.0 表示涨股拿到了超出家数占比的钱；&gt;1.0 表示钱集中在跌股。</div>
+      <div class="egg-key">关键：<b>同一个 TRIN 数值处在牛市还是熊市，决定了它是顺势信号，还是反转警告。</b></div>
 
-      <div class="egg-t2">① TRIN 数值怎么看</div>
-      <table class="et"><colgroup><col style="width:60px"><col style="width:56px"><col></colgroup>
-        <thead><tr><th>TRIN</th><th>状态</th><th>怎么理解</th></tr></thead><tbody>
-        <tr><td>&lt; 0.4</td><td class="r">极度亢奋</td><td>钱全往涨股挤，短期过热，常在反弹尾声</td></tr>
-        <tr><td>0.4~0.8</td><td class="r">多头占优</td><td>涨得健康、量能配合，可持股</td></tr>
-        <tr><td>0.8~1.0</td><td class="r">略偏多</td><td>温和多头</td></tr>
-        <tr><td>1.0</td><td class="n">量价平衡</td><td>无方向</td></tr>
-        <tr><td>1.0~1.5</td><td class="g">略偏空</td><td>跌股开始放量</td></tr>
-        <tr><td>1.5~2.5</td><td class="g">空头占优</td><td>杀跌是有量的，别急着抄</td></tr>
-        <tr><td>2.5~3.5</td><td class="g">恐慌</td><td>资金集中出逃</td></tr>
-        <tr><td>&gt; 3.5</td><td class="g">极度恐慌</td><td>常对应阶段性底部</td></tr>
-        </tbody></table>
+      <div class="egg-sec egg-bull">
+        <div class="egg-h">🐂 牛市中的 TRIN</div>
+        <div class="egg-hd">牛市趋势向上，TRIN 的低值通常被信任，高值则更多当作短期回调信号。</div>
+        <div class="egg-li"><div class="egg-rg">&lt; 0.5</div><div>
+          <div class="egg-lb">极度超买 / 涨势确认</div>
+          <div class="egg-tx">资金极度集中涌向上涨股，在牛市里往往被看作上涨趋势强劲的确认信号，属强势买入信号；但读数过低也提示短期情绪过热，追高需谨慎。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">0.5—0.8</div><div>
+          <div class="egg-lb">多头主导</div>
+          <div class="egg-tx">上涨股获得的资金支持明显强于其数量占比，是牛市中的健康多头状态，顺势看多。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">0.8—1.0</div><div>
+          <div class="egg-lb">偏多但均衡</div>
+          <div class="egg-tx">上涨股略占资金优势，但强度不算极端。在牛市中属于温和偏多，趋势仍在，但信号强度一般。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">1.0—1.2</div><div>
+          <div class="egg-lb">均衡偏弱</div>
+          <div class="egg-tx">多空资金大致平衡。牛市中短期上涨动力可能正在减弱，需要观察是否持续。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">1.2—2.0</div><div>
+          <div class="egg-lb">超卖 / 回调机会</div>
+          <div class="egg-tx">下跌股吸引了更多资金。在牛市里通常不被视为趋势反转，而是短期超卖、可能临近反弹的信号，可关注逢低机会。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">&gt; 2.0</div><div>
+          <div class="egg-lb">极度超卖 / 恐慌抛售</div>
+          <div class="egg-tx">下跌股遭遇集中抛售。牛市中出现这种极端读数，往往意味着抛压短期宣泄过度，是潜在的反转向上信号；但极少数情况下也可能标志牛市情绪的最终瓦解，需结合价格结构确认。</div></div></div>
+      </div>
 
-      <div class="egg-t2">② TRIN × 红盘率 组合（实战核心）</div>
-      <table class="et"><colgroup><col style="width:58px"><col style="width:58px"><col style="width:78px"><col></colgroup>
-        <thead><tr><th>TRIN</th><th>红盘率</th><th>组合含义</th><th>通常意味着</th></tr></thead><tbody>
-        <tr><td class="r">低 &lt;1</td><td class="r">高 &gt;60%</td><td>普涨・多头主导</td><td>趋势健康，可持股</td></tr>
-        <tr><td class="r">低 &lt;1</td><td class="g">低 &lt;40%</td><td>少数股抱团拉升</td><td>赚指数不赚钱，别追高</td></tr>
-        <tr><td class="g">高 &gt;1</td><td class="g">低 &lt;40%</td><td>普跌・恐慌出逃</td><td>系统性下杀，等量能衰竭</td></tr>
-        <tr><td class="g">高 &gt;1</td><td class="r">高 &gt;60%</td><td>指数虚涨・暗流</td><td>资金从小票撤退，注意切换</td></tr>
-        <tr><td class="r">持续走低</td><td class="g">同步走低</td><td>缩量阴跌</td><td>没人接也没人砸，弱势磨底</td></tr>
-        <tr><td class="g">急升</td><td class="g">回落</td><td>抛压释放</td><td>尾盘 TRIN 回落常是最后一跌</td></tr>
-        <tr><td class="r">极低 &lt;0.4</td><td class="r">高位 &gt;70%</td><td>短期过热</td><td>亢奋末端，容易回调</td></tr>
-        <tr><td class="g">极高 &gt;3</td><td class="g">极低 &lt;20%</td><td>恐慌见底</td><td>反向指标，常是阶段性低点</td></tr>
-        </tbody></table>
+      <div class="egg-sec egg-bear">
+        <div class="egg-h">🐻 熊市中的 TRIN</div>
+        <div class="egg-hd">熊市趋势向下，TRIN 的高值更可信，低值则要警惕是诱多。</div>
+        <div class="egg-li"><div class="egg-rg">&gt; 2.0</div><div>
+          <div class="egg-lb">极度超卖 / 恐慌宣泄</div>
+          <div class="egg-tx">下跌股被恐慌性抛售。在熊市中通常意味着短期抛压达到极致，可能出现技术性反弹，但不代表熊市结束。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">1.2—2.0</div><div>
+          <div class="egg-lb">空头主导</div>
+          <div class="egg-tx">下跌股持续获得更多资金，是熊市中的健康空头状态，顺势看空。若出现极端高值，同样可视为短期超卖、反弹概率增加的信号。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">1.0—1.2</div><div>
+          <div class="egg-lb">均衡偏弱</div>
+          <div class="egg-tx">资金略微偏向下跌股，空头略占优势，但强度有限。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">0.8—1.0</div><div>
+          <div class="egg-lb">短暂平衡 / 反弹尝试</div>
+          <div class="egg-tx">多空资金接近平衡。在熊市中可能是下跌动能暂时衰竭、尝试反弹的信号，但持续性通常需要后续确认。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">0.5—0.8</div><div>
+          <div class="egg-lb">多头抵抗 / 警惕诱多</div>
+          <div class="egg-tx">上涨股吸引了相对更多资金。在熊市里未必是可靠的看多信号，更可能是空头回补或短期抵抗，需要警惕反弹结束后继续下行。</div></div></div>
+        <div class="egg-li"><div class="egg-rg">&lt; 0.5</div><div>
+          <div class="egg-lb">极度超买 / 虚假强势</div>
+          <div class="egg-tx">这正是开头提到的核心情形。在熊市中，TRIN 低于 0.5 所显示的「资金强力支持上涨」，极有可能是虚假的多头走强信号，而非趋势反转的确认，反而应考虑择机卖出。</div></div></div>
+      </div>
 
-      <div class="egg-t2">③ 连续几天的走势</div>
-      <table class="et"><colgroup><col style="width:62%"><col></colgroup><tbody>
-        <tr><td>连续 3 天 TRIN&gt;1.5，红盘率一路走低</td><td>下跌趋势确立，别逆势</td></tr>
-        <tr><td>TRIN 连续 2 天自高位回落 ＋ 红盘率回升</td><td>抛压衰竭，反弹窗口开启</td></tr>
-        <tr><td>TRIN 自低位连续抬升 ＋ 红盘率仍高</td><td>上涨动能衰减，考虑兑现</td></tr>
-        <tr><td>TRIN 在 1.0 附近来回横盘</td><td>多空拉锯，等方向</td></tr>
-        </tbody></table>
+      <div class="egg-mix">
+        <div class="egg-t2">TRIN × 红盘率 —— 看「共振」还是「背离」</div>
+        <div class="egg-f">「红盘率」直观反映上涨家数的占比（即市场广度）。把两者结合，看的是<b>广度（多少股票在涨）</b>与<b>强度（资金是否支持上涨）</b>是否同步。</div>
+        <div class="egg-grid">
+          <div class="egg-cell u">
+            <div class="egg-ct">健康上涨 · 共振</div>
+            <div class="egg-cd"><b class="r">红盘率高</b> ＋ <b class="r">TRIN 偏低 &lt;1</b></div>
+            <div class="egg-cx">多数股票上涨，且资金大力支持上涨股。通常确认上涨趋势有效，是较健康的看多信号。</div>
+          </div>
+          <div class="egg-cell d">
+            <div class="egg-ct">健康下跌 · 共振</div>
+            <div class="egg-cd"><b class="g">红盘率低</b> ＋ <b class="g">TRIN 偏高 &gt;1</b></div>
+            <div class="egg-cx">多数股票下跌，且资金在集中抛售下跌股。确认下跌趋势的强度，市场短期承压。</div>
+          </div>
+          <div class="egg-cell w">
+            <div class="egg-ct">警惕上涨乏力 · 顶背离</div>
+            <div class="egg-cd"><b class="r">红盘率高（或尚可）</b> ＋ <b class="g">TRIN 偏高 &gt;1</b></div>
+            <div class="egg-cx">多数股票仍在涨，但资金已开始更集中地流向下跌股。上涨动力可能减弱，是潜在看跌背离。</div>
+          </div>
+          <div class="egg-cell w">
+            <div class="egg-ct">关注下跌衰竭 · 底背离</div>
+            <div class="egg-cd"><b class="g">红盘率低</b> ＋ <b class="r">TRIN 偏低 &lt;1</b></div>
+            <div class="egg-cx">多数股票在跌，但资金并未恐慌抛售，甚至在悄悄承接。下跌动能可能不足，是潜在看涨背离。</div>
+          </div>
+        </div>
+      </div>
 
     </div></div>
     <div id="widthChart"></div></div></section>
