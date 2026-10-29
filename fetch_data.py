@@ -270,6 +270,31 @@ def fetch_all_stocks(max_workers=8):
     return uniq
 
 
+def align_market_amount(breadth, idx):
+    """用综指/北证50 的成交额替换 A 股加总值，保证总览与指数行情数字一致。
+
+    idx: indices_for_date 返回的 {code: {...amount...}}
+    取不到某个市场时，保留原来的加总值兜底（不会把数字改丢）。
+    """
+    if not breadth or not idx:
+        return breadth
+    amounts = {}
+    for m, code in TURNOVER_INDEX.items():
+        it = idx.get(code) or {}
+        v = it.get('amount')
+        if v:
+            amounts[m] = float(v)
+    if not amounts:
+        return breadth
+    old = breadth.get('amount_yi') or {}
+    for m in ('sh', 'sz', 'bj'):                     # 缺哪个市场就沿用旧值
+        if m not in amounts and old.get(m) is not None:
+            amounts[m] = old[m] * 1e8
+    breadth['amount_yi'] = {k: fmt_amount(v) for k, v in amounts.items()}
+    breadth['amount_total_yi'] = fmt_amount(sum(amounts.values()))
+    return breadth
+
+
 def summarize_stocks(stocks):
     """统计涨跌家数、涨跌停家数、三市成交额"""
     up = down = flat = 0
@@ -799,6 +824,11 @@ def stage_market(date_str):
         with open(os.path.join(CACHE_DIR, 'stock_meta.json'), 'w', encoding='utf-8') as f:
             json.dump(meta, f, ensure_ascii=False)
         patch['breadth'] = breadth
+        # 三市成交额统一改成「指数（综指）口径」，与页面「指数行情」卡片里的数字一致。
+        # 说明：个股加总只覆盖 A 股，而上证/深证综指还包含 B 股，
+        #       两边原本差 6 亿左右（沪市最大）。改成官方口径后两处完全对齐。
+        #       注意：TRIN 用的上涨/下跌成交额仍保持 A 股加总口径，不受影响。
+        align_market_amount(patch['breadth'], idx)
     else:
         old = load_day(date_str)
         if not (old and old.get('breadth')):
