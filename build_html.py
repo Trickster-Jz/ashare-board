@@ -315,25 +315,25 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 9px}
     <div id="egg" class="egg"><div class="egg-box">
       <div class="egg-t">TRIN 速查卡</div>
       <div class="egg-fml">TRIN ＝（涨家数÷跌家数）÷（上涨成交额÷下跌成交额）</div>
-      <div class="egg-f">分子看「谁家多」，分母看「谁的钱多」。＝1.0 量价匹配；&lt;1.0 表示涨股拿到了超出家数占比的钱；&gt;1.0 表示钱集中在跌股。</div>
-      <div class="egg-key">关键：<b>同一个 TRIN 数值处在牛市还是熊市，决定了它是顺势信号，还是反转警告。</b></div>
+      <div class="egg-f">分子看「谁家多」，分母看「谁的钱多」。<br>＝1.0 量价匹配；<br>&lt;1.0 表示涨股拿到了超出家数占比的钱；<br>&gt;1.0 表示钱集中在跌股。</div>
+      <div class="egg-key"><b>关键：同一个 TRIN 数值处在牛市还是熊市，决定了它是顺势信号，还是反转警告。</b></div>
 
       <div class="egg-sec egg-bull">
-        <div class="egg-h">🐂 牛市中的 TRIN</div>
+        <div class="egg-h">牛市中的 TRIN</div>
         <div class="egg-hd">牛市趋势向上，TRIN 的低值通常被信任，高值则更多当作短期回调信号。</div>
         <div class="egg-li"><div class="egg-rg">&lt; 0.5</div><div>
           <div class="egg-lb">极度超买 / 涨势确认</div>
           <div class="egg-tx">资金极度集中涌向上涨股，在牛市里往往被看作上涨趋势强劲的确认信号，属强势买入信号；但读数过低也提示短期情绪过热，追高需谨慎。</div></div></div>
-        <div class="egg-li"><div class="egg-rg">0.5—0.8</div><div>
+        <div class="egg-li"><div class="egg-rg">0.5 - 0.8</div><div>
           <div class="egg-lb">多头主导</div>
           <div class="egg-tx">上涨股获得的资金支持明显强于其数量占比，是牛市中的健康多头状态，顺势看多。</div></div></div>
-        <div class="egg-li"><div class="egg-rg">0.8—1.0</div><div>
+        <div class="egg-li"><div class="egg-rg">0.8 - 1.0</div><div>
           <div class="egg-lb">偏多但均衡</div>
           <div class="egg-tx">上涨股略占资金优势，但强度不算极端。在牛市中属于温和偏多，趋势仍在，但信号强度一般。</div></div></div>
-        <div class="egg-li"><div class="egg-rg">1.0—1.2</div><div>
+        <div class="egg-li"><div class="egg-rg">1.0 - 1.2</div><div>
           <div class="egg-lb">均衡偏弱</div>
           <div class="egg-tx">多空资金大致平衡。牛市中短期上涨动力可能正在减弱，需要观察是否持续。</div></div></div>
-        <div class="egg-li"><div class="egg-rg">1.2—2.0</div><div>
+        <div class="egg-li"><div class="egg-rg">1.2 - 2.0</div><div>
           <div class="egg-lb">超卖 / 回调机会</div>
           <div class="egg-tx">下跌股吸引了更多资金。在牛市里通常不被视为趋势反转，而是短期超卖、可能临近反弹的信号，可关注逢低机会。</div></div></div>
         <div class="egg-li"><div class="egg-rg">&gt; 2.0</div><div>
@@ -342,21 +342,21 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 9px}
       </div>
 
       <div class="egg-sec egg-bear">
-        <div class="egg-h">🐻 熊市中的 TRIN</div>
+        <div class="egg-h">熊市中的 TRIN</div>
         <div class="egg-hd">熊市趋势向下，TRIN 的高值更可信，低值则要警惕是诱多。</div>
         <div class="egg-li"><div class="egg-rg">&gt; 2.0</div><div>
           <div class="egg-lb">极度超卖 / 恐慌宣泄</div>
           <div class="egg-tx">下跌股被恐慌性抛售。在熊市中通常意味着短期抛压达到极致，可能出现技术性反弹，但不代表熊市结束。</div></div></div>
-        <div class="egg-li"><div class="egg-rg">1.2—2.0</div><div>
+        <div class="egg-li"><div class="egg-rg">1.2 - 2.0</div><div>
           <div class="egg-lb">空头主导</div>
           <div class="egg-tx">下跌股持续获得更多资金，是熊市中的健康空头状态，顺势看空。若出现极端高值，同样可视为短期超卖、反弹概率增加的信号。</div></div></div>
-        <div class="egg-li"><div class="egg-rg">1.0—1.2</div><div>
+        <div class="egg-li"><div class="egg-rg">1.0 - 1.2</div><div>
           <div class="egg-lb">均衡偏弱</div>
           <div class="egg-tx">资金略微偏向下跌股，空头略占优势，但强度有限。</div></div></div>
-        <div class="egg-li"><div class="egg-rg">0.8—1.0</div><div>
+        <div class="egg-li"><div class="egg-rg">0.8 - 1.0</div><div>
           <div class="egg-lb">短暂平衡 / 反弹尝试</div>
           <div class="egg-tx">多空资金接近平衡。在熊市中可能是下跌动能暂时衰竭、尝试反弹的信号，但持续性通常需要后续确认。</div></div></div>
-        <div class="egg-li"><div class="egg-rg">0.5—0.8</div><div>
+        <div class="egg-li"><div class="egg-rg">0.5 - 0.8</div><div>
           <div class="egg-lb">多头抵抗 / 警惕诱多</div>
           <div class="egg-tx">上涨股吸引了相对更多资金。在熊市里未必是可靠的看多信号，更可能是空头回补或短期抵抗，需要警惕反弹结束后继续下行。</div></div></div>
         <div class="egg-li"><div class="egg-rg">&lt; 0.5</div><div>
