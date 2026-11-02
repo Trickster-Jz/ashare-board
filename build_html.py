@@ -868,7 +868,7 @@ function fundCard(title, val, unit, sub){
   return `<div style="flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:9px 8px">
     <div class="ov-lab">${title}</div>
     <div class="ov-val" style="white-space:nowrap;font-size:16px">${isNum(val) ? val : '—'}<span style="font-size:11px;color:var(--t3);font-weight:400;margin-left:2px">${unit||''}</span></div>
-    <div style="font-size:10px;color:var(--t3);margin-top:2px;white-space:nowrap">${sub || ''}</div>
+    <div style="font-size:10px;color:var(--t3);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${sub || ''}</div>
   </div>`;
 }
 function renderFunds(day){
@@ -883,14 +883,15 @@ function renderFunds(day){
   if(!s){ $('funds').innerHTML = '<div class="empty">暂无数据</div>'; return; }
   const m = (s.funds || {}).margin || {};
   const n = (s.funds || {}).north || {};
-  const mdate = m.date || n.date || s.date;   // 按数据实际所属日期提示，而不是文件所在日
-  const note = (mdate !== day.date)
-    ? `<div style="font-size:12px;color:var(--t3);margin-bottom:8px">融资/北向数据为 T+1 披露，以下为最新一期（${mdate}）</div>` : '';
+  const md = (m.date || '').slice(5), nd = (n.date || '').slice(5);   // 数据实际所属日，避免"看起来没更新"
   const chg = isNum(m.fin_chg) ? `<span class="${cls(m.fin_chg)}">${sg(m.fin_chg)}亿</span>` : '—';
-  $('funds').innerHTML = note + `<div style="display:flex;gap:10px">
+  $('funds').innerHTML = `<div style="font-size:11px;color:var(--t3);margin-bottom:7px">
+      数据日期：北向 <b style="font-weight:600;color:var(--t2)">${nd || '—'}</b> ｜ 两融 <b style="font-weight:600;color:var(--t2)">${md || '—'}</b>
+      <span style="opacity:.8">（T+1 披露）</span></div>
+    <div style="display:flex;gap:10px">
     ${fundCard('北向成交额', n.deal_amt, '亿', n.deal_amt ? '沪股通+深股通' : '暂无')}
     ${fundCard('融资余额', m.fin_balance, '亿', '较上日 ' + chg)}
-    ${fundCard('两融余额', m.margin_balance, '亿', isNum(m.fin_buy_amt) ? '融资买入 ' + m.fin_buy_amt + '亿' : '')}
+    ${fundCard('两融余额', m.margin_balance, '亿', isNum(m.fin_buy_amt) ? '买入 ' + m.fin_buy_amt + '亿' : '')}
   </div>`;
 }
 
