@@ -375,6 +375,28 @@ def fetch_limit_pool(date_compact, page_size=100):
     return {}
 
 
+def limit_ts(v):
+    """首次涨停时间戳 -> int（无效返回 None）"""
+    try:
+        t = int(v)
+        return t if t > 0 else None
+    except (TypeError, ValueError):
+        return None
+
+
+def limit_hm(v):
+    """首次涨停时间 -> 北京时间 HH:MM
+
+    口径：集合竞价（09:15-09:25）封板的一律记为 09:30 开盘涨停，
+    因为涨停统计只认 09:30 之后的连续竞价阶段。
+    """
+    t = limit_ts(v)
+    if not t:
+        return None
+    hm = time.strftime('%H:%M', time.gmtime(t + 8 * 3600))
+    return '09:30' if hm < '09:30' else hm
+
+
 def parse_ladder(info, date_compact):
     """把涨停池整理成连板梯队
 
@@ -450,9 +472,8 @@ def parse_ladder(info, date_compact):
             return None
 
     def hm(v):
-        """涨停时间戳 -> 北京时间 HH:MM"""
-        t = ts(v)
-        return time.strftime('%H:%M', time.gmtime(t + 8 * 3600)) if t else None
+        """涨停时间戳 -> 北京时间 HH:MM（集合竞价统一记 09:30）"""
+        return limit_hm(v)
 
     groups = {}
     for it in info:
@@ -480,8 +501,11 @@ def parse_ladder(info, date_compact):
     return ladder
 
 
-def fetch_hot_blocks(date_compact, limit=12):
-    """同花顺涨停板块榜 -> 热点题材"""
+def fetch_hot_blocks(date_compact, limit=12, tmap=None):
+    """同花顺涨停板块榜 -> 热点题材
+
+    tmap: {code: (首次涨停时间戳, 'HH:MM')}，用于给题材内个股标注涨停时刻并按早晚排序
+    """
     url = ('https://data.10jqka.com.cn/dataapi/limit_up/block_top?date=%s&limit=%d'
            % (date_compact, limit))
     r = get(url, headers={'Referer': 'https://data.10jqka.com.cn/'})
@@ -489,13 +513,19 @@ def fetch_hot_blocks(date_compact, limit=12):
         js = r.json()
     except Exception:
         return []
+    tmap = tmap or {}
     out = []
     for b in (js.get('data') or []):
         stocks = []
         # 涨停股全量保存（可点开查看），上限 60 只保护
         # 注意：板块接口的 high_days 是数字位编码（与涨停池接口同名不同义），不采集
         for s in (b.get('stock_list') or [])[:60]:
-            stocks.append({'code': s.get('code'), 'name': s.get('name')})
+            code = s.get('code')
+            t, hm = tmap.get(code, (None, None))
+            stocks.append({'code': code, 'name': s.get('name'),
+                           'first_time': t, 'first_hm': hm})
+        # 按当日首次涨停时间升序：先封板的排前面（无时间的排最后）
+        stocks.sort(key=lambda x: (x['first_time'] is None, x['first_time'] or 0))
         out.append({
             'name': b.get('name'),
             'pct': b.get('change'),
@@ -852,16 +882,21 @@ def stage_market(date_str):
             patch['breadth'] = None   # 历史模式无法实时统计家数，已有回溯结果则保留
 
     dc = date_str.replace('-', '')
+    tmap = {}
     try:
         js = fetch_limit_pool(dc)
         info = (js.get('data') or {}).get('info') or []
         total = ((js.get('data') or {}).get('page') or {}).get('total') or len(info)
         patch['limit_up_pool'] = {'total': total, 'ladder': parse_ladder(info, dc)}
+        # 涨停时刻映射（全量，供热点板块复用）
+        for it in info:
+            tmap[it.get('code')] = (limit_ts(it.get('first_limit_up_time')),
+                                    limit_hm(it.get('first_limit_up_time')))
     except Exception as e:
         print('[warn] limit pool fail: %s' % e, file=sys.stderr)
 
     try:
-        patch['hot_blocks'] = fetch_hot_blocks(dc)
+        patch['hot_blocks'] = fetch_hot_blocks(dc, tmap=tmap)
     except Exception as e:
         print('[warn] hot blocks fail: %s' % e, file=sys.stderr)
 
