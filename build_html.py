@@ -260,8 +260,8 @@ table.et{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
 /* 中文字形墨迹天生比字框偏上约 1.8px，这里单独把字下移，让“看起来”居中 */
 .bt i{font-style:normal;display:block;transform:translateY(1.3px)}
 .bt1{background:#fff3e2;color:#a86300}   /* 一字板 */
-.bt2{background:#fdeaea;color:#c9302c}   /* T字板 */
-.bt3{background:#e7f6ee;color:#0f9d58}   /* 换手板等 */
+.bt2{background:#e7f6ee;color:#0f9d58}   /* T字板（浅绿） */
+.bt3{background:#fdeaea;color:#c9302c}   /* 换手板（红） */
 /* 热点板块：点行展开涨停股清单——沿用龙虎榜模式，展开行横跨整宽。
    表格用固定列宽（宽度取自原本自适应时的自然值），插入展开行不会引起列宽重排 */
 table.bkt{table-layout:fixed}
@@ -684,20 +684,9 @@ function renderLHB(day){
 }
 
 /* ---------- 通用折线图（单轴 / 多序列） ---------- */
+/* 直线连接相邻数据点（不做平滑曲线），转折处保留圆角 */
 function smoothPath(coords){
-  if(coords.length < 3){
-    return coords.map((c, i) => (i ? 'L' : 'M') + c[0].toFixed(1) + ',' + c[1].toFixed(1)).join(' ');
-  }
-  const t = 0.16;
-  let d = 'M' + coords[0][0].toFixed(1) + ',' + coords[0][1].toFixed(1);
-  for(let i = 0; i < coords.length - 1; i++){
-    const p0 = coords[i - 1] || coords[i], p1 = coords[i], p2 = coords[i + 1];
-    const p3 = coords[i + 2] || p2;
-    const c1x = p1[0] + (p2[0] - p0[0]) * t, c1y = p1[1] + (p2[1] - p0[1]) * t;
-    const c2x = p2[0] - (p3[0] - p1[0]) * t, c2y = p2[1] - (p3[1] - p1[1]) * t;
-    d += ` C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;
-  }
-  return d;
+  return coords.map((c, i) => (i ? 'L' : 'M') + c[0].toFixed(1) + ',' + c[1].toFixed(1)).join(' ');
 }
 
 function niceStep(span, target){
