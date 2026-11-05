@@ -198,9 +198,9 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
   border-radius:7px;padding:5px 14px;cursor:pointer;font-family:inherit}
 .jr-btn:active{background:#e9edf3}
 .jr-tip{font-size:11px;color:var(--t3)}
-.jr-cfg{margin-left:auto;font-size:11px;color:var(--t3);cursor:pointer;
-  border-bottom:1px dashed #cfd6df;padding-bottom:1px;white-space:nowrap}
-.jr-cfg.on{color:#0f9d58;border-bottom-color:#b9e3cd}
+.jr-cfg{margin-left:auto;font-size:11px;color:#3b6fd4;background:#eef3fc;
+  border:1px solid #dbe6fa;border-radius:20px;padding:3px 9px;cursor:pointer;white-space:nowrap}
+.jr-cfg.on{color:#0f9d58;background:#eaf7f0;border-color:#cfeade}
 
 /* 龙虎榜 */
 .lhb-item{border:1px solid var(--line);border-radius:12px;padding:11px;margin-bottom:10px}
@@ -1201,7 +1201,7 @@ function renderJournal(day){
     if(!ghToken()){
       jrPush(day.date, v);
       renderJournal(day);
-      $('jrTip').textContent = '已存本机（还没连 GitHub）';
+      $('jrTip').textContent = '已存本机 · 点右下角「连 GitHub」可同步';
       return;
     }
     btn.disabled = true;
