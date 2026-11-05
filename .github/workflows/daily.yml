@@ -1,10 +1,11 @@
-name: 每日正式存档（24点）
+name: 每日正式存档（23点）
 
 on:
   schedule:
-    # GitHub Actions 使用 UTC 时间，北京时间 = UTC + 8
-    # 北京时间 24:00 = UTC 前一日 16:00；此刻 UTC 日期正好是刚收盘的那个交易日
-    - cron: '0 16 * * 1-5'
+    # GitHub Actions 用 UTC，北京时间 = UTC + 8
+    # 北京 23:05 = UTC 15:05。避开整点（整点排队最堵，容易晚到甚至被丢），
+    # 也刻意不放在 24:00：那一刻 UTC 还停在前一天，任何按本地时间取日期的代码都会错位一天。
+    - cron: '5 15 * * 1-5'
   workflow_dispatch:
     inputs:
       stage:
@@ -76,7 +77,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "无数据变化，跳过提交"
           else
-            git commit -m "data: $(date -u -d '+8 hours' +'%Y-%m-%d %H:%M') 存档 $STAGE 数据"
+            git commit -m "data: $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M') 存档 $STAGE 数据"
             # 页面上写的日记会直接提交到 data/*.json，若此刻刚好错开就 rebase 后再推
             git push || { git pull --rebase --autostash origin main && git push; }
           fi
