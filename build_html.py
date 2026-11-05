@@ -17,10 +17,6 @@ OUT = os.path.join(BASE_DIR, 'index.html')
 MAX_DAYS = 80          # 页面内嵌"完整明细"的天数上限
 MAX_SERIES_DAYS = 200  # 轻量序列（红盘率/TRIN）取数天数上限
 
-# 页面改动记录：已迁到 data/<日期>.json 的 journal 字段，由页面日记板直接写入，此处不再维护
-PAGE_NOTES = {}
-
-
 def load_days(max_days=MAX_DAYS):
     days = {}
     for p in sorted(glob.glob(os.path.join(DATA_DIR, '*.json'))):
@@ -180,27 +176,10 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 .chip .r{color:var(--t3);font-size:11px;display:block}
 .chip .tm2{display:block;font-size:10px;color:var(--t3);line-height:1.25;margin-top:1px;
   text-align:center;font-variant-numeric:tabular-nums}
+/* 热点板块展开后的个股小框：更紧凑，时间小字再缩一档 */
+.chip.chip2{padding:3px 8px;line-height:1.25}
+.chip2 .tm2{font-size:9px;line-height:1.05;margin-top:0}
 
-/* 日记板 */
-.jr-list{margin-bottom:10px}
-.jr-item{display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);
-  font-size:12.5px;color:var(--t1);line-height:1.7}
-.jr-item:first-child{padding-top:0}
-.jr-time{flex:none;font-size:11px;color:var(--t3);font-variant-numeric:tabular-nums;
-  padding-top:2px;min-width:34px}
-.jr-text{flex:1;min-width:0;word-break:break-word;white-space:pre-wrap}
-.jr-ta{width:100%;box-sizing:border-box;min-height:76px;border:1px solid var(--line);
-  border-radius:10px;padding:9px 10px;font-size:13px;line-height:1.75;color:var(--t1);
-  background:#fff;resize:vertical;font-family:inherit;display:block}
-.jr-ta:focus{outline:none;border-color:#c3cedd}
-.jr-bar{display:flex;align-items:center;gap:8px;margin-top:7px}
-.jr-btn{font-size:12px;color:var(--t2);background:#f4f6f9;border:1px solid var(--line);
-  border-radius:7px;padding:5px 14px;cursor:pointer;font-family:inherit}
-.jr-btn:active{background:#e9edf3}
-.jr-tip{font-size:11px;color:var(--t3)}
-.jr-cfg{margin-left:auto;font-size:11px;color:#3b6fd4;background:#eef3fc;
-  border:1px solid #dbe6fa;border-radius:20px;padding:3px 9px;cursor:pointer;white-space:nowrap}
-.jr-cfg.on{color:#0f9d58;background:#eaf7f0;border-color:#cfeade}
 
 /* 龙虎榜 */
 .lhb-item{border:1px solid var(--line);border-radius:12px;padding:11px;margin-bottom:10px}
@@ -294,7 +273,7 @@ table.bkt{table-layout:fixed}
 tr.bk{cursor:pointer}
 tr.bkb{display:none}
 tr.bk.open + tr.bkb{display:table-row}
-tr.bkb td{background:#fafbfc;padding:7px 10px 9px}
+tr.bkb td{background:#fafbfc;padding:7px 10px 8px}
 </style>
 </head>
 <body>
@@ -302,7 +281,7 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 9px}
   <div class="hd-top">
     <div>
       <div class="hd-title">骄子每日复盘看板</div>
-      <div class="hd-sub">盘中每小时更新数据　21:00 正式存档</div>
+      <div class="hd-sub">盘中每小时更新数据　23:00 正式存档</div>
     </div>
     <div style="display:flex;gap:6px">
       <button class="btn" id="prev">‹</button>
@@ -422,9 +401,6 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 9px}
 
   <section><div class="card"><h2>美股与大宗商品走势 <small>近 90 个交易日</small></h2>
     <div id="charts"></div></div></section>
-
-  <section><div class="card"><h2>日记板</h2>
-    <div id="journal"></div></div></section>
 
   <footer>
     数据来源：新浪财经 / 同花顺 / 东方财富<br>
@@ -569,7 +545,7 @@ function blocksTable(){
     + bs.map(b => {
       const st = (b.stocks || []).slice(0, 3).map(s => s.name).join('、');
       const all = (b.stocks || []).map(s =>
-        `<span class="chip"><b>${s.name}</b>${s.first_hm ? `<span class="tm2">${s.first_hm}</span>` : ''}</span>`).join('');
+        `<span class="chip chip2"><b>${s.name}</b>${s.first_hm ? `<span class="tm2">${s.first_hm}</span>` : ''}</span>`).join('');
       return `<tr class="bk">
         <td><b>${b.name}</b>${st ? `<div class="stk">${st}</div>` : ''}</td>
         <td class="num ${cls(b.pct)}">${sg(b.pct)}%</td>
@@ -819,13 +795,26 @@ function drawMount(mount){
      <text x="${PL-4}" y="${y(v).toFixed(1)}" text-anchor="end" dominant-baseline="middle"
       font-size="9.5" fill="#8b909b">${fmtTick(v)}</text>`).join('');
 
-  // 横轴：月份刻度
+  // 横轴：月份刻度（相邻标签挨太近就合并，首尾贴边时改对齐方式，避免和 Y 轴数字／边缘挤在一起）
   const mx = monthTicks(ss[0].points);
-  const xlab = mx.map(t =>
-    `<line x1="${x(t.i).toFixed(1)}" y1="${H-PB}" x2="${x(t.i).toFixed(1)}" y2="${H-PB+3}"
+  const picks = [];
+  mx.forEach(t => {
+    const px = x(t.i);
+    if(picks.length && px - picks[picks.length - 1].px < 26){
+      picks[picks.length - 1] = {px: px, lab: t.lab};   // 太近就弃掉前一个，保留靠近整月的那个
+    } else {
+      picks.push({px: px, lab: t.lab});
+    }
+  });
+  const xlab = picks.map(t => {
+    let anchor = 'middle', tx = t.px;
+    if(t.px < PL + 14){ anchor = 'start'; tx = t.px - 4; }
+    else if(t.px > W - PR - 14){ anchor = 'end'; tx = t.px + 4; }
+    return `<line x1="${t.px.toFixed(1)}" y1="${H-PB}" x2="${t.px.toFixed(1)}" y2="${H-PB+3}"
       stroke="#d8dce2" stroke-width="1" vector-effect="non-scaling-stroke"/>
-     <text x="${x(t.i).toFixed(1)}" y="${H-PB+13}" text-anchor="middle" font-size="10"
-      fill="#9aa0ab">${t.lab}</text>`).join('');
+     <text x="${tx.toFixed(1)}" y="${H-PB+13}" text-anchor="${anchor}" font-size="10"
+      fill="#9aa0ab">${t.lab}</text>`;
+  }).join('');
 
   const parts = ss.map((s, i) => {
     const coords = s.points.map((p, j) => [x(j), y(p.close)]);
@@ -1063,7 +1052,6 @@ function render(date){
   renderHistory(day);
   renderWidth();
   renderCharts(day);
-  renderJournal(day);
   $('genTime').textContent = '页面生成：__GEN__　共收录 ' + DAYS.length + ' 个交易日';
 }
 
@@ -1075,150 +1063,6 @@ function render(date){
     e.classList.toggle('on');
   });
 })();
-
-/* ---------- 日记板 ----------
-   日记的真源就是 data/<日期>.json 里的 journal 字段：每天 24:00 正式存档时，
-   它跟着当天所有数据一起提交到 GitHub，永久留在 git 历史里，谁打开页面都能看到。
-   在页面上写字时，用「存在你本机的 GitHub 令牌」把日记写回同一个文件——
-   不需要任何第三方后端；令牌不进代码库、不上传，别人打开页面只能看。
-   没配令牌时，日记暂存在本机浏览器，点「连 GitHub」粘一个令牌就能同步上去。 */
-const GH_OWNER = 'Trickster-Jz', GH_REPO = 'ashare-board', GH_BRANCH = 'main';
-const GH_TK = 'ashare-github-token';
-
-function ghToken(){ try{ return localStorage.getItem(GH_TK) || ''; }catch(e){ return ''; } }
-function ghSetToken(t){
-  try{ t ? localStorage.setItem(GH_TK, t) : localStorage.removeItem(GH_TK); }catch(e){}
-}
-
-function b64enc(str){
-  const bs = new TextEncoder().encode(str);
-  let s = '';
-  for(let i = 0; i < bs.length; i += 0x8000){
-    s += String.fromCharCode.apply(null, bs.subarray(i, i + 0x8000));
-  }
-  return btoa(s);
-}
-function b64dec(b64){
-  const bin = atob(String(b64 || '').replace(/\s/g, ''));
-  const bs = new Uint8Array(bin.length);
-  for(let i = 0; i < bin.length; i++) bs[i] = bin.charCodeAt(i);
-  return new TextDecoder().decode(bs);
-}
-
-/* 把一条日记追加进 data/jr/<date>.json 并提交（日记单独成文件，几 KB，写入快） */
-async function ghAddJournal(date, item){
-  const tk = ghToken();
-  if(!tk) throw new Error('未配置令牌');
-  const api = 'https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO +
-              '/contents/data/jr/' + date + '.json';
-  const hd = {'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + tk};
-  const g = await fetch(api + '?ref=' + GH_BRANCH, {headers: hd, cache: 'no-store'});
-  if(g.status === 401) throw new Error('令牌无效');
-  if(g.status === 403) throw new Error('令牌无仓库写入权限');
-  let obj = {date: date, items: []}, sha = null;
-  if(g.ok){
-    const meta = await g.json();
-    sha = meta.sha;
-    try{ obj = JSON.parse(b64dec(meta.content)) || obj; }catch(e){ obj = {date: date, items: []}; }
-  } else if(g.status !== 404){
-    throw new Error('读取失败 ' + g.status);
-  }
-  if(!Array.isArray(obj.items)) obj.items = [];
-  obj.date = date;
-  obj.items.push(item);
-  const payload = {
-    message: 'journal: ' + date + ' 日记',
-    content: b64enc(JSON.stringify(obj, null, 1)),
-    branch: GH_BRANCH
-  };
-  if(sha) payload.sha = sha;                 // 新建文件时不带 sha
-  const w = await fetch(api, {
-    method: 'PUT',
-    headers: Object.assign({'Content-Type': 'application/json'}, hd),
-    body: JSON.stringify(payload)
-  });
-  if(!w.ok){
-    if(w.status === 409) throw new Error('刚有别的提交，再点一次');
-    throw new Error('上传失败 ' + w.status);
-  }
-  return obj.items;
-}
-
-function escHtml(s){
-  return String(s == null ? '' : s).replace(/[&<>"]/g,
-    c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-}
-function jrKey(date){ return 'ashare-jr-' + date; }
-function jrGet(date){
-  try {
-    const a = JSON.parse(localStorage.getItem(jrKey(date)) || '[]');
-    return Array.isArray(a) ? a : [];
-  } catch(e){ return []; }
-}
-function jrPush(date, text){
-  const a = jrGet(date);
-  const n = new Date();
-  a.push({t: String(n.getHours()).padStart(2,'0') + ':' + String(n.getMinutes()).padStart(2,'0'),
-          text: text});
-  try { localStorage.setItem(jrKey(date), JSON.stringify(a)); } catch(e){}
-  return a;
-}
-function jrClear(date){
-  try{ localStorage.removeItem(jrKey(date)); }catch(e){}
-}
-function jrItem(text){
-  const n = new Date(), p = x => String(x).padStart(2, '0');
-  return {t: p(n.getHours()) + ':' + p(n.getMinutes()), text: text};
-}
-function renderJournal(day){
-  const box = $('journal');
-  if(!box || !day) return;
-  const saved = (day.journal || []);        // 存档里的（已进 git）
-  const local = jrGet(day.date);            // 本机还没同步的
-  const items = saved.concat(local);
-  const on = !!ghToken();
-  box.innerHTML = `
-    ${items.length
-      ? `<div class="jr-list">${items.map(it =>
-          `<div class="jr-item"><span class="jr-time">${escHtml(it.t || '')}</span>
-            <span class="jr-text">${escHtml(it.text || '')}</span></div>`).join('')}</div>`
-      : `<div class="empty" style="margin-bottom:10px">这天还没有记录</div>`}
-    <textarea id="jrText" class="jr-ta" placeholder="写点什么…"></textarea>
-    <div class="jr-bar"><button id="jrBtn" class="jr-btn">记下</button>
-      <span id="jrTip" class="jr-tip"></span>
-      <span id="jrCfg" class="jr-cfg${on ? ' on' : ''}">${on ? '云端 · 已连接' : '连 GitHub'}</span></div>`;
-  const ta = $('jrText'), btn = $('jrBtn');
-  $('jrCfg').onclick = () => {
-    const t = window.prompt('粘贴 GitHub 令牌（只存在这台设备的浏览器里）', '');
-    if(t === null) return;
-    ghSetToken(t.trim());
-    renderJournal(day);
-    $('jrTip').textContent = ghToken() ? '已连接，日记会直接写进 GitHub' : '';
-  };
-  btn.onclick = async () => {
-    const v = ta.value.trim();
-    if(!v) return;
-    if(!ghToken()){
-      jrPush(day.date, v);
-      renderJournal(day);
-      $('jrTip').textContent = '已存本机 · 点右下角「连 GitHub」可同步';
-      return;
-    }
-    btn.disabled = true;
-    btn.textContent = '写入中…';
-    $('jrTip').textContent = '';
-    try{
-      day.journal = await ghAddJournal(day.date, jrItem(v));
-      jrClear(day.date);
-      renderJournal(day);
-      $('jrTip').textContent = '已存进 GitHub';
-    }catch(e){
-      jrPush(day.date, v);
-      renderJournal(day);
-      $('jrTip').textContent = '没写进去，先存本机（' + e.message + '）';
-    }
-  };
-}
 
 function init(){
   const sel = $('dateSel');
@@ -1277,33 +1121,11 @@ def trim_hot_blocks(days, keep=7):
     return days
 
 
-def attach_journal(days):
-    """把 data/jr/<日期>.json 里的日记挂到对应交易日（日记单独成文件，写入只几百字节）"""
-    jdir = os.path.join(DATA_DIR, 'jr')
-    for d in days:
-        p = os.path.join(jdir, d['date'] + '.json')
-        if not os.path.exists(p):
-            continue
-        try:
-            with open(p, 'r', encoding='utf-8') as f:
-                items = (json.load(f) or {}).get('items') or []
-        except Exception:
-            continue
-        if items:
-            d['journal'] = items + (d.get('journal') or [])
-
-
 def main():
     days = trim_hot_blocks(load_days())
-    attach_journal(days)
     if not days:
         print('[error] data/ 下没有数据')
         return
-    # 页面改动 / 当日备注：按日期写进对应交易日的日记板（与存档一起长期保留）
-    for d in days:
-        notes = PAGE_NOTES.get(d['date'])
-        if notes:
-            d['journal'] = [{'t': t, 'text': txt} for t, txt in notes] + (d.get('journal') or [])
     kline = fetch_sh_kline(15)
     last_date = days[-1]['date']
     kline = [k for k in kline if k['date'] <= last_date]
