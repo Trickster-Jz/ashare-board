@@ -175,6 +175,24 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 .chip{background:#fafbfc;border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-size:12px;line-height:1.35}
 .chip b{font-weight:700}
 .chip .r{color:var(--t3);font-size:11px;display:block}
+.chip .tm{color:var(--t3);font-size:10px;margin-left:4px;font-variant-numeric:tabular-nums;
+  letter-spacing:-.2px}
+
+/* 日记板 */
+.jr-sec{font-size:12px;font-weight:700;color:var(--t2);margin:0 0 7px}
+.jr-ta{width:100%;box-sizing:border-box;min-height:92px;border:1px solid var(--line);
+  border-radius:10px;padding:9px 10px;font-size:13px;line-height:1.75;color:var(--t1);
+  background:#fff;resize:vertical;font-family:inherit;display:block}
+.jr-ta:focus{outline:none;border-color:#c3cedd}
+.jr-bar{display:flex;align-items:center;gap:8px;margin-top:7px}
+.jr-btn{font-size:12px;color:var(--t2);background:#f4f6f9;border:1px solid var(--line);
+  border-radius:7px;padding:4px 12px;cursor:pointer;font-family:inherit}
+.jr-btn:active{background:#e9edf3}
+.jr-tip{font-size:11px;color:var(--t3)}
+.jr-log{margin-top:16px;border-top:1px solid var(--line)}
+.jr-li{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);
+  font-size:12px;color:var(--t2);line-height:1.6}
+.jr-d{flex:none;font-size:11px;color:var(--t3);font-variant-numeric:tabular-nums;padding-top:1px}
 
 /* 龙虎榜 */
 .lhb-item{border:1px solid var(--line);border-radius:12px;padding:11px;margin-bottom:10px}
@@ -397,6 +415,9 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 9px}
   <section><div class="card"><h2>美股与大宗商品走势 <small>近 90 个交易日</small></h2>
     <div id="charts"></div></div></section>
 
+  <section><div class="card"><h2>日记板 <small>随手记 · 存在本机</small></h2>
+    <div id="journal"></div></div></section>
+
   <footer>
     数据来源：新浪财经 / 同花顺 / 东方财富<br>
     <span id="genTime"></span><br>
@@ -452,7 +473,11 @@ function idxPart(it, label){
 }
 function renderIndices(day){
   const prev = prevOf(day.date);
-  const list = (day.indices || []).filter(x => x.name !== '深证综指');
+  // 固定 2×2 布局：上排 上证指数 / 科创50，下排 深证成指 / 创业板指
+  const ORDER = ['上证指数', '科创50', '深证成指', '创业板指'];
+  const byName = {};
+  (day.indices || []).forEach(x => { byName[x.name] = x; });
+  const list = ORDER.map(n => byName[n]).filter(Boolean);
   $('indices').innerHTML = list.map(it => {
     const p = idxByName(prev, it.name);
     const c = cls(it.change);
@@ -589,6 +614,7 @@ function renderLadder(day){
       <div class="chips">${g.stocks.map(s => `<span class="chip"><b>${s.name}</b>
         <span style="font-size:11px;color:var(--t3)"> ${s.code}</span>${
         boardTag(s.board_type)}${
+        s.first_hm ? `<span class="tm">${s.first_hm}</span>` : ''}${
         s.reason ? `<span class="r">${s.reason.slice(0, 20)}</span>` : ''}</span>`).join('')}</div>
     </div>`;
   }).join('');
@@ -1041,6 +1067,56 @@ function render(date){
   });
 })();
 
+/* ---------- 日记板 ---------- */
+/* 页面改动记录：每次调整后在此追加一条（最新在上），构建时写进页面 */
+const CHANGELOG = [
+  {d:'11-05', t:'连板梯队改为按当日首次涨停时间排序，并显示封板时刻'},
+  {d:'11-05', t:'指数行情改成 2×2：上证 / 科创50 在上，深证成指 / 创业板指 在下；去掉北证50、沪深300'},
+  {d:'11-05', t:'新增日记板'},
+  {d:'11-05', t:'换手板改浅红、T字板改浅绿（配色互换）；所有走势图改为直线连接'},
+  {d:'11-05', t:'资金情况分别标注北向与两融的数据日期'},
+  {d:'10-31', t:'TRIN 速查卡按新文案重写：牛市 / 熊市分档 ＋ 共振与背离四象限'},
+  {d:'10-31', t:'三市成交额统一为指数口径，与指数行情卡片完全一致'},
+  {d:'10-30', t:'速查卡分行、加粗、去掉图标，档位分隔符统一为「0.5 - 0.8」'},
+  {d:'10-29', t:'修正连板梯队：「14天9板」曾被误读成 9 连板，改用日K核对真实连板数'},
+  {d:'10-28', t:'热点板块点击展开全部涨停股；封板类型标签上线并校准对齐'}
+];
+const JR_KEY = 'ashare-journal-v1';
+function escHtml(s){
+  return String(s == null ? '' : s).replace(/[&<>"]/g,
+    c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+function renderJournal(){
+  const box = $('journal');
+  if(!box) return;
+  let saved = '';
+  try { saved = localStorage.getItem(JR_KEY) || ''; } catch(e){}
+  box.innerHTML = `
+    <div class="jr-sec">我的记录</div>
+    <textarea id="jrText" class="jr-ta" placeholder="随手记点什么…">${escHtml(saved)}</textarea>
+    <div class="jr-bar"><button id="jrBtn" class="jr-btn">保存</button>
+      <span id="jrTip" class="jr-tip">仅存在本机浏览器，换设备不同步</span></div>
+    <div class="jr-sec" style="margin-top:16px">页面改动记录</div>
+    <div class="jr-log">${CHANGELOG.map(c =>
+      `<div class="jr-li"><span class="jr-d">${c.d}</span><span>${c.t}</span></div>`).join('')}</div>`;
+  const ta = $('jrText'), tip = $('jrTip');
+  let timer = null;
+  const save = () => {
+    try {
+      localStorage.setItem(JR_KEY, ta.value);
+      const n = new Date();
+      tip.textContent = '已保存 ' +
+        String(n.getHours()).padStart(2, '0') + ':' + String(n.getMinutes()).padStart(2, '0');
+      tip.style.color = '';
+    } catch(e){
+      tip.textContent = '保存失败：浏览器禁用了本地存储';
+      tip.style.color = '#c9302c';
+    }
+  };
+  $('jrBtn').onclick = save;
+  ta.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(save, 600); });
+}
+
 function init(){
   const sel = $('dateSel');
   sel.innerHTML = DAYS.slice().reverse().map(d =>
@@ -1054,6 +1130,7 @@ function init(){
     const i = DAYS.findIndex(d => d.date === sel.value);
     if(i < DAYS.length - 1) render(DAYS[i+1].date);  // 右箭头：往后一天（更晚）
   };
+  renderJournal();      // 只在初始化时渲染一次，切日期不重置输入内容
   render(DAYS[DAYS.length - 1].date);
 }
 init();
