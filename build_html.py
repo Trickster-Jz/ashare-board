@@ -281,7 +281,7 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 8px}
   <div class="hd-top">
     <div>
       <div class="hd-title">骄子每日复盘看板</div>
-      <div class="hd-sub">盘中每小时更新数据　23:00 正式存档</div>
+      <div class="hd-sub">盘中每小时更新数据　23:05 正式存档</div>
     </div>
     <div style="display:flex;gap:6px">
       <button class="btn" id="prev">‹</button>
