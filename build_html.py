@@ -17,6 +17,15 @@ OUT = os.path.join(BASE_DIR, 'index.html')
 MAX_DAYS = 80          # 页面内嵌"完整明细"的天数上限
 MAX_SERIES_DAYS = 200  # 轻量序列（红盘率/TRIN）取数天数上限
 
+# 页面改动记录：每次调整后在此追加一条，构建时会写进对应交易日期的日记板
+PAGE_NOTES = {
+    '2026-11-05': [
+        ('22:50', '日记板移到页面最下方；热点板块展开的个股改为按涨停时间排序，名称下方标注封板时刻；连板梯队不再显示时间'),
+        ('22:50', '指数行情改成 2×2：上证 / 科创50 在上，深证成指 / 创业板指 在下，去掉北证50、沪深300'),
+        ('22:50', '换手板改浅红、T字板改浅绿；所有走势图改为直线连接；资金情况分别标注北向与两融日期'),
+    ],
+}
+
 
 def load_days(max_days=MAX_DAYS):
     days = {}
@@ -175,24 +184,26 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 .chip{background:#fafbfc;border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-size:12px;line-height:1.35}
 .chip b{font-weight:700}
 .chip .r{color:var(--t3);font-size:11px;display:block}
-.chip .tm{color:var(--t3);font-size:10px;margin-left:4px;font-variant-numeric:tabular-nums;
-  letter-spacing:-.2px}
+.chip .tm2{display:block;font-size:10px;color:var(--t3);line-height:1.25;margin-top:1px;
+  text-align:center;font-variant-numeric:tabular-nums}
 
 /* 日记板 */
-.jr-sec{font-size:12px;font-weight:700;color:var(--t2);margin:0 0 7px}
-.jr-ta{width:100%;box-sizing:border-box;min-height:92px;border:1px solid var(--line);
+.jr-list{margin-bottom:10px}
+.jr-item{display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);
+  font-size:12.5px;color:var(--t1);line-height:1.7}
+.jr-item:first-child{padding-top:0}
+.jr-time{flex:none;font-size:11px;color:var(--t3);font-variant-numeric:tabular-nums;
+  padding-top:2px;min-width:34px}
+.jr-text{flex:1;min-width:0;word-break:break-word;white-space:pre-wrap}
+.jr-ta{width:100%;box-sizing:border-box;min-height:76px;border:1px solid var(--line);
   border-radius:10px;padding:9px 10px;font-size:13px;line-height:1.75;color:var(--t1);
   background:#fff;resize:vertical;font-family:inherit;display:block}
 .jr-ta:focus{outline:none;border-color:#c3cedd}
 .jr-bar{display:flex;align-items:center;gap:8px;margin-top:7px}
 .jr-btn{font-size:12px;color:var(--t2);background:#f4f6f9;border:1px solid var(--line);
-  border-radius:7px;padding:4px 12px;cursor:pointer;font-family:inherit}
+  border-radius:7px;padding:5px 14px;cursor:pointer;font-family:inherit}
 .jr-btn:active{background:#e9edf3}
 .jr-tip{font-size:11px;color:var(--t3)}
-.jr-log{margin-top:16px;border-top:1px solid var(--line)}
-.jr-li{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid var(--line);
-  font-size:12px;color:var(--t2);line-height:1.6}
-.jr-d{flex:none;font-size:11px;color:var(--t3);font-variant-numeric:tabular-nums;padding-top:1px}
 
 /* 龙虎榜 */
 .lhb-item{border:1px solid var(--line);border-radius:12px;padding:11px;margin-bottom:10px}
@@ -415,7 +426,7 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 9px}
   <section><div class="card"><h2>美股与大宗商品走势 <small>近 90 个交易日</small></h2>
     <div id="charts"></div></div></section>
 
-  <section><div class="card"><h2>日记板 <small>随手记 · 存在本机</small></h2>
+  <section><div class="card"><h2>日记板</h2>
     <div id="journal"></div></div></section>
 
   <footer>
@@ -560,7 +571,8 @@ function blocksTable(){
       <th>板块 / 题材</th><th class="num">涨跌幅</th><th class="num">涨停数</th><th>最高标</th></tr></thead><tbody>`
     + bs.map(b => {
       const st = (b.stocks || []).slice(0, 3).map(s => s.name).join('、');
-      const all = (b.stocks || []).map(s => `<span class="chip">${s.name}</span>`).join('');
+      const all = (b.stocks || []).map(s =>
+        `<span class="chip"><b>${s.name}</b>${s.first_hm ? `<span class="tm2">${s.first_hm}</span>` : ''}</span>`).join('');
       return `<tr class="bk">
         <td><b>${b.name}</b>${st ? `<div class="stk">${st}</div>` : ''}</td>
         <td class="num ${cls(b.pct)}">${sg(b.pct)}%</td>
@@ -614,7 +626,6 @@ function renderLadder(day){
       <div class="chips">${g.stocks.map(s => `<span class="chip"><b>${s.name}</b>
         <span style="font-size:11px;color:var(--t3)"> ${s.code}</span>${
         boardTag(s.board_type)}${
-        s.first_hm ? `<span class="tm">${s.first_hm}</span>` : ''}${
         s.reason ? `<span class="r">${s.reason.slice(0, 20)}</span>` : ''}</span>`).join('')}</div>
     </div>`;
   }).join('');
@@ -1055,6 +1066,7 @@ function render(date){
   renderHistory(day);
   renderWidth();
   renderCharts(day);
+  renderJournal(day);
   $('genTime').textContent = '页面生成：__GEN__　共收录 ' + DAYS.length + ' 个交易日';
 }
 
@@ -1068,53 +1080,53 @@ function render(date){
 })();
 
 /* ---------- 日记板 ---------- */
-/* 页面改动记录：每次调整后在此追加一条（最新在上），构建时写进页面 */
-const CHANGELOG = [
-  {d:'11-05', t:'连板梯队改为按当日首次涨停时间排序，并显示封板时刻'},
-  {d:'11-05', t:'指数行情改成 2×2：上证 / 科创50 在上，深证成指 / 创业板指 在下；去掉北证50、沪深300'},
-  {d:'11-05', t:'新增日记板'},
-  {d:'11-05', t:'换手板改浅红、T字板改浅绿（配色互换）；所有走势图改为直线连接'},
-  {d:'11-05', t:'资金情况分别标注北向与两融的数据日期'},
-  {d:'10-31', t:'TRIN 速查卡按新文案重写：牛市 / 熊市分档 ＋ 共振与背离四象限'},
-  {d:'10-31', t:'三市成交额统一为指数口径，与指数行情卡片完全一致'},
-  {d:'10-30', t:'速查卡分行、加粗、去掉图标，档位分隔符统一为「0.5 - 0.8」'},
-  {d:'10-29', t:'修正连板梯队：「14天9板」曾被误读成 9 连板，改用日K核对真实连板数'},
-  {d:'10-28', t:'热点板块点击展开全部涨停股；封板类型标签上线并校准对齐'}
-];
-const JR_KEY = 'ashare-journal-v1';
+/* 云同步端点：留空时日记只暂存在本机浏览器。
+   接上后端后填上地址即可（详见交付说明），格式：{list(date), add(date, text)} */
+const JOURNAL_API = '';
+
 function escHtml(s){
   return String(s == null ? '' : s).replace(/[&<>"]/g,
     c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 }
-function renderJournal(){
+function jrKey(date){ return 'ashare-jr-' + date; }
+function jrGet(date){
+  try {
+    const a = JSON.parse(localStorage.getItem(jrKey(date)) || '[]');
+    return Array.isArray(a) ? a : [];
+  } catch(e){ return []; }
+}
+function jrPush(date, text){
+  const a = jrGet(date);
+  const n = new Date();
+  a.push({t: String(n.getHours()).padStart(2,'0') + ':' + String(n.getMinutes()).padStart(2,'0'),
+          text: text});
+  try { localStorage.setItem(jrKey(date), JSON.stringify(a)); } catch(e){}
+  return a;
+}
+function renderJournal(day){
   const box = $('journal');
-  if(!box) return;
-  let saved = '';
-  try { saved = localStorage.getItem(JR_KEY) || ''; } catch(e){}
+  if(!box || !day) return;
+  const saved = (day.journal || []);        // 存档里的（正式归档）
+  const local = jrGet(day.date);            // 本机暂存
+  const items = saved.concat(local);
   box.innerHTML = `
-    <div class="jr-sec">我的记录</div>
-    <textarea id="jrText" class="jr-ta" placeholder="随手记点什么…">${escHtml(saved)}</textarea>
-    <div class="jr-bar"><button id="jrBtn" class="jr-btn">保存</button>
-      <span id="jrTip" class="jr-tip">仅存在本机浏览器，换设备不同步</span></div>
-    <div class="jr-sec" style="margin-top:16px">页面改动记录</div>
-    <div class="jr-log">${CHANGELOG.map(c =>
-      `<div class="jr-li"><span class="jr-d">${c.d}</span><span>${c.t}</span></div>`).join('')}</div>`;
+    ${items.length
+      ? `<div class="jr-list">${items.map(it =>
+          `<div class="jr-item"><span class="jr-time">${escHtml(it.t || '')}</span>
+            <span class="jr-text">${escHtml(it.text || '')}</span></div>`).join('')}</div>`
+      : `<div class="empty" style="margin-bottom:10px">这天还没有记录</div>`}
+    <textarea id="jrText" class="jr-ta" placeholder="写点什么…"></textarea>
+    <div class="jr-bar"><button id="jrBtn" class="jr-btn">记下</button>
+      <span id="jrTip" class="jr-tip"></span></div>`;
   const ta = $('jrText'), tip = $('jrTip');
-  let timer = null;
-  const save = () => {
-    try {
-      localStorage.setItem(JR_KEY, ta.value);
-      const n = new Date();
-      tip.textContent = '已保存 ' +
-        String(n.getHours()).padStart(2, '0') + ':' + String(n.getMinutes()).padStart(2, '0');
-      tip.style.color = '';
-    } catch(e){
-      tip.textContent = '保存失败：浏览器禁用了本地存储';
-      tip.style.color = '#c9302c';
-    }
+  $('jrBtn').onclick = () => {
+    const v = ta.value.trim();
+    if(!v) return;
+    jrPush(day.date, v);
+    ta.value = '';
+    renderJournal(day);
+    $('jrTip').textContent = '已记下';
   };
-  $('jrBtn').onclick = save;
-  ta.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(save, 600); });
 }
 
 function init(){
@@ -1130,7 +1142,6 @@ function init(){
     const i = DAYS.findIndex(d => d.date === sel.value);
     if(i < DAYS.length - 1) render(DAYS[i+1].date);  // 右箭头：往后一天（更晚）
   };
-  renderJournal();      // 只在初始化时渲染一次，切日期不重置输入内容
   render(DAYS[DAYS.length - 1].date);
 }
 init();
@@ -1180,6 +1191,11 @@ def main():
     if not days:
         print('[error] data/ 下没有数据')
         return
+    # 页面改动 / 当日备注：按日期写进对应交易日的日记板（与存档一起长期保留）
+    for d in days:
+        notes = PAGE_NOTES.get(d['date'])
+        if notes:
+            d['journal'] = [{'t': t, 'text': txt} for t, txt in notes] + (d.get('journal') or [])
     kline = fetch_sh_kline(15)
     last_date = days[-1]['date']
     kline = [k for k in kline if k['date'] <= last_date]
