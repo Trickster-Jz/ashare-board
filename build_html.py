@@ -179,6 +179,7 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
 /* 热点板块展开后的个股小框：更紧凑，时间小字再缩一档 */
 .chip.chip2{padding:3px 8px;line-height:1.25}
 .chip2 .tm2{font-size:9px;line-height:1.05;margin-top:0}
+tr.bkb .chips{gap:4px 6px}
 
 
 /* 龙虎榜 */
