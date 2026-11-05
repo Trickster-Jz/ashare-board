@@ -1,9 +1,10 @@
-name: 每日正式存档（21点）
+name: 每日正式存档（24点）
 
 on:
   schedule:
     # GitHub Actions 使用 UTC 时间，北京时间 = UTC + 8
-    - cron: '0 13 * * 1-5'    # 北京时间 21:00 抓行情+龙虎榜并存档
+    # 北京时间 24:00 = UTC 前一日 16:00；此刻 UTC 日期正好是刚收盘的那个交易日
+    - cron: '0 16 * * 1-5'
   workflow_dispatch:
     inputs:
       stage:
