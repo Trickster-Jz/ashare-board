@@ -190,7 +190,9 @@ tr.bkb .chips{gap:4px 6px}
 .seat-box h4{margin:0 0 5px;font-size:12px;color:var(--t2);font-weight:600}
 .srow{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:3px 0;
   font-variant-numeric:tabular-nums;min-width:0;overflow:hidden}
-.sname{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sname{flex:1;min-width:0;display:flex;align-items:center;overflow:hidden}
+.sname .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.sname .inst,.sname .north,.sname .yz{flex:none;white-space:nowrap}
 .inst{color:#3b6fd4;font-size:10px;background:#eaf0fc;border-radius:3px;padding:0 4px;margin-left:3px}
 .north{color:#b07d17;font-size:10px;background:#fdf3e0;border-radius:3px;padding:0 4px;margin-left:3px}
 .yz{color:#c2410c;font-size:10px;background:#ffeee4;border-radius:3px;padding:0 4px;margin-left:3px}
@@ -615,7 +617,7 @@ function seatTag(t){
 function seatRows(seats, kind){
   if(!seats || !seats.length) return '<div class="srow" style="color:var(--t3)">暂无</div>';
   return seats.map(s => `<div class="srow">
-      <span class="sname">${s.name}${seatTag(s.tag)}</span>
+      <span class="sname"><span class="nm">${s.name}</span>${seatTag(s.tag)}</span>
       <span class="money ${kind === 'buy' ? 'up' : 'down'}">${wan(s.amount)}万</span></div>`).join('');
 }
 function latestLhb(){
