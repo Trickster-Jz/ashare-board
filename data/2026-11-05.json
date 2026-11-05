@@ -9,7 +9,7 @@
    "close": 3689.9109,
    "high": 3701.5856,
    "low": 3646.572,
-   "amount": 979711778222.0,
+   "amount": 979711778222,
    "change": 3.74,
    "pct": 0.1,
    "amount_yi": 9797.12,
@@ -51,7 +51,7 @@
    "close": 1286.675,
    "high": 1329.1442,
    "low": 1236.0114,
-   "amount": 117259051221.0,
+   "amount": 117259051221,
    "change": 21.2,
    "pct": 1.68,
    "amount_yi": 1172.59,
@@ -65,7 +65,7 @@
    "close": 910.07,
    "high": 922.839,
    "low": 880.469,
-   "amount": 17372519512.0,
+   "amount": 17372519512,
    "change": 15.99,
    "pct": 1.79,
    "amount_yi": 173.73,
@@ -79,7 +79,7 @@
    "close": 4113.4112,
    "high": 4136.7983,
    "low": 4065.7238,
-   "amount": 622088649121.0,
+   "amount": 622088649121,
    "change": 12.08,
    "pct": 0.29,
    "amount_yi": 6220.89,
@@ -141,7 +141,7 @@
     "symbol": "sh600206",
     "code": "600206",
     "name": "有研新材",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sh600261",
@@ -159,7 +159,7 @@
     "symbol": "sh601599",
     "code": "601599",
     "name": "浙文影业",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sh601929",
@@ -189,7 +189,7 @@
     "symbol": "sh600641",
     "code": "600641",
     "name": "先导基电",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sh600683",
@@ -231,7 +231,7 @@
     "symbol": "sh603212",
     "code": "603212",
     "name": "赛伍技术",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sh603297",
@@ -285,7 +285,7 @@
     "symbol": "sh603657",
     "code": "603657",
     "name": "春光科技",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sh603682",
@@ -363,7 +363,7 @@
     "symbol": "sz001330",
     "code": "001330",
     "name": "博纳影业",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sz001360",
@@ -381,7 +381,7 @@
     "symbol": "sh603956",
     "code": "603956",
     "name": "威派格",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sh603959",
@@ -435,13 +435,13 @@
     "symbol": "sz002045",
     "code": "002045",
     "name": "国光电器",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sz002081",
     "code": "002081",
     "name": "金 螳 螂",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sz002086",
@@ -555,7 +555,7 @@
     "symbol": "sz300049",
     "code": "300049",
     "name": "福瑞医科",
-    "pct": 20.0
+    "pct": 20
    },
    {
     "symbol": "sz300071",
@@ -567,13 +567,13 @@
     "symbol": "sz300093",
     "code": "300093",
     "name": "金刚光伏",
-    "pct": 20.0
+    "pct": 20
    },
    {
     "symbol": "sz002865",
     "code": "002865",
     "name": "钧达股份",
-    "pct": 10.0
+    "pct": 10
    },
    {
     "symbol": "sz002929",
@@ -615,7 +615,7 @@
     "symbol": "sz301000",
     "code": "301000",
     "name": "肇民科技",
-    "pct": 20.0
+    "pct": 20
    },
    {
     "symbol": "sz301209",
@@ -655,22 +655,22 @@
       "reason": "光伏边框+液冷铝材+机器人布局+三季报扭亏",
       "turnover": 2.2427,
       "open_num": null,
-      "seal_amount": 214628410.0,
-      "luv": 3918289700.0,
+      "seal_amount": 214628410,
+      "luv": 3918289700,
       "first_time": 1793841900,
       "first_hm": "09:25"
      },
      {
       "code": "601599",
       "name": "浙文影业",
-      "pct": 10.0,
+      "pct": 10,
       "price": 4.62,
       "board_type": "一字板",
       "reason": "AI漫剧+微短剧+三季报增长",
       "turnover": 2.7405,
       "open_num": null,
-      "seal_amount": 269673560.0,
-      "luv": 5361706100.0,
+      "seal_amount": 269673560,
+      "luv": 5361706100,
       "first_time": 1793841902,
       "first_hm": "09:25"
      }
@@ -690,8 +690,8 @@
       "reason": "光伏+电池铝箔+人形机器人+三季报增长",
       "turnover": 2.3952,
       "open_num": null,
-      "seal_amount": 255898180.0,
-      "luv": 2679295400.0,
+      "seal_amount": 255898180,
+      "luv": 2679295400,
       "first_time": 1793841902,
       "first_hm": "09:25"
      },
@@ -704,8 +704,8 @@
       "reason": "陶瓷纤维+锂电隔热+“羊”字辈",
       "turnover": 9.8096,
       "open_num": 4,
-      "seal_amount": 23872464.0,
-      "luv": 5100123500.0,
+      "seal_amount": 23872464,
+      "luv": 5100123500,
       "first_time": 1793843799,
       "first_hm": "09:56"
      }
@@ -719,14 +719,14 @@
      {
       "code": "002081",
       "name": "金螳螂",
-      "pct": 10.0,
+      "pct": 10,
       "price": 4.73,
       "board_type": "一字板",
       "reason": "洁净室+半导体厂房配套+建筑装饰",
       "turnover": 1.411,
       "open_num": null,
-      "seal_amount": 225859630.0,
-      "luv": 12546564200.0,
+      "seal_amount": 225859630,
+      "luv": 12546564200,
       "first_time": 1793841900,
       "first_hm": "09:25"
      },
@@ -739,8 +739,8 @@
       "reason": "黄金珠宝+珠宝加工+客户拓展",
       "turnover": 2.5057,
       "open_num": null,
-      "seal_amount": 93151188.0,
-      "luv": 3094570100.0,
+      "seal_amount": 93151188,
+      "luv": 3094570100,
       "first_time": 1793841900,
       "first_hm": "09:25"
      },
@@ -753,8 +753,8 @@
       "reason": "白银采选+贵金属+拟购方鑫矿业+三季报高增",
       "turnover": 7.8708,
       "open_num": 7,
-      "seal_amount": 106112070.0,
-      "luv": 17367961000.0,
+      "seal_amount": 106112070,
+      "luv": 17367961000,
       "first_time": 1793842200,
       "first_hm": "09:30"
      },
@@ -767,8 +767,8 @@
       "reason": "AI短剧+AI营销+三季报增长",
       "turnover": 2.9272,
       "open_num": null,
-      "seal_amount": 84486996.0,
-      "luv": 5852820100.0,
+      "seal_amount": 84486996,
+      "luv": 5852820100,
       "first_time": 1793842200,
       "first_hm": "09:30"
      },
@@ -781,8 +781,8 @@
       "reason": "光伏银粉+低温光伏浆料+次新股",
       "turnover": 23.5414,
       "open_num": null,
-      "seal_amount": 158102360.0,
-      "luv": 1341726540.0,
+      "seal_amount": 158102360,
+      "luv": 1341726540,
       "first_time": 1793842200,
       "first_hm": "09:30"
      },
@@ -795,8 +795,8 @@
       "reason": "拟购境外金矿+矿山装备",
       "turnover": 2.9913,
       "open_num": null,
-      "seal_amount": 83329792.0,
-      "luv": 2381693000.0,
+      "seal_amount": 83329792,
+      "luv": 2381693000,
       "first_time": 1793842203,
       "first_hm": "09:30"
      },
@@ -809,36 +809,36 @@
       "reason": "光伏组件+汽车轻量化+储能",
       "turnover": 3.6883,
       "open_num": 1,
-      "seal_amount": 31139808.0,
-      "luv": 1747200000.0,
+      "seal_amount": 31139808,
+      "luv": 1747200000,
       "first_time": 1793842233,
       "first_hm": "09:30"
      },
      {
       "code": "600641",
       "name": "先导基电",
-      "pct": 10.0,
+      "pct": 10,
       "price": 31.02,
       "board_type": "换手板",
       "reason": "铟+离子注入机+半导体设备+SOFC",
       "turnover": 2.3197,
       "open_num": null,
-      "seal_amount": 280194600.0,
-      "luv": 28868140000.0,
+      "seal_amount": 280194600,
+      "luv": 28868140000,
       "first_time": 1793842261,
       "first_hm": "09:31"
      },
      {
       "code": "603657",
       "name": "春光科技",
-      "pct": 10.0,
+      "pct": 10,
       "price": 30.8,
       "board_type": "换手板",
       "reason": "扫地机器人+家庭具身机器人+清洁电器代工",
       "turnover": 2.3449,
       "open_num": null,
-      "seal_amount": 21664720.0,
-      "luv": 4163853500.0,
+      "seal_amount": 21664720,
+      "luv": 4163853500,
       "first_time": 1793842266,
       "first_hm": "09:31"
      },
@@ -851,8 +851,8 @@
       "reason": "锂电材料+固态电池+启元气体收购+AI服务器电源",
       "turnover": 14.5547,
       "open_num": 2,
-      "seal_amount": 68605866.0,
-      "luv": 3067714400.0,
+      "seal_amount": 68605866,
+      "luv": 3067714400,
       "first_time": 1793842323,
       "first_hm": "09:32"
      },
@@ -865,22 +865,22 @@
       "reason": "光伏储能+特种线缆+三季报扭亏+厦门国资",
       "turnover": 6.0234,
       "open_num": null,
-      "seal_amount": 83712312.0,
-      "luv": 7025906300.0,
+      "seal_amount": 83712312,
+      "luv": 7025906300,
       "first_time": 1793842371,
       "first_hm": "09:32"
      },
      {
       "code": "600206",
       "name": "有研新材",
-      "pct": 10.0,
+      "pct": 10,
       "price": 38.39,
       "board_type": "换手板",
       "reason": "半导体靶材+先进存储+靶材扩产+三季报增长",
       "turnover": 10.978,
       "open_num": 6,
-      "seal_amount": 160647560.0,
-      "luv": 32499182000.0,
+      "seal_amount": 160647560,
+      "luv": 32499182000,
       "first_time": 1793842799,
       "first_hm": "09:39"
      }
@@ -894,14 +894,14 @@
      {
       "code": "603212",
       "name": "赛伍技术",
-      "pct": 10.0,
+      "pct": 10,
       "price": 10.67,
       "board_type": "换手板",
       "reason": "光伏胶膜+半导体材料+三季报减亏",
       "turnover": 1.5813,
       "open_num": null,
-      "seal_amount": 39766023.0,
-      "luv": 4668025100.0,
+      "seal_amount": 39766023,
+      "luv": 4668025100,
       "first_time": 1793842262,
       "first_hm": "09:31"
      },
@@ -914,8 +914,8 @@
       "reason": "光伏组件+GPC电池+储能系统",
       "turnover": 3.4963,
       "open_num": null,
-      "seal_amount": 165333230.0,
-      "luv": 14844883000.0,
+      "seal_amount": 165333230,
+      "luv": 14844883000,
       "first_time": 1793842350,
       "first_hm": "09:32"
      },
@@ -928,8 +928,8 @@
       "reason": "烘焙油脂+乳制品+预制烘焙",
       "turnover": 0.9917,
       "open_num": null,
-      "seal_amount": 15024868.0,
-      "luv": 6092813200.0,
+      "seal_amount": 15024868,
+      "luv": 6092813200,
       "first_time": 1793842403,
       "first_hm": "09:33"
      },
@@ -942,8 +942,8 @@
       "reason": "光伏设备+叠栅技术+TOPCon电池",
       "turnover": 0.8305,
       "open_num": null,
-      "seal_amount": 35343684.0,
-      "luv": 4276008600.0,
+      "seal_amount": 35343684,
+      "luv": 4276008600,
       "first_time": 1793842405,
       "first_hm": "09:33"
      },
@@ -956,8 +956,8 @@
       "reason": "光伏+冷却塔+液冷",
       "turnover": 2.2846,
       "open_num": null,
-      "seal_amount": 61831218.0,
-      "luv": 8483880600.0,
+      "seal_amount": 61831218,
+      "luv": 8483880600,
       "first_time": 1793842417,
       "first_hm": "09:33"
      },
@@ -971,21 +971,21 @@
       "turnover": 1.4825,
       "open_num": null,
       "seal_amount": 11161154.8,
-      "luv": 3667379700.0,
+      "luv": 3667379700,
       "first_time": 1793842443,
       "first_hm": "09:34"
      },
      {
       "code": "002045",
       "name": "国光电器",
-      "pct": 10.0,
+      "pct": 10,
       "price": 9.9,
       "board_type": "换手板",
       "reason": "AI眼镜+智能音箱+声学模组",
       "turnover": 3.8142,
       "open_num": null,
-      "seal_amount": 83523330.0,
-      "luv": 5562145500.0,
+      "seal_amount": 83523330,
+      "luv": 5562145500,
       "first_time": 1793842485,
       "first_hm": "09:34"
      },
@@ -993,13 +993,13 @@
       "code": "000995",
       "name": "皇台酒业",
       "pct": 10.0244,
-      "price": 18.0,
+      "price": 18,
       "board_type": "换手板",
       "reason": "白酒+老窖池+董事会换届",
       "turnover": 39.0485,
       "open_num": 1,
-      "seal_amount": 23385600.0,
-      "luv": 3193344000.0,
+      "seal_amount": 23385600,
+      "luv": 3193344000,
       "first_time": 1793842554,
       "first_hm": "09:35"
      },
@@ -1012,8 +1012,8 @@
       "reason": "光伏建筑一体化+装配式建筑+回购",
       "turnover": 1.3156,
       "open_num": null,
-      "seal_amount": 32605794.0,
-      "luv": 4926553600.0,
+      "seal_amount": 32605794,
+      "luv": 4926553600,
       "first_time": 1793842557,
       "first_hm": "09:35"
      },
@@ -1026,8 +1026,8 @@
       "reason": "BIPV+光储充+高管增持",
       "turnover": 0.8003,
       "open_num": null,
-      "seal_amount": 29211536.0,
-      "luv": 5802875800.0,
+      "seal_amount": 29211536,
+      "luv": 5802875800,
       "first_time": 1793842558,
       "first_hm": "09:35"
      },
@@ -1040,8 +1040,8 @@
       "reason": "公路基建+资产盘活+新疆国资",
       "turnover": 6.5178,
       "open_num": null,
-      "seal_amount": 108818908.0,
-      "luv": 5962590300.0,
+      "seal_amount": 108818908,
+      "luv": 5962590300,
       "first_time": 1793842665,
       "first_hm": "09:37"
      },
@@ -1054,8 +1054,8 @@
       "reason": "数据中心+干式变压器+核电",
       "turnover": 3.6898,
       "open_num": null,
-      "seal_amount": 92141652.0,
-      "luv": 6691496400.0,
+      "seal_amount": 92141652,
+      "luv": 6691496400,
       "first_time": 1793842719,
       "first_hm": "09:38"
      }
@@ -3781,7 +3781,7 @@
    },
    {
     "date": "2026-07-27",
-    "close": 4138.0
+    "close": 4138
    },
    {
     "date": "2026-07-28",
@@ -3889,7 +3889,7 @@
    },
    {
     "date": "2026-09-02",
-    "close": 4434.0
+    "close": 4434
    },
    {
     "date": "2026-09-03",
@@ -3905,7 +3905,7 @@
    },
    {
     "date": "2026-09-08",
-    "close": 4400.0
+    "close": 4400
    },
    {
     "date": "2026-09-09",
@@ -3917,7 +3917,7 @@
    },
    {
     "date": "2026-09-11",
-    "close": 4390.0
+    "close": 4390
    },
    {
     "date": "2026-09-14",
@@ -3953,7 +3953,7 @@
    },
    {
     "date": "2026-09-24",
-    "close": 4310.0
+    "close": 4310
    },
    {
     "date": "2026-09-25",
@@ -3997,7 +3997,7 @@
    },
    {
     "date": "2026-10-09",
-    "close": 4220.0
+    "close": 4220
    },
    {
     "date": "2026-10-12",
@@ -4009,7 +4009,7 @@
    },
    {
     "date": "2026-10-14",
-    "close": 4127.0
+    "close": 4127
    },
    {
     "date": "2026-10-15",
@@ -4065,15 +4065,15 @@
    },
    {
     "date": "2026-11-03",
-    "close": 3940.0
+    "close": 3940
    },
    {
     "date": "2026-11-04",
-    "close": 4072.0
+    "close": 4072
    },
    {
     "date": "2026-11-05",
-    "close": 4132.0
+    "close": 4132
    }
   ]
  },
@@ -8888,6 +8888,10 @@
   {
    "t": "23:10",
    "text": "日记板改成跟着数据存进 GitHub：这里写的每条记录都会写进 data/日期.json，跟当天行情一起存档，打开页面的人都能看到"
+  },
+  {
+   "t": "23:05",
+   "text": "前端写入测试，待清理"
   }
  ]
 }
