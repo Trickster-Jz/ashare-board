@@ -441,6 +441,19 @@ def parse_ladder(info, date_compact):
             print('[warn] real board %s: %s' % (it.get('code'), e), file=sys.stderr)
         return m                                   # 取不到日K就退回原值，保证不丢数据
 
+    def ts(v):
+        """涨停时间戳 -> int（无效返回 None）"""
+        try:
+            t = int(v)
+            return t if t > 0 else None
+        except (TypeError, ValueError):
+            return None
+
+    def hm(v):
+        """涨停时间戳 -> 北京时间 HH:MM"""
+        t = ts(v)
+        return time.strftime('%H:%M', time.gmtime(t + 8 * 3600)) if t else None
+
     groups = {}
     for it in info:
         lv = level_of(it, date_compact)
@@ -455,11 +468,15 @@ def parse_ladder(info, date_compact):
             'open_num': it.get('open_num'),
             'seal_amount': it.get('order_amount'),   # 封单额(万元)
             'luv': it.get('currency_value'),         # 流通市值(元)
+            'first_time': ts(it.get('first_limit_up_time')),   # 当日首次涨停时间戳
+            'first_hm': hm(it.get('first_limit_up_time')),     # 同上，格式化为 HH:MM
         })
     ladder = []
     for lv in sorted(groups.keys(), reverse=True):
+        # 按当日首次涨停时间升序：最先封板的排前面（取不到时间的排最后）
+        stocks = sorted(groups[lv], key=lambda s: (s['first_time'] is None, s['first_time'] or 0))
         ladder.append({'level': lv, 'label': ('首板' if lv == 1 else '%d板' % lv),
-                       'count': len(groups[lv]), 'stocks': groups[lv][:12]})
+                       'count': len(stocks), 'stocks': stocks[:12]})
     return ladder
 
 
