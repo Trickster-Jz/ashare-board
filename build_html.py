@@ -122,9 +122,6 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 
 /* 龙虎榜折叠 */
 .lhb-item{cursor:pointer}
-.lhb-h .arr{font-size:15px;color:#fff;background:var(--blue);border-radius:8px;
-  padding:3px 10px;margin-left:4px;line-height:1.6;transition:transform .2s,background .2s,color .2s}
-.lhb-item.open .arr{transform:rotate(180deg);background:#eef0f4;color:var(--t2)}
 .lhb-b{display:none;margin-top:8px}
 .lhb-item.open .lhb-b{display:block}
 
@@ -178,24 +175,26 @@ td.num{text-align:right;font-variant-numeric:tabular-nums}
   text-align:center;font-variant-numeric:tabular-nums}
 /* 热点板块展开后的个股小框：更紧凑，时间小字再缩一档 */
 .chip.chip2{padding:3px 8px;line-height:1.25}
+.chip2 b{font-weight:400}
 .chip2 .tm2{font-size:9px;line-height:1.05;margin-top:0}
 tr.bkb .chips{gap:4px 6px}
 
 
 /* 龙虎榜 */
-.lhb-item{border:1px solid var(--line);border-radius:12px;padding:11px;margin-bottom:10px}
+.lhb-item{border:1px solid var(--line);border-radius:12px;padding:11px;margin-bottom:10px;overflow:hidden}
 .lhb-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .lhb-n{font-weight:700;font-size:15px}
 .lhb-t{font-size:11px;color:var(--t3);margin:3px 0 8px;line-height:1.4}
-.seats{display:grid;grid-template-columns:1fr;gap:8px}
-.seat-box{background:#fafbfc;border-radius:9px;padding:8px}
+.seats{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.seat-box{background:#fafbfc;border-radius:9px;padding:8px;min-width:0}
 .seat-box h4{margin:0 0 5px;font-size:12px;color:var(--t2);font-weight:600}
-.srow{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:3px 0;font-variant-numeric:tabular-nums}
+.srow{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:3px 0;
+  font-variant-numeric:tabular-nums;min-width:0;overflow:hidden}
 .sname{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .inst{color:#3b6fd4;font-size:10px;background:#eaf0fc;border-radius:3px;padding:0 4px;margin-left:3px}
 .north{color:#b07d17;font-size:10px;background:#fdf3e0;border-radius:3px;padding:0 4px;margin-left:3px}
 .yz{color:#c2410c;font-size:10px;background:#ffeee4;border-radius:3px;padding:0 4px;margin-left:3px}
-.money{color:var(--t1);font-weight:600}
+.money{color:var(--t1);font-weight:600;flex:none;white-space:nowrap}
 .more{display:block;width:100%;background:#f5f6f8;border:none;border-radius:10px;padding:10px;
   font-size:14px;color:var(--blue);cursor:pointer;margin-top:4px}
 
@@ -282,7 +281,7 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 8px}
   <div class="hd-top">
     <div>
       <div class="hd-title">骄子每日复盘看板</div>
-      <div class="hd-sub">盘中每小时更新数据　23:05 正式存档</div>
+      <div class="hd-sub">盘中每小时更新数据　21:00 正式存档</div>
     </div>
     <div style="display:flex;gap:6px">
       <button class="btn" id="prev">‹</button>
@@ -633,10 +632,9 @@ function lhbItemHtml(it){
         <span style="display:flex;align-items:baseline;gap:8px">
           <span style="font-size:12px;color:var(--t3)">净买入 <b class="${cls(it.net)}" style="font-size:13px">${isNum(net) ? net.toFixed(2) + '亿' : '—'}</b></span>
           <span class="${cls(it.pct)}" style="font-weight:700">${sg(it.pct)}%</span>
-          <span class="arr">▾</span>
         </span>
       </div>
-      <div class="lhb-t">${it.reason || ''} · 收盘 ${f(it.close)} · 点开查看买卖席位</div>
+      <div class="lhb-t">${it.reason || ''} · 收盘 ${f(it.close)}</div>
       <div class="lhb-b"><div class="seats">
         <div class="seat-box"><h4>买入前五</h4>${seatRows(it.buy_seats, 'buy')}</div>
         <div class="seat-box"><h4>卖出前五</h4>${seatRows(it.sell_seats, 'sell')}</div>
