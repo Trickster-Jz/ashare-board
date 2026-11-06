@@ -428,8 +428,12 @@ def parse_ladder(info, date_compact):
         return ('sh%s' % code) if code.startswith(('6', '9')) else ('bj%s' % code) \
             if code.startswith(('4', '8')) else ('sz%s' % code)
 
-    def real_board_days(code, name, date_compact):
-        """用日K倒推真实连续涨停天数（收盘涨停才算）"""
+    def real_board_days(code, name, date_compact, today_pct=None):
+        """用日K倒推真实连续涨停天数（收盘涨停才算）
+
+        盘中新浪日K还没有当天那根，用涨停池里的当日涨幅补上今天这一棒，
+        否则会退回同花顺的「区间涨停次数」——那是断过板的累计数，不是连板数。
+        """
         want = '%s-%s-%s' % (date_compact[:4], date_compact[4:6], date_compact[6:])
         url = ('https://money.finance.sina.com.cn/quotes_service/api/json_v2.php/'
                'CN_MarketData.getKLineData?symbol=%s&scale=240&ma=no&datalen=30'
@@ -437,26 +441,44 @@ def parse_ladder(info, date_compact):
         ks = get_json(url, headers={'Referer': 'https://finance.sina.com.cn/'})
         ks = [k for k in (ks or []) if k.get('day') and k.get('close')]
         ks.sort(key=lambda k: k['day'])
-        if not ks or ks[-1]['day'] != want:
-            return None                            # 当天K线还没出来，交给调用方降级
+        if not ks:
+            return None
         th = limit_th(code, name)
+        have_today = ks[-1]['day'] == want
         n, prev = 0, None
         for k in ks:
+            if k['day'] == want:
+                continue                            # 今天单独处理，避免重复计入
             close = float(k['close'])
             if prev is not None and (close / prev - 1) * 100 >= th:
                 n += 1
             else:
                 n = 0
             prev = close
+        # 今天这一棒
+        if have_today:
+            close = float(ks[-1]['close'])
+            n = n + 1 if (prev is not None and (close / prev - 1) * 100 >= th) else 0
+        elif today_pct is not None:
+            try:
+                n = n + 1 if float(today_pct) >= th else 0
+            except (TypeError, ValueError):
+                return None
+        else:
+            return None                             # 既没当天K线也没当日涨幅，交给调用方降级
         return max(n, 1)
 
     def level_of(it, date_compact):
         n, m = parse_hd(it)
-        if n == m:
-            return m                               # N天N板 → 中间没断，就是 M 连板
-        # N>M：区间内断过板，用真实日K重算
+        hd = str(it.get('high_days') or '')
+        if '首板' in hd:
+            return 1
+        # 只有明确写成「N天M板」且 N==M 才敢直接采信；写成「8板」这种一律用日K核实
+        if '天' in hd and n == m:
+            return m
         try:
-            r = real_board_days(it.get('code'), it.get('name'), date_compact)
+            r = real_board_days(it.get('code'), it.get('name'), date_compact,
+                                it.get('change_rate'))
             if r:
                 return r
         except Exception as e:
