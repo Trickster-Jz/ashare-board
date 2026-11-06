@@ -111,6 +111,9 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 .ikl-hd b{font-size:12.5px;color:var(--t1)}
 .ikl-hd .chg{margin-left:auto;font-weight:700;font-size:12px;font-variant-numeric:tabular-nums}
 .ikl-hd .chg i{font-style:normal;font-weight:400;font-size:10px;color:var(--t3);margin-right:4px}
+.ikl-hd .lg{display:inline-flex;align-items:center;gap:3px;margin-left:5px;font-size:9.5px;color:var(--t3)}
+.ikl-hd .lg i{display:inline-block;width:8px;height:2px;border-radius:1px;background:#3b4049}
+.ikl-hd .lg i.a{background:#e0a03c;margin-left:3px}
 .ikl-empty{font-size:12px;color:var(--t3);padding:8px 0}
 /* 指数卡标题行：名称与「分时 / 日K」两个小按钮同排垂直居中 */
 .idx-hd{display:flex;align-items:center;justify-content:space-between;gap:6px}
@@ -556,7 +559,8 @@ function drawIKL(day){
     const pct = (tm.p[tm.p.length - 1].c / tm.pc - 1) * 100;
     const sameDay = day && tm.d === day.date;
     const sub = sameDay ? `今日 ${tm.p[tm.p.length - 1].t}` : `盘中 ${(tm.d || '').slice(5)}`;
-    box.innerHTML = heading(name + ' 分时', sub, pct, '当日') + tmSvg(tm, W);
+    const lg = '<span class="lg"><i></i>价格<i class="a"></i>均价</span>';
+    box.innerHTML = heading(name + ' 分时', sub + lg, pct, '当日') + tmSvg(tm, W);
   }
 }
 
@@ -621,16 +625,22 @@ function tmSvg(tm, W){
   const vmax = Math.max(1, vs[Math.min(vs.length - 1, Math.floor(vs.length * 0.95))] || vs[vs.length - 1]);
   const yv = v => KH + GP + (1 - Math.min(1, v / vmax)) * (VH - 2);
   const last = pts[total - 1].c, pct = (last / pc - 1) * 100;
-  const col = pct >= 0 ? '#e0393e' : '#12a862';
-  // 曲线从 09:30 的今开起笔（首根 5 分钟线覆盖 09:30–09:35）
+  // 两条线：价格线（深色）+ 均价线（金黄，按成交量加权的当日累计均价）
   const draw = [{t: '09:30', c: (isNum(tm.o) ? tm.o : pc)}].concat(pts);
+  let cv = 0, ca = 0;
+  const avg = pts.map(q => {
+    const v = q.v || 0;
+    cv += v; ca += q.c * v;
+    return cv ? ca / cv : q.c;
+  });
   const line = draw.map((q, i) => `${i ? 'L' : 'M'}${X(pos(q.t)).toFixed(1)},${y(q.c).toFixed(1)}`).join('');
-  const area = line + `L${X(pos(draw[draw.length - 1].t)).toFixed(1)},${y(pc).toFixed(1)} L${PL},${y(pc).toFixed(1)} Z`;
+  const aline = avg.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join('');
   const bw = Math.max(1.4, Math.min(5, pw / 48 * 0.62));
+  // 成交量柱按「这一根 vs 上一根」着色，开盘首根对比昨收
   const bars = pts.map((q, i) => {
-    const vy = yv(q.v);
+    const vy = yv(q.v), prev = i ? pts[i - 1].c : pc;
     return `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${vy.toFixed(1)}" width="${bw.toFixed(1)}"
-      height="${Math.max(1, KH + GP + VH - vy).toFixed(1)}" fill="${q.c >= pc ? '#e0393e' : '#12a862'}" opacity=".45"/>`;
+      height="${Math.max(1, KH + GP + VH - vy).toFixed(1)}" fill="${q.c >= prev ? '#e0393e' : '#12a862'}" opacity=".88"/>`;
   }).join('');
   const ylab = [1, 0.5, 0, -0.5, -1].map(k => {
     const v = pc + dev * k;
@@ -647,8 +657,8 @@ function tmSvg(tm, W){
       <line x1="${PL}" y1="${y(pc).toFixed(1)}" x2="${W - PR}" y2="${y(pc).toFixed(1)}" stroke="#dfe3ea" stroke-width="1" stroke-dasharray="3 3"/>
       <line x1="${PL}" y1="${KH + GP - 4}" x2="${W - PR}" y2="${KH + GP - 4}" stroke="#eceff3" stroke-width="1"/>
       ${ylab}${bars}
-      <path d="${area}" fill="${col}" opacity=".07"/>
-      <path d="${line}" fill="none" stroke="${col}" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="${aline}" fill="none" stroke="#e0a03c" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="${line}" fill="none" stroke="#3b4049" stroke-width="1.5" stroke-linejoin="round"/>
       ${xlab}
     </svg>`;
 }
