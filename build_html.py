@@ -110,6 +110,7 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 .ikl-hd{display:flex;align-items:baseline;gap:7px;font-size:11px;color:var(--t3);margin-bottom:2px}
 .ikl-hd b{font-size:12.5px;color:var(--t1)}
 .ikl-hd .chg{margin-left:auto;font-weight:700;font-size:12px;font-variant-numeric:tabular-nums}
+.ikl-hd .chg i{font-style:normal;font-weight:400;font-size:10px;color:var(--t3);margin-right:4px}
 .ikl-empty{font-size:12px;color:var(--t3);padding:8px 0}
 /* 指数卡标题行：名称与「分时 / 日K」两个小按钮同排垂直居中 */
 .idx-hd{display:flex;align-items:center;justify-content:space-between;gap:6px}
@@ -542,7 +543,11 @@ function drawIKL(day){
   if(kind === 'dk'){
     const arr = ((IKL || {})[code] || []).filter(k => !day || k.d <= day.date).slice(-90);
     if(arr.length < 5){ box.innerHTML = `<div class="ikl-empty">${name}的日K数据暂时没取到</div>`; return; }
-    box.innerHTML = heading(name + ' 日K', `近 ${arr.length} 个交易日`, dkChg(arr)) + dkSvg(arr, W);
+    // 右上角显示「当日」涨跌，跟卡片一致；取不到当日就用整段区间涨幅并标明
+    const cur = ((day && day.indices) || []).find(x => x.name === name);
+    const ok = cur && isNum(cur.pct);
+    box.innerHTML = heading(name + ' 日K', `近 ${arr.length} 个交易日`,
+      ok ? cur.pct : dkChg(arr), ok ? '当日' : '区间') + dkSvg(arr, W);
   }else{
     const isLatest = !day || (DAYS.length && day.date === DAYS[DAYS.length - 1].date);
     const tm = (isLatest && (ITR || {})[code]) ? ITR[code] : null;
@@ -552,13 +557,16 @@ function drawIKL(day){
       return;
     }
     const pct = (tm.p[tm.p.length - 1].c / tm.pc - 1) * 100;
-    box.innerHTML = heading(name + ' 分时', (tm.d || '').slice(5), pct) + tmSvg(tm, W);
+    const sameDay = day && tm.d === day.date;
+    const sub = sameDay ? `今日 ${tm.p[tm.p.length - 1].t}` : `盘中 ${(tm.d || '').slice(5)}`;
+    box.innerHTML = heading(name + ' 分时', sub, pct, '当日') + tmSvg(tm, W);
   }
 }
 
-function heading(t, sub, pct){
+function heading(t, sub, pct, lab){
   return `<div class="ikl-hd"><b>${t}</b><span>${sub}</span>${
-    isNum(pct) ? `<span class="chg ${pct >= 0 ? 'up' : 'down'}">${sg(pct)}%</span>` : ''}</div>`;
+    isNum(pct) ? `<span class="chg ${pct >= 0 ? 'up' : 'down'}">${
+      lab ? `<i>${lab}</i>` : ''}${sg(pct)}%</span>` : ''}</div>`;
 }
 function dkChg(arr){
   return (arr[arr.length - 1].c / (arr[0].o || arr[0].c) - 1) * 100;
@@ -568,7 +576,7 @@ function dkChg(arr){
 function dkSvg(arr, W){
   W = W || 340;
   const KH = 130, VH = 44, GP = 10, AX = 14, H = KH + GP + VH + AX;
-  const PL = 5, PR = 40, pw = W - PL - PR, n = arr.length, step = pw / n;
+  const PL = 5, PR = 32, pw = W - PL - PR, n = arr.length, step = pw / n;
   const bw = Math.max(1.2, Math.min(5.5, step * 0.64));
   let hi = -Infinity, lo = Infinity, vmax = 1;
   arr.forEach(k => { hi = Math.max(hi, k.h); lo = Math.min(lo, k.l); vmax = Math.max(vmax, k.v); });
@@ -584,14 +592,14 @@ function dkSvg(arr, W){
       <rect x="${(x(i) - bw / 2).toFixed(1)}" y="${vy.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, KH + GP + VH - vy).toFixed(1)}" fill="${col}" opacity=".5"/>`;
   }).join('');
   const ylab = [hi, (hi + lo) / 2, lo].map(v =>
-    `<text x="${W - PR + 4}" y="${(y(v) + 3).toFixed(1)}" font-size="9" fill="#9aa0ab">${fmtTick(v)}</text>`).join('');
+    `<text x="${W - 2}" y="${(y(v) + 3).toFixed(1)}" text-anchor="end" font-size="9" fill="#9aa0ab">${fmtTick(v)}</text>`).join('');
   return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none">
       <line x1="${PL}" y1="${KH + GP - 4}" x2="${W - PR}" y2="${KH + GP - 4}" stroke="#eceff3" stroke-width="1"/>
       ${ylab}${bars}${monthLabels(arr, x, W, PL, PR, H)}
     </svg>`;
 }
 
-/* 分时（当日 5 分钟线 + 成交量），纵轴以昨收为中轴 */
+/* 分时（当日 5 分钟线 + 成交量）：横轴按真实交易时间钉死，走多少画多少，纵轴以昨收为中轴 */
 function tmSvg(tm, W){
   W = W || 340;
   const pts = tm.p, pc = tm.pc;
@@ -599,32 +607,42 @@ function tmSvg(tm, W){
   pts.forEach(q => { dev = Math.max(dev, Math.abs(q.c - pc)); });
   dev = Math.max(dev, pc * 0.002);
   const KH = 130, VH = 44, GP = 10, AX = 14, H = KH + GP + VH + AX;
-  const PL = 5, PR = 40, pw = W - PL - PR, total = pts.length;
+  const PL = 5, PR = 32, pw = W - PL - PR, total = pts.length;
+  // 09:30 → 0，11:30 / 13:00 → 0.5，15:00 → 1；盘中只画到当前时刻，右侧留白即“还没走到”
+  const pos = t => {
+    const a = String(t).split(':');
+    let m = (+a[0]) * 60 + (+(a[1] || 0));
+    m = m <= 11 * 60 + 30 ? m - (9 * 60 + 30) : 120 + Math.max(0, m - 13 * 60);
+    return Math.max(0, Math.min(240, m)) / 240;
+  };
+  const X = p => PL + pw * p;
+  const x = i => X(pos(pts[i].t));
   const y = v => 3 + (1 - (v - (pc - dev)) / (2 * dev)) * (KH - 6);
-  const x = i => PL + pw * (i / (total - 1));
   // 开盘第一根含集合竞价巨量，直接取最大值会把其余柱子压成一条线，用 95 分位做量纲
   const vs = pts.map(q => q.v).sort((a, b) => a - b);
   const vmax = Math.max(1, vs[Math.min(vs.length - 1, Math.floor(vs.length * 0.95))] || vs[vs.length - 1]);
   const yv = v => KH + GP + (1 - Math.min(1, v / vmax)) * (VH - 2);
   const last = pts[total - 1].c, pct = (last / pc - 1) * 100;
   const col = pct >= 0 ? '#e0393e' : '#12a862';
-  const line = pts.map((q, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(q.c).toFixed(1)}`).join('');
-  const area = line + `L${x(total - 1).toFixed(1)},${y(pc).toFixed(1)} L${x(0).toFixed(1)},${y(pc).toFixed(1)} Z`;
+  // 曲线从 09:30 起笔（首根 5 分钟线覆盖 09:30–09:35）
+  const draw = [{t: '09:30', c: pc}].concat(pts);
+  const line = draw.map((q, i) => `${i ? 'L' : 'M'}${X(pos(q.t)).toFixed(1)},${y(q.c).toFixed(1)}`).join('');
+  const area = line + `L${X(pos(draw[draw.length - 1].t)).toFixed(1)},${y(pc).toFixed(1)} L${PL},${y(pc).toFixed(1)} Z`;
+  const bw = Math.max(1.4, Math.min(5, pw / 48 * 0.62));
   const bars = pts.map((q, i) => {
-    const vy = yv(q.v), bw = Math.max(1.5, Math.min(6, pw / total * 0.6));
+    const vy = yv(q.v);
     return `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${vy.toFixed(1)}" width="${bw.toFixed(1)}"
       height="${Math.max(1, KH + GP + VH - vy).toFixed(1)}" fill="${q.c >= pc ? '#e0393e' : '#12a862'}" opacity=".45"/>`;
   }).join('');
   const ylab = [1, 0.5, 0, -0.5, -1].map(k => {
     const v = pc + dev * k;
-    return `<text x="${W - PR + 4}" y="${(y(v) + 3).toFixed(1)}" font-size="9" fill="${k === 0 ? '#8b93a3' : (k > 0 ? '#d05a5e' : '#3f9d74')}">${(k * dev / pc * 100).toFixed(2)}%</text>`;
+    return `<text x="${W - 2}" y="${(y(v) + 3).toFixed(1)}" text-anchor="end" font-size="9" fill="${k === 0 ? '#8b93a3' : (k > 0 ? '#d05a5e' : '#3f9d74')}">${(k * dev / pc * 100).toFixed(2)}%</text>`;
   }).join('');
-  const xs = [['09:30', 0], ['10:30', 12], ['11:30', 24], ['14:00', 30], ['15:00', total - 1]];
-  const xlab = xs.filter(([, i]) => i < total).map(([t, i]) => {
-    const px = x(i);
+  const xlab = [['09:30', 0], ['10:30', .25], ['11:30', .5], ['14:00', .75], ['15:00', 1]].map(([t, p]) => {
+    const px = X(p);
     let anc = 'middle';
     if(px < PL + 14) anc = 'start';
-    else if(px > W - PR - 14) anc = 'end';
+    else if(px > W - PR - 10) anc = 'end';
     return `<text x="${px.toFixed(1)}" y="${H - 2}" text-anchor="${anc}" font-size="9" fill="#9aa0ab">${t}</text>`;
   }).join('');
   return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none">
@@ -1314,10 +1332,15 @@ def fetch_index_intraday(symbol):
     if not order:
         return None
     day, rows = None, None
-    for d in reversed(order):
-        if len(byday[d]) >= 4:
-            day, rows = d, byday[d]
-            break
+    # 今天已经走出 2 根以上就用今天（盘中看到哪画到哪）；刚开盘只有 0–1 根时退回上一交易日
+    last = order[-1]
+    if len(byday[last]) >= 2:
+        day, rows = last, byday[last]
+    else:
+        for d in reversed(order[:-1]):
+            if len(byday[d]) >= 4:
+                day, rows = d, byday[d]
+                break
     if not rows:
         return None
     pts, pc = [], None
@@ -1331,7 +1354,7 @@ def fetch_index_intraday(symbol):
                         'v': float(k.get('volume') or 0)})
         except (KeyError, ValueError, TypeError):
             continue
-    if len(pts) < 4:
+    if len(pts) < 2:
         return None
     return {'d': day, 'pc': pc, 'p': pts}
 
