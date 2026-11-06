@@ -103,15 +103,19 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
   position:relative;transition:border-color .15s,background .15s}
 .idx.tap{cursor:pointer;-webkit-tap-highlight-color:transparent}
 .idx.on{border-color:#b9cdf3;background:#fbfcff}
-.idx .hint{position:absolute;right:8px;top:8px;font-size:10px;color:#8b93a3;
-  border:1px solid var(--line);border-radius:20px;padding:0 6px;line-height:1.6;background:#fff}
-.idx.on .hint{color:#3b6fd4;border-color:#c7d8f7;background:#eef3fd}
-.ikl{margin-top:9px;padding-top:8px;border-top:1px dashed var(--line)}
+#ikl{margin-top:10px}
+#ikl:empty{display:none}
 .ikl svg{display:block}
-.ikl-hd{display:flex;align-items:baseline;gap:6px;font-size:10px;color:var(--t3);margin:0 0 1px}
-.ikl-hd b{font-size:11px;color:var(--t2)}
-.ikl-hd .chg{margin-left:auto;font-weight:700;font-size:11px;font-variant-numeric:tabular-nums}
-.ikl-empty{font-size:11px;color:var(--t3);padding:6px 0}
+.ikl-hd{display:flex;align-items:baseline;gap:7px;font-size:11px;color:var(--t3);margin-bottom:2px}
+.ikl-hd b{font-size:12.5px;color:var(--t1)}
+.ikl-hd .chg{margin-left:auto;font-weight:700;font-size:12px;font-variant-numeric:tabular-nums}
+.ikl-empty{font-size:12px;color:var(--t3);padding:8px 0}
+/* 指数卡右上角的两个小按钮：分时 / 日K */
+.idx .hint{position:absolute;right:8px;top:8px;display:flex;gap:4px}
+.idx .hint i{font-style:normal;font-size:10px;color:#8b93a3;border:1px solid var(--line);
+  border-radius:20px;padding:0 6px;line-height:1.65;background:#fff}
+.idx .hint i.on{color:#3b6fd4;border-color:#c7d8f7;background:#eef3fd}
+.idx .n{padding-right:74px}
 .idx .n{font-size:13px;color:var(--t2)}
 .idx .c{font-size:22px;font-weight:700;margin:3px 0 1px;font-variant-numeric:tabular-nums}
 .idx .d{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
@@ -313,7 +317,8 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 8px}
     <div id="overview"></div></div></section>
 
   <section><div class="card" id="sec-index"><h2>指数行情 <small>开盘 / 收盘 / 成交额</small></h2>
-    <div class="idx-grid" id="indices"></div></div></section>
+    <div class="idx-grid" id="indices"></div>
+    <div id="ikl"></div></div></section>
 
   <section><div class="card"><h2>热点板块与题材 <small>按涨停数 / 涨跌幅排序</small></h2>
     <div id="blocks"></div></div></section>
@@ -472,10 +477,9 @@ function idxPart(it, label){
   </div>`;
 }
 const IKLMAP = {'上证指数': 'sh', '深证成指': 'sz'};
-window._ikl = '';          // 当前展开的指数代码，空为全部收起
-function iklName(code){ return code === 'sh' ? '上证指数' : '深证成指'; }
+window._iv = {code: '', kind: ''};   // 当前选中的指数与图种：分时 / 日K
 
-/* 指数卡：哪张展开，就在它自己下面接一张分时 + 日K 的图，不影响旁边那张 */
+/* 指数卡：上证与深证右上角各有两个小按钮，点哪个开哪个；图固定显示在四张卡的下方，横向铺满 */
 function renderIndices(day){
   const prev = prevOf(day.date);
   // 固定 2×2 布局：上排 上证指数 / 科创50，下排 深证成指 / 创业板指
@@ -487,10 +491,11 @@ function renderIndices(day){
     const p = idxByName(prev, it.name);
     const c = cls(it.change);
     const code = IKLMAP[it.name];
-    const on = code && code === window._ikl;
-    return `<div class="idx${code ? ' tap' : ''}${on ? ' on' : ''}"${
-        code ? ` data-ikl="${code}"` : ''}>
-      ${code ? `<span class="hint">${on ? '收起' : '分时/日K'}</span>` : ''}
+    const KINDS = [['tm', '分时'], ['dk', '日K']];
+    const btns = code ? `<span class="hint">${KINDS.map(([k, lab]) =>
+        `<i data-iv="${code}|${k}" class="${window._iv.code === code && window._iv.kind === k ? 'on' : ''}">${lab}</i>`).join('')}</span>` : '';
+    return `<div class="idx${code ? ' tap' : ''}">
+      ${btns}
       <div class="n">${it.name}</div>
       <div class="c ${c}">${f(it.close)}</div>
       <div class="d ${c}">${sg(it.change)}　${sg(it.pct)}%</div>
@@ -498,115 +503,129 @@ function renderIndices(day){
         ${idxPart(it, '今日')}
         ${idxPart(p, '上日')}
       </div>
-      ${on ? '<div class="ikl" data-for="' + code + '"></div>' : ''}
     </div>`;
   }).join('') || '<div class="empty">暂无数据</div>';
 
-  $('indices').querySelectorAll('[data-ikl]').forEach(el => {
-    el.onclick = ev => {
-      const c = el.dataset.ikl;
-      window._ikl = (window._ikl === c) ? '' : c;   // 再点同一个收起
+  $('indices').querySelectorAll('[data-iv]').forEach(b => {
+    b.onclick = ev => {
+      ev.stopPropagation();
+      const [c, k] = b.dataset.iv.split('|');
+      // 点已选中的按钮＝收起；否则切到这张图
+      if(window._iv.code === c && window._iv.kind === k) window._iv = {code: '', kind: ''};
+      else window._iv = {code: c, kind: k};
       renderIndices(day);
-      const box = $('indices').querySelector('.ikl');
-      if(box) box.scrollIntoView({block: 'nearest', behavior: 'smooth'});
+      if(window._iv.code && $('ikl')) $('ikl').scrollIntoView({block: 'nearest', behavior: 'smooth'});
     };
   });
-  const box = $('indices').querySelector('.ikl');
-  if(box) drawIdxChart(box, window._ikl, day);
+  drawIKL(day);
 }
 
-/* 分时（当日 5 分钟）+ 日K（近 90 个交易日）+ 成交量 */
-function drawIdxChart(box, code, day){
-  const dk = ((IKL || {})[code] || []).filter(k => !day || k.d <= day.date).slice(-90);
-  const isLatest = !day || (DAYS.length && day.date === DAYS[DAYS.length - 1].date);
-  const tm = (isLatest && (ITR || {})[code]) ? ITR[code] : null;
-  if(dk.length < 5 && !tm){
-    box.innerHTML = `<div class="ikl-empty">${iklName(code)}的图表数据暂时没取到</div>`;
-    return;
+/* 四卡下方的横向图：分时 或 日K（含成交量） */
+function drawIKL(day){
+  const box = $('ikl');
+  if(!box) return;
+  const {code, kind} = window._iv;
+  if(!code || !kind){ box.innerHTML = ''; return; }
+  const name = code === 'sh' ? '上证指数' : '深证成指';
+  if(kind === 'dk'){
+    const arr = ((IKL || {})[code] || []).filter(k => !day || k.d <= day.date).slice(-90);
+    if(arr.length < 5){ box.innerHTML = `<div class="ikl-empty">${name}的日K数据暂时没取到</div>`; return; }
+    box.innerHTML = heading(name + ' 日K', `近 ${arr.length} 个交易日`, dkChg(arr)) + dkSvg(arr);
+  }else{
+    const isLatest = !day || (DAYS.length && day.date === DAYS[DAYS.length - 1].date);
+    const tm = (isLatest && (ITR || {})[code]) ? ITR[code] : null;
+    if(!tm){
+      box.innerHTML = heading(name + ' 分时', '') +
+        `<div class="ikl-empty">${isLatest ? '今日分时暂时没取到' : '分时只保留最新交易日，看历史请选日K'}</div>`;
+      return;
+    }
+    const pct = (tm.p[tm.p.length - 1].c / tm.pc - 1) * 100;
+    box.innerHTML = heading(name + ' 分时', (tm.d || '').slice(5), pct) + tmSvg(tm);
   }
-  const W = Math.max(120, Math.round(box.clientWidth) || 150);
-  const PR = 34;
-  let h = '';
-
-  if(tm && tm.p && tm.p.length > 3){
-    h += tmBlock(tm, W, PR);
-  } else {
-    h += `<div class="ikl-hd"><b>分时</b><span>${isLatest ? '今日尚未采集到分时' : '分时只保留当日，历史日期不显示'}</span></div>`;
-  }
-  if(dk.length >= 5) h += dkBlock(dk, W, PR);
-  box.innerHTML = h;
 }
 
-/* 分时：横轴固定 09:30-15:00，纵轴以昨收为中轴上下对称，右轴标涨跌幅 */
-function tmBlock(tm, W, PR){
-  const pts = tm.p, pc = tm.pc || pts[0].c;
-  let dev = 0;
-  pts.forEach(q => { dev = Math.max(dev, Math.abs(q.c - pc)); });
-  dev = Math.max(dev, pc * 0.002);
-  const KH = 96, VH = 26, GP = 6, AX = 12, H = KH + GP + VH + AX;
-  const PL = 4, pw = W - PL - PR;
-  const y = v => 2 + (1 - (v - (pc - dev)) / (2 * dev)) * (KH - 4);
-  const xs = ['09:30', '11:30', '15:00'];   // 卡片窄，只放三个刻度
-  const total = pts.length;
-  const idxOf = t => pts.findIndex(q => q.t >= t) === -1 ? total - 1 : pts.findIndex(q => q.t >= t);
-  const x = i => PL + pw * (i / (total - 1));
-  // 上午/下午分段：11:30 与 13:00 之间不留空
-  const line = pts.map((q, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(q.c).toFixed(1)}`).join('');
-  const area = line + `L${x(total - 1).toFixed(1)},${y(pc).toFixed(1)} L${x(0).toFixed(1)},${y(pc).toFixed(1)} Z`;
-  let vmax = 1;
-  pts.forEach(q => { vmax = Math.max(vmax, q.v); });
-  const vh = q => KH + GP + (1 - q.v / vmax) * (VH - 2);
-  const bars = pts.map((q, i) => {
-    const vy = vh(q);
-    return `<rect x="${(x(i) - 0.6).toFixed(1)}" y="${vy.toFixed(1)}" width="1.4"
-      height="${Math.max(1, KH + GP + VH - vy).toFixed(1)}" fill="${q.c >= pc ? '#e0393e' : '#12a862'}" opacity=".45"/>`;
-  }).join('');
-  const ylab = [1, 0.5, 0, -0.5, -1].map(k => {
-    const v = pc + dev * k;
-    return `<text x="${W - PR + 3}" y="${(y(v) + 3).toFixed(1)}" font-size="8.5" fill="${k === 0 ? '#8b93a3' : (k > 0 ? '#d05a5e' : '#3f9d74')}">${(k * dev / pc * 100).toFixed(2)}%</text>`;
-  }).join('');
-  const xlab = xs.map(t => {
-    const i = idxOf(t), px = x(i);
-    let anc = 'middle';
-    if(px < PL + 12) anc = 'start';
-    else if(px > W - PR - 12) anc = 'end';
-    return `<text x="${px.toFixed(1)}" y="${H - 1}" text-anchor="${anc}" font-size="8" fill="#9aa0ab">${t === '14:00' ? '14:00' : t.slice(0, 5)}</text>`;
-  }).join('');
-  const lastP = pts[total - 1].c, pct = (lastP / pc - 1) * 100;
-  const lc = pct >= 0 ? '#e0393e' : '#12a862';
-  return `<div class="ikl-hd"><b>分时</b><span>${(tm.d || '').slice(5)}</span>
-      <span class="chg ${pct >= 0 ? 'up' : 'down'}">${sg(pct)}%</span></div>
-    <svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none">
-      <line x1="${PL}" y1="${y(pc).toFixed(1)}" x2="${W - PR}" y2="${y(pc).toFixed(1)}" stroke="#dfe3ea" stroke-width="1" stroke-dasharray="3 3"/>
-      <line x1="${PL}" y1="${KH + GP - 3}" x2="${W - PR}" y2="${KH + GP - 3}" stroke="#eceff3" stroke-width="1"/>
-      ${ylab}${bars}
-      <path d="${area}" fill="${lc}" opacity=".06"/>
-      <path d="${line}" fill="none" stroke="${lc}" stroke-width="1.4" stroke-linejoin="round"/>
-      ${xlab}
-    </svg>`;
+function heading(t, sub, pct){
+  return `<div class="ikl-hd"><b>${t}</b><span>${sub}</span>${
+    isNum(pct) ? `<span class="chg ${pct >= 0 ? 'up' : 'down'}">${sg(pct)}%</span>` : ''}</div>`;
+}
+function dkChg(arr){
+  return (arr[arr.length - 1].c / (arr[0].o || arr[0].c) - 1) * 100;
 }
 
-/* 日K + 成交量，横轴按月 */
-function dkBlock(arr, W, PR){
-  const KH = 96, VH = 26, GP = 6, AX = 12, H = KH + GP + VH + AX;
-  const PL = 4, pw = W - PL - PR, n = arr.length, step = pw / n;
-  const bw = Math.max(1, Math.min(4.5, step * 0.62));
+/* 日K + 成交量（横轴按月） */
+function dkSvg(arr){
+  const W = Math.max(300, Math.round($('ikl').clientWidth) || 340);
+  const KH = 130, VH = 44, GP = 10, AX = 14, H = KH + GP + VH + AX;
+  const PL = 5, PR = 40, pw = W - PL - PR, n = arr.length, step = pw / n;
+  const bw = Math.max(1.2, Math.min(5.5, step * 0.64));
   let hi = -Infinity, lo = Infinity, vmax = 1;
   arr.forEach(k => { hi = Math.max(hi, k.h); lo = Math.min(lo, k.l); vmax = Math.max(vmax, k.v); });
-  const pd = (hi - lo) * 0.06 || 1;
-  const top = hi + pd, bot = lo - pd;
-  const y = v => 2 + (1 - (v - bot) / (top - bot)) * (KH - 4);
+  const pd = (hi - lo) * 0.06 || 1, top = hi + pd, bot = lo - pd;
+  const y = v => 3 + (1 - (v - bot) / (top - bot)) * (KH - 6);
   const yv = v => KH + GP + (1 - v / vmax) * (VH - 2);
   const x = i => PL + step * i + step / 2;
   const bars = arr.map((k, i) => {
     const col = k.c >= k.o ? '#e0393e' : '#12a862';
-    const yt = y(Math.max(k.o, k.c)), yb = y(Math.min(k.o, k.c));
+    const yt = y(Math.max(k.o, k.c)), yb = y(Math.min(k.o, k.c)), vy = yv(k.v);
     return `<line x1="${x(i).toFixed(1)}" y1="${y(k.h).toFixed(1)}" x2="${x(i).toFixed(1)}" y2="${y(k.l).toFixed(1)}" stroke="${col}" stroke-width="1"/>
       <rect x="${(x(i) - bw / 2).toFixed(1)}" y="${yt.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, yb - yt).toFixed(1)}" fill="${col}"/>
-      <rect x="${(x(i) - bw / 2).toFixed(1)}" y="${yv(k.v).toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, KH + GP + VH - yv(k.v)).toFixed(1)}" fill="${col}" opacity=".45"/>`;
+      <rect x="${(x(i) - bw / 2).toFixed(1)}" y="${vy.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, KH + GP + VH - vy).toFixed(1)}" fill="${col}" opacity=".5"/>`;
   }).join('');
   const ylab = [hi, (hi + lo) / 2, lo].map(v =>
-    `<text x="${W - PR + 3}" y="${(y(v) + 3).toFixed(1)}" font-size="8.5" fill="#9aa0ab">${fmtTick(v)}</text>`).join('');
+    `<text x="${W - PR + 4}" y="${(y(v) + 3).toFixed(1)}" font-size="9" fill="#9aa0ab">${fmtTick(v)}</text>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none">
+      <line x1="${PL}" y1="${KH + GP - 4}" x2="${W - PR}" y2="${KH + GP - 4}" stroke="#eceff3" stroke-width="1"/>
+      ${ylab}${bars}${monthLabels(arr, x, W, PL, PR, H)}
+    </svg>`;
+}
+
+/* 分时（当日 5 分钟线 + 成交量），纵轴以昨收为中轴 */
+function tmSvg(tm){
+  const W = Math.max(300, Math.round($('ikl').clientWidth) || 340);
+  const pts = tm.p, pc = tm.pc;
+  let dev = 0;
+  pts.forEach(q => { dev = Math.max(dev, Math.abs(q.c - pc)); });
+  dev = Math.max(dev, pc * 0.002);
+  const KH = 130, VH = 44, GP = 10, AX = 14, H = KH + GP + VH + AX;
+  const PL = 5, PR = 40, pw = W - PL - PR, total = pts.length;
+  const y = v => 3 + (1 - (v - (pc - dev)) / (2 * dev)) * (KH - 6);
+  const x = i => PL + pw * (i / (total - 1));
+  let vmax = 1;
+  pts.forEach(q => { vmax = Math.max(vmax, q.v); });
+  const yv = v => KH + GP + (1 - v / vmax) * (VH - 2);
+  const last = pts[total - 1].c, pct = (last / pc - 1) * 100;
+  const col = pct >= 0 ? '#e0393e' : '#12a862';
+  const line = pts.map((q, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(q.c).toFixed(1)}`).join('');
+  const area = line + `L${x(total - 1).toFixed(1)},${y(pc).toFixed(1)} L${x(0).toFixed(1)},${y(pc).toFixed(1)} Z`;
+  const bars = pts.map((q, i) => {
+    const vy = yv(q.v);
+    return `<rect x="${(x(i) - 0.9).toFixed(1)}" y="${vy.toFixed(1)}" width="1.8"
+      height="${Math.max(1, KH + GP + VH - vy).toFixed(1)}" fill="${q.c >= pc ? '#e0393e' : '#12a862'}" opacity=".45"/>`;
+  }).join('');
+  const ylab = [1, 0.5, 0, -0.5, -1].map(k => {
+    const v = pc + dev * k;
+    return `<text x="${W - PR + 4}" y="${(y(v) + 3).toFixed(1)}" font-size="9" fill="${k === 0 ? '#8b93a3' : (k > 0 ? '#d05a5e' : '#3f9d74')}">${(k * dev / pc * 100).toFixed(2)}%</text>`;
+  }).join('');
+  const xs = [['09:30', 0], ['10:30', 12], ['11:30', 24], ['14:00', 30], ['15:00', total - 1]];
+  const xlab = xs.filter(([, i]) => i < total).map(([t, i]) => {
+    const px = x(i);
+    let anc = 'middle';
+    if(px < PL + 14) anc = 'start';
+    else if(px > W - PR - 14) anc = 'end';
+    return `<text x="${px.toFixed(1)}" y="${H - 2}" text-anchor="${anc}" font-size="9" fill="#9aa0ab">${t}</text>`;
+  }).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none">
+      <line x1="${PL}" y1="${y(pc).toFixed(1)}" x2="${W - PR}" y2="${y(pc).toFixed(1)}" stroke="#dfe3ea" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="${PL}" y1="${KH + GP - 4}" x2="${W - PR}" y2="${KH + GP - 4}" stroke="#eceff3" stroke-width="1"/>
+      ${ylab}${bars}
+      <path d="${area}" fill="${col}" opacity=".07"/>
+      <path d="${line}" fill="none" stroke="${col}" stroke-width="1.6" stroke-linejoin="round"/>
+      ${xlab}
+    </svg>`;
+}
+
+/* 横轴：月份刻度（相邻太近就合并，首尾贴边改对齐） */
+function monthLabels(arr, x, W, PL, PR, H){
   const ticks = [];
   let lastM = '';
   arr.forEach((k, i) => {
@@ -614,22 +633,15 @@ function dkBlock(arr, W, PR){
     if(m === lastM) return;
     lastM = m;
     const px = x(i);
-    if(ticks.length && px - ticks[ticks.length - 1].px < 22) ticks[ticks.length - 1] = {px: px, lab: (+k.d.slice(5, 7)) + '月'};
+    if(ticks.length && px - ticks[ticks.length - 1].px < 26) ticks[ticks.length - 1] = {px: px, lab: (+k.d.slice(5, 7)) + '月'};
     else ticks.push({px: px, lab: (+k.d.slice(5, 7)) + '月'});
   });
-  const xlab = ticks.map(t => {
+  return ticks.map(t => {
     let anc = 'middle', tx = t.px;
-    if(t.px < PL + 12){ anc = 'start'; tx = t.px - 3; }
-    else if(t.px > W - PR - 12){ anc = 'end'; tx = t.px + 3; }
-    return `<text x="${tx.toFixed(1)}" y="${H - 1}" text-anchor="${anc}" font-size="8" fill="#9aa0ab">${t.lab}</text>`;
+    if(t.px < PL + 14){ anc = 'start'; tx = t.px - 4; }
+    else if(t.px > W - PR - 14){ anc = 'end'; tx = t.px + 4; }
+    return `<text x="${tx.toFixed(1)}" y="${H - 2}" text-anchor="${anc}" font-size="9" fill="#9aa0ab">${t.lab}</text>`;
   }).join('');
-  const chg = (arr[n - 1].c / (arr[0].o || arr[0].c) - 1) * 100;
-  return `<div class="ikl-hd"><b>日K</b><span>近 ${n} 个交易日</span>
-      <span class="chg ${chg >= 0 ? 'up' : 'down'}">${sg(chg)}%</span></div>
-    <svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none">
-      <line x1="${PL}" y1="${KH + GP - 3}" x2="${W - PR}" y2="${KH + GP - 3}" stroke="#eceff3" stroke-width="1"/>
-      ${ylab}${bars}${xlab}
-    </svg>`;
 }
 
 /* ---------- 总览 ---------- */
