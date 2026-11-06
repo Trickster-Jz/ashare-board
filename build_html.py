@@ -318,7 +318,7 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 8px}
   <section><div class="card" id="sec-overview"><h2>市场总览</h2>
     <div id="overview"></div></div></section>
 
-  <section><div class="card" id="sec-index"><h2>指数行情 <small>开盘 / 收盘 / 成交额</small></h2>
+  <section><div class="card" id="sec-index"><h2>指数行情 <small>开盘 / 收盘 / 成交额 / 走势图</small></h2>
     <div class="idx-grid" id="indices"></div></div></section>
 
   <section><div class="card"><h2>热点板块与题材 <small>按涨停数 / 涨跌幅排序</small></h2>
@@ -646,7 +646,7 @@ function tmSvg(tm, W){
       <line x1="${PL}" y1="${y(pc).toFixed(1)}" x2="${W - PR}" y2="${y(pc).toFixed(1)}" stroke="#dfe3ea" stroke-width="1" stroke-dasharray="3 3"/>
       <line x1="${PL}" y1="${KH + GP - 4}" x2="${W - PR}" y2="${KH + GP - 4}" stroke="#eceff3" stroke-width="1"/>
       ${ylab}${bars}
-      <path d="${line}" fill="none" stroke="#3b4049" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="${line}" fill="none" stroke="#3b4049" stroke-width="1.1" stroke-linejoin="round"/>
       ${xlab}
     </svg>`;
 }
