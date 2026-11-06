@@ -1279,6 +1279,31 @@ init();
 """
 
 
+def fetch_index_snapshot(symbol):
+    """指数的实时快照（今开/最高/最低/现价/成交量），用来补齐盘中日K缺的当日那根
+    新浪的日K接口在盘中不生成当天K线，只有收盘后才补，所以每次构建都要自己补一根"""
+    import re
+    import requests
+    url = 'https://hq.sinajs.cn/list=%s' % symbol
+    try:
+        r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0',
+                                       'Referer': 'https://finance.sina.com.cn'}, timeout=15)
+        r.encoding = 'gbk'
+        m = re.search(r'"(.*)"', r.text)
+        if not m:
+            return None
+        f = m.group(1).split(',')
+        if len(f) < 32 or not f[30]:
+            return None
+        o, c, hi, lo = float(f[1]), float(f[3]), float(f[4]), float(f[5])
+        if o <= 0 or c <= 0:
+            return None
+        return {'d': f[30], 'o': o, 'h': hi, 'l': lo, 'c': c,
+                'v': float(f[8] or 0)}
+    except Exception:
+        return None
+
+
 def fetch_index_kline(symbol, n=130):
     """指数日K（开高低收 + 成交量），供指数卡片点开后的 K 线图使用"""
     import requests
@@ -1404,9 +1429,25 @@ def main():
     data_json = json.dumps(days, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     kl_json = json.dumps(kline, ensure_ascii=False, separators=(',', ':'))
     ikl = {'sh': fetch_index_kline('sh000001'), 'sz': fetch_index_kline('sz399001')}
-    ikl_json = json.dumps(ikl, ensure_ascii=False, separators=(',', ':'))
     itr = {'sh': fetch_index_intraday('sh000001'), 'sz': fetch_index_intraday('sz399001')}
     itr = {k: v for k, v in itr.items() if v}
+    # 盘中日K接口不给当天那根，用实时快照补上（收盘后接口自己有，不会重复补）
+    # 成交量优先用当日分时累加，量纲和日K一致（新浪实时接口两个市场单位不统一）
+    for code, sym in (('sh', 'sh000001'), ('sz', 'sz399001')):
+        ks = ikl.get(code) or []
+        if not ks:
+            continue
+        snap = fetch_index_snapshot(sym)
+        if snap and str(snap['d']) > str(ks[-1]['d']):
+            # 新浪实时接口两个市场的成交量量纲不一致（上证按手、深证按股），用最近几天日K校准
+            recent = [k['v'] for k in ks[-5:] if k.get('v')]
+            if recent:
+                med = sorted(recent)[len(recent) // 2]
+                if med > 0 and snap['v'] and snap['v'] < med / 20:
+                    snap['v'] *= 100
+            ks.append(snap)
+        ikl[code] = ks[-130:]
+    ikl_json = json.dumps(ikl, ensure_ascii=False, separators=(',', ':'))
     # 分时的基准价必须是「昨收」，否则涨跌幅会变成相对今开的涨幅（和卡片对不上）
     for code in ('sh', 'sz'):
         tm = itr.get(code)
