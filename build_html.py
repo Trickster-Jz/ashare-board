@@ -543,11 +543,8 @@ function drawIKL(day){
   if(kind === 'dk'){
     const arr = ((IKL || {})[code] || []).filter(k => !day || k.d <= day.date).slice(-90);
     if(arr.length < 5){ box.innerHTML = `<div class="ikl-empty">${name}的日K数据暂时没取到</div>`; return; }
-    // 右上角显示「当日」涨跌，跟卡片一致；取不到当日就用整段区间涨幅并标明
-    const cur = ((day && day.indices) || []).find(x => x.name === name);
-    const ok = cur && isNum(cur.pct);
-    box.innerHTML = heading(name + ' 日K', `近 ${arr.length} 个交易日`,
-      ok ? cur.pct : dkChg(arr), ok ? '当日' : '区间') + dkSvg(arr, W);
+    // 右上角是「近 90 个交易日」这一整段的累计涨跌（当日涨跌看卡片）
+    box.innerHTML = heading(name + ' 日K', `近 ${arr.length} 个交易日`, dkChg(arr), '区间') + dkSvg(arr, W);
   }else{
     const isLatest = !day || (DAYS.length && day.date === DAYS[DAYS.length - 1].date);
     const tm = (isLatest && (ITR || {})[code]) ? ITR[code] : null;
