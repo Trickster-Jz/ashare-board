@@ -605,6 +605,7 @@ function tmSvg(tm, W){
   const pts = tm.p, pc = tm.pc;
   let dev = 0;
   pts.forEach(q => { dev = Math.max(dev, Math.abs(q.c - pc)); });
+  if(isNum(tm.o)) dev = Math.max(dev, Math.abs(tm.o - pc));   // 跳空开盘也要落在纵轴范围内
   dev = Math.max(dev, pc * 0.002);
   const KH = 130, VH = 44, GP = 10, AX = 14, H = KH + GP + VH + AX;
   const PL = 5, PR = 32, pw = W - PL - PR, total = pts.length;
@@ -624,8 +625,8 @@ function tmSvg(tm, W){
   const yv = v => KH + GP + (1 - Math.min(1, v / vmax)) * (VH - 2);
   const last = pts[total - 1].c, pct = (last / pc - 1) * 100;
   const col = pct >= 0 ? '#e0393e' : '#12a862';
-  // 曲线从 09:30 起笔（首根 5 分钟线覆盖 09:30–09:35）
-  const draw = [{t: '09:30', c: pc}].concat(pts);
+  // 曲线从 09:30 的今开起笔（首根 5 分钟线覆盖 09:30–09:35）
+  const draw = [{t: '09:30', c: (isNum(tm.o) ? tm.o : pc)}].concat(pts);
   const line = draw.map((q, i) => `${i ? 'L' : 'M'}${X(pos(q.t)).toFixed(1)},${y(q.c).toFixed(1)}`).join('');
   const area = line + `L${X(pos(draw[draw.length - 1].t)).toFixed(1)},${y(pc).toFixed(1)} L${PL},${y(pc).toFixed(1)} Z`;
   const bw = Math.max(1.4, Math.min(5, pw / 48 * 0.62));
@@ -1343,20 +1344,22 @@ def fetch_index_intraday(symbol):
                 break
     if not rows:
         return None
-    pts, pc = [], None
+    pts, pc, o0 = [], None, None
     for k in rows:
         try:
             c = float(k['close'])
             o = float(k['open'])
+            if o0 is None:
+                o0 = o          # 今开（分时曲线从 09:30 的这个价位起笔）
             if pc is None:
-                pc = o          # 当日第一根 5 分钟的开盘价约等于昨收附近的起点
+                pc = o          # 兜底基准：主流程会用日K的昨收覆盖
             pts.append({'t': str(k['day'])[11:16], 'c': round(c, 3),
                         'v': float(k.get('volume') or 0)})
         except (KeyError, ValueError, TypeError):
             continue
     if len(pts) < 2:
         return None
-    return {'d': day, 'pc': pc, 'p': pts}
+    return {'d': day, 'pc': pc, 'o': o0, 'p': pts}
 
 
 def fetch_sh_kline(n=15):
@@ -1409,6 +1412,12 @@ def main():
     ikl_json = json.dumps(ikl, ensure_ascii=False, separators=(',', ':'))
     itr = {'sh': fetch_index_intraday('sh000001'), 'sz': fetch_index_intraday('sz399001')}
     itr = {k: v for k, v in itr.items() if v}
+    # 分时的基准价必须是「昨收」，否则涨跌幅会变成相对今开的涨幅（和卡片对不上）
+    for code in ('sh', 'sz'):
+        tm = itr.get(code)
+        ks = [k for k in (ikl.get(code) or []) if str(k.get('d', '')) < str(tm.get('d', '') if tm else '')]
+        if tm and ks:
+            tm['pc'] = ks[-1]['c']
     itr_json = json.dumps(itr, ensure_ascii=False, separators=(',', ':'))
     wser_json = json.dumps(wser, ensure_ascii=False, separators=(',', ':'))
     gen = dt.datetime.now().strftime('%Y-%m-%d %H:%M')
