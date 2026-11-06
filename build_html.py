@@ -106,12 +106,12 @@ h2 small{font-weight:400;font-size:11px;color:var(--t3)}
 .idx .hint{position:absolute;right:8px;top:8px;font-size:10px;color:#8b93a3;
   border:1px solid var(--line);border-radius:20px;padding:0 6px;line-height:1.6;background:#fff}
 .idx.on .hint{color:#3b6fd4;border-color:#c7d8f7;background:#eef3fd}
-#ikl{margin-top:10px}
-#ikl:empty{display:none}
-.ikl-hd{display:flex;align-items:baseline;gap:7px;font-size:11px;color:var(--t3);margin-bottom:2px}
-.ikl-hd b{font-size:12.5px;color:var(--t1)}
-.ikl-hd .chg{margin-left:auto;font-weight:700;font-size:12px;font-variant-numeric:tabular-nums}
-.ikl-empty{font-size:12px;color:var(--t3);padding:8px 0}
+.ikl{margin-top:9px;padding-top:8px;border-top:1px dashed var(--line)}
+.ikl svg{display:block}
+.ikl-hd{display:flex;align-items:baseline;gap:6px;font-size:10px;color:var(--t3);margin:0 0 1px}
+.ikl-hd b{font-size:11px;color:var(--t2)}
+.ikl-hd .chg{margin-left:auto;font-weight:700;font-size:11px;font-variant-numeric:tabular-nums}
+.ikl-empty{font-size:11px;color:var(--t3);padding:6px 0}
 .idx .n{font-size:13px;color:var(--t2)}
 .idx .c{font-size:22px;font-weight:700;margin:3px 0 1px;font-variant-numeric:tabular-nums}
 .idx .d{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
@@ -313,8 +313,7 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 8px}
     <div id="overview"></div></div></section>
 
   <section><div class="card" id="sec-index"><h2>指数行情 <small>开盘 / 收盘 / 成交额</small></h2>
-    <div class="idx-grid" id="indices"></div>
-    <div id="ikl"></div></div></section>
+    <div class="idx-grid" id="indices"></div></div></section>
 
   <section><div class="card"><h2>热点板块与题材 <small>按涨停数 / 涨跌幅排序</small></h2>
     <div id="blocks"></div></div></section>
@@ -428,6 +427,7 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 8px}
 const DAYS = __DATA__;
 const KL = __KLINE__;
 const IKL = __IKL__;
+const ITR = __ITR__;
 const WSER = __WIDTH__;
 const WEEK = ['周日','周一','周二','周三','周四','周五','周六'];
 
@@ -472,8 +472,10 @@ function idxPart(it, label){
   </div>`;
 }
 const IKLMAP = {'上证指数': 'sh', '深证成指': 'sz'};
-window._ikl = '';          // 当前展开日K的指数代码，空为收起
+window._ikl = '';          // 当前展开的指数代码，空为全部收起
 function iklName(code){ return code === 'sh' ? '上证指数' : '深证成指'; }
+
+/* 指数卡：哪张展开，就在它自己下面接一张分时 + 日K 的图，不影响旁边那张 */
 function renderIndices(day){
   const prev = prevOf(day.date);
   // 固定 2×2 布局：上排 上证指数 / 科创50，下排 深证成指 / 创业板指
@@ -488,7 +490,7 @@ function renderIndices(day){
     const on = code && code === window._ikl;
     return `<div class="idx${code ? ' tap' : ''}${on ? ' on' : ''}"${
         code ? ` data-ikl="${code}"` : ''}>
-      ${code ? `<span class="hint">${on ? '收起' : '日K'}</span>` : ''}
+      ${code ? `<span class="hint">${on ? '收起' : '分时/日K'}</span>` : ''}
       <div class="n">${it.name}</div>
       <div class="c ${c}">${f(it.close)}</div>
       <div class="d ${c}">${sg(it.change)}　${sg(it.pct)}%</div>
@@ -496,85 +498,136 @@ function renderIndices(day){
         ${idxPart(it, '今日')}
         ${idxPart(p, '上日')}
       </div>
+      ${on ? '<div class="ikl" data-for="' + code + '"></div>' : ''}
     </div>`;
   }).join('') || '<div class="empty">暂无数据</div>';
 
   $('indices').querySelectorAll('[data-ikl]').forEach(el => {
-    el.onclick = () => {
+    el.onclick = ev => {
       const c = el.dataset.ikl;
       window._ikl = (window._ikl === c) ? '' : c;   // 再点同一个收起
       renderIndices(day);
-      if(window._ikl && $('ikl')){                  // 展开后把图带进视野
-        $('ikl').scrollIntoView({block: 'nearest', behavior: 'smooth'});
-      }
+      const box = $('indices').querySelector('.ikl');
+      if(box) box.scrollIntoView({block: 'nearest', behavior: 'smooth'});
     };
   });
-  drawIKL(day);
+  const box = $('indices').querySelector('.ikl');
+  if(box) drawIdxChart(box, window._ikl, day);
 }
 
-/* 指数日K + 成交量（近 90 个交易日） */
-function drawIKL(day){
-  const box = $('ikl');
-  if(!box) return;
-  const code = window._ikl;
-  if(!code){ box.innerHTML = ''; return; }
-  const arr = ((IKL || {})[code] || []).filter(k => !day || k.d <= day.date).slice(-90);
-  if(arr.length < 5){
-    box.innerHTML = `<div class="ikl-empty">${iklName(code)}的日K数据暂时没取到</div>`;
+/* 分时（当日 5 分钟）+ 日K（近 90 个交易日）+ 成交量 */
+function drawIdxChart(box, code, day){
+  const dk = ((IKL || {})[code] || []).filter(k => !day || k.d <= day.date).slice(-90);
+  const isLatest = !day || (DAYS.length && day.date === DAYS[DAYS.length - 1].date);
+  const tm = (isLatest && (ITR || {})[code]) ? ITR[code] : null;
+  if(dk.length < 5 && !tm){
+    box.innerHTML = `<div class="ikl-empty">${iklName(code)}的图表数据暂时没取到</div>`;
     return;
   }
-  const W = Math.max(300, Math.round(box.clientWidth) || 340);
-  const KH = 118, VH = 40, GP = 10, AX = 14;
-  const H = KH + GP + VH + AX;
-  const PL = 5, PR = 38;
-  const pw = W - PL - PR, n = arr.length, step = pw / n;
-  const bw = Math.max(1.2, Math.min(5.5, step * 0.64));
+  const W = Math.max(120, Math.round(box.clientWidth) || 150);
+  const PR = 34;
+  let h = '';
+
+  if(tm && tm.p && tm.p.length > 3){
+    h += tmBlock(tm, W, PR);
+  } else {
+    h += `<div class="ikl-hd"><b>分时</b><span>${isLatest ? '今日尚未采集到分时' : '分时只保留当日，历史日期不显示'}</span></div>`;
+  }
+  if(dk.length >= 5) h += dkBlock(dk, W, PR);
+  box.innerHTML = h;
+}
+
+/* 分时：横轴固定 09:30-15:00，纵轴以昨收为中轴上下对称，右轴标涨跌幅 */
+function tmBlock(tm, W, PR){
+  const pts = tm.p, pc = tm.pc || pts[0].c;
+  let dev = 0;
+  pts.forEach(q => { dev = Math.max(dev, Math.abs(q.c - pc)); });
+  dev = Math.max(dev, pc * 0.002);
+  const KH = 96, VH = 26, GP = 6, AX = 12, H = KH + GP + VH + AX;
+  const PL = 4, pw = W - PL - PR;
+  const y = v => 2 + (1 - (v - (pc - dev)) / (2 * dev)) * (KH - 4);
+  const xs = ['09:30', '11:30', '15:00'];   // 卡片窄，只放三个刻度
+  const total = pts.length;
+  const idxOf = t => pts.findIndex(q => q.t >= t) === -1 ? total - 1 : pts.findIndex(q => q.t >= t);
+  const x = i => PL + pw * (i / (total - 1));
+  // 上午/下午分段：11:30 与 13:00 之间不留空
+  const line = pts.map((q, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(q.c).toFixed(1)}`).join('');
+  const area = line + `L${x(total - 1).toFixed(1)},${y(pc).toFixed(1)} L${x(0).toFixed(1)},${y(pc).toFixed(1)} Z`;
+  let vmax = 1;
+  pts.forEach(q => { vmax = Math.max(vmax, q.v); });
+  const vh = q => KH + GP + (1 - q.v / vmax) * (VH - 2);
+  const bars = pts.map((q, i) => {
+    const vy = vh(q);
+    return `<rect x="${(x(i) - 0.6).toFixed(1)}" y="${vy.toFixed(1)}" width="1.4"
+      height="${Math.max(1, KH + GP + VH - vy).toFixed(1)}" fill="${q.c >= pc ? '#e0393e' : '#12a862'}" opacity=".45"/>`;
+  }).join('');
+  const ylab = [1, 0.5, 0, -0.5, -1].map(k => {
+    const v = pc + dev * k;
+    return `<text x="${W - PR + 3}" y="${(y(v) + 3).toFixed(1)}" font-size="8.5" fill="${k === 0 ? '#8b93a3' : (k > 0 ? '#d05a5e' : '#3f9d74')}">${(k * dev / pc * 100).toFixed(2)}%</text>`;
+  }).join('');
+  const xlab = xs.map(t => {
+    const i = idxOf(t), px = x(i);
+    let anc = 'middle';
+    if(px < PL + 12) anc = 'start';
+    else if(px > W - PR - 12) anc = 'end';
+    return `<text x="${px.toFixed(1)}" y="${H - 1}" text-anchor="${anc}" font-size="8" fill="#9aa0ab">${t === '14:00' ? '14:00' : t.slice(0, 5)}</text>`;
+  }).join('');
+  const lastP = pts[total - 1].c, pct = (lastP / pc - 1) * 100;
+  const lc = pct >= 0 ? '#e0393e' : '#12a862';
+  return `<div class="ikl-hd"><b>分时</b><span>${(tm.d || '').slice(5)}</span>
+      <span class="chg ${pct >= 0 ? 'up' : 'down'}">${sg(pct)}%</span></div>
+    <svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none">
+      <line x1="${PL}" y1="${y(pc).toFixed(1)}" x2="${W - PR}" y2="${y(pc).toFixed(1)}" stroke="#dfe3ea" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="${PL}" y1="${KH + GP - 3}" x2="${W - PR}" y2="${KH + GP - 3}" stroke="#eceff3" stroke-width="1"/>
+      ${ylab}${bars}
+      <path d="${area}" fill="${lc}" opacity=".06"/>
+      <path d="${line}" fill="none" stroke="${lc}" stroke-width="1.4" stroke-linejoin="round"/>
+      ${xlab}
+    </svg>`;
+}
+
+/* 日K + 成交量，横轴按月 */
+function dkBlock(arr, W, PR){
+  const KH = 96, VH = 26, GP = 6, AX = 12, H = KH + GP + VH + AX;
+  const PL = 4, pw = W - PL - PR, n = arr.length, step = pw / n;
+  const bw = Math.max(1, Math.min(4.5, step * 0.62));
   let hi = -Infinity, lo = Infinity, vmax = 1;
   arr.forEach(k => { hi = Math.max(hi, k.h); lo = Math.min(lo, k.l); vmax = Math.max(vmax, k.v); });
   const pd = (hi - lo) * 0.06 || 1;
   const top = hi + pd, bot = lo - pd;
-  const y = v => 3 + (1 - (v - bot) / (top - bot)) * (KH - 6);
+  const y = v => 2 + (1 - (v - bot) / (top - bot)) * (KH - 4);
   const yv = v => KH + GP + (1 - v / vmax) * (VH - 2);
   const x = i => PL + step * i + step / 2;
-
   const bars = arr.map((k, i) => {
     const col = k.c >= k.o ? '#e0393e' : '#12a862';
     const yt = y(Math.max(k.o, k.c)), yb = y(Math.min(k.o, k.c));
-    const vy = yv(k.v);
     return `<line x1="${x(i).toFixed(1)}" y1="${y(k.h).toFixed(1)}" x2="${x(i).toFixed(1)}" y2="${y(k.l).toFixed(1)}" stroke="${col}" stroke-width="1"/>
       <rect x="${(x(i) - bw / 2).toFixed(1)}" y="${yt.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, yb - yt).toFixed(1)}" fill="${col}"/>
-      <rect x="${(x(i) - bw / 2).toFixed(1)}" y="${vy.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, KH + GP + VH - vy).toFixed(1)}" fill="${col}" opacity=".5"/>`;
+      <rect x="${(x(i) - bw / 2).toFixed(1)}" y="${yv(k.v).toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, KH + GP + VH - yv(k.v)).toFixed(1)}" fill="${col}" opacity=".45"/>`;
   }).join('');
-
-  // 右侧价格刻度：最高 / 中位 / 最低
-  const yt3 = [hi, (hi + lo) / 2, lo];
-  const ylab = yt3.map(v =>
-    `<text x="${W - PR + 4}" y="${(y(v) + 3).toFixed(1)}" font-size="9" fill="#9aa0ab">${fmtTick(v)}</text>`).join('');
-
-  // 横轴月份
-  const ticks2 = [];
+  const ylab = [hi, (hi + lo) / 2, lo].map(v =>
+    `<text x="${W - PR + 3}" y="${(y(v) + 3).toFixed(1)}" font-size="8.5" fill="#9aa0ab">${fmtTick(v)}</text>`).join('');
+  const ticks = [];
   let lastM = '';
   arr.forEach((k, i) => {
     const m = k.d.slice(0, 7);
     if(m === lastM) return;
     lastM = m;
     const px = x(i);
-    if(ticks2.length && px - ticks2[ticks2.length - 1].px < 26) ticks2[ticks2.length - 1] = {px: px, lab: (+k.d.slice(5, 7)) + '月'};
-    else ticks2.push({px: px, lab: (+k.d.slice(5, 7)) + '月'});
+    if(ticks.length && px - ticks[ticks.length - 1].px < 22) ticks[ticks.length - 1] = {px: px, lab: (+k.d.slice(5, 7)) + '月'};
+    else ticks.push({px: px, lab: (+k.d.slice(5, 7)) + '月'});
   });
-  const xlab = ticks2.map(t => {
+  const xlab = ticks.map(t => {
     let anc = 'middle', tx = t.px;
-    if(t.px < PL + 14){ anc = 'start'; tx = t.px - 4; }
-    else if(t.px > W - PR - 14){ anc = 'end'; tx = t.px + 4; }
-    return `<text x="${tx.toFixed(1)}" y="${H - 2}" text-anchor="${anc}" font-size="9" fill="#9aa0ab">${t.lab}</text>`;
+    if(t.px < PL + 12){ anc = 'start'; tx = t.px - 3; }
+    else if(t.px > W - PR - 12){ anc = 'end'; tx = t.px + 3; }
+    return `<text x="${tx.toFixed(1)}" y="${H - 1}" text-anchor="${anc}" font-size="8" fill="#9aa0ab">${t.lab}</text>`;
   }).join('');
-
-  const first = arr[0].o || arr[0].c, last = arr[n - 1].c;
-  const chg = (last / first - 1) * 100;
-  box.innerHTML = `<div class="ikl-hd"><b>${iklName(code)}</b><span>日K · 近 ${n} 个交易日</span>
+  const chg = (arr[n - 1].c / (arr[0].o || arr[0].c) - 1) * 100;
+  return `<div class="ikl-hd"><b>日K</b><span>近 ${n} 个交易日</span>
       <span class="chg ${chg >= 0 ? 'up' : 'down'}">${sg(chg)}%</span></div>
     <svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" preserveAspectRatio="none">
-      <line x1="${PL}" y1="${KH + GP - 4}" x2="${W - PR}" y2="${KH + GP - 4}" stroke="#eceff3" stroke-width="1"/>
+      <line x1="${PL}" y1="${KH + GP - 3}" x2="${W - PR}" y2="${KH + GP - 3}" stroke="#eceff3" stroke-width="1"/>
       ${ylab}${bars}${xlab}
     </svg>`;
 }
@@ -1209,6 +1262,39 @@ def fetch_index_kline(symbol, n=130):
     return out
 
 
+def fetch_index_intraday(symbol):
+    """指数当日分时（5 分钟线，含每根成交量）：返回 {'d','pc','p':[{'t','c','v'}]}"""
+    import requests
+    url = ('https://quotes.sina.cn/cn/api/json_v2.php/CN_MarketDataService.getKLineData'
+           '?symbol=%s&scale=5&ma=no&datalen=70' % symbol)
+    try:
+        r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0',
+                                       'Referer': 'https://finance.sina.com.cn'}, timeout=20)
+        ks = r.json()
+        if not isinstance(ks, list) or not ks:
+            return None
+    except Exception:
+        return None
+    day = ks[-1]['day'][:10]
+    pts = []
+    pc = None
+    for k in ks:
+        if k['day'][:10] != day:
+            continue
+        try:
+            c = float(k['close'])
+            o = float(k['open'])
+            if pc is None:
+                pc = o          # 当日第一根 5 分钟的开盘价约等于昨收附近的起点
+            pts.append({'t': k['day'][11:16], 'c': round(c, 3),
+                        'v': float(k.get('volume') or 0)})
+        except (KeyError, ValueError, TypeError):
+            continue
+    if len(pts) < 4:
+        return None
+    return {'d': day, 'pc': pc, 'p': pts}
+
+
 def fetch_sh_kline(n=15):
     """上证指数近 n 个交易日日K，用于'近7个交易日对比'"""
     import requests
@@ -1257,11 +1343,15 @@ def main():
     kl_json = json.dumps(kline, ensure_ascii=False, separators=(',', ':'))
     ikl = {'sh': fetch_index_kline('sh000001'), 'sz': fetch_index_kline('sz399001')}
     ikl_json = json.dumps(ikl, ensure_ascii=False, separators=(',', ':'))
+    itr = {'sh': fetch_index_intraday('sh000001'), 'sz': fetch_index_intraday('sz399001')}
+    itr = {k: v for k, v in itr.items() if v}
+    itr_json = json.dumps(itr, ensure_ascii=False, separators=(',', ':'))
     wser_json = json.dumps(wser, ensure_ascii=False, separators=(',', ':'))
     gen = dt.datetime.now().strftime('%Y-%m-%d %H:%M')
     html = (HTML.replace('__DATA__', data_json)
                 .replace('__KLINE__', kl_json)
                 .replace('__IKL__', ikl_json)
+                .replace('__ITR__', itr_json)
                 .replace('__WIDTH__', wser_json)
                 .replace('__GEN__', gen))
     with open(OUT, 'w', encoding='utf-8') as f:
