@@ -81,12 +81,38 @@ def save_day(date_str, data):
     return p
 
 
-def upsert_day(date_str, patch):
-    d = load_day(date_str) or {'date': date_str}
+TS_KEYS = ('updated_at', 'lhb_updated_at', 'archived_at')
+# 只有这几项才算「A 股行情变了」。标普/原油/黄金、两融北向在盘后还会各自跳动，
+# 不该带着「行情」的时间戳一起往后跑。
+MARKET_KEYS = ('indices', 'realtime', 'breadth', 'limit_up_pool', 'hot_blocks')
+
+
+def _content_sig(d, keys=None):
+    """内容指纹：剔除时间戳字段后序列化，用来判断这轮抓取有没有拿到新东西"""
+    src = d if keys is None else {k: d.get(k) for k in keys}
+    return json.dumps({k: v for k, v in src.items() if k not in TS_KEYS},
+                      ensure_ascii=False, sort_keys=True, default=str)
+
+
+def upsert_day(date_str, patch, touch='updated_at', sig_keys=None):
+    """写入当天数据。
+
+    时间戳只在「内容真的变了」的时候刷新：收盘后 17/18/19/20 点反复抓到的
+    是同一份数据，时间就停在最后一次变化的那一刻，不会一路跳到 20:00。
+    """
+    old = load_day(date_str) or {'date': date_str}
+    d = dict(old)
     for k, v in patch.items():
         d[k] = v
     d['date'] = date_str
-    d['updated_at'] = now_bj()
+    fresh = (_content_sig(old, sig_keys) != _content_sig(d, sig_keys))
+    if fresh:
+        d[touch] = now_bj()
+    # 没触及的时间戳一律沿用旧值；内容没变时连 touch 的那个也不动
+    for k in TS_KEYS:
+        if k != touch or not fresh:
+            if k in old:
+                d[k] = old[k]
     save_day(date_str, d)
     return d
 
@@ -928,7 +954,7 @@ def stage_market(date_str):
         'brent': fetch_commodity('OIL', 90),
         'gold': fetch_commodity('GC', 90),
     }
-    d = upsert_day(date_str, patch)
+    d = upsert_day(date_str, patch, sig_keys=MARKET_KEYS)
     print('[market] saved -> data/%s.json' % date_str)
     return d
 
@@ -939,9 +965,20 @@ def stage_lhb(date_str):
     if not lhb['count']:
         print('[lhb] 当日无龙虎榜数据（非交易日或尚未公布），跳过写入')
         return None
-    d = upsert_day(date_str, {'lhb': lhb,
-                              'lhb_updated_at': now_bj()})
+    d = upsert_day(date_str, {'lhb': lhb}, touch='lhb_updated_at')
     print('[lhb] %d 条 -> data/%s.json' % (lhb['count'], date_str))
+    return d
+
+
+def stage_archive(date_str):
+    """正式存档：只记录这一次存档的真实时刻，不动行情/龙虎榜的更新时间"""
+    d = load_day(date_str)
+    if not d or not d.get('indices'):
+        print('[archive] %s 还没有数据，跳过' % date_str)
+        return None
+    d['archived_at'] = now_bj()
+    save_day(date_str, d)
+    print('[archive] 存档时刻 %s' % d['archived_at'])
     return d
 
 
@@ -956,7 +993,7 @@ def stage_backfill(date_str):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--stage', choices=['market', 'lhb', 'backfill'], default='market')
+    ap.add_argument('--stage', choices=['market', 'lhb', 'archive', 'backfill'], default='market')
     ap.add_argument('--date', default=None, help='YYYY-MM-DD，默认今天')
     args = ap.parse_args()
     date_str = args.date or today_str()
@@ -965,6 +1002,8 @@ def main():
         stage_market(date_str)
     elif args.stage == 'lhb':
         stage_lhb(date_str)
+    elif args.stage == 'archive':
+        stage_archive(date_str)
     else:
         stage_backfill(date_str)
 
