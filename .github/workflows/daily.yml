@@ -62,6 +62,9 @@ jobs:
             python3 fetch_data.py --stage "$STAGE"
           fi
 
+      - name: 记录存档时刻
+        run: python3 fetch_data.py --stage archive
+
       - name: 生成页面
         run: python3 build_html.py
 
