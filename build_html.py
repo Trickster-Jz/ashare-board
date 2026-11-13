@@ -1457,12 +1457,11 @@ def main():
     itr_json = json.dumps(itr, ensure_ascii=False, separators=(',', ':'))
     wser_json = json.dumps(wser, ensure_ascii=False, separators=(',', ':'))
     gen = dt.datetime.now().strftime('%Y-%m-%d %H:%M')
-    # 头部写「实际存档时刻」：取最近一次正式存档记录，没有则退回中性说法
+    # 头部写「实际存档时刻」：只看最新这一天，今天的还没存档就写中性的说法，
+    # 免得把昨天的存档时间挂到今天的页面上
     arch = '收盘后正式存档'
-    for d0 in reversed(days):
-        if d0.get('archived_at'):
-            arch = '%s 正式存档' % str(d0['archived_at'])[11:16]
-            break
+    if days and days[-1].get('archived_at'):
+        arch = '%s 正式存档' % str(days[-1]['archived_at'])[11:16]
     html = (HTML.replace('__DATA__', data_json)
                 .replace('__KLINE__', kl_json)
                 .replace('__IKL__', ikl_json)
