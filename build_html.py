@@ -301,7 +301,7 @@ tr.bkb td{background:#fafbfc;padding:7px 10px 8px}
   <div class="hd-top">
     <div>
       <div class="hd-title">骄子每日复盘看板</div>
-      <div class="hd-sub">盘中每小时更新数据　21:00 正式存档</div>
+      <div class="hd-sub">盘中每小时更新数据　__ARCH__</div>
     </div>
     <div style="display:flex;gap:6px">
       <button class="btn" id="prev">‹</button>
@@ -1457,11 +1457,18 @@ def main():
     itr_json = json.dumps(itr, ensure_ascii=False, separators=(',', ':'))
     wser_json = json.dumps(wser, ensure_ascii=False, separators=(',', ':'))
     gen = dt.datetime.now().strftime('%Y-%m-%d %H:%M')
+    # 头部写「实际存档时刻」：取最近一次正式存档记录，没有则退回中性说法
+    arch = '收盘后正式存档'
+    for d0 in reversed(days):
+        if d0.get('archived_at'):
+            arch = '%s 正式存档' % str(d0['archived_at'])[11:16]
+            break
     html = (HTML.replace('__DATA__', data_json)
                 .replace('__KLINE__', kl_json)
                 .replace('__IKL__', ikl_json)
                 .replace('__ITR__', itr_json)
                 .replace('__WIDTH__', wser_json)
+                .replace('__ARCH__', arch)
                 .replace('__GEN__', gen))
     with open(OUT, 'w', encoding='utf-8') as f:
         f.write(html)
