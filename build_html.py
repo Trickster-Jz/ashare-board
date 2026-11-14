@@ -1222,9 +1222,8 @@ function renderStatus(day){
   let lday = null;
   if(day.lhb && day.lhb.count) lday = day;
   else for(let i = DAYS.length - 1; i >= 0; i--){ if(DAYS[i].lhb && DAYS[i].lhb.count){ lday = DAYS[i]; break; } }
-  // 徽章显示：数据所属日期 + 该期龙虎榜的抓取时刻
-  const lt = (lday && lday.lhb_updated_at) ? lday.lhb_updated_at.slice(11) : '';
-  s.push(lday ? `<span class="badge">龙虎榜 · ${lday.date}${lt ? ' ' + lt : ''}</span>`
+  // 龙虎榜只标「这一期榜单属于哪天」：抓取时刻受存档时间影响，写着反而误导
+  s.push(lday ? `<span class="badge">龙虎榜 · ${lday.date}</span>`
               : `<span class="badge warn">龙虎榜待更新</span>`);
   $('status').innerHTML = s.join('');
 }
