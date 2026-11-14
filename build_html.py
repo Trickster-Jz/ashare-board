@@ -1216,14 +1216,14 @@ function renderWidth(){
 /* ---------- 头部状态 ---------- */
 function renderStatus(day){
   const s = [];
-  s.push(`<span class="badge">行情 · ${day.updated_at || '—'}</span>`);
+  const hm = t => (t || '').slice(0, 16);          // 显示到分钟，秒没必要
+  s.push(`<span class="badge">行情 · ${hm(day.updated_at) || '—'}</span>`);
   if(day.realtime === false) s.push(`<span class="badge">收盘数据</span>`);
-  // 龙虎榜徽章：统一显示 当前展示数据的日期 + 抓取时刻（不显示条数）
   let lday = null;
   if(day.lhb && day.lhb.count) lday = day;
   else for(let i = DAYS.length - 1; i >= 0; i--){ if(DAYS[i].lhb && DAYS[i].lhb.count){ lday = DAYS[i]; break; } }
-  // 龙虎榜只标「这一期榜单属于哪天」：抓取时刻受存档时间影响，写着反而误导
-  s.push(lday ? `<span class="badge">龙虎榜 · ${lday.date}</span>`
+  // 龙虎榜徽章：日期 + 这份榜单最后一次有变化的抓取时刻
+  s.push(lday ? `<span class="badge">龙虎榜 · ${hm(lday.lhb_updated_at) || lday.date}</span>`
               : `<span class="badge warn">龙虎榜待更新</span>`);
   $('status').innerHTML = s.join('');
 }
