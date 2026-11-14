@@ -16,6 +16,7 @@ A股每日复盘看板 - 数据抓取脚本
 """
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -28,6 +29,7 @@ import requests
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
+STATE_DIR = os.path.join(DATA_DIR, '_state')
 CACHE_DIR = os.path.join(BASE_DIR, 'cache')
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(CACHE_DIR, exist_ok=True)
@@ -92,6 +94,38 @@ def _content_sig(d, keys=None):
     src = d if keys is None else {k: d.get(k) for k in keys}
     return json.dumps({k: v for k, v in src.items() if k not in TS_KEYS},
                       ensure_ascii=False, sort_keys=True, default=str)
+
+
+def _state_path(date_str):
+    return os.path.join(STATE_DIR, date_str + '.json')
+
+
+def load_state(date_str):
+    """当天「数据最后一次发生变化」的记录。盘中刷新会把它提交入库，
+    这样 18 点再抓到同一份数据时，还能知道 15:55 就已经定稿了。"""
+    try:
+        with open(_state_path(date_str), encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def save_state(date_str, st):
+    os.makedirs(STATE_DIR, exist_ok=True)
+    st['date'] = date_str
+    with open(_state_path(date_str), 'w', encoding='utf-8') as f:
+        json.dump(st, f, ensure_ascii=False, indent=1)
+
+
+def stamp_market(date_str, patch):
+    """返回这份行情该记的时刻：内容变了就记现在，没变就沿用上次变化的那一刻"""
+    sig = hashlib.md5(_content_sig(patch, MARKET_KEYS).encode('utf-8')).hexdigest()
+    st = load_state(date_str)
+    if st.get('mkt_sig') != sig or not st.get('mkt_at'):
+        st['mkt_sig'] = sig
+        st['mkt_at'] = now_bj()
+        save_state(date_str, st)
+    return st['mkt_at']
 
 
 def upsert_day(date_str, patch, touch='updated_at', sig_keys=None, stamp=None):
@@ -193,14 +227,12 @@ def fetch_indices_realtime():
         item['change'] = round(item['close'] - item['prev_close'], 2)
         item['pct'] = round((item['close'] / item['prev_close'] - 1) * 100, 2) if item['prev_close'] else 0.0
         item['amount_yi'] = fmt_amount(item['amount'])
-        qdate, qtime = None, None
+        qdate = None
         for fi in range(len(f) - 1, -1, -1):
             if re.match(r'^\d{4}-\d{2}-\d{2}$', f[fi]):
                 qdate = f[fi]
-                qtime = f[fi + 1] if fi + 1 < len(f) and re.match(r'^\d{2}:\d{2}:\d{2}$', f[fi + 1]) else None
                 break
         item['quote_date'] = qdate
-        item['quote_time'] = qtime
         out[code] = item
     return out
 
@@ -957,11 +989,9 @@ def stage_market(date_str):
         'brent': fetch_commodity('OIL', 90),
         'gold': fetch_commodity('GC', 90),
     }
-    # 行情时间用「市场时刻」而非抓取时刻：收盘后一律记 15:00:00，
-    # 不会因为 22 点才存档就写成 22:03；盘中仍记实时那一刻
-    stamp = None
-    if is_today and realtime and now_bj()[11:19] >= '15:00:00':
-        stamp = '%s 15:00:00' % date_str
+    # 行情时间 = 这份数据最后一次「有变化」的抓取时刻。收盘后反复抓到同一份，
+    # 时间就停在那一次（比如 15:55），不会跟着 18:30、22:03 往后跑
+    stamp = stamp_market(date_str, patch) if is_today else None
     d = upsert_day(date_str, patch, sig_keys=MARKET_KEYS, stamp=stamp)
     print('[market] saved -> data/%s.json' % date_str)
     return d
