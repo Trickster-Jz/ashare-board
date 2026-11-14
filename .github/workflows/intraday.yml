@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -37,6 +37,19 @@ jobs:
           python3 fetch_data.py --stage market
           # 龙虎榜同时尝试：已公布则更新，未公布脚本会自行跳过、页面沿用上一期
           python3 fetch_data.py --stage lhb || true
+
+      - name: 记录「数据最后一次变化」的时刻
+        run: |
+          # 只提交几百字节的状态文件，行情数据本身仍不入库（不让仓库每小时膨胀）
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f data/_state
+          if git diff --staged --quiet; then
+            echo "数据没有变化，时刻沿用上一次"
+          else
+            git commit -m "state: $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M') 数据变化时刻"
+            git push || { git pull --rebase --autostash origin main && git push; }
+          fi
 
       - name: 生成页面
         run: python3 build_html.py
