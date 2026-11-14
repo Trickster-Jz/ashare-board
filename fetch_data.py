@@ -94,11 +94,12 @@ def _content_sig(d, keys=None):
                       ensure_ascii=False, sort_keys=True, default=str)
 
 
-def upsert_day(date_str, patch, touch='updated_at', sig_keys=None):
+def upsert_day(date_str, patch, touch='updated_at', sig_keys=None, stamp=None):
     """写入当天数据。
 
     时间戳只在「内容真的变了」的时候刷新：收盘后 17/18/19/20 点反复抓到的
     是同一份数据，时间就停在最后一次变化的那一刻，不会一路跳到 20:00。
+    stamp 用来写「市场时刻」（如 15:00:00），比抓取时刻更能说明数据新鲜度。
     """
     old = load_day(date_str) or {'date': date_str}
     d = dict(old)
@@ -107,7 +108,7 @@ def upsert_day(date_str, patch, touch='updated_at', sig_keys=None):
     d['date'] = date_str
     fresh = (_content_sig(old, sig_keys) != _content_sig(d, sig_keys))
     if fresh:
-        d[touch] = now_bj()
+        d[touch] = stamp or now_bj()
     # 没触及的时间戳一律沿用旧值；内容没变时连 touch 的那个也不动
     for k in TS_KEYS:
         if k != touch or not fresh:
@@ -192,12 +193,14 @@ def fetch_indices_realtime():
         item['change'] = round(item['close'] - item['prev_close'], 2)
         item['pct'] = round((item['close'] / item['prev_close'] - 1) * 100, 2) if item['prev_close'] else 0.0
         item['amount_yi'] = fmt_amount(item['amount'])
-        qdate = None
-        for fld in reversed(f):
-            if re.match(r'^\d{4}-\d{2}-\d{2}$', fld):
-                qdate = fld
+        qdate, qtime = None, None
+        for fi in range(len(f) - 1, -1, -1):
+            if re.match(r'^\d{4}-\d{2}-\d{2}$', f[fi]):
+                qdate = f[fi]
+                qtime = f[fi + 1] if fi + 1 < len(f) and re.match(r'^\d{2}:\d{2}:\d{2}$', f[fi + 1]) else None
                 break
         item['quote_date'] = qdate
+        item['quote_time'] = qtime
         out[code] = item
     return out
 
@@ -954,7 +957,12 @@ def stage_market(date_str):
         'brent': fetch_commodity('OIL', 90),
         'gold': fetch_commodity('GC', 90),
     }
-    d = upsert_day(date_str, patch, sig_keys=MARKET_KEYS)
+    # 行情时间用「市场时刻」而非抓取时刻：收盘后一律记 15:00:00，
+    # 不会因为 22 点才存档就写成 22:03；盘中仍记实时那一刻
+    stamp = None
+    if is_today and realtime and now_bj()[11:19] >= '15:00:00':
+        stamp = '%s 15:00:00' % date_str
+    d = upsert_day(date_str, patch, sig_keys=MARKET_KEYS, stamp=stamp)
     print('[market] saved -> data/%s.json' % date_str)
     return d
 
