@@ -128,6 +128,17 @@ def stamp_market(date_str, patch):
     return st['mkt_at']
 
 
+def stamp_lhb(date_str, lhb):
+    """龙虎榜同理：榜单陆续公布，只在内容真的变了时才改时刻"""
+    sig = hashlib.md5(_content_sig({'lhb': lhb}).encode('utf-8')).hexdigest()
+    st = load_state(date_str)
+    if st.get('lhb_sig') != sig or not st.get('lhb_at'):
+        st['lhb_sig'] = sig
+        st['lhb_at'] = now_bj()
+        save_state(date_str, st)
+    return st['lhb_at']
+
+
 def upsert_day(date_str, patch, touch='updated_at', sig_keys=None, stamp=None):
     """写入当天数据。
 
@@ -1003,7 +1014,8 @@ def stage_lhb(date_str):
     if not lhb['count']:
         print('[lhb] 当日无龙虎榜数据（非交易日或尚未公布），跳过写入')
         return None
-    d = upsert_day(date_str, {'lhb': lhb}, touch='lhb_updated_at')
+    d = upsert_day(date_str, {'lhb': lhb}, touch='lhb_updated_at',
+                   stamp=stamp_lhb(date_str, lhb))
     print('[lhb] %d 条 -> data/%s.json' % (lhb['count'], date_str))
     return d
 
