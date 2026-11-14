@@ -43,7 +43,9 @@ jobs:
           # 只提交几百字节的状态文件，行情数据本身仍不入库（不让仓库每小时膨胀）
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f data/_state
+          if [ -d data/_state ]; then
+            git add -f data/_state
+          fi
           if git diff --staged --quiet; then
             echo "数据没有变化，时刻沿用上一次"
           else
