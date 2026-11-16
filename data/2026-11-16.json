@@ -1,0 +1,7761 @@
+{
+ "date": "2026-11-16",
+ "indices": [
+  {
+   "code": "sh000001",
+   "name": "上证指数",
+   "open": 3611.5366,
+   "prev_close": 3634.353,
+   "close": 3602.5698,
+   "high": 3623.1183,
+   "low": 3586.5677,
+   "amount": 706214352273.0,
+   "change": -31.78,
+   "pct": -0.87,
+   "amount_yi": 7062.14,
+   "quote_date": "2026-11-16"
+  },
+  {
+   "code": "sz399001",
+   "name": "深证成指",
+   "open": 10881.908,
+   "prev_close": 10968.787,
+   "close": 10690.778,
+   "high": 10881.908,
+   "low": 10642.365,
+   "amount": 778276106972.941,
+   "change": -278.01,
+   "pct": -2.53,
+   "amount_yi": 7782.76,
+   "quote_date": "2026-11-16"
+  },
+  {
+   "code": "sz399006",
+   "name": "创业板指",
+   "open": 2395.524,
+   "prev_close": 2426.084,
+   "close": 2320.02,
+   "high": 2398.192,
+   "low": 2308.897,
+   "amount": 369316401560.6,
+   "change": -106.06,
+   "pct": -4.37,
+   "amount_yi": 3693.16,
+   "quote_date": "2026-11-16"
+  },
+  {
+   "code": "sh000688",
+   "name": "科创50",
+   "open": 1254.4803,
+   "prev_close": 1279.6615,
+   "close": 1213.6833,
+   "high": 1266.6068,
+   "low": 1200.5535,
+   "amount": 85116422888.0,
+   "change": -65.98,
+   "pct": -5.16,
+   "amount_yi": 851.16,
+   "quote_date": "2026-11-16"
+  },
+  {
+   "code": "bj899050",
+   "name": "北证50",
+   "open": 868.848,
+   "prev_close": 876.331,
+   "close": 836.568,
+   "high": 869.564,
+   "low": 833.673,
+   "amount": 9835330040.0,
+   "change": -39.76,
+   "pct": -4.54,
+   "amount_yi": 98.35,
+   "quote_date": "2026-11-16"
+  },
+  {
+   "code": "sh000300",
+   "name": "沪深300",
+   "open": 3984.7731,
+   "prev_close": 4016.2897,
+   "close": 3979.8035,
+   "high": 3997.4042,
+   "low": 3959.9321,
+   "amount": 430554181505.0,
+   "change": -36.49,
+   "pct": -0.91,
+   "amount_yi": 4305.54,
+   "quote_date": "2026-11-16"
+  },
+  {
+   "code": "sz399106",
+   "name": "深证综指",
+   "open": 2089.233,
+   "prev_close": 2103.262,
+   "close": 2052.386,
+   "high": 2089.233,
+   "low": 2043.084,
+   "amount": 778276106972.941,
+   "change": -50.88,
+   "pct": -2.42,
+   "amount_yi": 7782.76,
+   "quote_date": "2026-11-16"
+  }
+ ],
+ "realtime": true,
+ "breadth": {
+  "up": 1135,
+  "down": 4344,
+  "flat": 99,
+  "limit_up": 33,
+  "limit_down": 76,
+  "total": 5578,
+  "amount_yi": {
+   "sh": 7062.14,
+   "sz": 7782.76,
+   "bj": 98.35
+  },
+  "amount_total_yi": 14943.26,
+  "amount_up_yi": 3630.63,
+  "amount_down_yi": 11231.3,
+  "amount_notup_yi": 11308.62,
+  "up_notup_ratio": 0.32,
+  "limit_up_list": [
+   {
+    "symbol": "sh600715",
+    "code": "600715",
+    "name": "文投控股",
+    "pct": 10.0
+   },
+   {
+    "symbol": "sh600936",
+    "code": "600936",
+    "name": "北投科技",
+    "pct": 10.137
+   },
+   {
+    "symbol": "sh600530",
+    "code": "600530",
+    "name": "ST交昂",
+    "pct": 10.062
+   },
+   {
+    "symbol": "sh600822",
+    "code": "600822",
+    "name": "上海物贸",
+    "pct": 10.012
+   },
+   {
+    "symbol": "sh601188",
+    "code": "601188",
+    "name": "龙江交通",
+    "pct": 10.0
+   },
+   {
+    "symbol": "sh600386",
+    "code": "600386",
+    "name": "北巴传媒",
+    "pct": 10.116
+   },
+   {
+    "symbol": "sh603118",
+    "code": "603118",
+    "name": "共进股份",
+    "pct": 10.022
+   },
+   {
+    "symbol": "sh601929",
+    "code": "601929",
+    "name": "吉视传媒",
+    "pct": 10.037
+   },
+   {
+    "symbol": "sh605378",
+    "code": "605378",
+    "name": "野马电池",
+    "pct": 9.993
+   },
+   {
+    "symbol": "sh603983",
+    "code": "603983",
+    "name": "丸美生物",
+    "pct": 10.0
+   },
+   {
+    "symbol": "sz000595",
+    "code": "000595",
+    "name": "新能股份",
+    "pct": 9.946
+   },
+   {
+    "symbol": "sz000628",
+    "code": "000628",
+    "name": "高新发展",
+    "pct": 9.995
+   },
+   {
+    "symbol": "sz000156",
+    "code": "000156",
+    "name": "华数传媒",
+    "pct": 10.052
+   },
+   {
+    "symbol": "sz000521",
+    "code": "000521",
+    "name": "长虹美菱",
+    "pct": 9.949
+   },
+   {
+    "symbol": "sz000533",
+    "code": "000533",
+    "name": "顺钠股份",
+    "pct": 9.966
+   },
+   {
+    "symbol": "sz000819",
+    "code": "000819",
+    "name": "岳阳兴长",
+    "pct": 9.984
+   },
+   {
+    "symbol": "sz001318",
+    "code": "001318",
+    "name": "阳光乳业",
+    "pct": 10.008
+   },
+   {
+    "symbol": "sz002035",
+    "code": "002035",
+    "name": "华帝股份",
+    "pct": 10.118
+   },
+   {
+    "symbol": "sz002058",
+    "code": "002058",
+    "name": "紫竹高科",
+    "pct": 10.02
+   },
+   {
+    "symbol": "sz002148",
+    "code": "002148",
+    "name": "北纬科技",
+    "pct": 10.063
+   },
+   {
+    "symbol": "sz002187",
+    "code": "002187",
+    "name": "广百股份",
+    "pct": 10.043
+   },
+   {
+    "symbol": "sz002685",
+    "code": "002685",
+    "name": "华东重机",
+    "pct": 9.928
+   },
+   {
+    "symbol": "sz002748",
+    "code": "002748",
+    "name": "世龙实业",
+    "pct": 10.008
+   },
+   {
+    "symbol": "sz002861",
+    "code": "002861",
+    "name": "瀛通通讯",
+    "pct": 10.032
+   },
+   {
+    "symbol": "sz002205",
+    "code": "002205",
+    "name": "国统股份",
+    "pct": 9.977
+   },
+   {
+    "symbol": "sz002548",
+    "code": "002548",
+    "name": "金新农",
+    "pct": 9.922
+   },
+   {
+    "symbol": "sz002905",
+    "code": "002905",
+    "name": "金逸影视",
+    "pct": 10.0
+   },
+   {
+    "symbol": "sz002959",
+    "code": "002959",
+    "name": "小熊电器",
+    "pct": 10.009
+   },
+   {
+    "symbol": "sz002356",
+    "code": "002356",
+    "name": "鹏飞绿能",
+    "pct": 10.044
+   },
+   {
+    "symbol": "sz002419",
+    "code": "002419",
+    "name": "天虹股份",
+    "pct": 9.98
+   },
+   {
+    "symbol": "sz002425",
+    "code": "002425",
+    "name": "凯撒文化",
+    "pct": 10.101
+   },
+   {
+    "symbol": "sz300530",
+    "code": "300530",
+    "name": "领湃科技",
+    "pct": 20.009
+   },
+   {
+    "symbol": "sz300824",
+    "code": "300824",
+    "name": "北鼎股份",
+    "pct": 19.944
+   }
+  ],
+  "limit_down_list": [
+   {
+    "symbol": "sh600228",
+    "code": "600228",
+    "name": "返利科技",
+    "pct": -10.027
+   },
+   {
+    "symbol": "sh600259",
+    "code": "600259",
+    "name": "中稀有色",
+    "pct": -9.995
+   },
+   {
+    "symbol": "sh600327",
+    "code": "600327",
+    "name": "大东方",
+    "pct": -10.062
+   },
+   {
+    "symbol": "sh600665",
+    "code": "600665",
+    "name": "天地源",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sh600857",
+    "code": "600857",
+    "name": "宁波中百",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sh600491",
+    "code": "600491",
+    "name": "ST龙元",
+    "pct": -5.512
+   },
+   {
+    "symbol": "sh600802",
+    "code": "600802",
+    "name": "福建水泥",
+    "pct": -9.961
+   },
+   {
+    "symbol": "sh600825",
+    "code": "600825",
+    "name": "新华传媒",
+    "pct": -9.992
+   },
+   {
+    "symbol": "sh601086",
+    "code": "601086",
+    "name": "国芳集团",
+    "pct": -9.967
+   },
+   {
+    "symbol": "sh601091",
+    "code": "601091",
+    "name": "沈鼓集团",
+    "pct": -9.987
+   },
+   {
+    "symbol": "sh601208",
+    "code": "601208",
+    "name": "东材科技",
+    "pct": -9.994
+   },
+   {
+    "symbol": "sh600180",
+    "code": "600180",
+    "name": "*ST瑞茂",
+    "pct": -9.783
+   },
+   {
+    "symbol": "sh600183",
+    "code": "600183",
+    "name": "生益科技",
+    "pct": -9.993
+   },
+   {
+    "symbol": "sh601566",
+    "code": "601566",
+    "name": "九牧王",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sh601869",
+    "code": "601869",
+    "name": "长飞光纤",
+    "pct": -9.988
+   },
+   {
+    "symbol": "sh603083",
+    "code": "603083",
+    "name": "剑桥科技",
+    "pct": -10.001
+   },
+   {
+    "symbol": "sh603124",
+    "code": "603124",
+    "name": "江南新材",
+    "pct": -9.997
+   },
+   {
+    "symbol": "sh603048",
+    "code": "603048",
+    "name": "浙江黎明",
+    "pct": -9.982
+   },
+   {
+    "symbol": "sh603061",
+    "code": "603061",
+    "name": "金海通",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sh603353",
+    "code": "603353",
+    "name": "和顺石油",
+    "pct": -9.997
+   },
+   {
+    "symbol": "sh603366",
+    "code": "603366",
+    "name": "日出东方",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sh603381",
+    "code": "603381",
+    "name": "永臻股份",
+    "pct": -9.995
+   },
+   {
+    "symbol": "sh603389",
+    "code": "603389",
+    "name": "亚振家居",
+    "pct": -10.005
+   },
+   {
+    "symbol": "sh603396",
+    "code": "603396",
+    "name": "金辰股份",
+    "pct": -9.994
+   },
+   {
+    "symbol": "sh603516",
+    "code": "603516",
+    "name": "淳中科技",
+    "pct": -10.004
+   },
+   {
+    "symbol": "sh603536",
+    "code": "603536",
+    "name": "惠发食品",
+    "pct": -9.966
+   },
+   {
+    "symbol": "sh603228",
+    "code": "603228",
+    "name": "景旺电子",
+    "pct": -10.003
+   },
+   {
+    "symbol": "sh603256",
+    "code": "603256",
+    "name": "宏和科技",
+    "pct": -9.999
+   },
+   {
+    "symbol": "sh603269",
+    "code": "603269",
+    "name": "海鸥股份",
+    "pct": -9.986
+   },
+   {
+    "symbol": "sh605376",
+    "code": "605376",
+    "name": "博迁新材",
+    "pct": -9.997
+   },
+   {
+    "symbol": "sh605598",
+    "code": "605598",
+    "name": "上海港湾",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sh605100",
+    "code": "605100",
+    "name": "华丰股份",
+    "pct": -9.995
+   },
+   {
+    "symbol": "sh605118",
+    "code": "605118",
+    "name": "力鼎光电",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sh605168",
+    "code": "605168",
+    "name": "三人行",
+    "pct": -9.993
+   },
+   {
+    "symbol": "sh605169",
+    "code": "605169",
+    "name": "洪通燃气",
+    "pct": -9.986
+   },
+   {
+    "symbol": "sh603738",
+    "code": "603738",
+    "name": "泰晶科技",
+    "pct": -9.98
+   },
+   {
+    "symbol": "sh603880",
+    "code": "603880",
+    "name": "南卫股份",
+    "pct": -10.028
+   },
+   {
+    "symbol": "sz000610",
+    "code": "000610",
+    "name": "*ST西旅",
+    "pct": -6.43
+   },
+   {
+    "symbol": "sz000639",
+    "code": "000639",
+    "name": "ST西王",
+    "pct": -6.024
+   },
+   {
+    "symbol": "sz000678",
+    "code": "000678",
+    "name": "襄阳轴承",
+    "pct": -9.975
+   },
+   {
+    "symbol": "sz000010",
+    "code": "000010",
+    "name": "*ST美丽",
+    "pct": -9.524
+   },
+   {
+    "symbol": "sz000011",
+    "code": "000011",
+    "name": "深物业A",
+    "pct": -9.965
+   },
+   {
+    "symbol": "sz000056",
+    "code": "000056",
+    "name": "*ST皇庭",
+    "pct": -10.241
+   },
+   {
+    "symbol": "sh603637",
+    "code": "603637",
+    "name": "镇海股份",
+    "pct": -9.968
+   },
+   {
+    "symbol": "sh603706",
+    "code": "603706",
+    "name": "东方环宇",
+    "pct": -9.982
+   },
+   {
+    "symbol": "sh603725",
+    "code": "603725",
+    "name": "天安新材",
+    "pct": -10.016
+   },
+   {
+    "symbol": "sz000766",
+    "code": "000766",
+    "name": "通化金马",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sz000826",
+    "code": "000826",
+    "name": "*ST启环",
+    "pct": -10.112
+   },
+   {
+    "symbol": "sz000962",
+    "code": "000962",
+    "name": "东方钽业",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sz001219",
+    "code": "001219",
+    "name": "青岛食品",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sz001233",
+    "code": "001233",
+    "name": "海安集团",
+    "pct": -10.002
+   },
+   {
+    "symbol": "sz001270",
+    "code": "001270",
+    "name": "铖昌科技",
+    "pct": -10.001
+   },
+   {
+    "symbol": "sz001400",
+    "code": "001400",
+    "name": "江顺科技",
+    "pct": -9.997
+   },
+   {
+    "symbol": "sz002029",
+    "code": "002029",
+    "name": "七 匹 狼",
+    "pct": -10.023
+   },
+   {
+    "symbol": "sz002046",
+    "code": "002046",
+    "name": "国机精工",
+    "pct": -10.01
+   },
+   {
+    "symbol": "sz002086",
+    "code": "002086",
+    "name": "东方海洋",
+    "pct": -9.959
+   },
+   {
+    "symbol": "sz002172",
+    "code": "002172",
+    "name": "澳洋健康",
+    "pct": -10.017
+   },
+   {
+    "symbol": "sz002647",
+    "code": "002647",
+    "name": "仁东控股",
+    "pct": -9.963
+   },
+   {
+    "symbol": "sz002696",
+    "code": "002696",
+    "name": "百洋股份",
+    "pct": -9.99
+   },
+   {
+    "symbol": "sz002724",
+    "code": "002724",
+    "name": "海洋王",
+    "pct": -9.992
+   },
+   {
+    "symbol": "sz002851",
+    "code": "002851",
+    "name": "麦格米特",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sz002856",
+    "code": "002856",
+    "name": "*ST美芝",
+    "pct": -4.838
+   },
+   {
+    "symbol": "sz002536",
+    "code": "002536",
+    "name": "飞龙股份",
+    "pct": -9.983
+   },
+   {
+    "symbol": "sz002578",
+    "code": "002578",
+    "name": "闽发铝业",
+    "pct": -9.926
+   },
+   {
+    "symbol": "sz002623",
+    "code": "002623",
+    "name": "亚玛顿",
+    "pct": -9.981
+   },
+   {
+    "symbol": "sz002865",
+    "code": "002865",
+    "name": "钧达股份",
+    "pct": -9.988
+   },
+   {
+    "symbol": "sz002903",
+    "code": "002903",
+    "name": "宇环数控",
+    "pct": -9.97
+   },
+   {
+    "symbol": "sz002929",
+    "code": "002929",
+    "name": "润建股份",
+    "pct": -10.005
+   },
+   {
+    "symbol": "sz002931",
+    "code": "002931",
+    "name": "锋龙股份",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sz002943",
+    "code": "002943",
+    "name": "宇晶股份",
+    "pct": -10.011
+   },
+   {
+    "symbol": "sz003033",
+    "code": "003033",
+    "name": "征和工业",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sz002384",
+    "code": "002384",
+    "name": "东山精密",
+    "pct": -10.004
+   },
+   {
+    "symbol": "sz002436",
+    "code": "002436",
+    "name": "兴森科技",
+    "pct": -9.963
+   },
+   {
+    "symbol": "sz002463",
+    "code": "002463",
+    "name": "沪电股份",
+    "pct": -10.0
+   },
+   {
+    "symbol": "sz002514",
+    "code": "002514",
+    "name": "*ST宝馨",
+    "pct": -5.025
+   },
+   {
+    "symbol": "sz300779",
+    "code": "300779",
+    "name": "惠城环保",
+    "pct": -20.0
+   }
+  ]
+ },
+ "limit_up_pool": {
+  "total": 32,
+  "ladder": [
+   {
+    "level": 4,
+    "label": "4板",
+    "count": 1,
+    "stocks": [
+     {
+      "code": "002148",
+      "name": "北纬科技",
+      "pct": 10.0629,
+      "price": 8.75,
+      "board_type": "T字板",
+      "reason": "四足机器人+物联网+手机游戏",
+      "turnover": 42.5854,
+      "open_num": 7,
+      "seal_amount": 26496558.0,
+      "luv": 3946482800.0,
+      "first_time": 1794792300,
+      "first_hm": "09:30"
+     }
+    ]
+   },
+   {
+    "level": 3,
+    "label": "3板",
+    "count": 2,
+    "stocks": [
+     {
+      "code": "002187",
+      "name": "广百股份",
+      "pct": 10.043,
+      "price": 7.67,
+      "board_type": "换手板",
+      "reason": "百货零售+免税退税+广州国资",
+      "turnover": 6.1387,
+      "open_num": null,
+      "seal_amount": 199469390.0,
+      "luv": 5375861800.0,
+      "first_time": 1794792603,
+      "first_hm": "09:30"
+     },
+     {
+      "code": "002205",
+      "name": "国统股份",
+      "pct": 9.9768,
+      "price": 14.22,
+      "board_type": "换手板",
+      "reason": "PCCP管道+风电混塔+央企控股",
+      "turnover": 20.3944,
+      "open_num": 5,
+      "seal_amount": 12299162.4,
+      "luv": 2642690700.0,
+      "first_time": 1794792885,
+      "first_hm": "09:34"
+     }
+    ]
+   },
+   {
+    "level": 2,
+    "label": "2板",
+    "count": 8,
+    "stocks": [
+     {
+      "code": "000819",
+      "name": "岳阳兴长",
+      "pct": 9.9844,
+      "price": 14.1,
+      "board_type": "T字板",
+      "reason": "MOFs材料+茂金属聚烯烃+三季报扭亏",
+      "turnover": 15.9566,
+      "open_num": 10,
+      "seal_amount": 20212660.0,
+      "luv": 5160883500.0,
+      "first_time": 1794792300,
+      "first_hm": "09:30"
+     },
+     {
+      "code": "002905",
+      "name": "金逸影视",
+      "pct": 10.0,
+      "price": 10.89,
+      "board_type": "一字板",
+      "reason": "电影院线+特色影厅",
+      "turnover": 1.2932,
+      "open_num": null,
+      "seal_amount": 115834447.0,
+      "luv": 3805401600.0,
+      "first_time": 1794792300,
+      "first_hm": "09:30"
+     },
+     {
+      "code": "002425",
+      "name": "凯撒文化",
+      "pct": 10.101,
+      "price": 4.36,
+      "board_type": "T字板",
+      "reason": "AI游戏+手游IP储备+腾讯代理",
+      "turnover": 20.272,
+      "open_num": 1,
+      "seal_amount": 108632975.0,
+      "luv": 4012010600.0,
+      "first_time": 1794792600,
+      "first_hm": "09:30"
+     },
+     {
+      "code": "002548",
+      "name": "金新农",
+      "pct": 9.9217,
+      "price": 4.21,
+      "board_type": "换手板",
+      "reason": "生猪养殖+猪饲料+养殖机器人",
+      "turnover": 6.7535,
+      "open_num": null,
+      "seal_amount": 27617171.0,
+      "luv": 3386825000.0,
+      "first_time": 1794792600,
+      "first_hm": "09:30"
+     },
+     {
+      "code": "600715",
+      "name": "文投控股",
+      "pct": 10.0,
+      "price": 3.74,
+      "board_type": "换手板",
+      "reason": "AI漫剧+剧集发行+北京国资",
+      "turnover": 37.8186,
+      "open_num": 12,
+      "seal_amount": 28809968.0,
+      "luv": 10705272200.0,
+      "first_time": 1794792624,
+      "first_hm": "09:30"
+     },
+     {
+      "code": "002685",
+      "name": "华东重机",
+      "pct": 9.9278,
+      "price": 6.09,
+      "board_type": "换手板",
+      "reason": "GPU芯片+港口装卸设备+三季报增长",
+      "turnover": 14.374,
+      "open_num": 2,
+      "seal_amount": 163518000.0,
+      "luv": 6136218900.0,
+      "first_time": 1794792789,
+      "first_hm": "09:33"
+     },
+     {
+      "code": "002748",
+      "name": "世龙实业",
+      "pct": 10.0081,
+      "price": 13.63,
+      "board_type": "换手板",
+      "reason": "氯化亚砜+扩产+业绩增长",
+      "turnover": 13.2542,
+      "open_num": 2,
+      "seal_amount": 38502092.0,
+      "luv": 3271200000.0,
+      "first_time": 1794795819,
+      "first_hm": "10:23"
+     },
+     {
+      "code": "000595",
+      "name": "新能股份",
+      "pct": 9.9458,
+      "price": 6.08,
+      "board_type": "换手板",
+      "reason": "储能并网+风光储一体化+宁夏国资",
+      "turnover": 13.8446,
+      "open_num": 5,
+      "seal_amount": 18319648.0,
+      "luv": 6923030700.0,
+      "first_time": 1794798891,
+      "first_hm": "11:14"
+     }
+    ]
+   },
+   {
+    "level": 1,
+    "label": "首板",
+    "count": 21,
+    "stocks": [
+     {
+      "code": "002419",
+      "name": "天虹股份",
+      "pct": 9.9796,
+      "price": 5.4,
+      "board_type": "换手板",
+      "reason": "“AI+零售”+超市调改+央企",
+      "turnover": 6.0072,
+      "open_num": 3,
+      "seal_amount": 57362499.0,
+      "luv": 6162694400.0,
+      "first_time": 1794792753,
+      "first_hm": "09:32"
+     },
+     {
+      "code": "002356",
+      "name": "鹏飞绿能",
+      "pct": 10.0437,
+      "price": 2.52,
+      "board_type": "换手板",
+      "reason": "综合能源站+风光制氢+商贸零售",
+      "turnover": 6.3297,
+      "open_num": 3,
+      "seal_amount": 19039432.0,
+      "luv": 3304342500.0,
+      "first_time": 1794792960,
+      "first_hm": "09:36"
+     },
+     {
+      "code": "605378",
+      "name": "野马电池",
+      "pct": 9.9929,
+      "price": 15.52,
+      "board_type": "换手板",
+      "reason": "董事会换届+锌锰电池+海外基地",
+      "turnover": 2.341,
+      "open_num": null,
+      "seal_amount": 41228880.0,
+      "luv": 4056096100.0,
+      "first_time": 1794793009,
+      "first_hm": "09:36"
+     },
+     {
+      "code": "601188",
+      "name": "龙江交通",
+      "pct": 10.0,
+      "price": 4.73,
+      "board_type": "换手板",
+      "reason": "冰雪旅游保障+高速公路运营+黑龙江国资",
+      "turnover": 16.6939,
+      "open_num": 3,
+      "seal_amount": 82480709.0,
+      "luv": 6174872700.0,
+      "first_time": 1794793108,
+      "first_hm": "09:38"
+     },
+     {
+      "code": "600822",
+      "name": "上海物贸",
+      "pct": 10.0116,
+      "price": 9.45,
+      "board_type": "换手板",
+      "reason": "汽车贸易+有色金属交易平台+上海国资",
+      "turnover": 4.1087,
+      "open_num": null,
+      "seal_amount": 41098976.0,
+      "luv": 3743597700.0,
+      "first_time": 1794793594,
+      "first_hm": "09:46"
+     },
+     {
+      "code": "600936",
+      "name": "北投科技",
+      "pct": 10.137,
+      "price": 4.02,
+      "board_type": "换手板",
+      "reason": "AI应用+平陆运河+广西国资",
+      "turnover": 2.7719,
+      "open_num": null,
+      "seal_amount": 64438260.0,
+      "luv": 6717525500.0,
+      "first_time": 1794793661,
+      "first_hm": "09:47"
+     },
+     {
+      "code": "000521",
+      "name": "长虹美菱",
+      "pct": 9.949,
+      "price": 4.31,
+      "board_type": "换手板",
+      "reason": "B股估值提升+家电+国企",
+      "turnover": 3.5723,
+      "open_num": null,
+      "seal_amount": 13219632.0,
+      "luv": 3772495000.0,
+      "first_time": 1794793665,
+      "first_hm": "09:47"
+     },
+     {
+      "code": "002035",
+      "name": "华帝股份",
+      "pct": 10.1176,
+      "price": 4.68,
+      "board_type": "换手板",
+      "reason": "厨电+高股息",
+      "turnover": 8.9326,
+      "open_num": 3,
+      "seal_amount": 23225904.0,
+      "luv": 3659936300.0,
+      "first_time": 1794793725,
+      "first_hm": "09:48"
+     },
+     {
+      "code": "600386",
+      "name": "北巴传媒",
+      "pct": 10.1156,
+      "price": 3.81,
+      "board_type": "换手板",
+      "reason": "广告传媒+汽车服务+北京国资",
+      "turnover": 4.3732,
+      "open_num": null,
+      "seal_amount": 16661199.0,
+      "luv": 3072384000.0,
+      "first_time": 1794793868,
+      "first_hm": "09:51"
+     },
+     {
+      "code": "001318",
+      "name": "阳光乳业",
+      "pct": 10.0075,
+      "price": 14.62,
+      "board_type": "换手板",
+      "reason": "“羊”字辈+低温乳制品+送奶上户",
+      "turnover": 15.4248,
+      "open_num": 3,
+      "seal_amount": 12736944.0,
+      "luv": 4132489200.0,
+      "first_time": 1794794223,
+      "first_hm": "09:57"
+     },
+     {
+      "code": "601929",
+      "name": "吉视传媒",
+      "pct": 10.0372,
+      "price": 2.96,
+      "board_type": "换手板",
+      "reason": "AI微短剧+AI应用+智慧广电",
+      "turnover": 14.9906,
+      "open_num": null,
+      "seal_amount": 137093800.0,
+      "luv": 10329773000.0,
+      "first_time": 1794795132,
+      "first_hm": "10:12"
+     },
+     {
+      "code": "002058",
+      "name": "紫竹高科",
+      "pct": 10.0196,
+      "price": 22.4,
+      "board_type": "换手板",
+      "reason": "固态电池+铝塑膜+汽车检具",
+      "turnover": 10.2167,
+      "open_num": null,
+      "seal_amount": 51600640.0,
+      "luv": 3211394600.0,
+      "first_time": 1794795507,
+      "first_hm": "10:18"
+     }
+    ]
+   }
+  ]
+ },
+ "hot_blocks": [
+  {
+   "name": "DeepSeek概念",
+   "pct": -2.1586,
+   "limit_up_num": 8,
+   "continuous": 3,
+   "top": "13天7板",
+   "days": 2,
+   "stocks": [
+    {
+     "code": "002419",
+     "name": "天虹股份",
+     "first_time": 1794792753,
+     "first_hm": "09:32"
+    },
+    {
+     "code": "002685",
+     "name": "华东重机",
+     "first_time": 1794792789,
+     "first_hm": "09:33"
+    },
+    {
+     "code": "601188",
+     "name": "龙江交通",
+     "first_time": 1794793108,
+     "first_hm": "09:38"
+    },
+    {
+     "code": "600936",
+     "name": "北投科技",
+     "first_time": 1794793661,
+     "first_hm": "09:47"
+    },
+    {
+     "code": "000521",
+     "name": "长虹美菱",
+     "first_time": 1794793665,
+     "first_hm": "09:47"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "603983",
+     "name": "丸美生物",
+     "first_time": 1794796573,
+     "first_hm": "10:36"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    }
+   ]
+  },
+  {
+   "name": "粤港澳大湾区",
+   "pct": -2.4953,
+   "limit_up_num": 8,
+   "continuous": 2,
+   "top": "5天3板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "002905",
+     "name": "金逸影视",
+     "first_time": 1794792300,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002187",
+     "name": "广百股份",
+     "first_time": 1794792603,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002419",
+     "name": "天虹股份",
+     "first_time": 1794792753,
+     "first_hm": "09:32"
+    },
+    {
+     "code": "002035",
+     "name": "华帝股份",
+     "first_time": 1794793725,
+     "first_hm": "09:48"
+    },
+    {
+     "code": "002959",
+     "name": "小熊电器",
+     "first_time": 1794796974,
+     "first_hm": "10:42"
+    },
+    {
+     "code": "300824",
+     "name": "北鼎股份",
+     "first_time": 1794797109,
+     "first_hm": "10:45"
+    },
+    {
+     "code": "000533",
+     "name": "顺钠股份",
+     "first_time": 1794798849,
+     "first_hm": "11:14"
+    },
+    {
+     "code": "603118",
+     "name": "共进股份",
+     "first_time": 1794799334,
+     "first_hm": "11:22"
+    }
+   ]
+  },
+  {
+   "name": "文化传媒概念",
+   "pct": -1.3608,
+   "limit_up_num": 7,
+   "continuous": 4,
+   "top": "6天5板",
+   "days": 2,
+   "stocks": [
+    {
+     "code": "002905",
+     "name": "金逸影视",
+     "first_time": 1794792300,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002425",
+     "name": "凯撒文化",
+     "first_time": 1794792600,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "600715",
+     "name": "文投控股",
+     "first_time": 1794792624,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "600936",
+     "name": "北投科技",
+     "first_time": 1794793661,
+     "first_hm": "09:47"
+    },
+    {
+     "code": "600386",
+     "name": "北巴传媒",
+     "first_time": 1794793868,
+     "first_hm": "09:51"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    }
+   ]
+  },
+  {
+   "name": "乡村振兴",
+   "pct": -1.3948,
+   "limit_up_num": 7,
+   "continuous": 3,
+   "top": "13天7板",
+   "days": 3,
+   "stocks": [
+    {
+     "code": "002548",
+     "name": "金新农",
+     "first_time": 1794792600,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002419",
+     "name": "天虹股份",
+     "first_time": 1794792753,
+     "first_hm": "09:32"
+    },
+    {
+     "code": "601188",
+     "name": "龙江交通",
+     "first_time": 1794793108,
+     "first_hm": "09:38"
+    },
+    {
+     "code": "600936",
+     "name": "北投科技",
+     "first_time": 1794793661,
+     "first_hm": "09:47"
+    },
+    {
+     "code": "001318",
+     "name": "阳光乳业",
+     "first_time": 1794794223,
+     "first_hm": "09:57"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    }
+   ]
+  },
+  {
+   "name": "创投",
+   "pct": -2.0114,
+   "limit_up_num": 7,
+   "continuous": 3,
+   "top": "5天4板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "002148",
+     "name": "北纬科技",
+     "first_time": 1794792300,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002425",
+     "name": "凯撒文化",
+     "first_time": 1794792600,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002187",
+     "name": "广百股份",
+     "first_time": 1794792603,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002035",
+     "name": "华帝股份",
+     "first_time": 1794793725,
+     "first_hm": "09:48"
+    },
+    {
+     "code": "002058",
+     "name": "紫竹高科",
+     "first_time": 1794795507,
+     "first_hm": "10:18"
+    },
+    {
+     "code": "002959",
+     "name": "小熊电器",
+     "first_time": 1794796974,
+     "first_hm": "10:42"
+    },
+    {
+     "code": "000628",
+     "name": "高新发展",
+     "first_time": 1794798891,
+     "first_hm": "11:14"
+    }
+   ]
+  },
+  {
+   "name": "虚拟现实",
+   "pct": -3.1897,
+   "limit_up_num": 7,
+   "continuous": 5,
+   "top": "6天5板",
+   "days": 2,
+   "stocks": [
+    {
+     "code": "002905",
+     "name": "金逸影视",
+     "first_time": 1794792300,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002425",
+     "name": "凯撒文化",
+     "first_time": 1794792600,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "600715",
+     "name": "文投控股",
+     "first_time": 1794792624,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    },
+    {
+     "code": "603118",
+     "name": "共进股份",
+     "first_time": 1794799334,
+     "first_hm": "11:22"
+    },
+    {
+     "code": "002861",
+     "name": "瀛通通讯",
+     "first_time": 1794805557,
+     "first_hm": "13:05"
+    }
+   ]
+  },
+  {
+   "name": "AI应用",
+   "pct": -2.1877,
+   "limit_up_num": 6,
+   "continuous": 3,
+   "top": "6天5板",
+   "days": 2,
+   "stocks": [
+    {
+     "code": "002425",
+     "name": "凯撒文化",
+     "first_time": 1794792600,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "600715",
+     "name": "文投控股",
+     "first_time": 1794792624,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002419",
+     "name": "天虹股份",
+     "first_time": 1794792753,
+     "first_hm": "09:32"
+    },
+    {
+     "code": "600936",
+     "name": "北投科技",
+     "first_time": 1794793661,
+     "first_hm": "09:47"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    }
+   ]
+  },
+  {
+   "name": "人工智能",
+   "pct": -2.5396,
+   "limit_up_num": 6,
+   "continuous": 3,
+   "top": "5天4板",
+   "days": 2,
+   "stocks": [
+    {
+     "code": "002425",
+     "name": "凯撒文化",
+     "first_time": 1794792600,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002419",
+     "name": "天虹股份",
+     "first_time": 1794792753,
+     "first_hm": "09:32"
+    },
+    {
+     "code": "000521",
+     "name": "长虹美菱",
+     "first_time": 1794793665,
+     "first_hm": "09:47"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    },
+    {
+     "code": "002861",
+     "name": "瀛通通讯",
+     "first_time": 1794805557,
+     "first_hm": "13:05"
+    }
+   ]
+  },
+  {
+   "name": "芯片概念",
+   "pct": -4.5237,
+   "limit_up_num": 6,
+   "continuous": 3,
+   "top": "4天4板",
+   "days": 6,
+   "stocks": [
+    {
+     "code": "002148",
+     "name": "北纬科技",
+     "first_time": 1794792300,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002685",
+     "name": "华东重机",
+     "first_time": 1794792789,
+     "first_hm": "09:33"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "300824",
+     "name": "北鼎股份",
+     "first_time": 1794797109,
+     "first_hm": "10:45"
+    },
+    {
+     "code": "000628",
+     "name": "高新发展",
+     "first_time": 1794798891,
+     "first_hm": "11:14"
+    },
+    {
+     "code": "603118",
+     "name": "共进股份",
+     "first_time": 1794799334,
+     "first_hm": "11:22"
+    }
+   ]
+  },
+  {
+   "name": "风电",
+   "pct": -1.8488,
+   "limit_up_num": 5,
+   "continuous": 3,
+   "top": "13天7板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "002205",
+     "name": "国统股份",
+     "first_time": 1794792885,
+     "first_hm": "09:34"
+    },
+    {
+     "code": "002356",
+     "name": "鹏飞绿能",
+     "first_time": 1794792960,
+     "first_hm": "09:36"
+    },
+    {
+     "code": "601188",
+     "name": "龙江交通",
+     "first_time": 1794793108,
+     "first_hm": "09:38"
+    },
+    {
+     "code": "000533",
+     "name": "顺钠股份",
+     "first_time": 1794798849,
+     "first_hm": "11:14"
+    },
+    {
+     "code": "000595",
+     "name": "新能股份",
+     "first_time": 1794798891,
+     "first_hm": "11:14"
+    }
+   ]
+  },
+  {
+   "name": "数字经济",
+   "pct": -2.1046,
+   "limit_up_num": 5,
+   "continuous": 0,
+   "top": "首板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "002419",
+     "name": "天虹股份",
+     "first_time": 1794792753,
+     "first_hm": "09:32"
+    },
+    {
+     "code": "002356",
+     "name": "鹏飞绿能",
+     "first_time": 1794792960,
+     "first_hm": "09:36"
+    },
+    {
+     "code": "002035",
+     "name": "华帝股份",
+     "first_time": 1794793725,
+     "first_hm": "09:48"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    },
+    {
+     "code": "000533",
+     "name": "顺钠股份",
+     "first_time": 1794798849,
+     "first_hm": "11:14"
+    }
+   ]
+  },
+  {
+   "name": "充电桩",
+   "pct": -2.2257,
+   "limit_up_num": 5,
+   "continuous": 0,
+   "top": "首板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "002356",
+     "name": "鹏飞绿能",
+     "first_time": 1794792960,
+     "first_hm": "09:36"
+    },
+    {
+     "code": "600386",
+     "name": "北巴传媒",
+     "first_time": 1794793868,
+     "first_hm": "09:51"
+    },
+    {
+     "code": "300530",
+     "name": "领湃科技",
+     "first_time": 1794796557,
+     "first_hm": "10:35"
+    },
+    {
+     "code": "000533",
+     "name": "顺钠股份",
+     "first_time": 1794798849,
+     "first_hm": "11:14"
+    },
+    {
+     "code": "603118",
+     "name": "共进股份",
+     "first_time": 1794799334,
+     "first_hm": "11:22"
+    }
+   ]
+  },
+  {
+   "name": "储能",
+   "pct": -2.426,
+   "limit_up_num": 5,
+   "continuous": 1,
+   "top": "2天2板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "002419",
+     "name": "天虹股份",
+     "first_time": 1794792753,
+     "first_hm": "09:32"
+    },
+    {
+     "code": "300530",
+     "name": "领湃科技",
+     "first_time": 1794796557,
+     "first_hm": "10:35"
+    },
+    {
+     "code": "000533",
+     "name": "顺钠股份",
+     "first_time": 1794798849,
+     "first_hm": "11:14"
+    },
+    {
+     "code": "000595",
+     "name": "新能股份",
+     "first_time": 1794798891,
+     "first_hm": "11:14"
+    },
+    {
+     "code": "000628",
+     "name": "高新发展",
+     "first_time": 1794798891,
+     "first_hm": "11:14"
+    }
+   ]
+  },
+  {
+   "name": "AIGC概念",
+   "pct": -2.5142,
+   "limit_up_num": 5,
+   "continuous": 3,
+   "top": "6天5板",
+   "days": 2,
+   "stocks": [
+    {
+     "code": "002425",
+     "name": "凯撒文化",
+     "first_time": 1794792600,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "600715",
+     "name": "文投控股",
+     "first_time": 1794792624,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002419",
+     "name": "天虹股份",
+     "first_time": 1794792753,
+     "first_hm": "09:32"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    }
+   ]
+  },
+  {
+   "name": "锂电池概念",
+   "pct": -2.5539,
+   "limit_up_num": 5,
+   "continuous": 2,
+   "top": "2天2板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "000819",
+     "name": "岳阳兴长",
+     "first_time": 1794792300,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "605378",
+     "name": "野马电池",
+     "first_time": 1794793009,
+     "first_hm": "09:36"
+    },
+    {
+     "code": "002058",
+     "name": "紫竹高科",
+     "first_time": 1794795507,
+     "first_hm": "10:18"
+    },
+    {
+     "code": "002748",
+     "name": "世龙实业",
+     "first_time": 1794795819,
+     "first_hm": "10:23"
+    },
+    {
+     "code": "300530",
+     "name": "领湃科技",
+     "first_time": 1794796557,
+     "first_hm": "10:35"
+    }
+   ]
+  },
+  {
+   "name": "物联网",
+   "pct": -2.8062,
+   "limit_up_num": 5,
+   "continuous": 2,
+   "top": "4天4板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "002148",
+     "name": "北纬科技",
+     "first_time": 1794792300,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    },
+    {
+     "code": "000628",
+     "name": "高新发展",
+     "first_time": 1794798891,
+     "first_hm": "11:14"
+    },
+    {
+     "code": "603118",
+     "name": "共进股份",
+     "first_time": 1794799334,
+     "first_hm": "11:22"
+    }
+   ]
+  },
+  {
+   "name": "机器人概念",
+   "pct": -2.9807,
+   "limit_up_num": 5,
+   "continuous": 2,
+   "top": "4天4板",
+   "days": 9,
+   "stocks": [
+    {
+     "code": "002148",
+     "name": "北纬科技",
+     "first_time": 1794792300,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002548",
+     "name": "金新农",
+     "first_time": 1794792600,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "600936",
+     "name": "北投科技",
+     "first_time": 1794793661,
+     "first_hm": "09:47"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    },
+    {
+     "code": "603118",
+     "name": "共进股份",
+     "first_time": 1794799334,
+     "first_hm": "11:22"
+    }
+   ]
+  },
+  {
+   "name": "5G",
+   "pct": -4.262,
+   "limit_up_num": 5,
+   "continuous": 2,
+   "top": "4天4板",
+   "days": 1,
+   "stocks": [
+    {
+     "code": "002148",
+     "name": "北纬科技",
+     "first_time": 1794792300,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "600936",
+     "name": "北投科技",
+     "first_time": 1794793661,
+     "first_hm": "09:47"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    },
+    {
+     "code": "603118",
+     "name": "共进股份",
+     "first_time": 1794799334,
+     "first_hm": "11:22"
+    }
+   ]
+  },
+  {
+   "name": "绿色电力",
+   "pct": -1.217,
+   "limit_up_num": 4,
+   "continuous": 2,
+   "top": "13天7板",
+   "days": 2,
+   "stocks": [
+    {
+     "code": "002419",
+     "name": "天虹股份",
+     "first_time": 1794792753,
+     "first_hm": "09:32"
+    },
+    {
+     "code": "002356",
+     "name": "鹏飞绿能",
+     "first_time": 1794792960,
+     "first_hm": "09:36"
+    },
+    {
+     "code": "601188",
+     "name": "龙江交通",
+     "first_time": 1794793108,
+     "first_hm": "09:38"
+    },
+    {
+     "code": "000595",
+     "name": "新能股份",
+     "first_time": 1794798891,
+     "first_hm": "11:14"
+    }
+   ]
+  },
+  {
+   "name": "IP经济(谷子经济)",
+   "pct": -1.3427,
+   "limit_up_num": 4,
+   "continuous": 3,
+   "top": "5天4板",
+   "days": 3,
+   "stocks": [
+    {
+     "code": "002425",
+     "name": "凯撒文化",
+     "first_time": 1794792600,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "002187",
+     "name": "广百股份",
+     "first_time": 1794792603,
+     "first_hm": "09:30"
+    },
+    {
+     "code": "601929",
+     "name": "吉视传媒",
+     "first_time": 1794795132,
+     "first_hm": "10:12"
+    },
+    {
+     "code": "000156",
+     "name": "华数传媒",
+     "first_time": 1794797610,
+     "first_hm": "10:53"
+    }
+   ]
+  }
+ ],
+ "funds": {
+  "margin": {
+   "date": "2026-11-13",
+   "fin_balance": 22571.87,
+   "margin_balance": 22865.27,
+   "fin_buy_amt": 1362.51,
+   "fin_chg": -166.34
+  },
+  "north": {
+   "deal_amt": 2202.4,
+   "net": null,
+   "date": "2026-11-16"
+  }
+ },
+ "commodities": {
+  "sp500": [
+   {
+    "date": "2026-07-10",
+    "close": 7575.39
+   },
+   {
+    "date": "2026-07-13",
+    "close": 7515.34
+   },
+   {
+    "date": "2026-07-14",
+    "close": 7543.59
+   },
+   {
+    "date": "2026-07-15",
+    "close": 7572.4
+   },
+   {
+    "date": "2026-07-16",
+    "close": 7533.77
+   },
+   {
+    "date": "2026-07-17",
+    "close": 7457.69
+   },
+   {
+    "date": "2026-07-20",
+    "close": 7443.28
+   },
+   {
+    "date": "2026-07-21",
+    "close": 7509.2
+   },
+   {
+    "date": "2026-07-22",
+    "close": 7498.96
+   },
+   {
+    "date": "2026-07-23",
+    "close": 7408.3
+   },
+   {
+    "date": "2026-07-24",
+    "close": 7411.98
+   },
+   {
+    "date": "2026-07-27",
+    "close": 7413.18
+   },
+   {
+    "date": "2026-07-28",
+    "close": 7428.78
+   },
+   {
+    "date": "2026-07-29",
+    "close": 7316.15
+   },
+   {
+    "date": "2026-07-30",
+    "close": 7437.63
+   },
+   {
+    "date": "2026-07-31",
+    "close": 7489.72
+   },
+   {
+    "date": "2026-08-03",
+    "close": 7600.5
+   },
+   {
+    "date": "2026-08-04",
+    "close": 7736.52
+   },
+   {
+    "date": "2026-08-05",
+    "close": 7723.55
+   },
+   {
+    "date": "2026-08-06",
+    "close": 7709.96
+   },
+   {
+    "date": "2026-08-07",
+    "close": 7757.64
+   },
+   {
+    "date": "2026-08-10",
+    "close": 7753.11
+   },
+   {
+    "date": "2026-08-11",
+    "close": 7728.2
+   },
+   {
+    "date": "2026-08-12",
+    "close": 7748.5
+   },
+   {
+    "date": "2026-08-13",
+    "close": 7798.99
+   },
+   {
+    "date": "2026-08-14",
+    "close": 7785.76
+   },
+   {
+    "date": "2026-08-17",
+    "close": 7745.06
+   },
+   {
+    "date": "2026-08-18",
+    "close": 7691.76
+   },
+   {
+    "date": "2026-08-19",
+    "close": 7707.98
+   },
+   {
+    "date": "2026-08-20",
+    "close": 7641.16
+   },
+   {
+    "date": "2026-08-21",
+    "close": 7674.37
+   },
+   {
+    "date": "2026-08-24",
+    "close": 7652.86
+   },
+   {
+    "date": "2026-08-25",
+    "close": 7677.28
+   },
+   {
+    "date": "2026-08-26",
+    "close": 7675.7
+   },
+   {
+    "date": "2026-08-27",
+    "close": 7730.99
+   },
+   {
+    "date": "2026-08-28",
+    "close": 7711.76
+   },
+   {
+    "date": "2026-08-31",
+    "close": 7686.14
+   },
+   {
+    "date": "2026-09-01",
+    "close": 7631.47
+   },
+   {
+    "date": "2026-09-02",
+    "close": 7666.6
+   },
+   {
+    "date": "2026-09-03",
+    "close": 7747.71
+   },
+   {
+    "date": "2026-09-04",
+    "close": 7718.6
+   },
+   {
+    "date": "2026-09-08",
+    "close": 7673.52
+   },
+   {
+    "date": "2026-09-09",
+    "close": 7636.36
+   },
+   {
+    "date": "2026-09-10",
+    "close": 7591.7
+   },
+   {
+    "date": "2026-09-11",
+    "close": 7656.98
+   },
+   {
+    "date": "2026-09-14",
+    "close": 7619.98
+   },
+   {
+    "date": "2026-09-15",
+    "close": 7585.73
+   },
+   {
+    "date": "2026-09-16",
+    "close": 7551.81
+   },
+   {
+    "date": "2026-09-17",
+    "close": 7637.76
+   },
+   {
+    "date": "2026-09-18",
+    "close": 7650.5
+   },
+   {
+    "date": "2026-09-21",
+    "close": 7764.7
+   },
+   {
+    "date": "2026-09-22",
+    "close": 7764.64
+   },
+   {
+    "date": "2026-09-23",
+    "close": 7706.03
+   },
+   {
+    "date": "2026-09-24",
+    "close": 7704.13
+   },
+   {
+    "date": "2026-09-25",
+    "close": 7743.41
+   },
+   {
+    "date": "2026-09-28",
+    "close": 7683.69
+   },
+   {
+    "date": "2026-09-29",
+    "close": 7670.84
+   },
+   {
+    "date": "2026-09-30",
+    "close": 7651.54
+   },
+   {
+    "date": "2026-10-01",
+    "close": 7666.45
+   },
+   {
+    "date": "2026-10-02",
+    "close": 7722.72
+   },
+   {
+    "date": "2026-10-05",
+    "close": 7773.95
+   },
+   {
+    "date": "2026-10-06",
+    "close": 7818.93
+   },
+   {
+    "date": "2026-10-07",
+    "close": 7801.77
+   },
+   {
+    "date": "2026-10-08",
+    "close": 7765.36
+   },
+   {
+    "date": "2026-10-09",
+    "close": 7811.54
+   },
+   {
+    "date": "2026-10-12",
+    "close": 7807.24
+   },
+   {
+    "date": "2026-10-13",
+    "close": 7805.45
+   },
+   {
+    "date": "2026-10-14",
+    "close": 7718.94
+   },
+   {
+    "date": "2026-10-15",
+    "close": 7744.06
+   },
+   {
+    "date": "2026-10-16",
+    "close": 7659.44
+   },
+   {
+    "date": "2026-10-19",
+    "close": 7690.73
+   },
+   {
+    "date": "2026-10-20",
+    "close": 7712.57
+   },
+   {
+    "date": "2026-10-21",
+    "close": 7757.17
+   },
+   {
+    "date": "2026-10-22",
+    "close": 7663.43
+   },
+   {
+    "date": "2026-10-23",
+    "close": 7623.68
+   },
+   {
+    "date": "2026-10-26",
+    "close": 7676.77
+   },
+   {
+    "date": "2026-10-27",
+    "close": 7722.6
+   },
+   {
+    "date": "2026-10-28",
+    "close": 7743.98
+   },
+   {
+    "date": "2026-10-29",
+    "close": 7720.39
+   },
+   {
+    "date": "2026-10-30",
+    "close": 7580.07
+   },
+   {
+    "date": "2026-11-02",
+    "close": 7541.4
+   },
+   {
+    "date": "2026-11-03",
+    "close": 7568.92
+   },
+   {
+    "date": "2026-11-04",
+    "close": 7688.62
+   },
+   {
+    "date": "2026-11-05",
+    "close": 7353.73
+   },
+   {
+    "date": "2026-11-06",
+    "close": 7376.86
+   },
+   {
+    "date": "2026-11-09",
+    "close": 7549.94
+   },
+   {
+    "date": "2026-11-10",
+    "close": 7520.93
+   },
+   {
+    "date": "2026-11-11",
+    "close": 7619.38
+   },
+   {
+    "date": "2026-11-12",
+    "close": 7592.4
+   },
+   {
+    "date": "2026-11-13",
+    "close": 7561.67
+   }
+  ],
+  "brent": [
+   {
+    "date": "2026-07-14",
+    "close": 85.09
+   },
+   {
+    "date": "2026-07-15",
+    "close": 84.97
+   },
+   {
+    "date": "2026-07-16",
+    "close": 84.83
+   },
+   {
+    "date": "2026-07-17",
+    "close": 88.33
+   },
+   {
+    "date": "2026-07-20",
+    "close": 88.81
+   },
+   {
+    "date": "2026-07-21",
+    "close": 91.53
+   },
+   {
+    "date": "2026-07-22",
+    "close": 90.9
+   },
+   {
+    "date": "2026-07-23",
+    "close": 94.24
+   },
+   {
+    "date": "2026-07-24",
+    "close": 92.85
+   },
+   {
+    "date": "2026-07-27",
+    "close": 85.34
+   },
+   {
+    "date": "2026-07-28",
+    "close": 83.04
+   },
+   {
+    "date": "2026-07-29",
+    "close": 88.01
+   },
+   {
+    "date": "2026-07-30",
+    "close": 86.82
+   },
+   {
+    "date": "2026-07-31",
+    "close": 91.04
+   },
+   {
+    "date": "2026-08-03",
+    "close": 83.58
+   },
+   {
+    "date": "2026-08-04",
+    "close": 78.72
+   },
+   {
+    "date": "2026-08-05",
+    "close": 79.47
+   },
+   {
+    "date": "2026-08-06",
+    "close": 83.08
+   },
+   {
+    "date": "2026-08-07",
+    "close": 82.31
+   },
+   {
+    "date": "2026-08-10",
+    "close": 87.88
+   },
+   {
+    "date": "2026-08-11",
+    "close": 89.3
+   },
+   {
+    "date": "2026-08-12",
+    "close": 88.46
+   },
+   {
+    "date": "2026-08-13",
+    "close": 86.95
+   },
+   {
+    "date": "2026-08-14",
+    "close": 88.66
+   },
+   {
+    "date": "2026-08-17",
+    "close": 91.07
+   },
+   {
+    "date": "2026-08-18",
+    "close": 91.33
+   },
+   {
+    "date": "2026-08-19",
+    "close": 91.58
+   },
+   {
+    "date": "2026-08-20",
+    "close": 93.2
+   },
+   {
+    "date": "2026-08-21",
+    "close": 91.94
+   },
+   {
+    "date": "2026-08-24",
+    "close": 90.29
+   },
+   {
+    "date": "2026-08-25",
+    "close": 85.79
+   },
+   {
+    "date": "2026-08-26",
+    "close": 86.62
+   },
+   {
+    "date": "2026-08-27",
+    "close": 88.44
+   },
+   {
+    "date": "2026-08-28",
+    "close": 88.27
+   },
+   {
+    "date": "2026-08-31",
+    "close": 90.67
+   },
+   {
+    "date": "2026-09-01",
+    "close": 95.11
+   },
+   {
+    "date": "2026-09-02",
+    "close": 95.25
+   },
+   {
+    "date": "2026-09-03",
+    "close": 95.86
+   },
+   {
+    "date": "2026-09-04",
+    "close": 95.85
+   },
+   {
+    "date": "2026-09-07",
+    "close": 97.26
+   },
+   {
+    "date": "2026-09-08",
+    "close": 99.33
+   },
+   {
+    "date": "2026-09-09",
+    "close": 101.74
+   },
+   {
+    "date": "2026-09-10",
+    "close": 109.27
+   },
+   {
+    "date": "2026-09-11",
+    "close": 103.78
+   },
+   {
+    "date": "2026-09-14",
+    "close": 106.39
+   },
+   {
+    "date": "2026-09-15",
+    "close": 108.48
+   },
+   {
+    "date": "2026-09-16",
+    "close": 105.42
+   },
+   {
+    "date": "2026-09-17",
+    "close": 99.46
+   },
+   {
+    "date": "2026-09-18",
+    "close": 99.03
+   },
+   {
+    "date": "2026-09-21",
+    "close": 95.99
+   },
+   {
+    "date": "2026-09-22",
+    "close": 94.72
+   },
+   {
+    "date": "2026-09-23",
+    "close": 98.36
+   },
+   {
+    "date": "2026-09-24",
+    "close": 100.21
+   },
+   {
+    "date": "2026-09-25",
+    "close": 97.43
+   },
+   {
+    "date": "2026-09-28",
+    "close": 98.63
+   },
+   {
+    "date": "2026-09-29",
+    "close": 95.69
+   },
+   {
+    "date": "2026-09-30",
+    "close": 97.86
+   },
+   {
+    "date": "2026-10-01",
+    "close": 103.05
+   },
+   {
+    "date": "2026-10-02",
+    "close": 102.61
+   },
+   {
+    "date": "2026-10-05",
+    "close": 100.23
+   },
+   {
+    "date": "2026-10-06",
+    "close": 101.03
+   },
+   {
+    "date": "2026-10-07",
+    "close": 101.1
+   },
+   {
+    "date": "2026-10-08",
+    "close": 104.04
+   },
+   {
+    "date": "2026-10-09",
+    "close": 104.42
+   },
+   {
+    "date": "2026-10-12",
+    "close": 106.13
+   },
+   {
+    "date": "2026-10-13",
+    "close": 106.2
+   },
+   {
+    "date": "2026-10-14",
+    "close": 106.1
+   },
+   {
+    "date": "2026-10-15",
+    "close": 105.64
+   },
+   {
+    "date": "2026-10-16",
+    "close": 109.64
+   },
+   {
+    "date": "2026-10-19",
+    "close": 109.15
+   },
+   {
+    "date": "2026-10-20",
+    "close": 109.01
+   },
+   {
+    "date": "2026-10-21",
+    "close": 109.9
+   },
+   {
+    "date": "2026-10-22",
+    "close": 112.96
+   },
+   {
+    "date": "2026-10-23",
+    "close": 112.08
+   },
+   {
+    "date": "2026-10-26",
+    "close": 110.17
+   },
+   {
+    "date": "2026-10-27",
+    "close": 109.67
+   },
+   {
+    "date": "2026-10-28",
+    "close": 110.66
+   },
+   {
+    "date": "2026-10-29",
+    "close": 111.51
+   },
+   {
+    "date": "2026-10-30",
+    "close": 113.4
+   },
+   {
+    "date": "2026-11-02",
+    "close": 104.17
+   },
+   {
+    "date": "2026-11-03",
+    "close": 104.23
+   },
+   {
+    "date": "2026-11-04",
+    "close": 94.55
+   },
+   {
+    "date": "2026-11-05",
+    "close": 99.32
+   },
+   {
+    "date": "2026-11-06",
+    "close": 97.92
+   },
+   {
+    "date": "2026-11-09",
+    "close": 92.26
+   },
+   {
+    "date": "2026-11-10",
+    "close": 91.96
+   },
+   {
+    "date": "2026-11-11",
+    "close": 92.58
+   },
+   {
+    "date": "2026-11-12",
+    "close": 95.95
+   },
+   {
+    "date": "2026-11-13",
+    "close": 96.29
+   },
+   {
+    "date": "2026-11-16",
+    "close": 93.79
+   }
+  ],
+  "gold": [
+   {
+    "date": "2026-07-14",
+    "close": 4057.9
+   },
+   {
+    "date": "2026-07-15",
+    "close": 4066.7
+   },
+   {
+    "date": "2026-07-16",
+    "close": 3979.8
+   },
+   {
+    "date": "2026-07-17",
+    "close": 4022.7
+   },
+   {
+    "date": "2026-07-20",
+    "close": 4011.8
+   },
+   {
+    "date": "2026-07-21",
+    "close": 4081.6
+   },
+   {
+    "date": "2026-07-22",
+    "close": 4134.7
+   },
+   {
+    "date": "2026-07-23",
+    "close": 4052.1
+   },
+   {
+    "date": "2026-07-24",
+    "close": 4055.2
+   },
+   {
+    "date": "2026-07-27",
+    "close": 4138.0
+   },
+   {
+    "date": "2026-07-28",
+    "close": 4088.2
+   },
+   {
+    "date": "2026-07-29",
+    "close": 4125.9
+   },
+   {
+    "date": "2026-07-30",
+    "close": 4162.3
+   },
+   {
+    "date": "2026-07-31",
+    "close": 4097.6
+   },
+   {
+    "date": "2026-08-03",
+    "close": 4110.9
+   },
+   {
+    "date": "2026-08-04",
+    "close": 4134.1
+   },
+   {
+    "date": "2026-08-05",
+    "close": 4307.7
+   },
+   {
+    "date": "2026-08-06",
+    "close": 4298.4
+   },
+   {
+    "date": "2026-08-07",
+    "close": 4400.8
+   },
+   {
+    "date": "2026-08-10",
+    "close": 4448.5
+   },
+   {
+    "date": "2026-08-11",
+    "close": 4427.7
+   },
+   {
+    "date": "2026-08-12",
+    "close": 4468.6
+   },
+   {
+    "date": "2026-08-13",
+    "close": 4406.7
+   },
+   {
+    "date": "2026-08-14",
+    "close": 4431.9
+   },
+   {
+    "date": "2026-08-17",
+    "close": 4473.1
+   },
+   {
+    "date": "2026-08-18",
+    "close": 4389.4
+   },
+   {
+    "date": "2026-08-19",
+    "close": 4580.7
+   },
+   {
+    "date": "2026-08-20",
+    "close": 4574.8
+   },
+   {
+    "date": "2026-08-21",
+    "close": 4661.6
+   },
+   {
+    "date": "2026-08-24",
+    "close": 4709.7
+   },
+   {
+    "date": "2026-08-25",
+    "close": 4715.7
+   },
+   {
+    "date": "2026-08-26",
+    "close": 4647.8
+   },
+   {
+    "date": "2026-08-27",
+    "close": 4654.5
+   },
+   {
+    "date": "2026-08-28",
+    "close": 4503.8
+   },
+   {
+    "date": "2026-08-31",
+    "close": 4497.3
+   },
+   {
+    "date": "2026-09-01",
+    "close": 4375.7
+   },
+   {
+    "date": "2026-09-02",
+    "close": 4434.0
+   },
+   {
+    "date": "2026-09-03",
+    "close": 4519.9
+   },
+   {
+    "date": "2026-09-04",
+    "close": 4477.1
+   },
+   {
+    "date": "2026-09-07",
+    "close": 4451.9
+   },
+   {
+    "date": "2026-09-08",
+    "close": 4400.0
+   },
+   {
+    "date": "2026-09-09",
+    "close": 4446.9
+   },
+   {
+    "date": "2026-09-10",
+    "close": 4358.3
+   },
+   {
+    "date": "2026-09-11",
+    "close": 4390.0
+   },
+   {
+    "date": "2026-09-14",
+    "close": 4339.7
+   },
+   {
+    "date": "2026-09-15",
+    "close": 4333.4
+   },
+   {
+    "date": "2026-09-16",
+    "close": 4302.4
+   },
+   {
+    "date": "2026-09-17",
+    "close": 4380.6
+   },
+   {
+    "date": "2026-09-18",
+    "close": 4415.9
+   },
+   {
+    "date": "2026-09-21",
+    "close": 4380.8
+   },
+   {
+    "date": "2026-09-22",
+    "close": 4395.8
+   },
+   {
+    "date": "2026-09-23",
+    "close": 4322.7
+   },
+   {
+    "date": "2026-09-24",
+    "close": 4310.0
+   },
+   {
+    "date": "2026-09-25",
+    "close": 4320.3
+   },
+   {
+    "date": "2026-09-28",
+    "close": 4148.4
+   },
+   {
+    "date": "2026-09-29",
+    "close": 4214.8
+   },
+   {
+    "date": "2026-09-30",
+    "close": 4188.9
+   },
+   {
+    "date": "2026-10-01",
+    "close": 4207.4
+   },
+   {
+    "date": "2026-10-02",
+    "close": 4171.7
+   },
+   {
+    "date": "2026-10-05",
+    "close": 4167.3
+   },
+   {
+    "date": "2026-10-06",
+    "close": 4192.7
+   },
+   {
+    "date": "2026-10-07",
+    "close": 4136.6
+   },
+   {
+    "date": "2026-10-08",
+    "close": 4158.1
+   },
+   {
+    "date": "2026-10-09",
+    "close": 4220.0
+   },
+   {
+    "date": "2026-10-12",
+    "close": 4195.7
+   },
+   {
+    "date": "2026-10-13",
+    "close": 4184.2
+   },
+   {
+    "date": "2026-10-14",
+    "close": 4127.0
+   },
+   {
+    "date": "2026-10-15",
+    "close": 4192.5
+   },
+   {
+    "date": "2026-10-16",
+    "close": 4186.5
+   },
+   {
+    "date": "2026-10-19",
+    "close": 4160.2
+   },
+   {
+    "date": "2026-10-20",
+    "close": 4142.6
+   },
+   {
+    "date": "2026-10-21",
+    "close": 4159.3
+   },
+   {
+    "date": "2026-10-22",
+    "close": 4039.8
+   },
+   {
+    "date": "2026-10-23",
+    "close": 4009.5
+   },
+   {
+    "date": "2026-10-26",
+    "close": 4030.8
+   },
+   {
+    "date": "2026-10-27",
+    "close": 4073.1
+   },
+   {
+    "date": "2026-10-28",
+    "close": 4081.1
+   },
+   {
+    "date": "2026-10-29",
+    "close": 4033.2
+   },
+   {
+    "date": "2026-10-30",
+    "close": 3884.4
+   },
+   {
+    "date": "2026-11-02",
+    "close": 3956.4
+   },
+   {
+    "date": "2026-11-03",
+    "close": 3940.0
+   },
+   {
+    "date": "2026-11-04",
+    "close": 4072.0
+   },
+   {
+    "date": "2026-11-05",
+    "close": 4097.8
+   },
+   {
+    "date": "2026-11-06",
+    "close": 4079.6
+   },
+   {
+    "date": "2026-11-09",
+    "close": 4149.5
+   },
+   {
+    "date": "2026-11-10",
+    "close": 4040.2
+   },
+   {
+    "date": "2026-11-11",
+    "close": 3994.2
+   },
+   {
+    "date": "2026-11-12",
+    "close": 3881.7
+   },
+   {
+    "date": "2026-11-13",
+    "close": 3887.6
+   },
+   {
+    "date": "2026-11-16",
+    "close": 3866.2
+   }
+  ]
+ },
+ "updated_at": "2026-11-16 23:47:46",
+ "lhb": {
+  "count": 61,
+  "items": [
+   {
+    "code": "002463",
+    "name": "沪电股份",
+    "close": 73.98,
+    "pct": -10,
+    "net": 457130267.63,
+    "buy_total": 1641204931.05,
+    "sell_total": 1184074663.42,
+    "deal": 2825279594.47,
+    "turnover": 4.342,
+    "reason": "日跌幅偏离值达到7%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 793282301.24
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 329241522.34
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 228577671.56
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 158603364.91
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 131500071
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 604329175.72
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 126444248.56
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 99004370.02
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 98972071.78
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 91564689.32
+     }
+    ]
+   },
+   {
+    "code": "688141",
+    "name": "杰华特",
+    "close": 56.11,
+    "pct": -16.98,
+    "net": 234346818.23,
+    "buy_total": 586341930.8,
+    "sell_total": 351995112.57,
+    "deal": 938337043.37,
+    "turnover": 7.3036,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅达到15%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 236672413.36
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 179630843.22
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 71325624.04
+     },
+     {
+      "name": "中信上海分公司",
+      "full": "中信证券股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 53739649.94
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 44973400.24
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 168830611.4
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 58512659.21
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 46149335.65
+     },
+     {
+      "name": "东方财富拉萨团结路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨团结路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 39262891.8
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 39239614.51
+     }
+    ]
+   },
+   {
+    "code": "601929",
+    "name": "吉视传媒",
+    "close": 2.96,
+    "pct": 10.04,
+    "net": 214137684.71,
+    "buy_total": 304753698.69,
+    "sell_total": 90616013.98,
+    "deal": 395369712.67,
+    "turnover": 14.9906,
+    "reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 95615827.18
+     },
+     {
+      "name": "国新北京分公司",
+      "full": "国新证券股份有限公司北京分公司",
+      "tag": null,
+      "amount": 76790392
+     },
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 55084879.8
+     },
+     {
+      "name": "国泰海通湛江万豪世家证券营业部",
+      "full": "国泰海通证券股份有限公司湛江万豪世家证券营业部",
+      "tag": null,
+      "amount": 50001180
+     },
+     {
+      "name": "中信东阳吴宁西路证券营业部",
+      "full": "中信证券股份有限公司东阳吴宁西路证券营业部",
+      "tag": null,
+      "amount": 27261419.71
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "东方财富拉萨东环路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 21994874.44
+     },
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 18969540.6
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 18614299
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 15787487.67
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 15249812.27
+     }
+    ]
+   },
+   {
+    "code": "002343",
+    "name": "慈文传媒",
+    "close": 10.12,
+    "pct": 5.42,
+    "net": 136338014.17,
+    "buy_total": 249695647.6,
+    "sell_total": 113357633.43,
+    "deal": 363053281.03,
+    "turnover": 34.1936,
+    "reason": "日振幅值达到15%的前5只证券；日换手率达到20%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 86678981.6
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 43782925
+     },
+     {
+      "name": "国泰海通武汉紫阳东路证券营业部",
+      "full": "国泰海通证券股份有限公司武汉紫阳东路证券营业部",
+      "tag": null,
+      "amount": 30807832
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 25129866
+     },
+     {
+      "name": "国泰海通上海自贸试验区第二分公司",
+      "full": "国泰海通证券股份有限公司上海自贸试验区第二分公司",
+      "tag": null,
+      "amount": 21004972
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 26204975
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 19704421.2
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 18298056.23
+     },
+     {
+      "name": "东方财富昌都两江大道证券营业部",
+      "full": "东方财富证券股份有限公司昌都两江大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 16708133
+     },
+     {
+      "name": "华鑫证券深圳益田路证券营业部",
+      "full": "华鑫证券有限责任公司深圳益田路证券营业部",
+      "tag": "深圳帮",
+      "amount": 15710873
+     }
+    ]
+   },
+   {
+    "code": "000156",
+    "name": "华数传媒",
+    "close": 8.54,
+    "pct": 10.05,
+    "net": 118963375.42,
+    "buy_total": 233479943.18,
+    "sell_total": 114516567.76,
+    "deal": 347996510.94,
+    "turnover": 5.8387,
+    "reason": "日涨幅偏离值达到7%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 90753143.18
+     },
+     {
+      "name": "国泰海通北京安贞门证券营业部",
+      "full": "国泰海通证券股份有限公司北京安贞门证券营业部",
+      "tag": null,
+      "amount": 49852282
+     },
+     {
+      "name": "平安绍兴解放大道证券营业部",
+      "full": "平安证券股份有限公司绍兴解放大道证券营业部",
+      "tag": "赵老哥",
+      "amount": 36042125
+     },
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 25880091
+     },
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 24673601
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 31993913.84
+     },
+     {
+      "name": "长江成都人民南路证券营业部",
+      "full": "长江证券股份有限公司成都人民南路证券营业部",
+      "tag": null,
+      "amount": 21937694
+     },
+     {
+      "name": "华林成都东二环路证券营业部",
+      "full": "华林证券股份有限公司成都东二环路证券营业部",
+      "tag": null,
+      "amount": 18958800
+     },
+     {
+      "name": "国信天津滨海新区证券营业部",
+      "full": "国信证券股份有限公司天津滨海新区证券营业部",
+      "tag": null,
+      "amount": 18850075
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 18665390.92
+     }
+    ]
+   },
+   {
+    "code": "603118",
+    "name": "共进股份",
+    "close": 14.71,
+    "pct": 10.02,
+    "net": 110266480.34,
+    "buy_total": 306401317.21,
+    "sell_total": 196134836.87,
+    "deal": 502536154.08,
+    "turnover": 19.1638,
+    "reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 131148841.02
+     },
+     {
+      "name": "开源西安太华路证券营业部",
+      "full": "开源证券股份有限公司西安太华路证券营业部",
+      "tag": null,
+      "amount": 63223920.86
+     },
+     {
+      "name": "中信上海分公司",
+      "full": "中信证券股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 47265461.63
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 33179591.54
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 31583502.16
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国泰海通长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 84167017.41
+     },
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 67291510.48
+     },
+     {
+      "name": "中信建投上海营口路证券营业部",
+      "full": "中信建投证券股份有限公司上海营口路证券营业部",
+      "tag": null,
+      "amount": 16062644
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 15044338.98
+     },
+     {
+      "name": "中泰常州惠国路证券营业部",
+      "full": "中泰证券股份有限公司常州惠国路证券营业部",
+      "tag": null,
+      "amount": 13569326
+     }
+    ]
+   },
+   {
+    "code": "000678",
+    "name": "襄阳轴承",
+    "close": 17.78,
+    "pct": -9.97,
+    "net": 102083160.7,
+    "buy_total": 354944116.46,
+    "sell_total": 252860955.76,
+    "deal": 607805072.22,
+    "turnover": 22.3192,
+    "reason": "日跌幅偏离值达到7%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 124230608.3
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 120705291.01
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 53705005.31
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 25366790.84
+     },
+     {
+      "name": "国泰海通连云港巨龙南路证券营业部",
+      "full": "国泰海通证券股份有限公司连云港巨龙南路证券营业部",
+      "tag": null,
+      "amount": 18190737
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 101062277.69
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 79457799
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 28255732.35
+     },
+     {
+      "name": "国盛宁波桑田路证券营业部",
+      "full": "国盛证券股份有限公司宁波桑田路证券营业部",
+      "tag": "宁波桑田路",
+      "amount": 24516947.72
+     },
+     {
+      "name": "天风浙江分公司",
+      "full": "天风证券股份有限公司浙江分公司",
+      "tag": null,
+      "amount": 19426801
+     }
+    ]
+   },
+   {
+    "code": "000595",
+    "name": "新能股份",
+    "close": 6.08,
+    "pct": 9.95,
+    "net": 96595800.82,
+    "buy_total": 288792684.6,
+    "sell_total": 192196883.78,
+    "deal": 480989568.38,
+    "turnover": 13.8446,
+    "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券；日涨幅偏离值达到7%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 78287546
+     },
+     {
+      "name": "国新北京分公司",
+      "full": "国新证券股份有限公司北京分公司",
+      "tag": null,
+      "amount": 76790400
+     },
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 61563603.6
+     },
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 39992144
+     },
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 35476328
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "信达上海铁岭路证券营业部",
+      "full": "信达证券股份有限公司上海铁岭路证券营业部",
+      "tag": null,
+      "amount": 61951552
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 59296539.86
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 58984166.86
+     },
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 32396075.12
+     },
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 27985532.12
+     }
+    ]
+   },
+   {
+    "code": "600936",
+    "name": "北投科技",
+    "close": 4.02,
+    "pct": 10.14,
+    "net": 80954872.18,
+    "buy_total": 102655847.18,
+    "sell_total": 21700975,
+    "deal": 124356822.18,
+    "turnover": 2.7719,
+    "reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 80150587
+     },
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 8834975.75
+     },
+     {
+      "name": "东吴宁波前河南路证券营业部",
+      "full": "东吴证券股份有限公司宁波前河南路证券营业部",
+      "tag": null,
+      "amount": 7631970
+     },
+     {
+      "name": "国海南宁飞云路证券营业部",
+      "full": "国海证券股份有限公司南宁飞云路证券营业部",
+      "tag": null,
+      "amount": 3109982.43
+     },
+     {
+      "name": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "full": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "tag": "外资席位",
+      "amount": 2928332
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 8594223
+     },
+     {
+      "name": "国海南宁飞云路证券营业部",
+      "full": "国海证券股份有限公司南宁飞云路证券营业部",
+      "tag": null,
+      "amount": 3825246
+     },
+     {
+      "name": "广发昆明广福路证券营业部",
+      "full": "广发证券股份有限公司昆明广福路证券营业部",
+      "tag": null,
+      "amount": 3620010
+     },
+     {
+      "name": "广发广州天河北路证券营业部",
+      "full": "广发证券股份有限公司广州天河北路证券营业部",
+      "tag": null,
+      "amount": 3131710
+     },
+     {
+      "name": "华宝成都天府大道证券营业部",
+      "full": "华宝证券股份有限公司成都天府大道证券营业部",
+      "tag": "成都帮",
+      "amount": 2529786
+     }
+    ]
+   },
+   {
+    "code": "301697",
+    "name": "贝特利",
+    "close": 27.76,
+    "pct": -6.85,
+    "net": 49862494.58,
+    "buy_total": 90996348.49,
+    "sell_total": 41133853.91,
+    "deal": 132130202.4,
+    "turnover": 30.9632,
+    "reason": "日换手率达到30%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 34854241.56
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 15347821.59
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 12725076.78
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 12547416.6
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 10867635.6
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 15300995.56
+     },
+     {
+      "name": "招商北京安外大街证券营业部",
+      "full": "招商证券股份有限公司北京安外大街证券营业部",
+      "tag": null,
+      "amount": 4950420
+     },
+     {
+      "name": "平安北京金融大街证券营业部",
+      "full": "平安证券股份有限公司北京金融大街证券营业部",
+      "tag": null,
+      "amount": 4638768
+     },
+     {
+      "name": "中信浙江分公司",
+      "full": "中信证券股份有限公司浙江分公司",
+      "tag": null,
+      "amount": 4003701
+     },
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 3658084
+     }
+    ]
+   },
+   {
+    "code": "603687",
+    "name": "大胜达",
+    "close": 15.16,
+    "pct": 8.67,
+    "net": 49422620.17,
+    "buy_total": 346892676.44,
+    "sell_total": 297470056.27,
+    "deal": 644362732.71,
+    "turnover": 16.2147,
+    "reason": "有价格涨跌幅限制的日价格振幅达到15%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通南京太平南路证券营业部",
+      "full": "国泰海通证券股份有限公司南京太平南路证券营业部",
+      "tag": "作手新一",
+      "amount": 212376303.99
+     },
+     {
+      "name": "平安浙江分公司",
+      "full": "平安证券股份有限公司浙江分公司",
+      "tag": null,
+      "amount": 51057945
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 33154935.07
+     },
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 32175907.38
+     },
+     {
+      "name": "平安金华李渔路证券营业部",
+      "full": "平安证券股份有限公司金华李渔路证券营业部",
+      "tag": null,
+      "amount": 18127585
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国泰海通南京太平南路证券营业部",
+      "full": "国泰海通证券股份有限公司南京太平南路证券营业部",
+      "tag": "作手新一",
+      "amount": 178650875
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 45995792.05
+     },
+     {
+      "name": "开源西安太华路证券营业部",
+      "full": "开源证券股份有限公司西安太华路证券营业部",
+      "tag": null,
+      "amount": 30604126
+     },
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 24976417.22
+     },
+     {
+      "name": "中信北京安外大街证券营业部",
+      "full": "中信证券股份有限公司北京安外大街证券营业部",
+      "tag": null,
+      "amount": 17242846
+     }
+    ]
+   },
+   {
+    "code": "002748",
+    "name": "世龙实业",
+    "close": 13.63,
+    "pct": 10.01,
+    "net": 47966526.11,
+    "buy_total": 155296022,
+    "sell_total": 107329495.89,
+    "deal": 262625517.89,
+    "turnover": 13.2542,
+    "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+    "buy_seats": [
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 44404745
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 20964379
+     },
+     {
+      "name": "国新北京亦庄证券营业部",
+      "full": "国新证券股份有限公司北京亦庄证券营业部",
+      "tag": null,
+      "amount": 19676362
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 19299042
+     },
+     {
+      "name": "国新北京分公司",
+      "full": "国新证券股份有限公司北京分公司",
+      "tag": null,
+      "amount": 18423473
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 39975175
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 22357212
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 12701159.89
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 11604593
+     },
+     {
+      "name": "中信景德镇珠山大道证券营业部",
+      "full": "中信证券股份有限公司景德镇珠山大道证券营业部",
+      "tag": null,
+      "amount": 10750470
+     }
+    ]
+   },
+   {
+    "code": "300530",
+    "name": "领湃科技",
+    "close": 27.83,
+    "pct": 20.01,
+    "net": 39531450.8,
+    "buy_total": 110457213.8,
+    "sell_total": 70925763,
+    "deal": 181382976.8,
+    "turnover": 10.4268,
+    "reason": "日涨幅达到15%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 34388591
+     },
+     {
+      "name": "国投深圳深南大道华侨城大厦证券营业部",
+      "full": "国投证券股份有限公司深圳深南大道华侨城大厦证券营业部",
+      "tag": null,
+      "amount": 16840735
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 15024434
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 12360193
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 12064295.8
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 29581193
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 13897035
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 8265950
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 7256687
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 6828617
+     }
+    ]
+   },
+   {
+    "code": "002685",
+    "name": "华东重机",
+    "close": 6.09,
+    "pct": 9.93,
+    "net": 36330037.78,
+    "buy_total": 170728780.48,
+    "sell_total": 134398742.7,
+    "deal": 305127523.18,
+    "turnover": 14.374,
+    "reason": "日涨幅偏离值达到7%的前5只证券；连续三个交易日内，涨幅偏离值累计达到20%的证券",
+    "buy_seats": [
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 54024015.46
+     },
+     {
+      "name": "东亚前海证券浙江第二分公司",
+      "full": "东亚前海证券有限责任公司浙江第二分公司",
+      "tag": null,
+      "amount": 48548186
+     },
+     {
+      "name": "东亚前海证券浙江第二分公司",
+      "full": "东亚前海证券有限责任公司浙江第二分公司",
+      "tag": null,
+      "amount": 48508298
+     },
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 31020390.62
+     },
+     {
+      "name": "国信赣州红旗大道证券营业部",
+      "full": "国信证券股份有限公司赣州红旗大道证券营业部",
+      "tag": null,
+      "amount": 30681538
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 105566238.6
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 38311680
+     },
+     {
+      "name": "东方无锡梁清路证券营业部",
+      "full": "东方证券股份有限公司无锡梁清路证券营业部",
+      "tag": null,
+      "amount": 33636124
+     },
+     {
+      "name": "东方无锡梁清路证券营业部",
+      "full": "东方证券股份有限公司无锡梁清路证券营业部",
+      "tag": null,
+      "amount": 33495000
+     },
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 30253833.6
+     }
+    ]
+   },
+   {
+    "code": "301052",
+    "name": "果麦文化",
+    "close": 48.01,
+    "pct": 4.17,
+    "net": 31888464.48,
+    "buy_total": 118709167.92,
+    "sell_total": 86820703.44,
+    "deal": 205529871.36,
+    "turnover": 38.21,
+    "reason": "日换手率达到30%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 23347260.6
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 17747242.7
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 17483967.8
+     },
+     {
+      "name": "长江台州市府大道证券营业部",
+      "full": "长江证券股份有限公司台州市府大道证券营业部",
+      "tag": "台州帮",
+      "amount": 15267811.51
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 14695391
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 16617654.51
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 16010179
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 15829314.03
+     },
+     {
+      "name": "东方财富昌都两江大道证券营业部",
+      "full": "东方财富证券股份有限公司昌都两江大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 13454087.9
+     },
+     {
+      "name": "长江台州市府大道证券营业部",
+      "full": "长江证券股份有限公司台州市府大道证券营业部",
+      "tag": "台州帮",
+      "amount": 12826537
+     }
+    ]
+   },
+   {
+    "code": "002548",
+    "name": "金新农",
+    "close": 4.21,
+    "pct": 9.92,
+    "net": 27180057.62,
+    "buy_total": 51501172.62,
+    "sell_total": 24321115,
+    "deal": 75822287.62,
+    "turnover": 6.7535,
+    "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通连云港巨龙南路证券营业部",
+      "full": "国泰海通证券股份有限公司连云港巨龙南路证券营业部",
+      "tag": null,
+      "amount": 9277469.42
+     },
+     {
+      "name": "东海福州长乐北路证券营业部",
+      "full": "东海证券股份有限公司福州长乐北路证券营业部",
+      "tag": null,
+      "amount": 8611976
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 8175355.2
+     },
+     {
+      "name": "东海长沙潇湘南路证券营业部",
+      "full": "东海证券股份有限公司长沙潇湘南路证券营业部",
+      "tag": null,
+      "amount": 7546845
+     },
+     {
+      "name": "国泰海通上海闵行区号文路证券营业部",
+      "full": "国泰海通证券股份有限公司上海闵行区号文路证券营业部",
+      "tag": null,
+      "amount": 4999796
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 4758670
+     },
+     {
+      "name": "国泰海通上海松江区中山东路证券营业部",
+      "full": "国泰海通证券股份有限公司上海松江区中山东路证券营业部",
+      "tag": "游资·松江中山东路",
+      "amount": 4545663
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 4468944
+     },
+     {
+      "name": "中国银河如皋健康路证券营业部",
+      "full": "中国银河证券股份有限公司如皋健康路证券营业部",
+      "tag": null,
+      "amount": 4218017
+     },
+     {
+      "name": "国金上海静安区南京西路证券营业部",
+      "full": "国金证券股份有限公司上海静安区南京西路证券营业部",
+      "tag": null,
+      "amount": 3972081
+     }
+    ]
+   },
+   {
+    "code": "301583",
+    "name": "托伦斯",
+    "close": 105.5,
+    "pct": 4.75,
+    "net": 26407140.25,
+    "buy_total": 203337275.14,
+    "sell_total": 176930134.89,
+    "deal": 380267410.03,
+    "turnover": 31.3651,
+    "reason": "日换手率达到30%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 70435743.12
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 29002484.92
+     },
+     {
+      "name": "中国中金财富证券有限公司株洲珠江北路证券营业部",
+      "full": "中国中金财富证券有限公司株洲珠江北路证券营业部",
+      "tag": null,
+      "amount": 22817058.48
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 22754499.66
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 21862672.44
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 94371054.13
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 22110860
+     },
+     {
+      "name": "中国中金财富证券有限公司株洲珠江北路证券营业部",
+      "full": "中国中金财富证券有限公司株洲珠江北路证券营业部",
+      "tag": null,
+      "amount": 21760190.18
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 16888252.96
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 10518407
+     }
+    ]
+   },
+   {
+    "code": "002425",
+    "name": "凯撒文化",
+    "close": 4.36,
+    "pct": 10.1,
+    "net": 22852200.97,
+    "buy_total": 213904431.96,
+    "sell_total": 191052230.99,
+    "deal": 404956662.95,
+    "turnover": 20.272,
+    "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+    "buy_seats": [
+     {
+      "name": "国新北京分公司",
+      "full": "国新证券股份有限公司北京分公司",
+      "tag": null,
+      "amount": 68280501
+     },
+     {
+      "name": "华鑫证券上海徐汇区瑞平路证券营业部",
+      "full": "华鑫证券有限责任公司上海徐汇区瑞平路证券营业部",
+      "tag": "炒股养家",
+      "amount": 40490924
+     },
+     {
+      "name": "国泰海通北京安贞门证券营业部",
+      "full": "国泰海通证券股份有限公司北京安贞门证券营业部",
+      "tag": null,
+      "amount": 37856397.6
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 35593673
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 20990885.36
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国新北京分公司",
+      "full": "国新证券股份有限公司北京分公司",
+      "tag": null,
+      "amount": 75177571
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 32782624
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 30284836
+     },
+     {
+      "name": "国金成都武成大街证券营业部",
+      "full": "国金证券股份有限公司成都武成大街证券营业部",
+      "tag": null,
+      "amount": 26452931.32
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 25204162.67
+     }
+    ]
+   },
+   {
+    "code": "002384",
+    "name": "东山精密",
+    "close": 75.93,
+    "pct": -10.0,
+    "net": 22133914.26,
+    "buy_total": 1358758444.16,
+    "sell_total": 1336624529.9,
+    "deal": 2695382974.06,
+    "turnover": 10.0968,
+    "reason": "日跌幅偏离值达到7%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 645826976.22
+     },
+     {
+      "name": "国泰海通三亚迎宾路证券营业部",
+      "full": "国泰海通证券股份有限公司三亚迎宾路证券营业部",
+      "tag": "游资·三亚迎宾路",
+      "amount": 213050071
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 194961208.09
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 161360072.47
+     },
+     {
+      "name": "国泰海通上海自贸试验区第二分公司",
+      "full": "国泰海通证券股份有限公司上海自贸试验区第二分公司",
+      "tag": null,
+      "amount": 142923215
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 618675706.4
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 169271191.52
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 162077490.36
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 154615204.75
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 151175915.99
+     }
+    ]
+   },
+   {
+    "code": "002905",
+    "name": "金逸影视",
+    "close": 10.89,
+    "pct": 10,
+    "net": 20641410,
+    "buy_total": 38028194,
+    "sell_total": 17386784,
+    "deal": 55414978,
+    "turnover": 1.2932,
+    "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+    "buy_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 14260950
+     },
+     {
+      "name": "中信建投上海张杨北路证券营业部",
+      "full": "中信建投证券股份有限公司上海张杨北路证券营业部",
+      "tag": null,
+      "amount": 6066581
+     },
+     {
+      "name": "华泰南京分公司",
+      "full": "华泰证券股份有限公司南京分公司",
+      "tag": null,
+      "amount": 4920829
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 4892547
+     },
+     {
+      "name": "国海上海黄浦区中山南路证券营业部",
+      "full": "国海证券股份有限公司上海黄浦区中山南路证券营业部",
+      "tag": null,
+      "amount": 4476879
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "招商深圳海天一路证券营业部",
+      "full": "招商证券股份有限公司深圳海天一路证券营业部",
+      "tag": null,
+      "amount": 7920000
+     },
+     {
+      "name": "中银国际深圳中心四路证券营业部",
+      "full": "中银国际证券股份有限公司深圳中心四路证券营业部",
+      "tag": null,
+      "amount": 3002512
+     },
+     {
+      "name": "爱建证券上海浦东新区前滩大道证券营业部",
+      "full": "爱建证券有限责任公司上海浦东新区前滩大道证券营业部",
+      "tag": null,
+      "amount": 2079990
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 1948745
+     },
+     {
+      "name": "东方财富拉萨团结路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨团结路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 1676788
+     }
+    ]
+   },
+   {
+    "code": "603880",
+    "name": "南卫股份",
+    "close": 6.46,
+    "pct": -10.03,
+    "net": 20509245.32,
+    "buy_total": 56737378.88,
+    "sell_total": 36228133.56,
+    "deal": 92965512.44,
+    "turnover": 8.8822,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 16655935
+     },
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 12695556
+     },
+     {
+      "name": "中信上海分公司",
+      "full": "中信证券股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 10773634
+     },
+     {
+      "name": "申万宏源证券有限公司北京安定路证券营业部",
+      "full": "申万宏源证券有限公司北京安定路证券营业部",
+      "tag": null,
+      "amount": 10280394
+     },
+     {
+      "name": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "full": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "tag": "外资席位",
+      "amount": 6331859.88
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 13774379.75
+     },
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 8720369.81
+     },
+     {
+      "name": "华泰南京文澜路证券营业部",
+      "full": "华泰证券股份有限公司南京文澜路证券营业部",
+      "tag": null,
+      "amount": 6316219
+     },
+     {
+      "name": "华泰常州东横街证券营业部",
+      "full": "华泰证券股份有限公司常州东横街证券营业部",
+      "tag": null,
+      "amount": 3750744
+     },
+     {
+      "name": "中信常州分公司",
+      "full": "中信证券股份有限公司常州分公司",
+      "tag": null,
+      "amount": 3666421
+     }
+    ]
+   },
+   {
+    "code": "301578",
+    "name": "辰奕智能",
+    "close": 35.6,
+    "pct": -0.61,
+    "net": 19051116.06,
+    "buy_total": 106240050.41,
+    "sell_total": 87188934.35,
+    "deal": 193428984.76,
+    "turnover": 35.2342,
+    "reason": "日换手率达到30%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 27212816.78
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 24699565.12
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 13517685.03
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 13083196
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 10566797.29
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 31850356.25
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 20568127.29
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 10097815.52
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 7716771
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 7574571.35
+     }
+    ]
+   },
+   {
+    "code": "002086",
+    "name": "东方海洋",
+    "close": 4.34,
+    "pct": -9.96,
+    "net": 18826659.38,
+    "buy_total": 202747713.82,
+    "sell_total": 183921054.44,
+    "deal": 386668768.26,
+    "turnover": 32.3554,
+    "reason": "日跌幅偏离值达到7%的前5只证券；日换手率达到20%的前5只证券；日振幅值达到15%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 55340008
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 27693498
+     },
+     {
+      "name": "平安深圳香蜜湖证券营业部",
+      "full": "平安证券股份有限公司深圳香蜜湖证券营业部",
+      "tag": null,
+      "amount": 25758993.58
+     },
+     {
+      "name": "东方财富昌都两江大道证券营业部",
+      "full": "东方财富证券股份有限公司昌都两江大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 25260857.24
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 24179282
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 43607967.35
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 29486152.33
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 23742661
+     },
+     {
+      "name": "广发广州寺右新马路证券营业部",
+      "full": "广发证券股份有限公司广州寺右新马路证券营业部",
+      "tag": null,
+      "amount": 22273835
+     },
+     {
+      "name": "中信深圳分公司",
+      "full": "中信证券股份有限公司深圳分公司",
+      "tag": null,
+      "amount": 21996343
+     }
+    ]
+   },
+   {
+    "code": "300010",
+    "name": "ST豆神",
+    "close": 4.12,
+    "pct": 15.08,
+    "net": 14484618,
+    "buy_total": 59558890,
+    "sell_total": 45074272,
+    "deal": 104633162,
+    "turnover": 9.5099,
+    "reason": "日涨幅达到15%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "中信建投上海营口路证券营业部",
+      "full": "中信建投证券股份有限公司上海营口路证券营业部",
+      "tag": null,
+      "amount": 12388519
+     },
+     {
+      "name": "东方财富拉萨东环路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 10617585
+     },
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 9741805
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 9443758
+     },
+     {
+      "name": "东方财富拉萨团结路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨团结路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 9254117
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "中信建投上海营口路证券营业部",
+      "full": "中信建投证券股份有限公司上海营口路证券营业部",
+      "tag": null,
+      "amount": 13749554
+     },
+     {
+      "name": "东方财富拉萨团结路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨团结路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 6914564
+     },
+     {
+      "name": "东方财富拉萨团结路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨团结路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 6410303
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 6154436
+     },
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 6019025
+     }
+    ]
+   },
+   {
+    "code": "600386",
+    "name": "北巴传媒",
+    "close": 3.81,
+    "pct": 10.12,
+    "net": 13682802,
+    "buy_total": 55552749.08,
+    "sell_total": 41869947.08,
+    "deal": 97422696.16,
+    "turnover": 4.3732,
+    "reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "中信东阳吴宁西路证券营业部",
+      "full": "中信证券股份有限公司东阳吴宁西路证券营业部",
+      "tag": null,
+      "amount": 17934793
+     },
+     {
+      "name": "开源西安太华路证券营业部",
+      "full": "开源证券股份有限公司西安太华路证券营业部",
+      "tag": null,
+      "amount": 15892458.08
+     },
+     {
+      "name": "东莞常熟东南大道证券营业部",
+      "full": "东莞证券股份有限公司常熟东南大道证券营业部",
+      "tag": null,
+      "amount": 10146411
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 7770230
+     },
+     {
+      "name": "第一创业上海杨浦区宁国路证券营业部",
+      "full": "第一创业证券股份有限公司上海杨浦区宁国路证券营业部",
+      "tag": null,
+      "amount": 3808857
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 12482703
+     },
+     {
+      "name": "方正河南分公司",
+      "full": "方正证券股份有限公司河南分公司",
+      "tag": null,
+      "amount": 10726106
+     },
+     {
+      "name": "申万宏源证券有限公司盐城解放南路证券营业部",
+      "full": "申万宏源证券有限公司盐城解放南路证券营业部",
+      "tag": null,
+      "amount": 10476486.08
+     },
+     {
+      "name": "申万宏源证券有限公司上海闵行区碧江路证券营业部",
+      "full": "申万宏源证券有限公司上海闵行区碧江路证券营业部",
+      "tag": null,
+      "amount": 4590425
+     },
+     {
+      "name": "华泰温州瓯江路证券营业部",
+      "full": "华泰证券股份有限公司温州瓯江路证券营业部",
+      "tag": null,
+      "amount": 3594227
+     }
+    ]
+   },
+   {
+    "code": "300824",
+    "name": "北鼎股份",
+    "close": 8.6,
+    "pct": 19.94,
+    "net": 7987231.4,
+    "buy_total": 59820708.8,
+    "sell_total": 51833477.4,
+    "deal": 111654186.2,
+    "turnover": 10.5106,
+    "reason": "日涨幅达到15%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "华鑫证券上海徐汇区瑞平路证券营业部",
+      "full": "华鑫证券有限责任公司上海徐汇区瑞平路证券营业部",
+      "tag": "炒股养家",
+      "amount": 14686000
+     },
+     {
+      "name": "平安浙江分公司",
+      "full": "平安证券股份有限公司浙江分公司",
+      "tag": null,
+      "amount": 11960030
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 10790878
+     },
+     {
+      "name": "国投上海浦东新区樱花路证券营业部",
+      "full": "国投证券股份有限公司上海浦东新区樱花路证券营业部",
+      "tag": null,
+      "amount": 8486049.8
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 7808051
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "平安广州体育东路证券营业部",
+      "full": "平安证券股份有限公司广州体育东路证券营业部",
+      "tag": null,
+      "amount": 13000924
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 12248206
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 9461291.4
+     },
+     {
+      "name": "华安池州分公司",
+      "full": "华安证券股份有限公司池州分公司",
+      "tag": null,
+      "amount": 9442218
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 7377743.5
+     }
+    ]
+   },
+   {
+    "code": "920021",
+    "name": "流金科技",
+    "close": 9.34,
+    "pct": -1.16,
+    "net": 7611201.58,
+    "buy_total": 50745615.86,
+    "sell_total": 43134414.28,
+    "deal": 93880030.14,
+    "turnover": 21.7336,
+    "reason": "当日换手率达到20%的前5只股票",
+    "buy_seats": [
+     {
+      "name": "国金成都双楠路证券营业部",
+      "full": "国金证券股份有限公司成都双楠路证券营业部",
+      "tag": null,
+      "amount": 9223906.62
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 8915418.16
+     },
+     {
+      "name": "国金上海浦东新区芳甸路证券营业部",
+      "full": "国金证券股份有限公司上海浦东新区芳甸路证券营业部",
+      "tag": null,
+      "amount": 8186719.01
+     },
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 7596766.57
+     },
+     {
+      "name": "东吴上海西藏南路证券营业部",
+      "full": "东吴证券股份有限公司上海西藏南路证券营业部",
+      "tag": null,
+      "amount": 5623466.86
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 10129111.36
+     },
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 6960792.2
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 6405383.19
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 6351530.82
+     },
+     {
+      "name": "东方财富拉萨团结路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨团结路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 5909411.68
+     }
+    ]
+   },
+   {
+    "code": "002853",
+    "name": "皮阿诺",
+    "close": 22.84,
+    "pct": 4.92,
+    "net": 6319581.75,
+    "buy_total": 57864550.77,
+    "sell_total": 51544969.02,
+    "deal": 109409519.79,
+    "turnover": 5.6076,
+    "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券",
+    "buy_seats": [
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 18508490
+     },
+     {
+      "name": "华泰上海长宁区凯旋路证券营业部",
+      "full": "华泰证券股份有限公司上海长宁区凯旋路证券营业部",
+      "tag": null,
+      "amount": 10188196
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 8126586.8
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 7143313.97
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 6546196
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 19153405.3
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 8745777
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 8331433.52
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 6938448.2
+     },
+     {
+      "name": "国信深圳金田路证券营业部",
+      "full": "国信证券股份有限公司深圳金田路证券营业部",
+      "tag": "金田路",
+      "amount": 6686725
+     }
+    ]
+   },
+   {
+    "code": "920085",
+    "name": "森峰激光",
+    "close": 29.38,
+    "pct": -6.49,
+    "net": 5615666.24,
+    "buy_total": 19920907.05,
+    "sell_total": 14305240.81,
+    "deal": 34226147.86,
+    "turnover": 21.1157,
+    "reason": "当日换手率达到20%的前5只股票",
+    "buy_seats": [
+     {
+      "name": "东方上海杨浦区控江路证券营业部",
+      "full": "东方证券股份有限公司上海杨浦区控江路证券营业部",
+      "tag": null,
+      "amount": 6805676.7
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 6027585.92
+     },
+     {
+      "name": "中信建投慈溪三北西大街证券营业部",
+      "full": "中信建投证券股份有限公司慈溪三北西大街证券营业部",
+      "tag": null,
+      "amount": 2478853.38
+     },
+     {
+      "name": "国投赤峰临潢大街证券营业部",
+      "full": "国投证券股份有限公司赤峰临潢大街证券营业部",
+      "tag": null,
+      "amount": 2310931.39
+     },
+     {
+      "name": "东吴太仓上海东路证券营业部",
+      "full": "东吴证券股份有限公司太仓上海东路证券营业部",
+      "tag": null,
+      "amount": 1940038.28
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 4433634.62
+     },
+     {
+      "name": "国泰海通浙江衢州白云中大道营业部",
+      "full": "国泰海通证券股份有限公司浙江衢州白云中大道营业部",
+      "tag": null,
+      "amount": 2704906.95
+     },
+     {
+      "name": "国泰海通福建福州杨桥东路营业部",
+      "full": "国泰海通证券股份有限公司福建福州杨桥东路营业部",
+      "tag": null,
+      "amount": 2590825.75
+     },
+     {
+      "name": "浙商金华分公司",
+      "full": "浙商证券股份有限公司金华分公司",
+      "tag": null,
+      "amount": 2483378.76
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 2065898.33
+     }
+    ]
+   },
+   {
+    "code": "600530",
+    "name": "ST交昂",
+    "close": 5.36,
+    "pct": 10.06,
+    "net": 5564516.25,
+    "buy_total": 16106779.25,
+    "sell_total": 10542263,
+    "deal": 26649042.25,
+    "turnover": 1.7931,
+    "reason": "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "中信建投上海营口路证券营业部",
+      "full": "中信建投证券股份有限公司上海营口路证券营业部",
+      "tag": null,
+      "amount": 5381026.5
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 3357363
+     },
+     {
+      "name": "华鑫证券上海徐汇区云锦路证券营业部",
+      "full": "华鑫证券有限责任公司上海徐汇区云锦路证券营业部",
+      "tag": "炒股养家",
+      "amount": 2540926
+     },
+     {
+      "name": "东方抚顺新华大街证券营业部",
+      "full": "东方证券股份有限公司抚顺新华大街证券营业部",
+      "tag": null,
+      "amount": 2529729
+     },
+     {
+      "name": "中信上海分公司",
+      "full": "中信证券股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 2297734.75
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "华泰沈阳青年大街证券营业部",
+      "full": "华泰证券股份有限公司沈阳青年大街证券营业部",
+      "tag": null,
+      "amount": 3094000
+     },
+     {
+      "name": "华福长沙芙蓉中路证券营业部",
+      "full": "华福证券股份有限公司长沙芙蓉中路证券营业部",
+      "tag": null,
+      "amount": 2680000
+     },
+     {
+      "name": "中信建投上海营口路证券营业部",
+      "full": "中信建投证券股份有限公司上海营口路证券营业部",
+      "tag": null,
+      "amount": 1778383
+     },
+     {
+      "name": "中银国际重庆分公司",
+      "full": "中银国际证券股份有限公司重庆分公司",
+      "tag": null,
+      "amount": 1580000
+     },
+     {
+      "name": "中信上海松江区新松江路证券营业部",
+      "full": "中信证券股份有限公司上海松江区新松江路证券营业部",
+      "tag": null,
+      "amount": 1409880
+     }
+    ]
+   },
+   {
+    "code": "688661",
+    "name": "和林微纳",
+    "close": 49.62,
+    "pct": -15.15,
+    "net": 2260660.3,
+    "buy_total": 84405546.45,
+    "sell_total": 82144886.15,
+    "deal": 166550432.6,
+    "turnover": 6.2092,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅达到15%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 39677241.95
+     },
+     {
+      "name": "国泰海通上海静安区新闸路证券营业部",
+      "full": "国泰海通证券股份有限公司上海静安区新闸路证券营业部",
+      "tag": null,
+      "amount": 12460825.48
+     },
+     {
+      "name": "瑞银证券上海花园石桥路证券营业部",
+      "full": "瑞银证券有限责任公司上海花园石桥路证券营业部",
+      "tag": "外资席位",
+      "amount": 11791456.08
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 10600058.33
+     },
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 9875964.61
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 25938697.4
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 16263115.01
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 14517607.13
+     },
+     {
+      "name": "国投上海虹口区杨树浦路证券营业部",
+      "full": "国投证券股份有限公司上海虹口区杨树浦路证券营业部",
+      "tag": "游资·杨树浦路",
+      "amount": 12769753.13
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 12655713.48
+     }
+    ]
+   },
+   {
+    "code": "920289",
+    "name": "华汇智能",
+    "close": 24.56,
+    "pct": 2.93,
+    "net": 500885.9,
+    "buy_total": 8741467.23,
+    "sell_total": 8240581.33,
+    "deal": 16982048.56,
+    "turnover": 22.2736,
+    "reason": "当日换手率达到20%的前5只股票",
+    "buy_seats": [
+     {
+      "name": "国泰海通江苏江阴朝阳路营业部",
+      "full": "国泰海通证券股份有限公司江苏江阴朝阳路营业部",
+      "tag": null,
+      "amount": 2382621.21
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 1972119.3
+     },
+     {
+      "name": "中信丽水花园路证券营业部",
+      "full": "中信证券股份有限公司丽水花园路证券营业部",
+      "tag": null,
+      "amount": 1846804.07
+     },
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 1435614.41
+     },
+     {
+      "name": "东方财富拉萨东环路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 1104308.24
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 2349289.07
+     },
+     {
+      "name": "中信建投西安南大街证券营业部",
+      "full": "中信建投证券股份有限公司西安南大街证券营业部",
+      "tag": null,
+      "amount": 1600537.35
+     },
+     {
+      "name": "南京连云港通灌南路证券营业部",
+      "full": "南京证券股份有限公司连云港通灌南路证券营业部",
+      "tag": null,
+      "amount": 1442137.35
+     },
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 1379772.7
+     },
+     {
+      "name": "长江杭州秋涛北路证券营业部",
+      "full": "长江证券股份有限公司杭州秋涛北路证券营业部",
+      "tag": null,
+      "amount": 1198671.89
+     }
+    ]
+   },
+   {
+    "code": "200056",
+    "name": "*ST皇庭B",
+    "close": 0.45,
+    "pct": -10,
+    "net": -54952.62,
+    "buy_total": 117912.67,
+    "sell_total": 172865.29,
+    "deal": 290777.96,
+    "turnover": 0.1814,
+    "reason": "日跌幅偏离值达到7%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "华泰长沙湘江中路证券营业部",
+      "full": "华泰证券股份有限公司长沙湘江中路证券营业部",
+      "tag": null,
+      "amount": 38521.8
+     },
+     {
+      "name": "华西深圳民田路证券营业部",
+      "full": "华西证券股份有限公司深圳民田路证券营业部",
+      "tag": "欢乐海岸",
+      "amount": 29603.58
+     },
+     {
+      "name": "中国中金财富证券有限公司江门迎宾大道证券营业部",
+      "full": "中国中金财富证券有限公司江门迎宾大道证券营业部",
+      "tag": null,
+      "amount": 22822.03
+     },
+     {
+      "name": "国泰海通广州临江大道证券营业部",
+      "full": "国泰海通证券股份有限公司广州临江大道证券营业部",
+      "tag": null,
+      "amount": 19260.9
+     },
+     {
+      "name": "申万宏源证券有限公司上海徐汇区凯旋路证券营业部",
+      "full": "申万宏源证券有限公司上海徐汇区凯旋路证券营业部",
+      "tag": null,
+      "amount": 7704.36
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "中信丽水花园路证券营业部",
+      "full": "中信证券股份有限公司丽水花园路证券营业部",
+      "tag": null,
+      "amount": 156596.25
+     },
+     {
+      "name": "中泰淄博临淄大道证券营业部",
+      "full": "中泰证券股份有限公司淄博临淄大道证券营业部",
+      "tag": null,
+      "amount": 11132.8
+     },
+     {
+      "name": "中泰青岛香港东路证券营业部",
+      "full": "中泰证券股份有限公司青岛香港东路证券营业部",
+      "tag": null,
+      "amount": 5136.24
+     }
+    ]
+   },
+   {
+    "code": "920202",
+    "name": "安达股份",
+    "close": 12.57,
+    "pct": -10.53,
+    "net": -901465.16,
+    "buy_total": 9565022.57,
+    "sell_total": 10466487.73,
+    "deal": 20031510.3,
+    "turnover": 29.783,
+    "reason": "当日换手率达到20%的前5只股票",
+    "buy_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 2663304.9
+     },
+     {
+      "name": "申万宏源西部证券有限公司新疆克拉玛依广源路证券营业部",
+      "full": "申万宏源西部证券有限公司新疆克拉玛依广源路证券营业部",
+      "tag": null,
+      "amount": 1920303.11
+     },
+     {
+      "name": "国信深圳红岭中路证券营业部",
+      "full": "国信证券股份有限公司深圳红岭中路证券营业部",
+      "tag": null,
+      "amount": 1508324.72
+     },
+     {
+      "name": "中航证券有限公司景德镇营业部",
+      "full": "中航证券有限公司景德镇营业部",
+      "tag": null,
+      "amount": 1366202.85
+     },
+     {
+      "name": "国金上海互联网证券分公司",
+      "full": "国金证券股份有限公司上海互联网证券分公司",
+      "tag": null,
+      "amount": 1325726.79
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 4498384.57
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 1642538.22
+     },
+     {
+      "name": "国信深圳红岭中路证券营业部",
+      "full": "国信证券股份有限公司深圳红岭中路证券营业部",
+      "tag": null,
+      "amount": 1511631.81
+     },
+     {
+      "name": "东方财富拉萨团结路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨团结路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 1484237.74
+     },
+     {
+      "name": "东海厦门嘉禾路证券营业部",
+      "full": "东海证券股份有限公司厦门嘉禾路证券营业部",
+      "tag": null,
+      "amount": 1289211.39
+     }
+    ]
+   },
+   {
+    "code": "118078",
+    "name": "N航亚转",
+    "close": 130.73,
+    "pct": 30.73,
+    "net": -1734540,
+    "buy_total": 39648760,
+    "sell_total": 41383300,
+    "deal": 81032060,
+    "turnover": null,
+    "reason": "向不特定对象发行的可转债上市首日交易公开信息",
+    "buy_seats": [
+     {
+      "name": "国信温州分公司",
+      "full": "国信证券股份有限公司温州分公司",
+      "tag": null,
+      "amount": 11994590
+     },
+     {
+      "name": "华宝上海东大名路证券营业部",
+      "full": "华宝证券股份有限公司上海东大名路证券营业部",
+      "tag": null,
+      "amount": 11813100
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 5999800
+     },
+     {
+      "name": "联储宁波分公司",
+      "full": "联储证券股份有限公司宁波分公司",
+      "tag": null,
+      "amount": 5062940
+     },
+     {
+      "name": "华泰成都蜀金路证券营业部",
+      "full": "华泰证券股份有限公司成都蜀金路证券营业部",
+      "tag": "成都帮",
+      "amount": 4778330
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "民生无锡中山路证券营业部",
+      "full": "民生证券股份有限公司无锡中山路证券营业部",
+      "tag": null,
+      "amount": 13571900
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 11239930
+     },
+     {
+      "name": "华宝上海东大名路证券营业部",
+      "full": "华宝证券股份有限公司上海东大名路证券营业部",
+      "tag": null,
+      "amount": 9999440
+     },
+     {
+      "name": "国泰海通成都天府大道证券营业部",
+      "full": "国泰海通证券股份有限公司成都天府大道证券营业部",
+      "tag": "成都帮",
+      "amount": 3423990
+     },
+     {
+      "name": "华鑫证券上海陆家嘴证券营业部",
+      "full": "华鑫证券有限责任公司上海陆家嘴证券营业部",
+      "tag": "炒股养家",
+      "amount": 3148040
+     }
+    ]
+   },
+   {
+    "code": "600261",
+    "name": "阳光照明",
+    "close": 5.18,
+    "pct": -9.6,
+    "net": -2403170.78,
+    "buy_total": 120880675.66,
+    "sell_total": 123283846.44,
+    "deal": 244164522.1,
+    "turnover": 24.0648,
+    "reason": "有价格涨跌幅限制的日价格振幅达到15%的前五只证券；有价格涨跌幅限制的日换手率达到20%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 40070500.42
+     },
+     {
+      "name": "平安深圳香蜜湖证券营业部",
+      "full": "平安证券股份有限公司深圳香蜜湖证券营业部",
+      "tag": null,
+      "amount": 22006109.79
+     },
+     {
+      "name": "中信深圳分公司",
+      "full": "中信证券股份有限公司深圳分公司",
+      "tag": null,
+      "amount": 20042210.7
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 19479542.75
+     },
+     {
+      "name": "广发广州寺右新马路证券营业部",
+      "full": "广发证券股份有限公司广州寺右新马路证券营业部",
+      "tag": null,
+      "amount": 19282312
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 44467405.62
+     },
+     {
+      "name": "广发广州寺右新马路证券营业部",
+      "full": "广发证券股份有限公司广州寺右新马路证券营业部",
+      "tag": null,
+      "amount": 20775430.54
+     },
+     {
+      "name": "平安深圳香蜜湖证券营业部",
+      "full": "平安证券股份有限公司深圳香蜜湖证券营业部",
+      "tag": null,
+      "amount": 20478032.96
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 19098806.36
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 18464170.96
+     }
+    ]
+   },
+   {
+    "code": "603389",
+    "name": "亚振家居",
+    "close": 55.23,
+    "pct": -10.0,
+    "net": -5784292,
+    "buy_total": 96008454.6,
+    "sell_total": 101792746.6,
+    "deal": 197801201.2,
+    "turnover": 2.6508,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 37026538.6
+     },
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 17751951
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 14928215
+     },
+     {
+      "name": "中信上海分公司",
+      "full": "中信证券股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 14215915
+     },
+     {
+      "name": "华泰南京止马营证券营业部",
+      "full": "华泰证券股份有限公司南京止马营证券营业部",
+      "tag": null,
+      "amount": 12085835
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 27416161
+     },
+     {
+      "name": "中信建投杭州庆春路证券营业部",
+      "full": "中信建投证券股份有限公司杭州庆春路证券营业部",
+      "tag": "杭州帮",
+      "amount": 22959765
+     },
+     {
+      "name": "中国银河绍兴鲁迅中路证券营业部",
+      "full": "中国银河证券股份有限公司绍兴鲁迅中路证券营业部",
+      "tag": "赵老哥",
+      "amount": 20833544.6
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 17513773
+     },
+     {
+      "name": "国金深圳分公司",
+      "full": "国金证券股份有限公司深圳分公司",
+      "tag": null,
+      "amount": 13069503
+     }
+    ]
+   },
+   {
+    "code": "600327",
+    "name": "大东方",
+    "close": 5.81,
+    "pct": -10.06,
+    "net": -7058391.55,
+    "buy_total": 54692926.46,
+    "sell_total": 61751318.01,
+    "deal": 116444244.47,
+    "turnover": 14.3946,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 15969179
+     },
+     {
+      "name": "东方财富昌都两江大道证券营业部",
+      "full": "东方财富证券股份有限公司昌都两江大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 10017216.36
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 9841897.1
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 9820576
+     },
+     {
+      "name": "平安深圳香蜜湖证券营业部",
+      "full": "平安证券股份有限公司深圳香蜜湖证券营业部",
+      "tag": null,
+      "amount": 9044058
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国泰海通长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 15906665.61
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 15324513
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 11932135.6
+     },
+     {
+      "name": "东方财富昌都两江大道证券营业部",
+      "full": "东方财富证券股份有限公司昌都两江大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 9367279
+     },
+     {
+      "name": "平安深圳香蜜湖证券营业部",
+      "full": "平安证券股份有限公司深圳香蜜湖证券营业部",
+      "tag": null,
+      "amount": 9220724.8
+     }
+    ]
+   },
+   {
+    "code": "688433",
+    "name": "华曙高科",
+    "close": 57,
+    "pct": -15.56,
+    "net": -7192888.15000001,
+    "buy_total": 153145339,
+    "sell_total": 160338227.15,
+    "deal": 313483566.15,
+    "turnover": 2.6924,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅达到15%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 60970055.27
+     },
+     {
+      "name": "国金深圳分公司",
+      "full": "国金证券股份有限公司深圳分公司",
+      "tag": null,
+      "amount": 33185913.92
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 24269694.7
+     },
+     {
+      "name": "财达深圳分公司",
+      "full": "财达证券股份有限公司深圳分公司",
+      "tag": null,
+      "amount": 19999159.76
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 14720515.35
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "光大长沙芙蓉中路证券营业部",
+      "full": "光大证券股份有限公司长沙芙蓉中路证券营业部",
+      "tag": null,
+      "amount": 41887674.7
+     },
+     {
+      "name": "广发上海漕溪北路证券营业部",
+      "full": "广发证券股份有限公司上海漕溪北路证券营业部",
+      "tag": null,
+      "amount": 37437278.57
+     },
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 35401366.31
+     },
+     {
+      "name": "中信上海虹口区溧阳路证券营业部",
+      "full": "中信证券股份有限公司上海虹口区溧阳路证券营业部",
+      "tag": "章盟主",
+      "amount": 28475870.08
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 17136037.49
+     }
+    ]
+   },
+   {
+    "code": "600228",
+    "name": "返利科技",
+    "close": 9.87,
+    "pct": -10.03,
+    "net": -8906074.03999999,
+    "buy_total": 113061219.7,
+    "sell_total": 121967293.74,
+    "deal": 235028513.44,
+    "turnover": 13.387,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 27865462
+     },
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 23926056.7
+     },
+     {
+      "name": "国投上海浦东新区樱花路证券营业部",
+      "full": "国投证券股份有限公司上海浦东新区樱花路证券营业部",
+      "tag": null,
+      "amount": 23323770
+     },
+     {
+      "name": "财通杭州丽水路证券营业部",
+      "full": "财通证券股份有限公司杭州丽水路证券营业部",
+      "tag": null,
+      "amount": 19558039
+     },
+     {
+      "name": "中信武汉建设大道证券营业部",
+      "full": "中信证券股份有限公司武汉建设大道证券营业部",
+      "tag": null,
+      "amount": 18387892
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 50663666.4
+     },
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 25069718
+     },
+     {
+      "name": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "full": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "tag": "外资席位",
+      "amount": 17718853
+     },
+     {
+      "name": "中信上海分公司",
+      "full": "中信证券股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 14897444.34
+     },
+     {
+      "name": "中信深圳深南中路中信大厦证券营业部",
+      "full": "中信证券股份有限公司深圳深南中路中信大厦证券营业部",
+      "tag": null,
+      "amount": 13617612
+     }
+    ]
+   },
+   {
+    "code": "123118",
+    "name": "惠城转债",
+    "close": 413.891,
+    "pct": -20,
+    "net": -9019229.59999999,
+    "buy_total": 79151489.65,
+    "sell_total": 88170719.25,
+    "deal": 167322208.9,
+    "turnover": null,
+    "reason": "日跌幅达到15%的前5只可转债",
+    "buy_seats": [
+     {
+      "name": "华宝上海东大名路证券营业部",
+      "full": "华宝证券股份有限公司上海东大名路证券营业部",
+      "tag": null,
+      "amount": 37254796.37
+     },
+     {
+      "name": "东方深圳金田路证券营业部",
+      "full": "东方证券股份有限公司深圳金田路证券营业部",
+      "tag": "金田路",
+      "amount": 15587215.04
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 13675626.96
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 6411016.75
+     },
+     {
+      "name": "光大河源永和东路证券营业部",
+      "full": "光大证券股份有限公司河源永和东路证券营业部",
+      "tag": null,
+      "amount": 6214189.79
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "华宝上海东大名路证券营业部",
+      "full": "华宝证券股份有限公司上海东大名路证券营业部",
+      "tag": null,
+      "amount": 37161830.01
+     },
+     {
+      "name": "东方深圳金田路证券营业部",
+      "full": "东方证券股份有限公司深圳金田路证券营业部",
+      "tag": "金田路",
+      "amount": 15660642.95
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 12202970.86
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 10356834.28
+     },
+     {
+      "name": "华泰武汉新华路证券营业部",
+      "full": "华泰证券股份有限公司武汉新华路证券营业部",
+      "tag": null,
+      "amount": 6465787.8
+     }
+    ]
+   },
+   {
+    "code": "920157",
+    "name": "宇特光电",
+    "close": 61.96,
+    "pct": 1.57,
+    "net": -10160774.69,
+    "buy_total": 34177185.29,
+    "sell_total": 44337959.98,
+    "deal": 78515145.27,
+    "turnover": 35.4761,
+    "reason": "当日换手率达到20%的前5只股票",
+    "buy_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 13274916.39
+     },
+     {
+      "name": "东莞四川分公司",
+      "full": "东莞证券股份有限公司四川分公司",
+      "tag": null,
+      "amount": 4947243.65
+     },
+     {
+      "name": "申万宏源证券有限公司靖江人民中路证券营业部",
+      "full": "申万宏源证券有限公司靖江人民中路证券营业部",
+      "tag": null,
+      "amount": 4144631.94
+     },
+     {
+      "name": "广发秦皇岛和平大街营业部",
+      "full": "广发证券股份有限公司秦皇岛和平大街营业部",
+      "tag": null,
+      "amount": 3930230.98
+     },
+     {
+      "name": "东方财富拉萨团结路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨团结路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 3462694.59
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 27499147.46
+     },
+     {
+      "name": "平安重庆分公司",
+      "full": "平安证券股份有限公司重庆分公司",
+      "tag": null,
+      "amount": 3768032.29
+     },
+     {
+      "name": "华鑫证券常州劳动西路营业部",
+      "full": "华鑫证券有限责任公司常州劳动西路营业部",
+      "tag": null,
+      "amount": 3707558.42
+     },
+     {
+      "name": "东方财富拉萨团结路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨团结路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 3549621.65
+     },
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 3233439.76
+     }
+    ]
+   },
+   {
+    "code": "600892",
+    "name": "大晟文化",
+    "close": 6.1,
+    "pct": 8.35,
+    "net": -10536518.4,
+    "buy_total": 72950887.6,
+    "sell_total": 83487406,
+    "deal": 156438293.6,
+    "turnover": 35.3395,
+    "reason": "有价格涨跌幅限制的日换手率达到20%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 21056836.6
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 15955458
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 12234588
+     },
+     {
+      "name": "华泰广州海珠广场证券营业部",
+      "full": "华泰证券股份有限公司广州海珠广场证券营业部",
+      "tag": null,
+      "amount": 12094141
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 11609864
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 36548280
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 12587350
+     },
+     {
+      "name": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "full": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "tag": "外资席位",
+      "amount": 11578381
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 11396540
+     },
+     {
+      "name": "国泰海通杭州金华南路证券营业部",
+      "full": "国泰海通证券股份有限公司杭州金华南路证券营业部",
+      "tag": null,
+      "amount": 11376855
+     }
+    ]
+   },
+   {
+    "code": "002724",
+    "name": "海洋王",
+    "close": 11.71,
+    "pct": -9.99,
+    "net": -13662856.28,
+    "buy_total": 126127313.68,
+    "sell_total": 139790169.96,
+    "deal": 265917483.64,
+    "turnover": 17.5892,
+    "reason": "日振幅值达到15%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "华泰深圳彩田路证券营业部",
+      "full": "华泰证券股份有限公司深圳彩田路证券营业部",
+      "tag": null,
+      "amount": 30814632.6
+     },
+     {
+      "name": "国泰海通杭州文一西路证券营业部",
+      "full": "国泰海通证券股份有限公司杭州文一西路证券营业部",
+      "tag": null,
+      "amount": 29404037.38
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 24083865
+     },
+     {
+      "name": "国泰海通合肥潜山路证券营业部",
+      "full": "国泰海通证券股份有限公司合肥潜山路证券营业部",
+      "tag": null,
+      "amount": 20927277.6
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 12655871.1
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "方正杭州新塘路证券营业部",
+      "full": "方正证券股份有限公司杭州新塘路证券营业部",
+      "tag": null,
+      "amount": 34311340.7
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 24291059.38
+     },
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 21447402.38
+     },
+     {
+      "name": "中信海宁海昌南路证券营业部",
+      "full": "中信证券股份有限公司海宁海昌南路证券营业部",
+      "tag": null,
+      "amount": 20250796
+     },
+     {
+      "name": "东莞四川分公司",
+      "full": "东莞证券股份有限公司四川分公司",
+      "tag": null,
+      "amount": 12420490
+     }
+    ]
+   },
+   {
+    "code": "000995",
+    "name": "皇台酒业",
+    "close": 18.79,
+    "pct": 2.29,
+    "net": -14514827.65,
+    "buy_total": 67427940,
+    "sell_total": 81942767.65,
+    "deal": 149370707.65,
+    "turnover": 31.488,
+    "reason": "日换手率达到20%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "平安珠海园林路证券营业部",
+      "full": "平安证券股份有限公司珠海园林路证券营业部",
+      "tag": null,
+      "amount": 16196225
+     },
+     {
+      "name": "东方财富昌都两江大道证券营业部",
+      "full": "东方财富证券股份有限公司昌都两江大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 12572190
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 11725711
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 11707293
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 11566910
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 25209627
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 15332834
+     },
+     {
+      "name": "东方财富昌都两江大道证券营业部",
+      "full": "东方财富证券股份有限公司昌都两江大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 14589243
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 14014837.65
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 12710857
+     }
+    ]
+   },
+   {
+    "code": "300862",
+    "name": "蓝盾光电",
+    "close": 27.9,
+    "pct": -16.57,
+    "net": -15065491.75,
+    "buy_total": 114510603.05,
+    "sell_total": 129576094.8,
+    "deal": 244086697.85,
+    "turnover": 24.7231,
+    "reason": "日跌幅达到15%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "东方深圳金田路证券营业部",
+      "full": "东方证券股份有限公司深圳金田路证券营业部",
+      "tag": "金田路",
+      "amount": 30529697.04
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 25145127.02
+     },
+     {
+      "name": "东亚前海证券苏州分公司",
+      "full": "东亚前海证券有限责任公司苏州分公司",
+      "tag": null,
+      "amount": 15954621.76
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 10817507
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 10422408.15
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "东方财富拉萨东环路第一证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第一证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 53010499.44
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 18652881.89
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 16191808.72
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 13608623.64
+     },
+     {
+      "name": "光大北京东中街证券营业部",
+      "full": "光大证券股份有限公司北京东中街证券营业部",
+      "tag": null,
+      "amount": 11266731
+     }
+    ]
+   },
+   {
+    "code": "601599",
+    "name": "浙文影业",
+    "close": 5.06,
+    "pct": 0.4,
+    "net": -15308684.51,
+    "buy_total": 143656656,
+    "sell_total": 158965340.51,
+    "deal": 302621996.51,
+    "turnover": 29.8053,
+    "reason": "有价格涨跌幅限制的日换手率达到20%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通北京安贞门证券营业部",
+      "full": "国泰海通证券股份有限公司北京安贞门证券营业部",
+      "tag": null,
+      "amount": 59776887
+     },
+     {
+      "name": "国泰海通长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 26999626
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 24748854
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 17484943
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 14646346
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国泰海通长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 61083708.99
+     },
+     {
+      "name": "国泰海通成都龙腾东路证券营业部",
+      "full": "国泰海通证券股份有限公司成都龙腾东路证券营业部",
+      "tag": null,
+      "amount": 27546343
+     },
+     {
+      "name": "国泰海通宁波广福街证券营业部",
+      "full": "国泰海通证券股份有限公司宁波广福街证券营业部",
+      "tag": null,
+      "amount": 25476326.52
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 23089114
+     },
+     {
+      "name": "国泰海通北京安贞门证券营业部",
+      "full": "国泰海通证券股份有限公司北京安贞门证券营业部",
+      "tag": null,
+      "amount": 21769848
+     }
+    ]
+   },
+   {
+    "code": "603725",
+    "name": "天安新材",
+    "close": 11.14,
+    "pct": -10.02,
+    "net": -17503504.94,
+    "buy_total": 63966942.53,
+    "sell_total": 81470447.47,
+    "deal": 145437390,
+    "turnover": 11.6923,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "中国中金财富证券有限公司杭州江河汇证券营业部",
+      "full": "中国中金财富证券有限公司杭州江河汇证券营业部",
+      "tag": null,
+      "amount": 15748593.65
+     },
+     {
+      "name": "财通杭州丽水路证券营业部",
+      "full": "财通证券股份有限公司杭州丽水路证券营业部",
+      "tag": null,
+      "amount": 14906669.72
+     },
+     {
+      "name": "光大广州花地大道证券营业部",
+      "full": "光大证券股份有限公司广州花地大道证券营业部",
+      "tag": null,
+      "amount": 14261606
+     },
+     {
+      "name": "浙商杭州五星路证券营业部",
+      "full": "浙商证券股份有限公司杭州五星路证券营业部",
+      "tag": null,
+      "amount": 10996379.16
+     },
+     {
+      "name": "东莞四川分公司",
+      "full": "东莞证券股份有限公司四川分公司",
+      "tag": null,
+      "amount": 8053694
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国泰海通长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 23806743
+     },
+     {
+      "name": "国泰海通广州珠江新城证券营业部",
+      "full": "国泰海通证券股份有限公司广州珠江新城证券营业部",
+      "tag": null,
+      "amount": 20761618
+     },
+     {
+      "name": "财通杭州丽水路证券营业部",
+      "full": "财通证券股份有限公司杭州丽水路证券营业部",
+      "tag": null,
+      "amount": 14907066.42
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 12970820.1
+     },
+     {
+      "name": "国金上海奉贤区金碧路证券营业部",
+      "full": "国金证券股份有限公司上海奉贤区金碧路证券营业部",
+      "tag": null,
+      "amount": 9024199.95
+     }
+    ]
+   },
+   {
+    "code": "301513",
+    "name": "尚水智能",
+    "close": 65.02,
+    "pct": 14.21,
+    "net": -18365042,
+    "buy_total": 63694070.68,
+    "sell_total": 82059112.68,
+    "deal": 145753183.36,
+    "turnover": 45.9141,
+    "reason": "日换手率达到30%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "东亚前海证券上海分公司",
+      "full": "东亚前海证券有限责任公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 17019120.75
+     },
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 15477692.33
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 9856291
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 8073890.6
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 5623944
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 42113617.58
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 13949791.68
+     },
+     {
+      "name": "光大余姚南雷南路证券营业部",
+      "full": "光大证券股份有限公司余姚南雷南路证券营业部",
+      "tag": null,
+      "amount": 11613354
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 7721955.31
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 5931259.76
+     }
+    ]
+   },
+   {
+    "code": "001358",
+    "name": "兴欣新材",
+    "close": 27.01,
+    "pct": 1.39,
+    "net": -36145820.43,
+    "buy_total": 27426779,
+    "sell_total": 63572599.43,
+    "deal": 90999378.43,
+    "turnover": 26.8755,
+    "reason": "日振幅值达到15%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "兴业北京北三环中路证券营业部",
+      "full": "兴业证券股份有限公司北京北三环中路证券营业部",
+      "tag": null,
+      "amount": 5594843
+     },
+     {
+      "name": "广发广州寺右新马路证券营业部",
+      "full": "广发证券股份有限公司广州寺右新马路证券营业部",
+      "tag": null,
+      "amount": 4051664
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 3612989
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 3354808
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 3330473
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 19471203.2
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 12615716.69
+     },
+     {
+      "name": "华鑫证券上海分公司",
+      "full": "华鑫证券有限责任公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 11003343.74
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 10711664.84
+     },
+     {
+      "name": "华鑫证券上海徐汇区瑞平路证券营业部",
+      "full": "华鑫证券有限责任公司上海徐汇区瑞平路证券营业部",
+      "tag": "炒股养家",
+      "amount": 8500097.96
+     }
+    ]
+   },
+   {
+    "code": "300779",
+    "name": "惠城环保",
+    "close": 31.32,
+    "pct": -20,
+    "net": -42810055.2,
+    "buy_total": 5123952,
+    "sell_total": 47934007.2,
+    "deal": 53057959.2,
+    "turnover": 0.6931,
+    "reason": "日跌幅达到15%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "中泰青岛分公司",
+      "full": "中泰证券股份有限公司青岛分公司",
+      "tag": null,
+      "amount": 2057724
+     },
+     {
+      "name": "广发梅州梅江二路证券营业部",
+      "full": "广发证券股份有限公司梅州梅江二路证券营业部",
+      "tag": null,
+      "amount": 917676
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 833112
+     },
+     {
+      "name": "中信上海静安区南京西路证券营业部",
+      "full": "中信证券股份有限公司上海静安区南京西路证券营业部",
+      "tag": null,
+      "amount": 648324
+     },
+     {
+      "name": "平安湖南分公司",
+      "full": "平安证券股份有限公司湖南分公司",
+      "tag": null,
+      "amount": 582552
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "光大上海金山区卫清西路证券营业部",
+      "full": "光大证券股份有限公司上海金山区卫清西路证券营业部",
+      "tag": null,
+      "amount": 32347296
+     },
+     {
+      "name": "信达深圳分公司",
+      "full": "信达证券股份有限公司深圳分公司",
+      "tag": null,
+      "amount": 8437608
+     },
+     {
+      "name": "东莞厦门分公司",
+      "full": "东莞证券股份有限公司厦门分公司",
+      "tag": null,
+      "amount": 4485024
+     },
+     {
+      "name": "华泰苏州人民路证券营业部",
+      "full": "华泰证券股份有限公司苏州人民路证券营业部",
+      "tag": null,
+      "amount": 2037679.2
+     },
+     {
+      "name": "招商深圳南山南油大道证券营业部",
+      "full": "招商证券股份有限公司深圳南山南油大道证券营业部",
+      "tag": null,
+      "amount": 626400
+     }
+    ]
+   },
+   {
+    "code": "601091",
+    "name": "沈鼓集团",
+    "close": 20.01,
+    "pct": -9.99,
+    "net": -53869824.98,
+    "buy_total": 75291420,
+    "sell_total": 129161244.98,
+    "deal": 204452664.98,
+    "turnover": 29.434,
+    "reason": "有价格涨跌幅限制的日换手率达到20%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 17403113
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 15983036
+     },
+     {
+      "name": "中信上海分公司",
+      "full": "中信证券股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 15519957
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 14901005
+     },
+     {
+      "name": "平安深圳香蜜湖证券营业部",
+      "full": "平安证券股份有限公司深圳香蜜湖证券营业部",
+      "tag": null,
+      "amount": 11484309
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "方正杭州新塘路证券营业部",
+      "full": "方正证券股份有限公司杭州新塘路证券营业部",
+      "tag": null,
+      "amount": 40126990.6
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 34335007.38
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 19568649
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 19135067
+     },
+     {
+      "name": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "full": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "tag": "外资席位",
+      "amount": 15995531
+     }
+    ]
+   },
+   {
+    "code": "000665",
+    "name": "湖北广电",
+    "close": 4.74,
+    "pct": 3.49,
+    "net": -57623381.16,
+    "buy_total": 72738828.2,
+    "sell_total": 130362209.36,
+    "deal": 203101037.56,
+    "turnover": 16.0252,
+    "reason": "日振幅值达到15%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 34251930.33
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 10591342
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 8857049
+     },
+     {
+      "name": "中泰杭州滨和路证券营业部",
+      "full": "中泰证券股份有限公司杭州滨和路证券营业部",
+      "tag": null,
+      "amount": 8042542
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 7338103.87
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 34575927.21
+     },
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 31220135.51
+     },
+     {
+      "name": "国泰海通连云港巨龙南路证券营业部",
+      "full": "国泰海通证券股份有限公司连云港巨龙南路证券营业部",
+      "tag": null,
+      "amount": 17571031
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 16816791
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 14291939.6
+     }
+    ]
+   },
+   {
+    "code": "603103",
+    "name": "横店影视",
+    "close": 21,
+    "pct": 8.75,
+    "net": -63625049.87,
+    "buy_total": 148767597.78,
+    "sell_total": 212392647.65,
+    "deal": 361160245.43,
+    "turnover": 7.0261,
+    "reason": "非S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券",
+    "buy_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 67315670.11
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 28954581.78
+     },
+     {
+      "name": "华鑫证券上海徐汇区瑞平路证券营业部",
+      "full": "华鑫证券有限责任公司上海徐汇区瑞平路证券营业部",
+      "tag": "炒股养家",
+      "amount": 18841086
+     },
+     {
+      "name": "国泰海通连云港巨龙南路证券营业部",
+      "full": "国泰海通证券股份有限公司连云港巨龙南路证券营业部",
+      "tag": null,
+      "amount": 17461063.75
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 16195196.14
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 88802296.04
+     },
+     {
+      "name": "中信上海分公司",
+      "full": "中信证券股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 41032235.61
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 30483707
+     },
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 27810751
+     },
+     {
+      "name": "瑞银证券上海花园石桥路证券营业部",
+      "full": "瑞银证券有限责任公司上海花园石桥路证券营业部",
+      "tag": "外资席位",
+      "amount": 24263658
+     }
+    ]
+   },
+   {
+    "code": "000819",
+    "name": "岳阳兴长",
+    "close": 14.1,
+    "pct": 9.98,
+    "net": -64754952.18,
+    "buy_total": 109640469.4,
+    "sell_total": 174395421.58,
+    "deal": 284035890.98,
+    "turnover": 15.9566,
+    "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券；日涨幅偏离值达到7%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 70276342
+     },
+     {
+      "name": "国泰海通洛阳中州中路证券营业部",
+      "full": "国泰海通证券股份有限公司洛阳中州中路证券营业部",
+      "tag": null,
+      "amount": 31346943
+     },
+     {
+      "name": "国泰海通常州健身路证券营业部",
+      "full": "国泰海通证券股份有限公司常州健身路证券营业部",
+      "tag": null,
+      "amount": 22817704
+     },
+     {
+      "name": "国泰海通连云港巨龙南路证券营业部",
+      "full": "国泰海通证券股份有限公司连云港巨龙南路证券营业部",
+      "tag": null,
+      "amount": 20746066.83
+     },
+     {
+      "name": "平安绍兴解放大道证券营业部",
+      "full": "平安证券股份有限公司绍兴解放大道证券营业部",
+      "tag": "赵老哥",
+      "amount": 18698630.4
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 77110914
+     },
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 77085798
+     },
+     {
+      "name": "东方杭州龙井路证券营业部",
+      "full": "东方证券股份有限公司杭州龙井路证券营业部",
+      "tag": null,
+      "amount": 47457611.7
+     },
+     {
+      "name": "方正岳阳巴陵东路证券营业部",
+      "full": "方正证券股份有限公司岳阳巴陵东路证券营业部",
+      "tag": null,
+      "amount": 19780809.66
+     },
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 19694636.88
+     }
+    ]
+   },
+   {
+    "code": "002148",
+    "name": "北纬科技",
+    "close": 8.75,
+    "pct": 10.06,
+    "net": -88290941.65,
+    "buy_total": 155239040.32,
+    "sell_total": 243529981.97,
+    "deal": 398769022.29,
+    "turnover": 42.5854,
+    "reason": "连续三个交易日内，涨幅偏离值累计达到20%的证券；日换手率达到20%的前5只证券；日涨幅偏离值达到7%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "国新北京分公司",
+      "full": "国新证券股份有限公司北京分公司",
+      "tag": null,
+      "amount": 77447853
+     },
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 62609280
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 42823293.32
+     },
+     {
+      "name": "国泰海通上海长宁区江苏路证券营业部",
+      "full": "国泰海通证券股份有限公司上海长宁区江苏路证券营业部",
+      "tag": null,
+      "amount": 40299777.32
+     },
+     {
+      "name": "东亚前海证券苏州分公司",
+      "full": "东亚前海证券有限责任公司苏州分公司",
+      "tag": null,
+      "amount": 40026980
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "国新北京分公司",
+      "full": "国新证券股份有限公司北京分公司",
+      "tag": null,
+      "amount": 85227020
+     },
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 69282177
+     },
+     {
+      "name": "开源西安西大街证券营业部",
+      "full": "开源证券股份有限公司西安西大街证券营业部",
+      "tag": "游资·西安系",
+      "amount": 69190320
+     },
+     {
+      "name": "东方财富拉萨东城区江苏大道证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东城区江苏大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 31399809
+     },
+     {
+      "name": "东方财富拉萨东城区江苏大道证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东城区江苏大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 30008195
+     }
+    ]
+   },
+   {
+    "code": "000530",
+    "name": "冰山冷热",
+    "close": 11,
+    "pct": 6.49,
+    "net": -90471495.01,
+    "buy_total": 178396465.99,
+    "sell_total": 268867961,
+    "deal": 447264426.99,
+    "turnover": 33.5415,
+    "reason": "日换手率达到20%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 37979180.19
+     },
+     {
+      "name": "东方财富山南香曲东路证券营业部",
+      "full": "东方财富证券股份有限公司山南香曲东路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 29707948.15
+     },
+     {
+      "name": "东方财富拉萨金融城南环路证券营业部",
+      "full": "东方财富证券股份有限公司拉萨金融城南环路证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 26092664.75
+     },
+     {
+      "name": "国泰海通武汉紫阳东路证券营业部",
+      "full": "国泰海通证券股份有限公司武汉紫阳东路证券营业部",
+      "tag": null,
+      "amount": 22395314.04
+     },
+     {
+      "name": "平安深圳香蜜湖证券营业部",
+      "full": "平安证券股份有限公司深圳香蜜湖证券营业部",
+      "tag": null,
+      "amount": 20521134.86
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 68712501.07
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 39505116
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 29994410.72
+     },
+     {
+      "name": "东方财富拉萨东环路第二证券营业部",
+      "full": "东方财富证券股份有限公司拉萨东环路第二证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 23639431.6
+     },
+     {
+      "name": "东莞南京分公司",
+      "full": "东莞证券股份有限公司南京分公司",
+      "tag": null,
+      "amount": 23332705
+     }
+    ]
+   },
+   {
+    "code": "688765",
+    "name": "禾元生物",
+    "close": 29.98,
+    "pct": -18.44,
+    "net": -128194271.79,
+    "buy_total": 76205937.42,
+    "sell_total": 204400209.21,
+    "deal": 280606146.63,
+    "turnover": 7.2702,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅达到15%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 23926175.12
+     },
+     {
+      "name": "国泰海通上海静安区新闸路证券营业部",
+      "full": "国泰海通证券股份有限公司上海静安区新闸路证券营业部",
+      "tag": null,
+      "amount": 15882506.24
+     },
+     {
+      "name": "国金深圳分公司",
+      "full": "国金证券股份有限公司深圳分公司",
+      "tag": null,
+      "amount": 13938662.09
+     },
+     {
+      "name": "国泰海通武汉新华路证券营业部",
+      "full": "国泰海通证券股份有限公司武汉新华路证券营业部",
+      "tag": null,
+      "amount": 11700632.79
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 10757961.18
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 80379099.47
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 40836708.19
+     },
+     {
+      "name": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "full": "摩根大通证券(中国)有限公司上海银城中路证券营业部",
+      "tag": "外资席位",
+      "amount": 34159263.79
+     },
+     {
+      "name": "国泰海通总部",
+      "full": "国泰海通证券股份有限公司总部",
+      "tag": null,
+      "amount": 26409202.83
+     },
+     {
+      "name": "国泰海通上海静安区新闸路证券营业部",
+      "full": "国泰海通证券股份有限公司上海静安区新闸路证券营业部",
+      "tag": null,
+      "amount": 22615934.93
+     }
+    ]
+   },
+   {
+    "code": "688025",
+    "name": "杰普特",
+    "close": 254.67,
+    "pct": -15.05,
+    "net": -149676091.35,
+    "buy_total": 467258398.1,
+    "sell_total": 616934489.45,
+    "deal": 1084192887.55,
+    "turnover": 6.6495,
+    "reason": "有价格涨跌幅限制的日收盘价格跌幅达到15%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 199631126.75
+     },
+     {
+      "name": "高盛(中国)证券上海浦东新区世纪大道证券营业部",
+      "full": "高盛(中国)证券有限责任公司上海浦东新区世纪大道证券营业部",
+      "tag": "外资席位",
+      "amount": 107584294.47
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 71868534.62
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 48459661.45
+     },
+     {
+      "name": "瑞银证券上海花园石桥路证券营业部",
+      "full": "瑞银证券有限责任公司上海花园石桥路证券营业部",
+      "tag": "外资席位",
+      "amount": 39714780.81
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 185230709.45
+     },
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 135507608.96
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 129871425.84
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 87297503.72
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 79027241.48
+     }
+    ]
+   },
+   {
+    "code": "002851",
+    "name": "麦格米特",
+    "close": 64.62,
+    "pct": -10,
+    "net": -169725853.2,
+    "buy_total": 344670505.83,
+    "sell_total": 514396359.03,
+    "deal": 859066864.86,
+    "turnover": 6.6395,
+    "reason": "日跌幅偏离值达到7%的前5只证券",
+    "buy_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 131641432.33
+     },
+     {
+      "name": "中国国际金融上海分公司",
+      "full": "中国国际金融股份有限公司上海分公司",
+      "tag": "炒股养家",
+      "amount": 60750570
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 49055455
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 43355750
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 34304067.5
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "深股通专用",
+      "full": "深股通专用",
+      "tag": "北向资金",
+      "amount": 231906390.48
+     },
+     {
+      "name": "华泰浙江分公司",
+      "full": "华泰证券股份有限公司浙江分公司",
+      "tag": null,
+      "amount": 62376026.28
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 54115753.75
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 53291518.37
+     },
+     {
+      "name": "机构专用",
+      "full": "机构专用",
+      "tag": "机构专用",
+      "amount": 36768324.65
+     }
+    ]
+   },
+   {
+    "code": "600715",
+    "name": "文投控股",
+    "close": 3.74,
+    "pct": 10,
+    "net": -355443794,
+    "buy_total": 300875947,
+    "sell_total": 656319741,
+    "deal": 957195688,
+    "turnover": 37.8186,
+    "reason": "有价格涨跌幅限制的日换手率达到20%的前五只证券",
+    "buy_seats": [
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 139741253
+     },
+     {
+      "name": "国泰海通上海自贸试验区第二分公司",
+      "full": "国泰海通证券股份有限公司上海自贸试验区第二分公司",
+      "tag": null,
+      "amount": 43431073
+     },
+     {
+      "name": "国信浙江互联网分公司",
+      "full": "国信证券股份有限公司浙江互联网分公司",
+      "tag": null,
+      "amount": 40407371
+     },
+     {
+      "name": "华鑫证券上海徐汇区瑞平路证券营业部",
+      "full": "华鑫证券有限责任公司上海徐汇区瑞平路证券营业部",
+      "tag": "炒股养家",
+      "amount": 39944411
+     },
+     {
+      "name": "东方财富昌都两江大道证券营业部",
+      "full": "东方财富证券股份有限公司昌都两江大道证券营业部",
+      "tag": "拉萨天团(散户)",
+      "amount": 37351839
+     }
+    ],
+    "sell_seats": [
+     {
+      "name": "民生慈溪影清路证券营业部",
+      "full": "民生证券股份有限公司慈溪影清路证券营业部",
+      "tag": null,
+      "amount": 189477450
+     },
+     {
+      "name": "民生宁波分公司",
+      "full": "民生证券股份有限公司宁波分公司",
+      "tag": null,
+      "amount": 132493707
+     },
+     {
+      "name": "民生宁波财神殿南路证券营业部",
+      "full": "民生证券股份有限公司宁波财神殿南路证券营业部",
+      "tag": null,
+      "amount": 124704712
+     },
+     {
+      "name": "沪股通专用",
+      "full": "沪股通专用",
+      "tag": "北向资金",
+      "amount": 110785887
+     },
+     {
+      "name": "广发深圳后海证券营业部",
+      "full": "广发证券股份有限公司深圳后海证券营业部",
+      "tag": "游资·深圳系",
+      "amount": 98857985
+     }
+    ]
+   }
+  ]
+ },
+ "lhb_updated_at": "2026-11-16 18:32:22",
+ "archived_at": "2026-11-16 23:47:52"
+}
