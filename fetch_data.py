@@ -89,10 +89,25 @@ TS_KEYS = ('updated_at', 'lhb_updated_at', 'archived_at')
 MARKET_KEYS = ('indices', 'realtime', 'breadth', 'limit_up_pool', 'hot_blocks')
 
 
+def _canon(o):
+    """把数据规范化：字典按 key 排序，列表按元素内容排序。
+
+    全市场个股是分批抓取再合并的，合并顺序每次都不完全一样，涨跌停名单
+    这类列表即使内容一模一样，顺序也会抖。不先排好，指纹就会误判成
+    「数据变了」，把时间戳一路刷新到晚上十点十一点。
+    """
+    if isinstance(o, dict):
+        return {k: _canon(v) for k, v in sorted(o.items())}
+    if isinstance(o, list):
+        return sorted((_canon(x) for x in o),
+                      key=lambda x: json.dumps(x, ensure_ascii=False, sort_keys=True, default=str))
+    return o
+
+
 def _content_sig(d, keys=None):
     """内容指纹：剔除时间戳字段后序列化，用来判断这轮抓取有没有拿到新东西"""
     src = d if keys is None else {k: d.get(k) for k in keys}
-    return json.dumps({k: v for k, v in src.items() if k not in TS_KEYS},
+    return json.dumps(_canon({k: v for k, v in src.items() if k not in TS_KEYS}),
                       ensure_ascii=False, sort_keys=True, default=str)
 
 
@@ -420,8 +435,10 @@ def summarize_stocks(stocks):
         'amount_down_yi': fmt_amount(amt_down),
         'amount_notup_yi': fmt_amount(amt_notup),
         'up_notup_ratio': round(amt_up / amt_notup, 2) if amt_notup else None,
-        'limit_up_list': lu_list,
-        'limit_down_list': ld_list,
+        # 名单要按代码排好再入库：个股是分批并发抓的，合并顺序每次不同，
+        # 不排序的话同一份数据每次的指纹都不一样
+        'limit_up_list': sorted(lu_list, key=lambda x: str(x.get('symbol'))),
+        'limit_down_list': sorted(ld_list, key=lambda x: str(x.get('symbol'))),
     }
 
 
