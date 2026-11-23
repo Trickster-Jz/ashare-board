@@ -1278,42 +1278,69 @@ init();
 """
 
 
+_SINA_KLINE_BASES = (
+    'https://money.finance.sina.com.cn/quotes_service/api/json_v2.php/CN_MarketData.getKLineData',
+    'https://quotes.sina.cn/cn/api/json_v2.php/CN_MarketDataService.getKLineData',
+)
+_UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+       '(KHTML, like Gecko) Chrome/122.0 Safari/537.36')
+
+
+def sina_kline(symbol, scale, datalen, tries=3):
+    """抓新浪K线：两个域名互为备份，每轮都试，最多 tries 轮。
+
+    单次请求偶尔被限流、返回空串或半截 HTML，以前只发一次请求，
+    遇上就直接把整块图判成「没抓到」，还会把前几天的历史一起拖没。
+    """
+    import time
+    import requests
+    params = {'symbol': symbol, 'scale': scale, 'ma': 'no', 'datalen': datalen}
+    hdr = {'User-Agent': _UA, 'Referer': 'https://finance.sina.com.cn'}
+    for attempt in range(tries):
+        for base in _SINA_KLINE_BASES:
+            try:
+                r = requests.get(base, params=params, headers=hdr, timeout=25)
+                txt = (r.text or '').strip()
+                if r.status_code != 200 or not txt.startswith('['):
+                    continue
+                ks = json.loads(txt)
+                if isinstance(ks, list) and ks:
+                    return ks
+            except Exception:
+                continue
+        time.sleep(1.0 + attempt)
+    return None
+
+
 def fetch_index_snapshot(symbol):
     """指数的实时快照（今开/最高/最低/现价/成交量），用来补齐盘中日K缺的当日那根
     新浪的日K接口在盘中不生成当天K线，只有收盘后才补，所以每次构建都要自己补一根"""
     import re
+    import time
     import requests
     url = 'https://hq.sinajs.cn/list=%s' % symbol
-    try:
-        r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0',
-                                       'Referer': 'https://finance.sina.com.cn'}, timeout=15)
-        r.encoding = 'gbk'
-        m = re.search(r'"(.*)"', r.text)
-        if not m:
-            return None
-        f = m.group(1).split(',')
-        if len(f) < 32 or not f[30]:
-            return None
-        o, c, hi, lo = float(f[1]), float(f[3]), float(f[4]), float(f[5])
-        if o <= 0 or c <= 0:
-            return None
-        return {'d': f[30], 'o': o, 'h': hi, 'l': lo, 'c': c,
-                'v': float(f[8] or 0)}
-    except Exception:
-        return None
+    hdr = {'User-Agent': _UA, 'Referer': 'https://finance.sina.com.cn'}
+    for attempt in range(3):
+        try:
+            r = requests.get(url, headers=hdr, timeout=15)
+            r.encoding = 'gbk'
+            m = re.search(r'"(.*)"', r.text or '')
+            if m:
+                f = m.group(1).split(',')
+                if len(f) >= 32 and f[30]:
+                    o, c, hi, lo = float(f[1]), float(f[3]), float(f[4]), float(f[5])
+                    if o > 0 and c > 0:
+                        return {'d': f[30], 'o': o, 'h': hi, 'l': lo, 'c': c,
+                                'v': float(f[8] or 0)}
+        except Exception:
+            pass
+        time.sleep(1.0 + attempt)
+    return None
 
 
 def fetch_index_kline(symbol, n=130):
     """指数日K（开高低收 + 成交量），供指数卡片点开后的 K 线图使用"""
-    import requests
-    url = ('https://money.finance.sina.com.cn/quotes_service/api/json_v2.php/'
-           'CN_MarketData.getKLineData?symbol=%s&scale=240&ma=no&datalen=%d' % (symbol, n))
-    try:
-        r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0',
-                                       'Referer': 'https://finance.sina.com.cn'}, timeout=25)
-        ks = r.json()
-    except Exception:
-        return []
+    ks = sina_kline(symbol, 240, n) or []
     out = []
     for k in ks:
         try:
@@ -1328,16 +1355,8 @@ def fetch_index_kline(symbol, n=130):
 def fetch_index_intraday(symbol):
     """指数分时（5 分钟线，含每根成交量）：返回 {'d','pc','p':[{'t','c','v'}]}
     盘中刚开盘不足 4 根时，自动回退到上一个交易日，避免点开是空的"""
-    import requests
-    url = ('https://quotes.sina.cn/cn/api/json_v2.php/CN_MarketDataService.getKLineData'
-           '?symbol=%s&scale=5&ma=no&datalen=300' % symbol)
-    try:
-        r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0',
-                                       'Referer': 'https://finance.sina.com.cn'}, timeout=20)
-        ks = r.json()
-        if not isinstance(ks, list) or not ks:
-            return None
-    except Exception:
+    ks = sina_kline(symbol, 5, 300)
+    if not ks:
         return None
     # 按交易日分组，从最新一天往回找第一天根数够画的
     byday, order = {}, []
