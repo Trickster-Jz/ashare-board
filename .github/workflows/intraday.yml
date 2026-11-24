@@ -69,6 +69,17 @@ jobs:
         with:
           path: '_public'
 
+      # GitHub Pages 偶发抽风：报「Deployment failed, try again later」
+      # 或「Fetching artifact metadata failed」。等半分钟再发一次，多数能过。
       - name: 发布到线上（不提交，仓库零增长）
         id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: 发布失败，等 30 秒
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+
+      - name: 重新发布
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
