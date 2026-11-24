@@ -1365,7 +1365,7 @@
    "name": "芯片概念",
    "pct": 0.6135,
    "limit_up_num": 13,
-   "continuous": 7,
+   "continuous": 8,
    "top": "4天4板",
    "days": 12,
    "stocks": [
@@ -1541,7 +1541,7 @@
    "name": "专精特新",
    "pct": 0.3143,
    "limit_up_num": 12,
-   "continuous": 6,
+   "continuous": 7,
    "top": "2天2板",
    "days": 2,
    "stocks": [
@@ -1775,7 +1775,7 @@
    "name": "一带一路",
    "pct": -0.1561,
    "limit_up_num": 10,
-   "continuous": 6,
+   "continuous": 7,
    "top": "6天4板",
    "days": 2,
    "stocks": [
@@ -2327,7 +2327,7 @@
    "name": "传感器",
    "pct": 0.7948,
    "limit_up_num": 7,
-   "continuous": 5,
+   "continuous": 6,
    "top": "2天2板",
    "days": 1,
    "stocks": [
@@ -2379,7 +2379,7 @@
    "name": "新型工业化",
    "pct": 0.7294,
    "limit_up_num": 7,
-   "continuous": 3,
+   "continuous": 4,
    "top": "3天3板",
    "days": 2,
    "stocks": [
@@ -3216,7 +3216,7 @@
    },
    {
     "date": "2026-11-24",
-    "close": 87.5
+    "close": 87.33
    }
   ],
   "gold": [
@@ -3578,11 +3578,11 @@
    },
    {
     "date": "2026-11-24",
-    "close": 3646.6
+    "close": 3621.4
    }
   ]
  },
- "updated_at": "2026-11-24 16:21:49",
+ "updated_at": "2026-11-24 23:36:59",
  "lhb": {
   "count": 62,
   "items": [
@@ -8301,5 +8301,5 @@
   ]
  },
  "lhb_updated_at": "2026-11-24 18:51:37",
- "archived_at": "2026-11-24 22:14:45"
+ "archived_at": "2026-11-24 23:37:06"
 }
