@@ -19,6 +19,10 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    # 与每日存档共用一把锁：两个流程同时部署 Pages 会互相打断
+    concurrency:
+      group: pages-deploy
+      cancel-in-progress: false
 
     steps:
       - name: 检出历史存档（仅用于对比，不写入）
@@ -69,17 +73,43 @@ jobs:
         with:
           path: '_public'
 
+      # 刚上传的包，artifacts 服务要一两秒才建好索引；
+      # 立刻发布会报「Fetching artifact metadata failed / Found 0 artifact(s)」。
+      - name: 等页面包建好索引
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for i in $(seq 1 15); do
+            n=$(curl -s -H "Authorization: Bearer $GH_TOKEN" \
+                 "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+                 | python3 -c "import json,sys;d=json.load(sys.stdin);print(sum(1 for a in d.get('artifacts',[]) if a['name']=='github-pages'))" 2>/dev/null || echo 0)
+            echo "第 $i 次检查：github-pages 包 = ${n:-0}"
+            [ "${n:-0}" -ge 1 ] && break
+            sleep 4
+          done
+          sleep 3
+
       # GitHub Pages 偶发抽风：报「Deployment failed, try again later」
-      # 或「Fetching artifact metadata failed」。等半分钟再发一次，多数能过。
+      # 或「Fetching artifact metadata failed」。隔一会儿再发，多数能过。
       - name: 发布到线上（不提交，仓库零增长）
         id: deployment
         uses: actions/deploy-pages@v4
         continue-on-error: true
 
-      - name: 发布失败，等 30 秒
+      - name: 发布失败，等 20 秒
         if: steps.deployment.outcome == 'failure'
-        run: sleep 30
+        run: sleep 20
 
       - name: 重新发布
+        id: deployment2
         if: steps.deployment.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: 仍然失败，等 40 秒
+        if: steps.deployment.outcome == 'failure' && steps.deployment2.outcome == 'failure'
+        run: sleep 40
+
+      - name: 最后一次尝试
+        if: steps.deployment.outcome == 'failure' && steps.deployment2.outcome == 'failure'
         uses: actions/deploy-pages@v4
