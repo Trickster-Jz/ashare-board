@@ -19,10 +19,6 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    # 与每日存档共用一把锁：两个流程同时部署 Pages 会互相打断
-    concurrency:
-      group: pages-deploy
-      cancel-in-progress: false
 
     steps:
       - name: 检出历史存档（仅用于对比，不写入）
