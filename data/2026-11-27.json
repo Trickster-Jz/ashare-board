@@ -3135,45 +3135,51 @@
    "days": 2,
    "stocks": [
     {
-     "code": "603322",
-     "name": "超讯科技",
-     "first_time": 1795743190,
-     "first_hm": "09:33"
+     "code": "603175",
+     "name": "超颖电子",
+     "first_time": 1795757251,
+     "first_hm": "13:27"
     },
     {
-     "code": "688788",
-     "name": "科思科技",
-     "first_time": 1795758310,
-     "first_hm": "13:45"
+     "code": "002819",
+     "name": "东方中科",
+     "first_time": 1795757307,
+     "first_hm": "13:28"
     },
     {
-     "code": "603978",
-     "name": "深圳新星",
-     "first_time": 1795758363,
-     "first_hm": "13:46"
+     "code": "300943",
+     "name": "春晖智控",
+     "first_time": 1795759533,
+     "first_hm": "14:05"
     },
     {
-     "code": "603002",
-     "name": "宏昌电子",
-     "first_time": 1795760679,
-     "first_hm": "14:24"
+     "code": "688082",
+     "name": "盛美上海",
+     "first_time": 1795760839,
+     "first_hm": "14:27"
     },
     {
-     "code": "688757",
-     "name": "胜科纳米",
-     "first_time": 1795760740,
-     "first_hm": "14:25"
+     "code": "600498",
+     "name": "烽火通信",
+     "first_time": 1795761187,
+     "first_hm": "14:33"
     },
     {
-     "code": "603688",
-     "name": "石英股份",
-     "first_time": 1795761296,
-     "first_hm": "14:34"
+     "code": "688313",
+     "name": "仕佳光子",
+     "first_time": 1795761302,
+     "first_hm": "14:35"
     },
     {
-     "code": "301611",
-     "name": "珂玛科技",
-     "first_time": 1795761690,
+     "code": "600378",
+     "name": "昊华科技",
+     "first_time": 1795761611,
+     "first_hm": "14:40"
+    },
+    {
+     "code": "002971",
+     "name": "和远气体",
+     "first_time": 1795761714,
      "first_hm": "14:41"
     },
     {
@@ -3183,8 +3189,8 @@
      "first_hm": "14:44"
     },
     {
-     "code": "688012",
-     "name": "中微公司",
+     "code": "000066",
+     "name": "中国长城",
      "first_time": 1795761867,
      "first_hm": "14:44"
     },
@@ -3201,26 +3207,134 @@
      "first_hm": "14:48"
     },
     {
-     "code": "600651",
-     "name": "飞乐音响",
-     "first_time": 1795762209,
-     "first_hm": "14:50"
+     "code": "002647",
+     "name": "仁东控股",
+     "first_time": 1795762596,
+     "first_hm": "14:56"
     },
     {
-     "code": "301660",
-     "name": "粤芯半导体",
-     "first_time": 1795762338,
-     "first_hm": "14:52"
-    },
-    {
-     "code": "002077",
-     "name": "大港股份",
+     "code": "688785",
+     "name": "恒运昌",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "600895",
-     "name": "张江高科",
+     "code": "603297",
+     "name": "永新光学",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603068",
+     "name": "博通集成",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300480",
+     "name": "光力科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000988",
+     "name": "华工科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001339",
+     "name": "智微智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603283",
+     "name": "赛腾股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688535",
+     "name": "华海诚科",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688143",
+     "name": "长盈通",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002787",
+     "name": "华源控股",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000628",
+     "name": "高新发展",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603015",
+     "name": "弘讯科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603690",
+     "name": "至纯科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603687",
+     "name": "大胜达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "601869",
+     "name": "长飞光纤",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301259",
+     "name": "艾布鲁",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600410",
+     "name": "华胜天成",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300604",
+     "name": "长川科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000859",
+     "name": "国风新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002046",
+     "name": "国机精工",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000034",
+     "name": "神州数码",
      "first_time": null,
      "first_hm": null
     },
@@ -3237,98 +3351,8 @@
      "first_hm": null
     },
     {
-     "code": "688691",
-     "name": "灿芯股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600619",
-     "name": "海立股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000818",
-     "name": "航锦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603052",
-     "name": "可川科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300666",
-     "name": "江丰电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603663",
-     "name": "三祥新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603031",
-     "name": "安孚科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300820",
-     "name": "英杰电气",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603005",
-     "name": "晶方科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688797",
-     "name": "臻宝科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688347",
-     "name": "华虹宏力",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002338",
-     "name": "奥普光电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003031",
-     "name": "中瓷电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688820",
-     "name": "盛合晶微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603068",
-     "name": "博通集成",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002903",
-     "name": "宇环数控",
+     "code": "688200",
+     "name": "华峰测控",
      "first_time": null,
      "first_hm": null
     },
@@ -3339,8 +3363,20 @@
      "first_hm": null
     },
     {
-     "code": "601133",
-     "name": "柏诚股份",
+     "code": "688037",
+     "name": "芯源微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300567",
+     "name": "精测电子",
      "first_time": null,
      "first_hm": null
     },
@@ -3351,8 +3387,68 @@
      "first_hm": null
     },
     {
-     "code": "002081",
-     "name": "金螳螂",
+     "code": "301717",
+     "name": "超纯应材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688485",
+     "name": "九州一轨",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300820",
+     "name": "英杰电气",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003026",
+     "name": "中晶科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603929",
+     "name": "亚翔集成",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688172",
+     "name": "燕东微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603052",
+     "name": "可川科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603661",
+     "name": "恒林股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600667",
+     "name": "太极实业",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002338",
+     "name": "奥普光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000062",
+     "name": "深圳华强",
      "first_time": null,
      "first_hm": null
     },
@@ -3363,134 +3459,38 @@
      "first_hm": null
     },
     {
-     "code": "002409",
-     "name": "雅克科技",
+     "code": "605588",
+     "name": "冠石科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "600641",
-     "name": "先导基电",
+     "code": "002290",
+     "name": "禾盛新材",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "688141",
-     "name": "杰华特",
+     "code": "002943",
+     "name": "宇晶股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "688072",
-     "name": "拓荆科技",
+     "code": "603960",
+     "name": "克来机电",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "301717",
-     "name": "超纯应材",
+     "code": "603061",
+     "name": "金海通",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "688535",
-     "name": "华海诚科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688432",
-     "name": "有研硅",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002536",
-     "name": "飞龙股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300339",
-     "name": "润和软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688037",
-     "name": "芯源微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002156",
-     "name": "通富微电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600246",
-     "name": "万通发展",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600183",
-     "name": "生益科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600330",
-     "name": "天通股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300672",
-     "name": "国科微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688521",
-     "name": "芯原股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603163",
-     "name": "圣晖集成",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688809",
-     "name": "强一股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002527",
-     "name": "新时达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601869",
-     "name": "长飞光纤",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688200",
-     "name": "华峰测控",
+     "code": "600797",
+     "name": "浙大网新",
      "first_time": null,
      "first_hm": null
     }
@@ -3511,16 +3511,22 @@
      "first_hm": "09:33"
     },
     {
+     "code": "002889",
+     "name": "东方嘉盛",
+     "first_time": 1795756620,
+     "first_hm": "13:17"
+    },
+    {
      "code": "002819",
      "name": "东方中科",
      "first_time": 1795757307,
      "first_hm": "13:28"
     },
     {
-     "code": "600114",
-     "name": "东睦股份",
-     "first_time": 1795759564,
-     "first_hm": "14:06"
+     "code": "600498",
+     "name": "烽火通信",
+     "first_time": 1795761187,
+     "first_hm": "14:33"
     },
     {
      "code": "002885",
@@ -3529,16 +3535,46 @@
      "first_hm": "14:34"
     },
     {
+     "code": "600552",
+     "name": "凯盛科技",
+     "first_time": 1795761621,
+     "first_hm": "14:40"
+    },
+    {
      "code": "300870",
      "name": "欧陆通",
      "first_time": 1795761636,
      "first_hm": "14:40"
     },
     {
-     "code": "300684",
-     "name": "中石科技",
-     "first_time": 1795761654,
-     "first_hm": "14:40"
+     "code": "002938",
+     "name": "鹏鼎控股",
+     "first_time": 1795761690,
+     "first_hm": "14:41"
+    },
+    {
+     "code": "002185",
+     "name": "华天科技",
+     "first_time": 1795761849,
+     "first_hm": "14:44"
+    },
+    {
+     "code": "000066",
+     "name": "中国长城",
+     "first_time": 1795761867,
+     "first_hm": "14:44"
+    },
+    {
+     "code": "603895",
+     "name": "天永智能",
+     "first_time": 1795761964,
+     "first_hm": "14:46"
+    },
+    {
+     "code": "600345",
+     "name": "长江通信",
+     "first_time": 1795762093,
+     "first_hm": "14:48"
     },
     {
      "code": "603918",
@@ -3547,86 +3583,20 @@
      "first_hm": "14:48"
     },
     {
-     "code": "600602",
-     "name": "云赛智联",
-     "first_time": 1795762274,
-     "first_hm": "14:51"
+     "code": "000070",
+     "name": "特发信息",
+     "first_time": 1795762563,
+     "first_hm": "14:56"
     },
     {
-     "code": "002657",
-     "name": "中科金财",
+     "code": "002222",
+     "name": "福晶科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603256",
-     "name": "宏和科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300925",
-     "name": "法本信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002649",
-     "name": "博彦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001389",
-     "name": "广合科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002947",
-     "name": "恒铭达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603031",
-     "name": "安孚科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002396",
-     "name": "星网锐捷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002768",
-     "name": "国恩股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603005",
-     "name": "晶方科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603990",
-     "name": "麦迪科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300047",
-     "name": "天源迪科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003021",
-     "name": "兆威机电",
+     "code": "688371",
+     "name": "菲沃泰",
      "first_time": null,
      "first_hm": null
     },
@@ -3637,188 +3607,14 @@
      "first_hm": null
     },
     {
-     "code": "003031",
-     "name": "中瓷电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "603068",
      "name": "博通集成",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002903",
-     "name": "宇环数控",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001393",
-     "name": "维通利",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688141",
-     "name": "杰华特",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301178",
-     "name": "天亿马",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003007",
-     "name": "直真科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300598",
-     "name": "诚迈科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002222",
-     "name": "福晶科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002536",
-     "name": "飞龙股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002261",
-     "name": "拓维信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300339",
-     "name": "润和软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301396",
-     "name": "宏景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600183",
-     "name": "生益科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300085",
-     "name": "银之杰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688809",
-     "name": "强一股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002779",
-     "name": "中坚科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688200",
-     "name": "华峰测控",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000158",
-     "name": "常山北明",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603220",
-     "name": "中贝通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002436",
-     "name": "兴森科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688343",
-     "name": "云天励飞",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688195",
-     "name": "腾景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600850",
-     "name": "电科数字",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600571",
-     "name": "信雅达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000948",
-     "name": "南天信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600839",
-     "name": "四川长虹",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002730",
-     "name": "电光科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300377",
-     "name": "赢时胜",
+     "code": "300480",
+     "name": "光力科技",
      "first_time": null,
      "first_hm": null
     },
@@ -3829,14 +3625,32 @@
      "first_hm": null
     },
     {
-     "code": "000636",
-     "name": "风华高科",
+     "code": "002855",
+     "name": "捷荣技术",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002963",
-     "name": "豪尔赛",
+     "code": "603083",
+     "name": "剑桥科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603690",
+     "name": "至纯科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002253",
+     "name": "川大智胜",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600410",
+     "name": "华胜天成",
      "first_time": null,
      "first_hm": null
     },
@@ -3847,20 +3661,206 @@
      "first_hm": null
     },
     {
-     "code": "600071",
-     "name": "凤凰光学",
+     "code": "603679",
+     "name": "华体科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002281",
-     "name": "光迅科技",
+     "code": "600571",
+     "name": "信雅达",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "688371",
-     "name": "菲沃泰",
+     "code": "002929",
+     "name": "润建股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605398",
+     "name": "新炬网络",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002843",
+     "name": "泰嘉股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603228",
+     "name": "景旺电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000034",
+     "name": "神州数码",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603256",
+     "name": "宏和科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688200",
+     "name": "华峰测控",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300377",
+     "name": "赢时胜",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603138",
+     "name": "海量数据",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300567",
+     "name": "精测电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002025",
+     "name": "航天电器",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002331",
+     "name": "皖通科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603929",
+     "name": "亚翔集成",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600850",
+     "name": "电科数字",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600536",
+     "name": "中国软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000062",
+     "name": "深圳华强",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001373",
+     "name": "翔腾新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002897",
+     "name": "意华股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603936",
+     "name": "博敏电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300925",
+     "name": "法本信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605588",
+     "name": "冠石科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603960",
+     "name": "克来机电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002642",
+     "name": "荣联科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600797",
+     "name": "浙大网新",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003007",
+     "name": "直真科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603005",
+     "name": "晶方科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002008",
+     "name": "大族激光",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002957",
+     "name": "科瑞技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688343",
+     "name": "云天励飞",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600839",
+     "name": "四川长虹",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001388",
+     "name": "信通电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603038",
+     "name": "华立股份",
      "first_time": null,
      "first_hm": null
     }
@@ -3875,28 +3875,22 @@
    "days": 7,
    "stocks": [
     {
+     "code": "002889",
+     "name": "东方嘉盛",
+     "first_time": 1795756620,
+     "first_hm": "13:17"
+    },
+    {
      "code": "603175",
      "name": "超颖电子",
      "first_time": 1795757251,
      "first_hm": "13:27"
     },
     {
-     "code": "000811",
-     "name": "冰轮环境",
-     "first_time": 1795758573,
-     "first_hm": "13:49"
-    },
-    {
-     "code": "600114",
-     "name": "东睦股份",
-     "first_time": 1795759564,
-     "first_hm": "14:06"
-    },
-    {
-     "code": "002048",
-     "name": "宁波华翔",
-     "first_time": 1795761270,
-     "first_hm": "14:34"
+     "code": "603667",
+     "name": "五洲新春",
+     "first_time": 1795760474,
+     "first_hm": "14:21"
     },
     {
      "code": "603901",
@@ -3909,6 +3903,18 @@
      "name": "科达利",
      "first_time": 1795761801,
      "first_hm": "14:43"
+    },
+    {
+     "code": "002185",
+     "name": "华天科技",
+     "first_time": 1795761849,
+     "first_hm": "14:44"
+    },
+    {
+     "code": "603895",
+     "name": "天永智能",
+     "first_time": 1795761964,
+     "first_hm": "14:46"
     },
     {
      "code": "603380",
@@ -3929,212 +3935,20 @@
      "first_hm": "14:48"
     },
     {
-     "code": "001389",
-     "name": "广合科技",
+     "code": "688610",
+     "name": "埃科光电",
+     "first_time": 1795762168,
+     "first_hm": "14:49"
+    },
+    {
+     "code": "002403",
+     "name": "爱仕达",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002396",
-     "name": "星网锐捷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002768",
-     "name": "国恩股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603683",
-     "name": "晶华新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603990",
-     "name": "麦迪科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300047",
-     "name": "天源迪科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003021",
-     "name": "兆威机电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688827",
-     "name": "钶锐锶",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002338",
-     "name": "奥普光电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002903",
-     "name": "宇环数控",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600520",
-     "name": "三佳科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301178",
-     "name": "天亿马",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002708",
-     "name": "光洋股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300598",
-     "name": "诚迈科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002536",
-     "name": "飞龙股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300508",
-     "name": "维宏股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002261",
-     "name": "拓维信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300339",
-     "name": "润和软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002988",
-     "name": "豪美新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300672",
-     "name": "国科微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300085",
-     "name": "银之杰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002779",
-     "name": "中坚科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002527",
-     "name": "新时达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601869",
-     "name": "长飞光纤",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000938",
-     "name": "紫光股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002436",
-     "name": "兴森科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688343",
-     "name": "云天励飞",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003033",
-     "name": "征和工业",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603955",
-     "name": "灵动股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600850",
-     "name": "电科数字",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002921",
-     "name": "联诚精密",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600839",
-     "name": "四川长虹",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002144",
-     "name": "宏达高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002730",
-     "name": "电光科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300377",
-     "name": "赢时胜",
+     "code": "300480",
+     "name": "光力科技",
      "first_time": null,
      "first_hm": null
     },
@@ -4145,62 +3959,20 @@
      "first_hm": null
     },
     {
-     "code": "603306",
-     "name": "华懋科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688585",
-     "name": "上纬新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000700",
-     "name": "模塑科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000636",
-     "name": "风华高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688627",
-     "name": "精智达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003036",
-     "name": "泰坦股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "001339",
      "name": "智微智能",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "300843",
-     "name": "胜蓝股份",
+     "code": "603015",
+     "name": "弘讯科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "600071",
-     "name": "凤凰光学",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000021",
-     "name": "深科技",
+     "code": "601869",
+     "name": "长飞光纤",
      "first_time": null,
      "first_hm": null
     },
@@ -4211,14 +3983,176 @@
      "first_hm": null
     },
     {
-     "code": "603375",
-     "name": "盛景微",
+     "code": "003033",
+     "name": "征和工业",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "605358",
-     "name": "立昂微",
+     "code": "002046",
+     "name": "国机精工",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002929",
+     "name": "润建股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300508",
+     "name": "维宏股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605398",
+     "name": "新炬网络",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000034",
+     "name": "神州数码",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688585",
+     "name": "上纬新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300377",
+     "name": "赢时胜",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600520",
+     "name": "三佳科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002144",
+     "name": "宏达高科",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002921",
+     "name": "联诚精密",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600850",
+     "name": "电科数字",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002708",
+     "name": "光洋股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603608",
+     "name": "天创股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002338",
+     "name": "奥普光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600536",
+     "name": "中国软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000062",
+     "name": "深圳华强",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603936",
+     "name": "博敏电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002164",
+     "name": "宁波东力",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003036",
+     "name": "泰坦股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002943",
+     "name": "宇晶股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603960",
+     "name": "克来机电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603800",
+     "name": "洪田股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002988",
+     "name": "豪美新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002008",
+     "name": "大族激光",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002957",
+     "name": "科瑞技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688343",
+     "name": "云天励飞",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600839",
+     "name": "四川长虹",
      "first_time": null,
      "first_hm": null
     },
@@ -4229,8 +4163,74 @@
      "first_hm": null
     },
     {
-     "code": "603400",
-     "name": "华之杰",
+     "code": "001306",
+     "name": "夏厦精密",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300339",
+     "name": "润和软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603955",
+     "name": "灵动股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002261",
+     "name": "拓维信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002779",
+     "name": "中坚科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003021",
+     "name": "兆威机电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002527",
+     "name": "新时达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300085",
+     "name": "银之杰",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000409",
+     "name": "云鼎科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688827",
+     "name": "钶锐锶",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603306",
+     "name": "华懋科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301107",
+     "name": "瑜欣电子",
      "first_time": null,
      "first_hm": null
     }
@@ -4251,22 +4251,34 @@
      "first_hm": "09:33"
     },
     {
+     "code": "002152",
+     "name": "广电运通",
+     "first_time": 1795756212,
+     "first_hm": "13:10"
+    },
+    {
+     "code": "603316",
+     "name": "诚邦股份",
+     "first_time": 1795757237,
+     "first_hm": "13:27"
+    },
+    {
      "code": "603175",
      "name": "超颖电子",
      "first_time": 1795757251,
      "first_hm": "13:27"
     },
     {
+     "code": "002913",
+     "name": "奥士康",
+     "first_time": 1795757295,
+     "first_hm": "13:28"
+    },
+    {
      "code": "002819",
      "name": "东方中科",
      "first_time": 1795757307,
      "first_hm": "13:28"
-    },
-    {
-     "code": "000811",
-     "name": "冰轮环境",
-     "first_time": 1795758573,
-     "first_hm": "13:49"
     },
     {
      "code": "600114",
@@ -4293,16 +4305,16 @@
      "first_hm": "14:34"
     },
     {
+     "code": "688313",
+     "name": "仕佳光子",
+     "first_time": 1795761302,
+     "first_hm": "14:35"
+    },
+    {
      "code": "000032",
      "name": "深桑达A",
      "first_time": 1795761309,
      "first_hm": "14:35"
-    },
-    {
-     "code": "603045",
-     "name": "福达合金",
-     "first_time": 1795761624,
-     "first_hm": "14:40"
     },
     {
      "code": "300870",
@@ -4311,22 +4323,22 @@
      "first_hm": "14:40"
     },
     {
-     "code": "300684",
-     "name": "中石科技",
-     "first_time": 1795761654,
-     "first_hm": "14:40"
+     "code": "600105",
+     "name": "永鼎股份",
+     "first_time": 1795761805,
+     "first_hm": "14:43"
     },
     {
-     "code": "300502",
-     "name": "新易盛",
-     "first_time": 1795762077,
-     "first_hm": "14:47"
+     "code": "603296",
+     "name": "华勤技术",
+     "first_time": 1795761829,
+     "first_hm": "14:43"
     },
     {
-     "code": "000977",
-     "name": "浪潮信息",
-     "first_time": 1795762092,
-     "first_hm": "14:48"
+     "code": "000066",
+     "name": "中国长城",
+     "first_time": 1795761867,
+     "first_hm": "14:44"
     },
     {
      "code": "603380",
@@ -4341,152 +4353,20 @@
      "first_hm": "14:51"
     },
     {
-     "code": "002657",
-     "name": "中科金财",
-     "first_time": null,
-     "first_hm": null
+     "code": "603019",
+     "name": "中科曙光",
+     "first_time": 1795762368,
+     "first_hm": "14:52"
     },
     {
-     "code": "603256",
-     "name": "宏和科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000818",
-     "name": "航锦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001389",
-     "name": "广合科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002947",
-     "name": "恒铭达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603031",
-     "name": "安孚科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002396",
-     "name": "星网锐捷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300820",
-     "name": "英杰电气",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300047",
-     "name": "天源迪科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002713",
-     "name": "东易日盛",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001393",
-     "name": "维通利",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301178",
-     "name": "天亿马",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003007",
-     "name": "直真科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002536",
-     "name": "飞龙股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301396",
-     "name": "宏景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600330",
-     "name": "天通股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603090",
-     "name": "宏盛股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002527",
-     "name": "新时达",
-     "first_time": null,
-     "first_hm": null
+     "code": "000070",
+     "name": "特发信息",
+     "first_time": 1795762563,
+     "first_hm": "14:56"
     },
     {
      "code": "601869",
      "name": "长飞光纤",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002122",
-     "name": "汇洲智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000158",
-     "name": "常山北明",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603220",
-     "name": "中贝通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000938",
-     "name": "紫光股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688195",
-     "name": "腾景科技",
      "first_time": null,
      "first_hm": null
     },
@@ -4497,92 +4377,38 @@
      "first_hm": null
     },
     {
-     "code": "600850",
-     "name": "电科数字",
+     "code": "600410",
+     "name": "华胜天成",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002353",
-     "name": "杰瑞股份",
+     "code": "603090",
+     "name": "宏盛股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "000948",
-     "name": "南天信息",
+     "code": "603679",
+     "name": "华体科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "600839",
-     "name": "四川长虹",
+     "code": "002713",
+     "name": "东易日盛",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002730",
-     "name": "电光科技",
+     "code": "002929",
+     "name": "润建股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603306",
-     "name": "华懋科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000636",
-     "name": "风华高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002963",
-     "name": "豪尔赛",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300843",
-     "name": "胜蓝股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002281",
-     "name": "光迅科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002065",
-     "name": "东华软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603912",
-     "name": "佳力图",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002272",
-     "name": "川润股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002871",
-     "name": "伟隆股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002837",
-     "name": "英维克",
+     "code": "605398",
+     "name": "新炬网络",
      "first_time": null,
      "first_hm": null
     },
@@ -4593,14 +4419,188 @@
      "first_hm": null
     },
     {
-     "code": "601519",
-     "name": "大智慧",
+     "code": "000034",
+     "name": "神州数码",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "688702",
-     "name": "盛科通信",
+     "code": "603256",
+     "name": "宏和科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603138",
+     "name": "海量数据",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002122",
+     "name": "汇洲智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002025",
+     "name": "航天电器",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300820",
+     "name": "英杰电气",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600850",
+     "name": "电科数字",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600536",
+     "name": "中国软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002897",
+     "name": "意华股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603936",
+     "name": "博敏电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002642",
+     "name": "荣联科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605289",
+     "name": "罗曼股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600797",
+     "name": "浙大网新",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003007",
+     "name": "直真科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688807",
+     "name": "优迅股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600839",
+     "name": "四川长虹",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688498",
+     "name": "源杰科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002527",
+     "name": "新时达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000409",
+     "name": "云鼎科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603306",
+     "name": "华懋科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300324",
+     "name": "旋极信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002272",
+     "name": "川润股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600584",
+     "name": "长电科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603220",
+     "name": "中贝通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002730",
+     "name": "电光科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001393",
+     "name": "维通利",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688515",
+     "name": "裕太微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605111",
+     "name": "新洁能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600487",
+     "name": "亨通光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300843",
+     "name": "胜蓝股份",
      "first_time": null,
      "first_hm": null
     }
@@ -4627,10 +4627,16 @@
      "first_hm": "13:28"
     },
     {
-     "code": "000811",
-     "name": "冰轮环境",
-     "first_time": 1795758573,
-     "first_hm": "13:49"
+     "code": "605255",
+     "name": "天普股份",
+     "first_time": 1795758077,
+     "first_hm": "13:41"
+    },
+    {
+     "code": "002870",
+     "name": "香山股份",
+     "first_time": 1795758747,
+     "first_hm": "13:52"
     },
     {
      "code": "300943",
@@ -4643,6 +4649,18 @@
      "name": "东睦股份",
      "first_time": 1795759564,
      "first_hm": "14:06"
+    },
+    {
+     "code": "301086",
+     "name": "鸿富瀚",
+     "first_time": 1795759881,
+     "first_hm": "14:11"
+    },
+    {
+     "code": "603667",
+     "name": "五洲新春",
+     "first_time": 1795760474,
+     "first_hm": "14:21"
     },
     {
      "code": "688757",
@@ -4663,9 +4681,9 @@
      "first_hm": "14:34"
     },
     {
-     "code": "002048",
-     "name": "宁波华翔",
-     "first_time": 1795761270,
+     "code": "603358",
+     "name": "华达科技",
+     "first_time": 1795761261,
      "first_hm": "14:34"
     },
     {
@@ -4681,22 +4699,28 @@
      "first_hm": "14:40"
     },
     {
-     "code": "603045",
-     "name": "福达合金",
-     "first_time": 1795761624,
-     "first_hm": "14:40"
-    },
-    {
-     "code": "300684",
-     "name": "中石科技",
-     "first_time": 1795761654,
-     "first_hm": "14:40"
+     "code": "002938",
+     "name": "鹏鼎控股",
+     "first_time": 1795761690,
+     "first_hm": "14:41"
     },
     {
      "code": "002850",
      "name": "科达利",
      "first_time": 1795761801,
      "first_hm": "14:43"
+    },
+    {
+     "code": "600105",
+     "name": "永鼎股份",
+     "first_time": 1795761805,
+     "first_hm": "14:43"
+    },
+    {
+     "code": "603895",
+     "name": "天永智能",
+     "first_time": 1795761964,
+     "first_hm": "14:46"
     },
     {
      "code": "603380",
@@ -4711,164 +4735,14 @@
      "first_hm": "14:48"
     },
     {
-     "code": "600651",
-     "name": "飞乐音响",
-     "first_time": 1795762209,
-     "first_hm": "14:50"
-    },
-    {
      "code": "688668",
      "name": "鼎通科技",
      "first_time": 1795762303,
      "first_hm": "14:51"
     },
     {
-     "code": "688693",
-     "name": "锴威特",
-     "first_time": 1795762601,
-     "first_hm": "14:56"
-    },
-    {
-     "code": "600895",
-     "name": "张江高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600619",
-     "name": "海立股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603052",
-     "name": "可川科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002980",
-     "name": "华盛昌",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002947",
-     "name": "恒铭达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002768",
-     "name": "国恩股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300820",
-     "name": "英杰电气",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603005",
-     "name": "晶方科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603683",
-     "name": "晶华新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003021",
-     "name": "兆威机电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003031",
-     "name": "中瓷电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002903",
-     "name": "宇环数控",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001393",
-     "name": "维通利",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688141",
-     "name": "杰华特",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002708",
-     "name": "光洋股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002536",
-     "name": "飞龙股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603009",
-     "name": "北特科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002988",
-     "name": "豪美新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600183",
-     "name": "生益科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600330",
-     "name": "天通股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603090",
-     "name": "宏盛股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002527",
-     "name": "新时达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601869",
-     "name": "长飞光纤",
+     "code": "688371",
+     "name": "菲沃泰",
      "first_time": null,
      "first_hm": null
     },
@@ -4879,62 +4753,38 @@
      "first_hm": null
     },
     {
-     "code": "603220",
-     "name": "中贝通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002921",
-     "name": "联诚精密",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002144",
-     "name": "宏达高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "000988",
      "name": "华工科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603306",
-     "name": "华懋科技",
+     "code": "603283",
+     "name": "赛腾股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "000700",
-     "name": "模塑科技",
+     "code": "000628",
+     "name": "高新发展",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "300843",
-     "name": "胜蓝股份",
+     "code": "601869",
+     "name": "长飞光纤",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "000021",
-     "name": "深科技",
+     "code": "603090",
+     "name": "宏盛股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "688371",
-     "name": "菲沃泰",
+     "code": "603679",
+     "name": "华体科技",
      "first_time": null,
      "first_hm": null
     },
@@ -4945,20 +4795,8 @@
      "first_hm": null
     },
     {
-     "code": "002406",
-     "name": "远东传动",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603400",
-     "name": "华之杰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002655",
-     "name": "共达电声",
+     "code": "002046",
+     "name": "国机精工",
      "first_time": null,
      "first_hm": null
     },
@@ -4969,8 +4807,170 @@
      "first_hm": null
     },
     {
-     "code": "002837",
-     "name": "英维克",
+     "code": "002144",
+     "name": "宏达高科",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002025",
+     "name": "航天电器",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002921",
+     "name": "联诚精密",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300820",
+     "name": "英杰电气",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603052",
+     "name": "可川科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002708",
+     "name": "光洋股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000062",
+     "name": "深圳华强",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001373",
+     "name": "翔腾新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002897",
+     "name": "意华股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603936",
+     "name": "博敏电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603960",
+     "name": "克来机电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002190",
+     "name": "成飞集成",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002988",
+     "name": "豪美新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603005",
+     "name": "晶方科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002008",
+     "name": "大族激光",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001306",
+     "name": "夏厦精密",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003021",
+     "name": "兆威机电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002527",
+     "name": "新时达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603306",
+     "name": "华懋科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301107",
+     "name": "瑜欣电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603305",
+     "name": "旭升集团",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603203",
+     "name": "快克智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603220",
+     "name": "中贝通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001393",
+     "name": "维通利",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603303",
+     "name": "得邦照明",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002406",
+     "name": "远东传动",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000021",
+     "name": "深科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002768",
+     "name": "国恩股份",
      "first_time": null,
      "first_hm": null
     }
@@ -4991,22 +4991,22 @@
      "first_hm": "09:33"
     },
     {
+     "code": "002152",
+     "name": "广电运通",
+     "first_time": 1795756212,
+     "first_hm": "13:10"
+    },
+    {
+     "code": "002889",
+     "name": "东方嘉盛",
+     "first_time": 1795756620,
+     "first_hm": "13:17"
+    },
+    {
      "code": "002819",
      "name": "东方中科",
      "first_time": 1795757307,
      "first_hm": "13:28"
-    },
-    {
-     "code": "688788",
-     "name": "科思科技",
-     "first_time": 1795758310,
-     "first_hm": "13:45"
-    },
-    {
-     "code": "000811",
-     "name": "冰轮环境",
-     "first_time": 1795758573,
-     "first_hm": "13:49"
     },
     {
      "code": "600498",
@@ -5021,9 +5021,15 @@
      "first_hm": "14:35"
     },
     {
-     "code": "000977",
-     "name": "浪潮信息",
-     "first_time": 1795762092,
+     "code": "000066",
+     "name": "中国长城",
+     "first_time": 1795761867,
+     "first_hm": "14:44"
+    },
+    {
+     "code": "600345",
+     "name": "长江通信",
+     "first_time": 1795762093,
      "first_hm": "14:48"
     },
     {
@@ -5045,74 +5051,20 @@
      "first_hm": "14:51"
     },
     {
-     "code": "688069",
-     "name": "德林海",
-     "first_time": null,
-     "first_hm": null
+     "code": "603019",
+     "name": "中科曙光",
+     "first_time": 1795762368,
+     "first_hm": "14:52"
     },
     {
-     "code": "002657",
-     "name": "中科金财",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000818",
-     "name": "航锦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300925",
-     "name": "法本信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002649",
-     "name": "博彦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001389",
-     "name": "广合科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603739",
-     "name": "蔚蓝生物",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002396",
-     "name": "星网锐捷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603990",
-     "name": "麦迪科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300047",
-     "name": "天源迪科",
-     "first_time": null,
-     "first_hm": null
+     "code": "000070",
+     "name": "特发信息",
+     "first_time": 1795762563,
+     "first_hm": "14:56"
     },
     {
      "code": "600446",
      "name": "金证股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002713",
-     "name": "东易日盛",
      "first_time": null,
      "first_hm": null
     },
@@ -5123,98 +5075,32 @@
      "first_hm": null
     },
     {
-     "code": "301178",
-     "name": "天亿马",
+     "code": "001339",
+     "name": "智微智能",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "003007",
-     "name": "直真科技",
+     "code": "603283",
+     "name": "赛腾股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "300598",
-     "name": "诚迈科技",
+     "code": "603015",
+     "name": "弘讯科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002261",
-     "name": "拓维信息",
+     "code": "002253",
+     "name": "川大智胜",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "300339",
-     "name": "润和软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301396",
-     "name": "宏景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300672",
-     "name": "国科微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688521",
-     "name": "芯原股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603171",
-     "name": "税友股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300085",
-     "name": "银之杰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002122",
-     "name": "汇洲智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000158",
-     "name": "常山北明",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603220",
-     "name": "中贝通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000938",
-     "name": "紫光股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688343",
-     "name": "云天励飞",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
+     "code": "603687",
+     "name": "大胜达",
      "first_time": null,
      "first_hm": null
     },
@@ -5225,56 +5111,8 @@
      "first_hm": null
     },
     {
-     "code": "600850",
-     "name": "电科数字",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "605168",
-     "name": "三人行",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600571",
-     "name": "信雅达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000948",
-     "name": "南天信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600839",
-     "name": "四川长虹",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002730",
-     "name": "电光科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300377",
-     "name": "赢时胜",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600666",
-     "name": "奥瑞德",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001339",
-     "name": "智微智能",
+     "code": "600410",
+     "name": "华胜天成",
      "first_time": null,
      "first_hm": null
     },
@@ -5285,8 +5123,128 @@
      "first_hm": null
     },
     {
-     "code": "002065",
-     "name": "东华软件",
+     "code": "603679",
+     "name": "华体科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002713",
+     "name": "东易日盛",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600571",
+     "name": "信雅达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002929",
+     "name": "润建股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605398",
+     "name": "新炬网络",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000034",
+     "name": "神州数码",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688069",
+     "name": "德林海",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300377",
+     "name": "赢时胜",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603138",
+     "name": "海量数据",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002122",
+     "name": "汇洲智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600850",
+     "name": "电科数字",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600536",
+     "name": "中国软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300925",
+     "name": "法本信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002290",
+     "name": "禾盛新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002642",
+     "name": "荣联科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605289",
+     "name": "罗曼股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600797",
+     "name": "浙大网新",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003007",
+     "name": "直真科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688343",
+     "name": "云天励飞",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600839",
+     "name": "四川长虹",
      "first_time": null,
      "first_hm": null
     },
@@ -5297,50 +5255,92 @@
      "first_hm": null
     },
     {
-     "code": "002871",
-     "name": "伟隆股份",
+     "code": "300192",
+     "name": "科德教育",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "301316",
-     "name": "慧博云通",
+     "code": "603038",
+     "name": "华立股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "000555",
-     "name": "神州信息",
+     "code": "688521",
+     "name": "芯原股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002197",
-     "name": "证通电子",
+     "code": "300339",
+     "name": "润和软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002261",
+     "name": "拓维信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300085",
+     "name": "银之杰",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603030",
+     "name": "全筑股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000409",
+     "name": "云鼎科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300324",
+     "name": "旋极信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603203",
+     "name": "快克智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600584",
+     "name": "长电科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603220",
+     "name": "中贝通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002730",
+     "name": "电光科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002990",
+     "name": "盛视科技",
      "first_time": null,
      "first_hm": null
     },
     {
      "code": "603956",
      "name": "威派格",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300663",
-     "name": "科蓝软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002368",
-     "name": "太极股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002290",
-     "name": "禾盛新材",
      "first_time": null,
      "first_hm": null
     }
@@ -5359,6 +5359,12 @@
      "name": "超讯科技",
      "first_time": 1795743190,
      "first_hm": "09:33"
+    },
+    {
+     "code": "002152",
+     "name": "广电运通",
+     "first_time": 1795756212,
+     "first_hm": "13:10"
     },
     {
      "code": "603175",
@@ -5403,16 +5409,22 @@
      "first_hm": "14:43"
     },
     {
+     "code": "603296",
+     "name": "华勤技术",
+     "first_time": 1795761829,
+     "first_hm": "14:43"
+    },
+    {
      "code": "000066",
      "name": "中国长城",
      "first_time": 1795761867,
      "first_hm": "14:44"
     },
     {
-     "code": "000977",
-     "name": "浪潮信息",
-     "first_time": 1795762092,
-     "first_hm": "14:48"
+     "code": "603859",
+     "name": "能科科技",
+     "first_time": 1795762027,
+     "first_hm": "14:47"
     },
     {
      "code": "600602",
@@ -5421,170 +5433,32 @@
      "first_hm": "14:51"
     },
     {
+     "code": "603019",
+     "name": "中科曙光",
+     "first_time": 1795762368,
+     "first_hm": "14:52"
+    },
+    {
      "code": "002575",
      "name": "群兴玩具",
      "first_time": 1795762521,
      "first_hm": "14:55"
     },
     {
-     "code": "002657",
-     "name": "中科金财",
-     "first_time": null,
-     "first_hm": null
+     "code": "000070",
+     "name": "特发信息",
+     "first_time": 1795762563,
+     "first_hm": "14:56"
     },
     {
-     "code": "000818",
-     "name": "航锦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300925",
-     "name": "法本信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600186",
-     "name": "莲花控股",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002947",
-     "name": "恒铭达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300047",
-     "name": "天源迪科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002713",
-     "name": "东易日盛",
-     "first_time": null,
-     "first_hm": null
+     "code": "002647",
+     "name": "仁东控股",
+     "first_time": 1795762596,
+     "first_hm": "14:56"
     },
     {
      "code": "603068",
      "name": "博通集成",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001393",
-     "name": "维通利",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301178",
-     "name": "天亿马",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003007",
-     "name": "直真科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002261",
-     "name": "拓维信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300339",
-     "name": "润和软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301396",
-     "name": "宏景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300672",
-     "name": "国科微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688521",
-     "name": "芯原股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601869",
-     "name": "长飞光纤",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002122",
-     "name": "汇洲智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000158",
-     "name": "常山北明",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603220",
-     "name": "中贝通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000938",
-     "name": "紫光股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688343",
-     "name": "云天励飞",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301259",
-     "name": "艾布鲁",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600850",
-     "name": "电科数字",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "605168",
-     "name": "三人行",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002730",
-     "name": "电光科技",
      "first_time": null,
      "first_hm": null
     },
@@ -5595,32 +5469,26 @@
      "first_hm": null
     },
     {
-     "code": "000636",
-     "name": "风华高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600666",
-     "name": "奥瑞德",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688627",
-     "name": "精智达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600353",
-     "name": "旭光电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "001339",
      "name": "智微智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "601869",
+     "name": "长飞光纤",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301259",
+     "name": "艾布鲁",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600410",
+     "name": "华胜天成",
      "first_time": null,
      "first_hm": null
     },
@@ -5631,44 +5499,50 @@
      "first_hm": null
     },
     {
-     "code": "002281",
-     "name": "光迅科技",
+     "code": "603679",
+     "name": "华体科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002065",
-     "name": "东华软件",
+     "code": "002713",
+     "name": "东易日盛",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603912",
-     "name": "佳力图",
+     "code": "002929",
+     "name": "润建股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002837",
-     "name": "英维克",
+     "code": "000034",
+     "name": "神州数码",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002197",
-     "name": "证通电子",
+     "code": "605318",
+     "name": "法狮龙",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "300663",
-     "name": "科蓝软件",
+     "code": "600186",
+     "name": "莲花控股",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002368",
-     "name": "太极股份",
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002122",
+     "name": "汇洲智能",
      "first_time": null,
      "first_hm": null
     },
@@ -5679,20 +5553,38 @@
      "first_hm": null
     },
     {
+     "code": "600850",
+     "name": "电科数字",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000062",
+     "name": "深圳华强",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300925",
+     "name": "法本信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "002290",
      "name": "禾盛新材",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603679",
-     "name": "华体科技",
+     "code": "002642",
+     "name": "荣联科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603496",
-     "name": "恒为科技",
+     "code": "605289",
+     "name": "罗曼股份",
      "first_time": null,
      "first_hm": null
     },
@@ -5703,14 +5595,122 @@
      "first_hm": null
     },
     {
-     "code": "603459",
-     "name": "红板科技",
+     "code": "003007",
+     "name": "直真科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002298",
-     "name": "中电鑫龙",
+     "code": "688343",
+     "name": "云天励飞",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300192",
+     "name": "科德教育",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688521",
+     "name": "芯原股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300339",
+     "name": "润和软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002261",
+     "name": "拓维信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603030",
+     "name": "全筑股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000409",
+     "name": "云鼎科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300324",
+     "name": "旋极信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002930",
+     "name": "宏川智慧",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603220",
+     "name": "中贝通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002730",
+     "name": "电光科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001393",
+     "name": "维通利",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605111",
+     "name": "新洁能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002990",
+     "name": "盛视科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002975",
+     "name": "博杰股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000158",
+     "name": "常山北明",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002837",
+     "name": "英维克",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002484",
+     "name": "江海股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600666",
+     "name": "奥瑞德",
      "first_time": null,
      "first_hm": null
     }
@@ -5725,10 +5725,16 @@
    "days": 2,
    "stocks": [
     {
-     "code": "688605",
-     "name": "先锋精科",
-     "first_time": 1795759372,
-     "first_hm": "14:02"
+     "code": "688019",
+     "name": "安集科技",
+     "first_time": 1795758463,
+     "first_hm": "13:47"
+    },
+    {
+     "code": "688502",
+     "name": "茂莱光学",
+     "first_time": 1795758567,
+     "first_hm": "13:49"
     },
     {
      "code": "301086",
@@ -5737,10 +5743,10 @@
      "first_hm": "14:11"
     },
     {
-     "code": "603078",
-     "name": "江化微",
-     "first_time": 1795761289,
-     "first_hm": "14:34"
+     "code": "688313",
+     "name": "仕佳光子",
+     "first_time": 1795761302,
+     "first_hm": "14:35"
     },
     {
      "code": "000032",
@@ -5749,10 +5755,10 @@
      "first_hm": "14:35"
     },
     {
-     "code": "301611",
-     "name": "珂玛科技",
-     "first_time": 1795761690,
-     "first_hm": "14:41"
+     "code": "605389",
+     "name": "长龄液压",
+     "first_time": 1795761329,
+     "first_hm": "14:35"
     },
     {
      "code": "002971",
@@ -5761,10 +5767,22 @@
      "first_hm": "14:41"
     },
     {
+     "code": "603738",
+     "name": "泰晶科技",
+     "first_time": 1795761767,
+     "first_hm": "14:42"
+    },
+    {
      "code": "600105",
      "name": "永鼎股份",
      "first_time": 1795761805,
      "first_hm": "14:43"
+    },
+    {
+     "code": "603895",
+     "name": "天永智能",
+     "first_time": 1795761964,
+     "first_hm": "14:46"
     },
     {
      "code": "688693",
@@ -5773,242 +5791,8 @@
      "first_hm": "14:56"
     },
     {
-     "code": "688069",
-     "name": "德林海",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603256",
-     "name": "宏和科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688691",
-     "name": "灿芯股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603052",
-     "name": "可川科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603663",
-     "name": "三祥新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300820",
-     "name": "英杰电气",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688797",
-     "name": "臻宝科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301209",
-     "name": "联合化学",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002859",
-     "name": "洁美科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002338",
-     "name": "奥普光电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003031",
-     "name": "中瓷电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002903",
-     "name": "宇环数控",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301392",
-     "name": "汇成真空",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688409",
-     "name": "富创精密",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001393",
-     "name": "维通利",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002409",
-     "name": "雅克科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688141",
-     "name": "杰华特",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003007",
-     "name": "直真科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301717",
-     "name": "超纯应材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688535",
-     "name": "华海诚科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300508",
-     "name": "维宏股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688037",
-     "name": "芯源微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301396",
-     "name": "宏景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300672",
-     "name": "国科微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601869",
-     "name": "长飞光纤",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688200",
-     "name": "华峰测控",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "605376",
-     "name": "博迁新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003033",
-     "name": "征和工业",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688195",
-     "name": "腾景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688530",
-     "name": "欧莱新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000988",
-     "name": "华工科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688627",
-     "name": "精智达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688362",
-     "name": "甬矽电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001339",
-     "name": "智微智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603375",
-     "name": "盛景微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "605358",
-     "name": "立昂微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001388",
-     "name": "信通电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603912",
-     "name": "佳力图",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002979",
-     "name": "雷赛智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603956",
-     "name": "威派格",
+     "code": "688636",
+     "name": "智明达",
      "first_time": null,
      "first_hm": null
     },
@@ -6019,32 +5803,140 @@
      "first_hm": null
     },
     {
-     "code": "300862",
-     "name": "蓝盾光电",
+     "code": "000988",
+     "name": "华工科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603757",
-     "name": "大元泵业",
+     "code": "001339",
+     "name": "智微智能",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002119",
-     "name": "康强电子",
+     "code": "688535",
+     "name": "华海诚科",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603496",
-     "name": "恒为科技",
+     "code": "688143",
+     "name": "长盈通",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002298",
-     "name": "中电鑫龙",
+     "code": "603690",
+     "name": "至纯科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "601869",
+     "name": "长飞光纤",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603124",
+     "name": "江南新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003033",
+     "name": "征和工业",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300604",
+     "name": "长川科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300508",
+     "name": "维宏股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603256",
+     "name": "宏和科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688200",
+     "name": "华峰测控",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301392",
+     "name": "汇成真空",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688037",
+     "name": "芯源微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688069",
+     "name": "德林海",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688552",
+     "name": "航天南湖",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301717",
+     "name": "超纯应材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688485",
+     "name": "九州一轨",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300820",
+     "name": "英杰电气",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603052",
+     "name": "可川科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301209",
+     "name": "联合化学",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002338",
+     "name": "奥普光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688409",
+     "name": "富创精密",
      "first_time": null,
      "first_hm": null
     },
@@ -6055,14 +5947,44 @@
      "first_hm": null
     },
     {
+     "code": "603061",
+     "name": "金海通",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002190",
+     "name": "成飞集成",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003007",
+     "name": "直真科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "688652",
      "name": "京仪装备",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603127",
-     "name": "昭衍新药",
+     "code": "001388",
+     "name": "信通电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001306",
+     "name": "夏厦精密",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301107",
+     "name": "瑜欣电子",
      "first_time": null,
      "first_hm": null
     },
@@ -6073,14 +5995,92 @@
      "first_hm": null
     },
     {
-     "code": "688048",
-     "name": "长光华芯",
+     "code": "001393",
+     "name": "维通利",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603124",
-     "name": "江南新材",
+     "code": "603127",
+     "name": "昭衍新药",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003043",
+     "name": "华亚智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605111",
+     "name": "新洁能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603956",
+     "name": "威派格",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003031",
+     "name": "中瓷电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300862",
+     "name": "蓝盾光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002979",
+     "name": "雷赛智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001309",
+     "name": "德明利",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688691",
+     "name": "灿芯股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688362",
+     "name": "甬矽电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605118",
+     "name": "力鼎光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603757",
+     "name": "大元泵业",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603037",
+     "name": "凯众股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002903",
+     "name": "宇环数控",
      "first_time": null,
      "first_hm": null
     }
@@ -6095,16 +6095,22 @@
    "days": 1,
    "stocks": [
     {
+     "code": "002889",
+     "name": "东方嘉盛",
+     "first_time": 1795756620,
+     "first_hm": "13:17"
+    },
+    {
      "code": "301086",
      "name": "鸿富瀚",
      "first_time": 1795759881,
      "first_hm": "14:11"
     },
     {
-     "code": "603002",
-     "name": "宏昌电子",
-     "first_time": 1795760679,
-     "first_hm": "14:24"
+     "code": "605208",
+     "name": "永茂泰",
+     "first_time": 1795759966,
+     "first_hm": "14:12"
     },
     {
      "code": "000657",
@@ -6131,15 +6137,21 @@
      "first_hm": "14:35"
     },
     {
-     "code": "603045",
-     "name": "福达合金",
-     "first_time": 1795761624,
-     "first_hm": "14:40"
+     "code": "603738",
+     "name": "泰晶科技",
+     "first_time": 1795761767,
+     "first_hm": "14:42"
     },
     {
      "code": "600105",
      "name": "永鼎股份",
      "first_time": 1795761805,
+     "first_hm": "14:43"
+    },
+    {
+     "code": "603296",
+     "name": "华勤技术",
+     "first_time": 1795761829,
      "first_hm": "14:43"
     },
     {
@@ -6149,15 +6161,21 @@
      "first_hm": "14:44"
     },
     {
+     "code": "000066",
+     "name": "中国长城",
+     "first_time": 1795761867,
+     "first_hm": "14:44"
+    },
+    {
      "code": "688012",
      "name": "中微公司",
      "first_time": 1795761867,
      "first_hm": "14:44"
     },
     {
-     "code": "000066",
-     "name": "中国长城",
-     "first_time": 1795761867,
+     "code": "600176",
+     "name": "中国巨石",
+     "first_time": 1795761871,
      "first_hm": "14:44"
     },
     {
@@ -6167,16 +6185,10 @@
      "first_hm": "14:46"
     },
     {
-     "code": "300502",
-     "name": "新易盛",
-     "first_time": 1795762077,
-     "first_hm": "14:47"
-    },
-    {
-     "code": "000977",
-     "name": "浪潮信息",
-     "first_time": 1795762092,
-     "first_hm": "14:48"
+     "code": "002552",
+     "name": "宝鼎科技",
+     "first_time": 1795762251,
+     "first_hm": "14:50"
     },
     {
      "code": "688668",
@@ -6185,164 +6197,14 @@
      "first_hm": "14:51"
     },
     {
-     "code": "002077",
-     "name": "大港股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603256",
-     "name": "宏和科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600619",
-     "name": "海立股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000818",
-     "name": "航锦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002980",
-     "name": "华盛昌",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300666",
-     "name": "江丰电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001389",
-     "name": "广合科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603663",
-     "name": "三祥新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002636",
-     "name": "金安国纪",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603031",
-     "name": "安孚科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002768",
-     "name": "国恩股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000603",
-     "name": "盛达资源",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002338",
-     "name": "奥普光电",
-     "first_time": null,
-     "first_hm": null
+     "code": "000070",
+     "name": "特发信息",
+     "first_time": 1795762563,
+     "first_hm": "14:56"
     },
     {
      "code": "603068",
      "name": "博通集成",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688409",
-     "name": "富创精密",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600641",
-     "name": "先导基电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301717",
-     "name": "超纯应材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002156",
-     "name": "通富微电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600183",
-     "name": "生益科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603051",
-     "name": "鹿山新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601869",
-     "name": "长飞光纤",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000938",
-     "name": "紫光股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002436",
-     "name": "兴森科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600839",
-     "name": "四川长虹",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000636",
-     "name": "风华高科",
      "first_time": null,
      "first_hm": null
     },
@@ -6353,44 +6215,50 @@
      "first_hm": null
     },
     {
-     "code": "003026",
-     "name": "中晶科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002281",
-     "name": "光迅科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002406",
-     "name": "远东传动",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603986",
-     "name": "兆易创新",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002979",
-     "name": "雷赛智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603186",
-     "name": "华正新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "002787",
      "name": "华源控股",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603083",
+     "name": "剑桥科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "601869",
+     "name": "长飞光纤",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603124",
+     "name": "江南新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300604",
+     "name": "长川科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603256",
+     "name": "宏和科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301717",
+     "name": "超纯应材",
      "first_time": null,
      "first_hm": null
     },
@@ -6401,8 +6269,14 @@
      "first_hm": null
     },
     {
-     "code": "603038",
-     "name": "华立股份",
+     "code": "003026",
+     "name": "中晶科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603929",
+     "name": "亚翔集成",
      "first_time": null,
      "first_hm": null
     },
@@ -6413,20 +6287,38 @@
      "first_hm": null
     },
     {
-     "code": "603459",
-     "name": "红板科技",
+     "code": "002338",
+     "name": "奥普光电",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "601208",
-     "name": "东材科技",
+     "code": "000062",
+     "name": "深圳华强",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002298",
-     "name": "中电鑫龙",
+     "code": "688409",
+     "name": "富创精密",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002164",
+     "name": "宁波东力",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603061",
+     "name": "金海通",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603051",
+     "name": "鹿山新材",
      "first_time": null,
      "first_hm": null
     },
@@ -6437,8 +6329,32 @@
      "first_hm": null
     },
     {
-     "code": "603629",
-     "name": "利通电子",
+     "code": "002008",
+     "name": "大族激光",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002636",
+     "name": "金安国纪",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600839",
+     "name": "四川长虹",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603038",
+     "name": "华立股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688498",
+     "name": "源杰科技",
      "first_time": null,
      "first_hm": null
     },
@@ -6449,8 +6365,92 @@
      "first_hm": null
     },
     {
+     "code": "600584",
+     "name": "长电科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "603127",
      "name": "昭衍新药",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002406",
+     "name": "远东传动",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002768",
+     "name": "国恩股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600487",
+     "name": "亨通光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002990",
+     "name": "盛视科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300666",
+     "name": "江丰电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002975",
+     "name": "博杰股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603986",
+     "name": "兆易创新",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002436",
+     "name": "兴森科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002979",
+     "name": "雷赛智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600183",
+     "name": "生益科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002916",
+     "name": "深南电路",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001389",
+     "name": "广合科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603893",
+     "name": "瑞芯微",
      "first_time": null,
      "first_hm": null
     }
@@ -6471,10 +6471,16 @@
      "first_hm": "09:33"
     },
     {
-     "code": "603927",
-     "name": "中科软",
-     "first_time": 1795756257,
+     "code": "002152",
+     "name": "广电运通",
+     "first_time": 1795756212,
      "first_hm": "13:10"
+    },
+    {
+     "code": "002889",
+     "name": "东方嘉盛",
+     "first_time": 1795756620,
+     "first_hm": "13:17"
     },
     {
      "code": "002819",
@@ -6513,9 +6519,15 @@
      "first_hm": "14:44"
     },
     {
-     "code": "000977",
-     "name": "浪潮信息",
-     "first_time": 1795762092,
+     "code": "603859",
+     "name": "能科科技",
+     "first_time": 1795762027,
+     "first_hm": "14:47"
+    },
+    {
+     "code": "600345",
+     "name": "长江通信",
+     "first_time": 1795762093,
      "first_hm": "14:48"
     },
     {
@@ -6531,62 +6543,20 @@
      "first_hm": "14:51"
     },
     {
+     "code": "603019",
+     "name": "中科曙光",
+     "first_time": 1795762368,
+     "first_hm": "14:52"
+    },
+    {
      "code": "002575",
      "name": "群兴玩具",
      "first_time": 1795762521,
      "first_hm": "14:55"
     },
     {
-     "code": "002657",
-     "name": "中科金财",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000818",
-     "name": "航锦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300925",
-     "name": "法本信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002649",
-     "name": "博彦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002980",
-     "name": "华盛昌",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600186",
-     "name": "莲花控股",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002396",
-     "name": "星网锐捷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603990",
-     "name": "麦迪科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300047",
-     "name": "天源迪科",
+     "code": "688636",
+     "name": "智明达",
      "first_time": null,
      "first_hm": null
     },
@@ -6597,206 +6567,14 @@
      "first_hm": null
     },
     {
-     "code": "688409",
-     "name": "富创精密",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301178",
-     "name": "天亿马",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003007",
-     "name": "直真科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300598",
-     "name": "诚迈科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000766",
-     "name": "通化金马",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002261",
-     "name": "拓维信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300339",
-     "name": "润和软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301396",
-     "name": "宏景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603171",
-     "name": "税友股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002122",
-     "name": "汇洲智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000158",
-     "name": "常山北明",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603220",
-     "name": "中贝通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000938",
-     "name": "紫光股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688343",
-     "name": "云天励飞",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600850",
-     "name": "电科数字",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600571",
-     "name": "信雅达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000948",
-     "name": "南天信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600839",
-     "name": "四川长虹",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300377",
-     "name": "赢时胜",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600666",
-     "name": "奥瑞德",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600353",
-     "name": "旭光电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "001339",
      "name": "智微智能",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603636",
-     "name": "南威软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002065",
-     "name": "东华软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603912",
-     "name": "佳力图",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301316",
-     "name": "慧博云通",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000555",
-     "name": "神州信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002197",
-     "name": "证通电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603956",
-     "name": "威派格",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300663",
-     "name": "科蓝软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002368",
-     "name": "太极股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002290",
-     "name": "禾盛新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603679",
-     "name": "华体科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603496",
-     "name": "恒为科技",
+     "code": "688143",
+     "name": "长盈通",
      "first_time": null,
      "first_hm": null
     },
@@ -6807,8 +6585,104 @@
      "first_hm": null
     },
     {
-     "code": "600797",
-     "name": "浙大网新",
+     "code": "600410",
+     "name": "华胜天成",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603636",
+     "name": "南威软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603679",
+     "name": "华体科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600571",
+     "name": "信雅达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002929",
+     "name": "润建股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000034",
+     "name": "神州数码",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300377",
+     "name": "赢时胜",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600186",
+     "name": "莲花控股",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002122",
+     "name": "汇洲智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002331",
+     "name": "皖通科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600850",
+     "name": "电科数字",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600536",
+     "name": "中国软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688409",
+     "name": "富创精密",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300925",
+     "name": "法本信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002290",
+     "name": "禾盛新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002642",
+     "name": "荣联科技",
      "first_time": null,
      "first_hm": null
     },
@@ -6819,8 +6693,134 @@
      "first_hm": null
     },
     {
-     "code": "002929",
-     "name": "润建股份",
+     "code": "600797",
+     "name": "浙大网新",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003007",
+     "name": "直真科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688343",
+     "name": "云天励飞",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600839",
+     "name": "四川长虹",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300192",
+     "name": "科德教育",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300339",
+     "name": "润和软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002261",
+     "name": "拓维信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000409",
+     "name": "云鼎科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300324",
+     "name": "旋极信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603220",
+     "name": "中贝通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600487",
+     "name": "亨通光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002990",
+     "name": "盛视科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000766",
+     "name": "通化金马",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603956",
+     "name": "威派格",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301172",
+     "name": "君逸数码",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000158",
+     "name": "常山北明",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600666",
+     "name": "奥瑞德",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002368",
+     "name": "太极股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603171",
+     "name": "税友股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002396",
+     "name": "星网锐捷",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002197",
+     "name": "证通电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002123",
+     "name": "梦网科技",
      "first_time": null,
      "first_hm": null
     }
@@ -6841,16 +6841,16 @@
      "first_hm": "09:33"
     },
     {
+     "code": "002913",
+     "name": "奥士康",
+     "first_time": 1795757295,
+     "first_hm": "13:28"
+    },
+    {
      "code": "002819",
      "name": "东方中科",
      "first_time": 1795757307,
      "first_hm": "13:28"
-    },
-    {
-     "code": "603002",
-     "name": "宏昌电子",
-     "first_time": 1795760679,
-     "first_hm": "14:24"
     },
     {
      "code": "600498",
@@ -6877,16 +6877,10 @@
      "first_hm": "14:35"
     },
     {
-     "code": "603045",
-     "name": "福达合金",
-     "first_time": 1795761624,
-     "first_hm": "14:40"
-    },
-    {
-     "code": "300684",
-     "name": "中石科技",
-     "first_time": 1795761654,
-     "first_hm": "14:40"
+     "code": "603738",
+     "name": "泰晶科技",
+     "first_time": 1795761767,
+     "first_hm": "14:42"
     },
     {
      "code": "600105",
@@ -6911,6 +6905,12 @@
      "name": "中国长城",
      "first_time": 1795761867,
      "first_hm": "14:44"
+    },
+    {
+     "code": "603859",
+     "name": "能科科技",
+     "first_time": 1795762027,
+     "first_hm": "14:47"
     },
     {
      "code": "002335",
@@ -6943,140 +6943,20 @@
      "first_hm": "14:51"
     },
     {
-     "code": "603256",
-     "name": "宏和科技",
-     "first_time": null,
-     "first_hm": null
+     "code": "002491",
+     "name": "通鼎互联",
+     "first_time": 1795762524,
+     "first_hm": "14:55"
     },
     {
-     "code": "688691",
-     "name": "灿芯股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000818",
-     "name": "航锦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001389",
-     "name": "广合科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002947",
-     "name": "恒铭达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002396",
-     "name": "星网锐捷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300047",
-     "name": "天源迪科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003021",
-     "name": "兆威机电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003031",
-     "name": "中瓷电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003007",
-     "name": "直真科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600246",
-     "name": "万通发展",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600183",
-     "name": "生益科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600330",
-     "name": "天通股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300085",
-     "name": "银之杰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601869",
-     "name": "长飞光纤",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603220",
-     "name": "中贝通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000938",
-     "name": "紫光股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002436",
-     "name": "兴森科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
+     "code": "000070",
+     "name": "特发信息",
+     "first_time": 1795762563,
+     "first_hm": "14:56"
     },
     {
      "code": "000988",
      "name": "华工科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000636",
-     "name": "风华高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688362",
-     "name": "甬矽电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600353",
-     "name": "旭光电子",
      "first_time": null,
      "first_hm": null
     },
@@ -7087,68 +6967,14 @@
      "first_hm": null
     },
     {
-     "code": "002281",
-     "name": "光迅科技",
+     "code": "603083",
+     "name": "剑桥科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "605358",
-     "name": "立昂微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603912",
-     "name": "佳力图",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603228",
-     "name": "景旺电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301316",
-     "name": "慧博云通",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603186",
-     "name": "华正新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000555",
-     "name": "神州信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688702",
-     "name": "盛科通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002025",
-     "name": "航天电器",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603496",
-     "name": "恒为科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002298",
-     "name": "中电鑫龙",
+     "code": "601869",
+     "name": "长飞光纤",
      "first_time": null,
      "first_hm": null
     },
@@ -7159,14 +6985,26 @@
      "first_hm": null
     },
     {
-     "code": "688629",
-     "name": "华丰科技",
+     "code": "603228",
+     "name": "景旺电子",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "688205",
-     "name": "德科立",
+     "code": "603256",
+     "name": "宏和科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002025",
+     "name": "航天电器",
      "first_time": null,
      "first_hm": null
     },
@@ -7183,14 +7021,176 @@
      "first_hm": null
     },
     {
-     "code": "000889",
-     "name": "中嘉博创",
+     "code": "003007",
+     "name": "直真科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688807",
+     "name": "优迅股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688498",
+     "name": "源杰科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003021",
+     "name": "兆威机电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300085",
+     "name": "银之杰",
      "first_time": null,
      "first_hm": null
     },
     {
      "code": "000409",
      "name": "云鼎科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603220",
+     "name": "中贝通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600487",
+     "name": "亨通光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003031",
+     "name": "中瓷电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002975",
+     "name": "博杰股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300939",
+     "name": "秋田微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002436",
+     "name": "兴森科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002484",
+     "name": "江海股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600183",
+     "name": "生益科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688702",
+     "name": "盛科通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688691",
+     "name": "灿芯股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688362",
+     "name": "甬矽电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002916",
+     "name": "深南电路",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600330",
+     "name": "天通股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002947",
+     "name": "恒铭达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000889",
+     "name": "中嘉博创",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002396",
+     "name": "星网锐捷",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002815",
+     "name": "崇达技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002123",
+     "name": "梦网科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001389",
+     "name": "广合科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603912",
+     "name": "佳力图",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002298",
+     "name": "中电鑫龙",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688205",
+     "name": "德科立",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603386",
+     "name": "骏亚科技",
      "first_time": null,
      "first_hm": null
     }
@@ -7217,22 +7217,16 @@
      "first_hm": "13:28"
     },
     {
+     "code": "002870",
+     "name": "香山股份",
+     "first_time": 1795758747,
+     "first_hm": "13:52"
+    },
+    {
      "code": "605208",
      "name": "永茂泰",
      "first_time": 1795759966,
      "first_hm": "14:12"
-    },
-    {
-     "code": "603002",
-     "name": "宏昌电子",
-     "first_time": 1795760679,
-     "first_hm": "14:24"
-    },
-    {
-     "code": "002213",
-     "name": "大为股份",
-     "first_time": 1795761069,
-     "first_hm": "14:31"
     },
     {
      "code": "002885",
@@ -7247,28 +7241,16 @@
      "first_hm": "14:34"
     },
     {
-     "code": "300461",
-     "name": "田中精机",
-     "first_time": 1795761462,
-     "first_hm": "14:37"
-    },
-    {
-     "code": "603045",
-     "name": "福达合金",
-     "first_time": 1795761624,
-     "first_hm": "14:40"
-    },
-    {
      "code": "300870",
      "name": "欧陆通",
      "first_time": 1795761636,
      "first_hm": "14:40"
     },
     {
-     "code": "300684",
-     "name": "中石科技",
-     "first_time": 1795761654,
-     "first_hm": "14:40"
+     "code": "603738",
+     "name": "泰晶科技",
+     "first_time": 1795761767,
+     "first_hm": "14:42"
     },
     {
      "code": "002850",
@@ -7289,6 +7271,12 @@
      "first_hm": "14:44"
     },
     {
+     "code": "603859",
+     "name": "能科科技",
+     "first_time": 1795762027,
+     "first_hm": "14:47"
+    },
+    {
      "code": "600651",
      "name": "飞乐音响",
      "first_time": 1795762209,
@@ -7301,44 +7289,38 @@
      "first_hm": "14:51"
     },
     {
-     "code": "600619",
-     "name": "海立股份",
+     "code": "603950",
+     "name": "长源东谷",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "300925",
-     "name": "法本信息",
+     "code": "000988",
+     "name": "华工科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002947",
-     "name": "恒铭达",
+     "code": "603283",
+     "name": "赛腾股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002768",
-     "name": "国恩股份",
+     "code": "600567",
+     "name": "山鹰国际",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "003021",
-     "name": "兆威机电",
+     "code": "003033",
+     "name": "征和工业",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "003031",
-     "name": "中瓷电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002903",
-     "name": "宇环数控",
+     "code": "603228",
+     "name": "景旺电子",
      "first_time": null,
      "first_hm": null
     },
@@ -7349,8 +7331,20 @@
      "first_hm": null
     },
     {
-     "code": "001393",
-     "name": "维通利",
+     "code": "300567",
+     "name": "精测电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002144",
+     "name": "宏达高科",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002025",
+     "name": "航天电器",
      "first_time": null,
      "first_hm": null
     },
@@ -7367,182 +7361,14 @@
      "first_hm": null
     },
     {
-     "code": "300598",
-     "name": "诚迈科技",
+     "code": "603407",
+     "name": "长裕集团",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002156",
-     "name": "通富微电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600567",
-     "name": "山鹰国际",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603009",
-     "name": "北特科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002988",
-     "name": "豪美新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603051",
-     "name": "鹿山新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002527",
-     "name": "新时达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603950",
-     "name": "长源东谷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003033",
-     "name": "征和工业",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002144",
-     "name": "宏达高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000988",
-     "name": "华工科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603306",
-     "name": "华懋科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000700",
-     "name": "模塑科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000636",
-     "name": "风华高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600666",
-     "name": "奥瑞德",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300843",
-     "name": "胜蓝股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603375",
-     "name": "盛景微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "605358",
-     "name": "立昂微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300567",
-     "name": "精测电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603228",
-     "name": "景旺电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002837",
-     "name": "英维克",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002979",
-     "name": "雷赛智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002025",
-     "name": "航天电器",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603283",
-     "name": "赛腾股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603459",
-     "name": "红板科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603305",
-     "name": "旭升集团",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603203",
-     "name": "快克智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688629",
-     "name": "华丰科技",
+     "code": "000062",
+     "name": "深圳华强",
      "first_time": null,
      "first_hm": null
     },
@@ -7559,8 +7385,182 @@
      "first_hm": null
     },
     {
+     "code": "300925",
+     "name": "法本信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002943",
+     "name": "宇晶股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603051",
+     "name": "鹿山新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002988",
+     "name": "豪美新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002008",
+     "name": "大族激光",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "002957",
      "name": "科瑞技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001306",
+     "name": "夏厦精密",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003021",
+     "name": "兆威机电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002527",
+     "name": "新时达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603306",
+     "name": "华懋科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603305",
+     "name": "旭升集团",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603203",
+     "name": "快克智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001393",
+     "name": "维通利",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688515",
+     "name": "裕太微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002768",
+     "name": "国恩股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605111",
+     "name": "新洁能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000700",
+     "name": "模塑科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300843",
+     "name": "胜蓝股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003031",
+     "name": "中瓷电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002975",
+     "name": "博杰股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300939",
+     "name": "秋田微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002837",
+     "name": "英维克",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002979",
+     "name": "雷赛智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600666",
+     "name": "奥瑞德",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603917",
+     "name": "合力科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002947",
+     "name": "恒铭达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603037",
+     "name": "凯众股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002815",
+     "name": "崇达技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002903",
+     "name": "宇环数控",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002123",
+     "name": "梦网科技",
      "first_time": null,
      "first_hm": null
     }
@@ -7574,6 +7574,12 @@
    "top": "5天3板",
    "days": 1,
    "stocks": [
+    {
+     "code": "603316",
+     "name": "诚邦股份",
+     "first_time": 1795757237,
+     "first_hm": "13:27"
+    },
     {
      "code": "603175",
      "name": "超颖电子",
@@ -7635,6 +7641,12 @@
      "first_hm": "14:41"
     },
     {
+     "code": "603738",
+     "name": "泰晶科技",
+     "first_time": 1795761767,
+     "first_hm": "14:42"
+    },
+    {
      "code": "603296",
      "name": "华勤技术",
      "first_time": 1795761829,
@@ -7659,6 +7671,54 @@
      "first_hm": "14:52"
     },
     {
+     "code": "688371",
+     "name": "菲沃泰",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603068",
+     "name": "博通集成",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001339",
+     "name": "智微智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603283",
+     "name": "赛腾股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002855",
+     "name": "捷荣技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002843",
+     "name": "泰嘉股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603228",
+     "name": "景旺电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000034",
+     "name": "神州数码",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "603256",
      "name": "宏和科技",
      "first_time": null,
@@ -7671,212 +7731,14 @@
      "first_hm": null
     },
     {
-     "code": "002980",
-     "name": "华盛昌",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001389",
-     "name": "广合科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002947",
-     "name": "恒铭达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603005",
-     "name": "晶方科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603683",
-     "name": "晶华新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688827",
-     "name": "钶锐锶",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688347",
-     "name": "华虹宏力",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002859",
-     "name": "洁美科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003031",
-     "name": "中瓷电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603068",
-     "name": "博通集成",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002903",
-     "name": "宇环数控",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688141",
-     "name": "杰华特",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "002708",
      "name": "光洋股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002156",
-     "name": "通富微电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688343",
-     "name": "云天励飞",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600839",
-     "name": "四川长虹",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688362",
-     "name": "甬矽电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001339",
-     "name": "智微智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300843",
-     "name": "胜蓝股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600071",
-     "name": "凤凰光学",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688371",
-     "name": "菲沃泰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603400",
-     "name": "华之杰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002655",
-     "name": "共达电声",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603228",
-     "name": "景旺电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002843",
-     "name": "泰嘉股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603186",
-     "name": "华正新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002855",
-     "name": "捷荣技术",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603283",
-     "name": "赛腾股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603459",
-     "name": "红板科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601208",
-     "name": "东材科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002298",
-     "name": "中电鑫龙",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603629",
-     "name": "利通电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603203",
-     "name": "快克智能",
+     "code": "001373",
+     "name": "翔腾新材",
      "first_time": null,
      "first_hm": null
     },
@@ -7893,20 +7755,20 @@
      "first_hm": null
     },
     {
-     "code": "000034",
-     "name": "神州数码",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "605588",
      "name": "冠石科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603773",
-     "name": "沃格光电",
+     "code": "603005",
+     "name": "晶方科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002008",
+     "name": "大族激光",
      "first_time": null,
      "first_hm": null
     },
@@ -7917,8 +7779,26 @@
      "first_hm": null
     },
     {
-     "code": "688035",
-     "name": "德邦科技",
+     "code": "688343",
+     "name": "云天励飞",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600839",
+     "name": "四川长虹",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688827",
+     "name": "钶锐锶",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603203",
+     "name": "快克智能",
      "first_time": null,
      "first_hm": null
     },
@@ -7929,8 +7809,128 @@
      "first_hm": null
     },
     {
-     "code": "301421",
-     "name": "波长光电",
+     "code": "300843",
+     "name": "胜蓝股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003031",
+     "name": "中瓷电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002975",
+     "name": "博杰股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600071",
+     "name": "凤凰光学",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688362",
+     "name": "甬矽电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605118",
+     "name": "力鼎光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002947",
+     "name": "恒铭达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002815",
+     "name": "崇达技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002903",
+     "name": "宇环数控",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001389",
+     "name": "广合科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603893",
+     "name": "瑞芯微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603459",
+     "name": "红板科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002298",
+     "name": "中电鑫龙",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688347",
+     "name": "华虹宏力",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603626",
+     "name": "科森科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003040",
+     "name": "楚天龙",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688035",
+     "name": "德邦科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600460",
+     "name": "士兰微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603400",
+     "name": "华之杰",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688141",
+     "name": "杰华特",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603236",
+     "name": "移远通信",
      "first_time": null,
      "first_hm": null
     }
@@ -7945,6 +7945,12 @@
    "days": 1,
    "stocks": [
     {
+     "code": "603316",
+     "name": "诚邦股份",
+     "first_time": 1795757237,
+     "first_hm": "13:27"
+    },
+    {
      "code": "603175",
      "name": "超颖电子",
      "first_time": 1795757251,
@@ -7955,6 +7961,12 @@
      "name": "东方中科",
      "first_time": 1795757307,
      "first_hm": "13:28"
+    },
+    {
+     "code": "688019",
+     "name": "安集科技",
+     "first_time": 1795758463,
+     "first_hm": "13:47"
     },
     {
      "code": "688757",
@@ -7993,12 +8005,6 @@
      "first_hm": "14:34"
     },
     {
-     "code": "688545",
-     "name": "兴福电子",
-     "first_time": 1795761528,
-     "first_hm": "14:38"
-    },
-    {
      "code": "301611",
      "name": "珂玛科技",
      "first_time": 1795761690,
@@ -8029,140 +8035,8 @@
      "first_hm": "14:47"
     },
     {
-     "code": "002077",
-     "name": "大港股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688361",
-     "name": "中科飞测",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688691",
-     "name": "灿芯股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000818",
-     "name": "航锦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300666",
-     "name": "江丰电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688797",
-     "name": "臻宝科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688347",
-     "name": "华虹宏力",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688820",
-     "name": "盛合晶微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601133",
-     "name": "柏诚股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002409",
-     "name": "雅克科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600641",
-     "name": "先导基电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688072",
-     "name": "拓荆科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688535",
-     "name": "华海诚科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688432",
-     "name": "有研硅",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688037",
-     "name": "芯源微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002156",
-     "name": "通富微电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600246",
-     "name": "万通发展",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600183",
-     "name": "生益科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300672",
-     "name": "国科微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688809",
-     "name": "强一股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002436",
-     "name": "兴森科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600667",
-     "name": "太极实业",
+     "code": "300480",
+     "name": "光力科技",
      "first_time": null,
      "first_hm": null
     },
@@ -8173,26 +8047,44 @@
      "first_hm": null
     },
     {
-     "code": "688627",
-     "name": "精智达",
+     "code": "603283",
+     "name": "赛腾股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "000021",
-     "name": "深科技",
+     "code": "688535",
+     "name": "华海诚科",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603375",
-     "name": "盛景微",
+     "code": "603690",
+     "name": "至纯科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "605358",
-     "name": "立昂微",
+     "code": "300604",
+     "name": "长川科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000034",
+     "name": "神州数码",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688361",
+     "name": "中科飞测",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688037",
+     "name": "芯源微",
      "first_time": null,
      "first_hm": null
     },
@@ -8203,50 +8095,38 @@
      "first_hm": null
     },
     {
-     "code": "605178",
-     "name": "时空科技",
+     "code": "600667",
+     "name": "太极实业",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603986",
-     "name": "兆易创新",
+     "code": "000062",
+     "name": "深圳华强",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "300480",
-     "name": "光力科技",
+     "code": "603936",
+     "name": "博敏电子",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002119",
-     "name": "康强电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603283",
-     "name": "赛腾股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603459",
-     "name": "红板科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603650",
-     "name": "彤程新材",
+     "code": "002008",
+     "name": "大族激光",
      "first_time": null,
      "first_hm": null
     },
     {
      "code": "688652",
      "name": "京仪装备",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "601133",
+     "name": "柏诚股份",
      "first_time": null,
      "first_hm": null
     },
@@ -8263,32 +8143,20 @@
      "first_hm": null
     },
     {
-     "code": "603936",
-     "name": "博敏电子",
+     "code": "000021",
+     "name": "深科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "000034",
-     "name": "神州数码",
+     "code": "688072",
+     "name": "拓荆科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603690",
-     "name": "至纯科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603773",
-     "name": "沃格光电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688035",
-     "name": "德邦科技",
+     "code": "002990",
+     "name": "盛视科技",
      "first_time": null,
      "first_hm": null
     },
@@ -8299,8 +8167,140 @@
      "first_hm": null
     },
     {
+     "code": "300666",
+     "name": "江丰电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002975",
+     "name": "博杰股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603986",
+     "name": "兆易创新",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002436",
+     "name": "兴森科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002371",
+     "name": "北方华创",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600183",
+     "name": "生益科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001309",
+     "name": "德明利",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688691",
+     "name": "灿芯股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "002916",
      "name": "深南电路",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605178",
+     "name": "时空科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002119",
+     "name": "康强电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603459",
+     "name": "红板科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688797",
+     "name": "臻宝科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688432",
+     "name": "有研硅",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688347",
+     "name": "华虹宏力",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605358",
+     "name": "立昂微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688035",
+     "name": "德邦科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688627",
+     "name": "精智达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688147",
+     "name": "微导纳米",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688596",
+     "name": "正帆科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688120",
+     "name": "华海清科",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603773",
+     "name": "沃格光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600206",
+     "name": "有研新材",
      "first_time": null,
      "first_hm": null
     }
@@ -8319,12 +8319,6 @@
      "name": "深圳新星",
      "first_time": 1795758363,
      "first_hm": "13:46"
-    },
-    {
-     "code": "000811",
-     "name": "冰轮环境",
-     "first_time": 1795758573,
-     "first_hm": "13:49"
     },
     {
      "code": "301086",
@@ -8351,12 +8345,6 @@
      "first_hm": "14:34"
     },
     {
-     "code": "603045",
-     "name": "福达合金",
-     "first_time": 1795761624,
-     "first_hm": "14:40"
-    },
-    {
      "code": "300870",
      "name": "欧陆通",
      "first_time": 1795761636,
@@ -8381,6 +8369,12 @@
      "first_hm": "14:43"
     },
     {
+     "code": "603895",
+     "name": "天永智能",
+     "first_time": 1795761964,
+     "first_hm": "14:46"
+    },
+    {
      "code": "002335",
      "name": "科华数据",
      "first_time": 1795762056,
@@ -8393,194 +8387,14 @@
      "first_hm": "14:52"
     },
     {
-     "code": "688069",
-     "name": "德林海",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600619",
-     "name": "海立股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002980",
-     "name": "华盛昌",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002947",
-     "name": "恒铭达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603031",
-     "name": "安孚科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002768",
-     "name": "国恩股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300820",
-     "name": "英杰电气",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001393",
-     "name": "维通利",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688141",
-     "name": "杰华特",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002536",
-     "name": "飞龙股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600567",
-     "name": "山鹰国际",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002988",
-     "name": "豪美新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600330",
-     "name": "天通股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603090",
-     "name": "宏盛股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603220",
-     "name": "中贝通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000938",
-     "name": "紫光股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002353",
-     "name": "杰瑞股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600839",
-     "name": "四川长虹",
-     "first_time": null,
-     "first_hm": null
+     "code": "002491",
+     "name": "通鼎互联",
+     "first_time": 1795762524,
+     "first_hm": "14:55"
     },
     {
      "code": "000988",
      "name": "华工科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603680",
-     "name": "今创集团",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000636",
-     "name": "风华高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002963",
-     "name": "豪尔赛",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300843",
-     "name": "胜蓝股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600071",
-     "name": "凤凰光学",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000021",
-     "name": "深科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002065",
-     "name": "东华软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603400",
-     "name": "华之杰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002272",
-     "name": "川润股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002837",
-     "name": "英维克",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002843",
-     "name": "泰嘉股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603186",
-     "name": "华正新材",
      "first_time": null,
      "first_hm": null
     },
@@ -8591,56 +8405,8 @@
      "first_hm": null
     },
     {
-     "code": "603757",
-     "name": "大元泵业",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603679",
-     "name": "华体科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002298",
-     "name": "中电鑫龙",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "605289",
-     "name": "罗曼股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002929",
-     "name": "润建股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "000628",
      "name": "高新发展",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603305",
-     "name": "旭升集团",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002723",
-     "name": "小崧股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603119",
-     "name": "浙江荣泰",
      "first_time": null,
      "first_hm": null
     },
@@ -8651,14 +8417,122 @@
      "first_hm": null
     },
     {
-     "code": "688035",
-     "name": "德邦科技",
+     "code": "603090",
+     "name": "宏盛股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002972",
-     "name": "科安达",
+     "code": "603679",
+     "name": "华体科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600567",
+     "name": "山鹰国际",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002929",
+     "name": "润建股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002843",
+     "name": "泰嘉股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002723",
+     "name": "小崧股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688069",
+     "name": "德林海",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300820",
+     "name": "英杰电气",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605289",
+     "name": "罗曼股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002190",
+     "name": "成飞集成",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002988",
+     "name": "豪美新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002008",
+     "name": "大族激光",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600839",
+     "name": "四川长虹",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603305",
+     "name": "旭升集团",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002272",
+     "name": "川润股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603220",
+     "name": "中贝通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001393",
+     "name": "维通利",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000021",
+     "name": "深科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002768",
+     "name": "国恩股份",
      "first_time": null,
      "first_hm": null
     },
@@ -8669,8 +8543,134 @@
      "first_hm": null
     },
     {
+     "code": "300843",
+     "name": "胜蓝股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300939",
+     "name": "秋田微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600071",
+     "name": "凤凰光学",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002837",
+     "name": "英维克",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002484",
+     "name": "江海股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "001326",
      "name": "联域股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600330",
+     "name": "天通股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603421",
+     "name": "鼎信通讯",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002947",
+     "name": "恒铭达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603757",
+     "name": "大元泵业",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603037",
+     "name": "凯众股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002298",
+     "name": "中电鑫龙",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603626",
+     "name": "科森科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603680",
+     "name": "今创集团",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688035",
+     "name": "德邦科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600460",
+     "name": "士兰微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002963",
+     "name": "豪尔赛",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603400",
+     "name": "华之杰",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688141",
+     "name": "杰华特",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000636",
+     "name": "风华高科",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603236",
+     "name": "移远通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688596",
+     "name": "正帆科技",
      "first_time": null,
      "first_hm": null
     }
@@ -8703,12 +8703,6 @@
      "first_hm": "13:28"
     },
     {
-     "code": "002463",
-     "name": "沪电股份",
-     "first_time": 1795758399,
-     "first_hm": "13:46"
-    },
-    {
      "code": "002870",
      "name": "香山股份",
      "first_time": 1795758747,
@@ -8725,6 +8719,12 @@
      "name": "宁波华翔",
      "first_time": 1795761270,
      "first_hm": "14:34"
+    },
+    {
+     "code": "603319",
+     "name": "美湖股份",
+     "first_time": 1795761348,
+     "first_hm": "14:35"
     },
     {
      "code": "300461",
@@ -8755,6 +8755,12 @@
      "name": "鹏鼎控股",
      "first_time": 1795761690,
      "first_hm": "14:41"
+    },
+    {
+     "code": "603738",
+     "name": "泰晶科技",
+     "first_time": 1795761767,
+     "first_hm": "14:42"
     },
     {
      "code": "603296",
@@ -8799,14 +8805,56 @@
      "first_hm": "14:50"
     },
     {
-     "code": "002077",
-     "name": "大港股份",
+     "code": "603950",
+     "name": "长源东谷",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "001389",
-     "name": "广合科技",
+     "code": "000988",
+     "name": "华工科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688535",
+     "name": "华海诚科",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603228",
+     "name": "景旺电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003026",
+     "name": "中晶科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002708",
+     "name": "光洋股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000062",
+     "name": "深圳华强",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603936",
+     "name": "博敏电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603960",
+     "name": "克来机电",
      "first_time": null,
      "first_hm": null
     },
@@ -8823,164 +8871,8 @@
      "first_hm": null
     },
     {
-     "code": "003031",
-     "name": "中瓷电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688141",
-     "name": "杰华特",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002708",
-     "name": "光洋股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300598",
-     "name": "诚迈科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688535",
-     "name": "华海诚科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002536",
-     "name": "飞龙股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002156",
-     "name": "通富微电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600183",
-     "name": "生益科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600330",
-     "name": "天通股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300672",
-     "name": "国科微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603950",
-     "name": "长源东谷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000988",
-     "name": "华工科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000636",
-     "name": "风华高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688362",
-     "name": "甬矽电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003026",
-     "name": "中晶科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600071",
-     "name": "凤凰光学",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000021",
-     "name": "深科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "605358",
-     "name": "立昂微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603400",
-     "name": "华之杰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002655",
-     "name": "共达电声",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603228",
-     "name": "景旺电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603986",
-     "name": "兆易创新",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002368",
-     "name": "太极股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603459",
-     "name": "红板科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603960",
-     "name": "克来机电",
+     "code": "301107",
+     "name": "瑜欣电子",
      "first_time": null,
      "first_hm": null
     },
@@ -8997,14 +8889,74 @@
      "first_hm": null
     },
     {
-     "code": "603936",
-     "name": "博敏电子",
+     "code": "603303",
+     "name": "得邦照明",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603773",
-     "name": "沃格光电",
+     "code": "000021",
+     "name": "深科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605111",
+     "name": "新洁能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003031",
+     "name": "中瓷电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002975",
+     "name": "博杰股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300939",
+     "name": "秋田微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603986",
+     "name": "兆易创新",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600071",
+     "name": "凤凰光学",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600183",
+     "name": "生益科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002368",
+     "name": "太极股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001309",
+     "name": "德明利",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688362",
+     "name": "甬矽电子",
      "first_time": null,
      "first_hm": null
     },
@@ -9015,14 +8967,8 @@
      "first_hm": null
     },
     {
-     "code": "301107",
-     "name": "瑜欣电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000062",
-     "name": "深圳华强",
+     "code": "600330",
+     "name": "天通股份",
      "first_time": null,
      "first_hm": null
     },
@@ -9033,8 +8979,62 @@
      "first_hm": null
     },
     {
-     "code": "603303",
-     "name": "得邦照明",
+     "code": "001389",
+     "name": "广合科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603459",
+     "name": "红板科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603386",
+     "name": "骏亚科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605358",
+     "name": "立昂微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600460",
+     "name": "士兰微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603400",
+     "name": "华之杰",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688141",
+     "name": "杰华特",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000636",
+     "name": "风华高科",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603236",
+     "name": "移远通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603773",
+     "name": "沃格光电",
      "first_time": null,
      "first_hm": null
     },
@@ -9079,44 +9079,62 @@
      "first_hm": "14:56"
     },
     {
-     "code": "002649",
-     "name": "博彦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002980",
-     "name": "华盛昌",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002396",
-     "name": "星网锐捷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603990",
-     "name": "麦迪科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "603068",
      "name": "博通集成",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "003007",
-     "name": "直真科技",
+     "code": "300480",
+     "name": "光力科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "300598",
-     "name": "诚迈科技",
+     "code": "000988",
+     "name": "华工科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001339",
+     "name": "智微智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000628",
+     "name": "高新发展",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603015",
+     "name": "弘讯科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603083",
+     "name": "剑桥科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603687",
+     "name": "大胜达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603636",
+     "name": "南威软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603679",
+     "name": "华体科技",
      "first_time": null,
      "first_hm": null
     },
@@ -9127,50 +9145,8 @@
      "first_hm": null
     },
     {
-     "code": "002261",
-     "name": "拓维信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300339",
-     "name": "润和软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301396",
-     "name": "宏景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002156",
-     "name": "通富微电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300672",
-     "name": "国科微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688521",
-     "name": "芯原股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002527",
-     "name": "新时达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603220",
-     "name": "中贝通信",
+     "code": "000034",
+     "name": "神州数码",
      "first_time": null,
      "first_hm": null
     },
@@ -9187,134 +9163,14 @@
      "first_hm": null
     },
     {
-     "code": "000948",
-     "name": "南天信息",
+     "code": "603936",
+     "name": "博敏电子",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "600839",
-     "name": "四川长虹",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002730",
-     "name": "电光科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000988",
-     "name": "华工科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002963",
-     "name": "豪尔赛",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001339",
-     "name": "智微智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603636",
-     "name": "南威软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600071",
-     "name": "凤凰光学",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000021",
-     "name": "深科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002065",
-     "name": "东华软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001388",
-     "name": "信通电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "605178",
-     "name": "时空科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301316",
-     "name": "慧博云通",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603986",
-     "name": "兆易创新",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000555",
-     "name": "神州信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603956",
-     "name": "威派格",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300480",
-     "name": "光力科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300663",
-     "name": "科蓝软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002368",
-     "name": "太极股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603679",
-     "name": "华体科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603496",
-     "name": "恒为科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603687",
-     "name": "大胜达",
+     "code": "002642",
+     "name": "荣联科技",
      "first_time": null,
      "first_hm": null
     },
@@ -9325,44 +9181,14 @@
      "first_hm": null
     },
     {
-     "code": "002298",
-     "name": "中电鑫龙",
+     "code": "003007",
+     "name": "直真科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "000628",
-     "name": "高新发展",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600584",
-     "name": "长电科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603936",
-     "name": "博敏电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000034",
-     "name": "神州数码",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603015",
-     "name": "弘讯科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000409",
-     "name": "云鼎科技",
+     "code": "002008",
+     "name": "大族激光",
      "first_time": null,
      "first_hm": null
     },
@@ -9373,26 +9199,38 @@
      "first_hm": null
     },
     {
-     "code": "300324",
-     "name": "旋极信息",
+     "code": "600839",
+     "name": "四川长虹",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "001326",
-     "name": "联域股份",
+     "code": "001388",
+     "name": "信通电子",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "301172",
-     "name": "君逸数码",
+     "code": "688521",
+     "name": "芯原股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "003040",
-     "name": "楚天龙",
+     "code": "300339",
+     "name": "润和软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002261",
+     "name": "拓维信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002527",
+     "name": "新时达",
      "first_time": null,
      "first_hm": null
     },
@@ -9403,14 +9241,176 @@
      "first_hm": null
     },
     {
-     "code": "603893",
-     "name": "瑞芯微",
+     "code": "000409",
+     "name": "云鼎科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300324",
+     "name": "旋极信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600584",
+     "name": "长电科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603220",
+     "name": "中贝通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002730",
+     "name": "电光科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000021",
+     "name": "深科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002990",
+     "name": "盛视科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603956",
+     "name": "威派格",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301172",
+     "name": "君逸数码",
      "first_time": null,
      "first_hm": null
     },
     {
      "code": "300939",
      "name": "秋田微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603986",
+     "name": "兆易创新",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600071",
+     "name": "凤凰光学",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002368",
+     "name": "太极股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001326",
+     "name": "联域股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002396",
+     "name": "星网锐捷",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605178",
+     "name": "时空科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002123",
+     "name": "梦网科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603893",
+     "name": "瑞芯微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301396",
+     "name": "宏景科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002298",
+     "name": "中电鑫龙",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003040",
+     "name": "楚天龙",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002963",
+     "name": "豪尔赛",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300663",
+     "name": "科蓝软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301316",
+     "name": "慧博云通",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603236",
+     "name": "移远通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603496",
+     "name": "恒为科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002065",
+     "name": "东华软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603990",
+     "name": "麦迪科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000555",
+     "name": "神州信息",
      "first_time": null,
      "first_hm": null
     }
@@ -9473,12 +9473,6 @@
      "first_hm": "14:47"
     },
     {
-     "code": "000977",
-     "name": "浪潮信息",
-     "first_time": 1795762092,
-     "first_hm": "14:48"
-    },
-    {
      "code": "600345",
      "name": "长江通信",
      "first_time": 1795762093,
@@ -9509,134 +9503,8 @@
      "first_hm": "14:56"
     },
     {
-     "code": "002657",
-     "name": "中科金财",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300925",
-     "name": "法本信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002649",
-     "name": "博彦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002396",
-     "name": "星网锐捷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300047",
-     "name": "天源迪科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "600446",
      "name": "金证股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301178",
-     "name": "天亿马",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300598",
-     "name": "诚迈科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300508",
-     "name": "维宏股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002261",
-     "name": "拓维信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300339",
-     "name": "润和软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301396",
-     "name": "宏景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603171",
-     "name": "税友股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300085",
-     "name": "银之杰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000158",
-     "name": "常山北明",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688343",
-     "name": "云天励飞",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600850",
-     "name": "电科数字",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600571",
-     "name": "信雅达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000948",
-     "name": "南天信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600839",
-     "name": "四川长虹",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300377",
-     "name": "赢时胜",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600353",
-     "name": "旭光电子",
      "first_time": null,
      "first_hm": null
     },
@@ -9647,80 +9515,8 @@
      "first_hm": null
     },
     {
-     "code": "603636",
-     "name": "南威软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002065",
-     "name": "东华软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301316",
-     "name": "慧博云通",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000555",
-     "name": "神州信息",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002197",
-     "name": "证通电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603956",
-     "name": "威派格",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300663",
-     "name": "科蓝软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002368",
-     "name": "太极股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002290",
-     "name": "禾盛新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603496",
-     "name": "恒为科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600797",
-     "name": "浙大网新",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002298",
-     "name": "中电鑫龙",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002929",
-     "name": "润建股份",
+     "code": "002253",
+     "name": "川大智胜",
      "first_time": null,
      "first_hm": null
     },
@@ -9731,20 +9527,116 @@
      "first_hm": null
     },
     {
+     "code": "603636",
+     "name": "南威软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600571",
+     "name": "信雅达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002929",
+     "name": "润建股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300508",
+     "name": "维宏股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605398",
+     "name": "新炬网络",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "000034",
      "name": "神州数码",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002253",
-     "name": "川大智胜",
+     "code": "300377",
+     "name": "赢时胜",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002972",
-     "name": "科安达",
+     "code": "603138",
+     "name": "海量数据",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600850",
+     "name": "电科数字",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600536",
+     "name": "中国软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300925",
+     "name": "法本信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002290",
+     "name": "禾盛新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002642",
+     "name": "荣联科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600797",
+     "name": "浙大网新",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688343",
+     "name": "云天励飞",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600839",
+     "name": "四川长虹",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300339",
+     "name": "润和软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002261",
+     "name": "拓维信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300085",
+     "name": "银之杰",
      "first_time": null,
      "first_hm": null
     },
@@ -9761,8 +9653,68 @@
      "first_hm": null
     },
     {
+     "code": "002990",
+     "name": "盛视科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603956",
+     "name": "威派格",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "301172",
      "name": "君逸数码",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000158",
+     "name": "常山北明",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002368",
+     "name": "太极股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603171",
+     "name": "税友股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002396",
+     "name": "星网锐捷",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002197",
+     "name": "证通电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002123",
+     "name": "梦网科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301396",
+     "name": "宏景科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002298",
+     "name": "中电鑫龙",
      "first_time": null,
      "first_hm": null
     },
@@ -9773,14 +9725,62 @@
      "first_hm": null
     },
     {
-     "code": "600536",
-     "name": "中国软件",
+     "code": "600353",
+     "name": "旭光电子",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603138",
-     "name": "海量数据",
+     "code": "300663",
+     "name": "科蓝软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301316",
+     "name": "慧博云通",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003005",
+     "name": "竞业达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603496",
+     "name": "恒为科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002065",
+     "name": "东华软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000555",
+     "name": "神州信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000948",
+     "name": "南天信息",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "301178",
+     "name": "天亿马",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002649",
+     "name": "博彦科技",
      "first_time": null,
      "first_hm": null
     }
@@ -9831,6 +9831,12 @@
      "first_hm": "14:41"
     },
     {
+     "code": "603738",
+     "name": "泰晶科技",
+     "first_time": 1795761767,
+     "first_hm": "14:42"
+    },
+    {
      "code": "600105",
      "name": "永鼎股份",
      "first_time": 1795761805,
@@ -9873,128 +9879,8 @@
      "first_hm": "14:56"
     },
     {
-     "code": "000818",
-     "name": "航锦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603052",
-     "name": "可川科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002980",
-     "name": "华盛昌",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001389",
-     "name": "广合科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603031",
-     "name": "安孚科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002396",
-     "name": "星网锐捷",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003031",
-     "name": "中瓷电子",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
      "code": "002222",
      "name": "福晶科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002156",
-     "name": "通富微电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600183",
-     "name": "生益科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601869",
-     "name": "长飞光纤",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603220",
-     "name": "中贝通信",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000938",
-     "name": "紫光股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002436",
-     "name": "兴森科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001267",
-     "name": "汇绿生态",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688195",
-     "name": "腾景科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000988",
-     "name": "华工科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603306",
-     "name": "华懋科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000636",
-     "name": "风华高科",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002281",
-     "name": "光迅科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000021",
-     "name": "深科技",
      "first_time": null,
      "first_hm": null
     },
@@ -10005,14 +9891,20 @@
      "first_hm": null
     },
     {
-     "code": "605358",
-     "name": "立昂微",
+     "code": "300480",
+     "name": "光力科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603228",
-     "name": "景旺电子",
+     "code": "000988",
+     "name": "华工科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688143",
+     "name": "长盈通",
      "first_time": null,
      "first_hm": null
     },
@@ -10023,44 +9915,14 @@
      "first_hm": null
     },
     {
-     "code": "300480",
-     "name": "光力科技",
+     "code": "603083",
+     "name": "剑桥科技",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002025",
-     "name": "航天电器",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603459",
-     "name": "红板科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603960",
-     "name": "克来机电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603203",
-     "name": "快克智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688629",
-     "name": "华丰科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600584",
-     "name": "长电科技",
+     "code": "601869",
+     "name": "长飞光纤",
      "first_time": null,
      "first_hm": null
     },
@@ -10071,14 +9933,32 @@
      "first_hm": null
     },
     {
-     "code": "688048",
-     "name": "长光华芯",
+     "code": "603228",
+     "name": "景旺电子",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "688205",
-     "name": "德科立",
+     "code": "000938",
+     "name": "紫光股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002025",
+     "name": "航天电器",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603052",
+     "name": "可川科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000062",
+     "name": "深圳华强",
      "first_time": null,
      "first_hm": null
     },
@@ -10095,20 +9975,8 @@
      "first_hm": null
     },
     {
-     "code": "603773",
-     "name": "沃格光电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002957",
-     "name": "科瑞技术",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600487",
-     "name": "亨通光电",
+     "code": "603960",
+     "name": "克来机电",
      "first_time": null,
      "first_hm": null
     },
@@ -10119,20 +9987,14 @@
      "first_hm": null
     },
     {
-     "code": "002384",
-     "name": "东山精密",
+     "code": "002008",
+     "name": "大族激光",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "000062",
-     "name": "深圳华强",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002815",
-     "name": "崇达技术",
+     "code": "002957",
+     "name": "科瑞技术",
      "first_time": null,
      "first_hm": null
     },
@@ -10143,14 +10005,152 @@
      "first_hm": null
     },
     {
+     "code": "603306",
+     "name": "华懋科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603203",
+     "name": "快克智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600584",
+     "name": "长电科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603220",
+     "name": "中贝通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000021",
+     "name": "深科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600487",
+     "name": "亨通光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001267",
+     "name": "汇绿生态",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "301172",
      "name": "君逸数码",
      "first_time": null,
      "first_hm": null
     },
     {
+     "code": "003031",
+     "name": "中瓷电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002436",
+     "name": "兴森科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600183",
+     "name": "生益科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001309",
+     "name": "德明利",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002396",
+     "name": "星网锐捷",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002815",
+     "name": "崇达技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688048",
+     "name": "长光华芯",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001389",
+     "name": "广合科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603459",
+     "name": "红板科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688205",
+     "name": "德科立",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "603386",
      "name": "骏亚科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605358",
+     "name": "立昂微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688195",
+     "name": "腾景科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002281",
+     "name": "光迅科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000636",
+     "name": "风华高科",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688629",
+     "name": "华丰科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603773",
+     "name": "沃格光电",
      "first_time": null,
      "first_hm": null
     }
@@ -10225,6 +10225,12 @@
      "first_hm": "14:41"
     },
     {
+     "code": "603738",
+     "name": "泰晶科技",
+     "first_time": 1795761767,
+     "first_hm": "14:42"
+    },
+    {
      "code": "002850",
      "name": "科达利",
      "first_time": 1795761801,
@@ -10261,134 +10267,8 @@
      "first_hm": "14:48"
     },
     {
-     "code": "002768",
-     "name": "国恩股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603683",
-     "name": "晶华新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603990",
-     "name": "麦迪科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003021",
-     "name": "兆威机电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "301178",
-     "name": "天亿马",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002708",
-     "name": "光洋股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600460",
-     "name": "士兰微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300508",
-     "name": "维宏股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "300339",
-     "name": "润和软件",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603009",
-     "name": "北特科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603051",
-     "name": "鹿山新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002779",
-     "name": "中坚科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002527",
-     "name": "新时达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "601869",
-     "name": "长飞光纤",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002122",
-     "name": "汇洲智能",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688343",
-     "name": "云天励飞",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002975",
-     "name": "博杰股份",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "003033",
-     "name": "征和工业",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600850",
-     "name": "电科数字",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688585",
-     "name": "上纬新材",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000700",
-     "name": "模塑科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600353",
-     "name": "旭光电子",
+     "code": "002403",
+     "name": "爱仕达",
      "first_time": null,
      "first_hm": null
     },
@@ -10399,104 +10279,44 @@
      "first_hm": null
     },
     {
-     "code": "300843",
-     "name": "胜蓝股份",
+     "code": "601869",
+     "name": "长飞光纤",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "605358",
-     "name": "立昂微",
+     "code": "003033",
+     "name": "征和工业",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603986",
-     "name": "兆易创新",
+     "code": "300508",
+     "name": "维宏股份",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002979",
-     "name": "雷赛智能",
+     "code": "688585",
+     "name": "上纬新材",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "002403",
-     "name": "爱仕达",
+     "code": "002122",
+     "name": "汇洲智能",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "603305",
-     "name": "旭升集团",
+     "code": "600850",
+     "name": "电科数字",
      "first_time": null,
      "first_hm": null
     },
     {
-     "code": "688629",
-     "name": "华丰科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603119",
-     "name": "浙江荣泰",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002957",
-     "name": "科瑞技术",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688035",
-     "name": "德邦科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "600487",
-     "name": "亨通光电",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002164",
-     "name": "宁波东力",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "001306",
-     "name": "夏厦精密",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "603337",
-     "name": "杰克科技",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "688515",
-     "name": "裕太微",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "000026",
-     "name": "飞亚达",
-     "first_time": null,
-     "first_hm": null
-    },
-    {
-     "code": "002384",
-     "name": "东山精密",
+     "code": "002708",
+     "name": "光洋股份",
      "first_time": null,
      "first_hm": null
     },
@@ -10507,8 +10327,116 @@
      "first_hm": null
     },
     {
-     "code": "002815",
-     "name": "崇达技术",
+     "code": "002164",
+     "name": "宁波东力",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603051",
+     "name": "鹿山新材",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002957",
+     "name": "科瑞技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688343",
+     "name": "云天励飞",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "001306",
+     "name": "夏厦精密",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300339",
+     "name": "润和软件",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002779",
+     "name": "中坚科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "003021",
+     "name": "兆威机电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002527",
+     "name": "新时达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603305",
+     "name": "旭升集团",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000026",
+     "name": "飞亚达",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688515",
+     "name": "裕太微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002768",
+     "name": "国恩股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600487",
+     "name": "亨通光电",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002990",
+     "name": "盛视科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "000700",
+     "name": "模塑科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "300843",
+     "name": "胜蓝股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002975",
+     "name": "博杰股份",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603986",
+     "name": "兆易创新",
      "first_time": null,
      "first_hm": null
     },
@@ -10519,8 +10447,80 @@
      "first_hm": null
     },
     {
+     "code": "002979",
+     "name": "雷赛智能",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "002815",
+     "name": "崇达技术",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
      "code": "603893",
      "name": "瑞芯微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603337",
+     "name": "杰克科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603386",
+     "name": "骏亚科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "605358",
+     "name": "立昂微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688035",
+     "name": "德邦科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600460",
+     "name": "士兰微",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "600353",
+     "name": "旭光电子",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603236",
+     "name": "移远通信",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "688629",
+     "name": "华丰科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603990",
+     "name": "麦迪科技",
+     "first_time": null,
+     "first_hm": null
+    },
+    {
+     "code": "603119",
+     "name": "浙江荣泰",
      "first_time": null,
      "first_hm": null
     }
@@ -11263,7 +11263,7 @@
    },
    {
     "date": "2026-11-27",
-    "close": 92.44
+    "close": 90.74
    }
   ],
   "gold": [
@@ -11625,11 +11625,11 @@
    },
    {
     "date": "2026-11-27",
-    "close": 3705.4
+    "close": 3681.1
    }
   ]
  },
- "updated_at": "2026-11-27 17:56:22",
+ "updated_at": "2026-11-28 05:48:07",
  "lhb": {
   "count": 74,
   "items": [
@@ -17260,5 +17260,5 @@
   ]
  },
  "lhb_updated_at": "2026-11-27 17:56:25",
- "archived_at": "2026-11-27 17:56:26"
+ "archived_at": "2026-11-28 05:48:10"
 }
