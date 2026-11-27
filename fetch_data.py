@@ -167,9 +167,10 @@ def upsert_day(date_str, patch, touch='updated_at', sig_keys=None, stamp=None):
         d[k] = v
     d['date'] = date_str
     fresh = (_content_sig(old, sig_keys) != _content_sig(d, sig_keys))
-    if fresh:
+    if fresh and touch:
         d[touch] = stamp or now_bj()
     # 没触及的时间戳一律沿用旧值；内容没变时连 touch 的那个也不动
+    # touch=None 表示补录历史日，一个时间戳都不碰（那天的真实时刻早已过去）
     for k in TS_KEYS:
         if k != touch or not fresh:
             if k in old:
@@ -1020,7 +1021,8 @@ def stage_market(date_str):
     # 行情时间 = 这份数据最后一次「有变化」的抓取时刻。收盘后反复抓到同一份，
     # 时间就停在那一次（比如 15:55），不会跟着 18:30、22:03 往后跑
     stamp = stamp_market(date_str, patch) if is_today else None
-    d = upsert_day(date_str, patch, sig_keys=MARKET_KEYS, stamp=stamp)
+    d = upsert_day(date_str, patch, sig_keys=MARKET_KEYS, stamp=stamp,
+                   touch='updated_at' if is_today else None)
     print('[market] saved -> data/%s.json' % date_str)
     return d
 
@@ -1052,7 +1054,9 @@ def stage_archive(date_str):
 def stage_backfill(date_str):
     print('[backfill] date=%s' % date_str)
     b = backfill_breadth(date_str)
-    d = upsert_day(date_str, {'breadth': b})
+    # 补录历史日不刷时间戳，否则会把「今天几点补的」写成那天的行情时刻
+    d = upsert_day(date_str, {'breadth': b},
+                   touch='updated_at' if date_str == today_str() else None)
     print('[backfill] up=%d down=%d flat=%d lu=%d ld=%d' %
           (b['up'], b['down'], b['flat'], b['limit_up'], b['limit_down']))
     return d
