@@ -16,6 +16,12 @@ on:
           - all
           - market
           - lhb
+          - backfill
+      date:
+        description: '补哪一天（YYYY-MM-DD，留空=今天）'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: write
@@ -44,25 +50,35 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           INPUT_STAGE: ${{ github.event.inputs.stage }}
+          INPUT_DATE: ${{ github.event.inputs.date }}
         run: |
           if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ -n "$INPUT_STAGE" ]; then
             echo "stage=$INPUT_STAGE" >> "$GITHUB_OUTPUT"
           else
             echo "stage=all" >> "$GITHUB_OUTPUT"
           fi
+          echo "day=$INPUT_DATE" >> "$GITHUB_OUTPUT"
 
       - name: 抓取数据
         env:
           STAGE: ${{ steps.st.outputs.stage }}
+          DAY: ${{ steps.st.outputs.day }}
         run: |
+          ARG=""
+          if [ -n "$DAY" ]; then ARG="--date $DAY"; fi
           if [ "$STAGE" = "all" ]; then
-            python3 fetch_data.py --stage market
-            python3 fetch_data.py --stage lhb
+            python3 fetch_data.py --stage market $ARG
+            python3 fetch_data.py --stage lhb $ARG
+            # 补历史日：涨跌家数拿不到实时快照，得用个股日K回溯（慢，仅补数据时跑）
+            if [ -n "$DAY" ]; then python3 fetch_data.py --stage backfill $ARG || true; fi
           else
-            python3 fetch_data.py --stage "$STAGE"
+            python3 fetch_data.py --stage "$STAGE" $ARG
           fi
 
+      # 补历史某天时不写「存档时刻」：那天真实的存档时间已经过去了，
+      # 硬写now()会把补录时刻冒充成当时的存档时刻。
       - name: 记录存档时刻
+        if: steps.st.outputs.day == ''
         run: python3 fetch_data.py --stage archive
 
       - name: 生成页面
