@@ -1033,8 +1033,10 @@ def stage_lhb(date_str):
     if not lhb['count']:
         print('[lhb] 当日无龙虎榜数据（非交易日或尚未公布），跳过写入')
         return None
-    d = upsert_day(date_str, {'lhb': lhb}, touch='lhb_updated_at',
-                   stamp=stamp_lhb(date_str, lhb))
+    is_today = (date_str == today_str())
+    d = upsert_day(date_str, {'lhb': lhb},
+                   touch='lhb_updated_at' if is_today else None,
+                   stamp=stamp_lhb(date_str, lhb) if is_today else None)
     print('[lhb] %d 条 -> data/%s.json' % (lhb['count'], date_str))
     return d
 
